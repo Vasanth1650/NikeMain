@@ -1,0 +1,598 @@
+.body {
+    background-color: white;
+    color: #fff;
+    margin: 0;
+    overflow: hidden;
+  }
+  .gi{
+    background-color: white;
+  }
+  
+  .jordan{
+    background-color: white;
+  }
+  
+  
+  .headpops{background-image: url("http://res.cloudinary.com/rinma/image/upload/v1498143792/Clouds-Background-HD-min_y126nz.jpg");
+    color: black;
+    font-weight: bolder;
+    background-size: cover  ;
+    font-family: Georgia, serif;
+    font-size: 25px;
+  }
+  
+  .ko{
+    color: black;
+    font-weight: bolder;
+    font-family: Georgia, serif;
+    font-size: 25px;
+  }
+  
+  
+  
+  .popi{
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    font-family: Georgia, serif;
+    font-size: 25px;
+  }
+  
+  .jordantitle{
+    color: #000;
+    font-weight: bolder;
+    font-family: Georgia, serif;
+    font-size: 25px;
+  }
+  .popular{
+    background-color: black;
+  }
+  
+  .ad{
+    text-align: center;
+  }
+  .popularbut{
+    text-align: center;
+  }
+  
+  .popbut{
+    background-color: transparent;
+    
+  }
+  
+  .headpop{
+    text-align: center;
+    color: white;
+    font-size: larger;
+    font-family: Georgia, serif;
+    font-weight: bolder;
+    
+  }
+  
+  .headpop1{
+    color: black;
+    background-color: white;
+    font-weight: bolder;
+    font-family: Georgia, serif;
+    font-size: 25px;
+  }
+  
+  .bodys {
+    background-color: #eaf818;
+    background-image: linear-gradient(315deg,black 20%, grey 70%);
+    font-family: Georgia, serif;
+    font-size: 30px;
+    text-align: center;
+    color: #000;
+  }
+  
+  .bodysi{
+    background-color: #eaf818;
+    background-image: linear-gradient(315deg,black 20%, grey 70%);
+    font-family: Georgia, serif;
+    text-align: center;
+    font-size: 30px;
+    color: #000;
+  }
+  
+  .bodysii{
+    background-color: #eaf818;
+    background-image: linear-gradient(315deg,black 20%, grey 70%);
+    font-family: Georgia, serif;
+    font-size: 30px;
+    text-align: center;
+    color: #000;
+  }
+  
+  
+  
+  .me-2 {
+    background-color: lightgray;
+  }
+  
+  .dum {
+    font-size: larger;
+  }
+  
+  .card5 {
+    margin-left: 6%;
+    width: 20%;
+  
+  }
+  .c{
+    width: 40%;
+    height: 10%;
+    margin-left: 18%;
+    font-family: Georgia, serif;
+  }
+  .cardsi{
+    width: 20%;
+    height: 10%;
+    margin-left: 18%;
+  }
+  
+  .dust{
+    margin-left: 50%;
+  }
+  
+  .dustbac{
+    background-color: white;
+    
+  }
+  
+  .cardii{
+    margin-left: 4%;
+    width: 20%;
+  
+  }
+  .cardi {
+    margin-left: 3%;
+    width: 40%;
+  
+  }
+  
+  .nike {
+    text-align: center;
+    margin-top: 5%;
+    color: black;
+    font-family: Georgia, serif;
+  }
+  
+  .moveit {
+    background-color: #ff9800;
+    color: #fff;
+    margin-left: 45%;
+  }
+  
+  
+  .adjust {
+    margin-left: 15%;
+    font-family: Georgia, serif;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  .frame {
+    text-align: center;
+  }
+  
+  .custom-btn {
+    color: #fff;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+      7px 7px 20px 0px rgba(0, 0, 0, .1),
+      4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+  }
+  
+  .btn-14 {
+    background: rgb(255, 151, 0);
+    border: none;
+    z-index: 1;
+    margin-left: 25%;
+  }
+  
+  .btn-14:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: #eaf818;
+    background-image: linear-gradient(315deg, #eaf818 0%, #f6fc9c 74%);
+  
+    transition: all 0.3s ease;
+  }
+  
+  .btn-14:hover {
+    color: #000;
+  }
+  
+  .btn-14:hover:after {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+  
+  .btn-14:active {
+    top: 2px;
+  }
+  
+  
+  
+  
+  
+  .btn-16 {
+    border: none;
+    width: 70%;
+  }
+  .btn-16:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    direction: rtl;
+    z-index: -1;
+   
+    transition: all 0.3s ease;
+  }
+  .btn-16:hover {
+    color: black;
+  }
+  .btn-16:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+  }
+  .btn-16:active {
+    top: 2px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  body {
+    font-family: Georgia, serif;
+  }
+  
+  /* Float four columns side by side */
+  
+  
+  /* Remove extra left and right margins, due to padding */
+  
+  
+  /* Clear floats after the columns */
+  
+  
+  /* Responsive columns */
+  
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+  
+  
+  
+  .textmen{
+    color: #000;
+    margin-left: 2%;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .items{
+    
+    color: #000;
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  ul {
+    margin: 0px;
+    padding: 0px;
+  }
+  .footer-section {
+  background: whitesmoke;
+  background-image:-moz-repeating-linear-gradient();
+  position: relative;
+  }
+  .footer-cta {
+  border-bottom: 1px solid #373636;
+  }
+  .single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+  }
+  .cta-text {
+  padding-left: 50px;
+  display: inline-block;
+  color: #000;
+  }
+  .cta-text h4 {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  }
+  .cta-text span {
+  color: black;
+  font-size: 15px;
+  }
+  .footer-content {
+  position: relative;
+  z-index: 2;
+  }
+  .footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+  }
+  .footer-logo {
+  margin-bottom: 30px;
+  }
+  .footer-logo img {
+    max-width: 200px;
+  }
+  .footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: black;
+  line-height: 28px;
+  }
+  .footer-social-icon span {
+  color: black;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  }
+  .footer-social-icon a {
+  color: black;
+  font-size: 16px;
+  margin-right: 15px;
+  }
+  .footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+  }
+  .facebook-bg{
+  background: #3B5998;
+  }
+  .twitter-bg{
+  background: #55ACEE;
+  }
+  .google-bg{
+  background: #DD4B39;
+  }
+  .footer-widget-heading h3 {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+  }
+  .footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+  }
+  .footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+  }
+  .footer-widget ul li a:hover{
+  color: #ff5e14;
+  }
+  .footer-widget ul li a {
+  color: black;
+  text-transform: capitalize;
+  }
+  .subscribe-form {
+  position: relative;
+  overflow: hidden;
+  }
+  .subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: black;
+  }
+  .subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #ff5e14;
+    padding: 13px 20px;
+    border: 1px solid #ff5e14;
+    top: 0;
+  }
+  .subscribe-form button i {
+  color: black;
+  font-size: 22px;
+  transform: rotate(-6deg);
+  }
+  .copyright-area{
+  background: #202020;
+  padding: 25px 0;
+  }
+  .copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+  }
+  .copyright-text p a{
+  color: #ff5e14;
+  }
+  .footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+  }
+  .footer-menu li:hover a{
+  color: #ff5e14;
+  }
+  .footer-menu li a {
+  font-size: 14px;
+  color: white;
+  }
+  
+  
+  
+  
+  
+  
+  
+  .texting{
+    color: #000;
+  }
+  
+  
+  
+  
+  
+  
+  .carding{
+    
+  
+  }
+  
+  
+  
+  
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20vmin;
+    text-align: center;
+    line-height: 20vmin;
+  }
+  
+  .gradient-text {
+    color: transparent;
+    background: conic-gradient(
+      #D9D7F1 12%, 
+      #BAABDA 12%, #BAABDA 33%, 
+      #E7FBBE 33%, #E7FBBE 55%, 
+      #FFCBCB 55%, #FFCBCB 70%, 
+      #B5DEFF 70%, #B5DEFF 87%, 
+      #F7D1BA 87%);
+    background-size: 50%;
+    background-clip: text;  
+    -webkit-background-clip: text;
+  
+    animation: expand-rev 0.5s ease forwards;
+  
+    cursor: pointer;
+  }
+  
+  .gradient-text:hover {
+    animation: expand 0.5s ease forwards;
+  }
+  
+  @keyframes expand {
+    0% {
+      background-size: 50%;
+      background-position: 0 0;
+    }
+    20% {
+      background-size: 55%;
+      background-position: 0 1em;
+    }
+    100% {
+      background-size: 325%;
+      background-position: -10em -4em;
+    }
+  }
+  
+  @keyframes expand-rev {
+    0% {
+      background-size: 325%;
+      background-position: -10em -4em;
+    }
+    20% {
+      background-size: 55%;
+      background-position: 0 1em;
+    }
+    100% {
+      background-size: 50%;
+      background-position: 0 0;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

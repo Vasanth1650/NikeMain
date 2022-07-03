@@ -38,6 +38,28 @@ function MostPopularViewing() {
     })
 
 
+    const wishlist = (e) =>{
+        e.preventDefault()
+        if ((localStorage.getItem("USER_KEY")) && (check != "undefined")) {
+            const check = { id,userid, username, productname, image1}
+            if (size) {
+                fetch("http://localhost:8080/wishlist/addwishlist", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(check)
+                }).then(() => {
+                    console.log("Everything Went Perfect")
+                    usenavigate("/")
+                }).catch(error => {
+                    console.log("something went wrong")
+                })
+            } else {
+                alert("Please Select Size Of The Product")
+            }
+        } else {
+            usenavigate('/login')
+        }
+    }
 
 
 
@@ -162,7 +184,7 @@ function MostPopularViewing() {
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.productimage4} />
                         <div className='conentings'>
                             <BootStrap.Button className='bags' onClick={handleClick}><BsHandbag />Add to bag</BootStrap.Button>
-                            <BootStrap.Button className='bags'><AiOutlineHeart />Favourite</BootStrap.Button>
+                            <BootStrap.Button className='bags' onClick={wishlist}><AiOutlineHeart />Favourite</BootStrap.Button>
 
                         </div>
 

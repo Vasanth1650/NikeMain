@@ -55,7 +55,7 @@ function Dashboard() {
 
 
   return (
-    <div>
+    <div className='body'>
         <Header/>
 
 

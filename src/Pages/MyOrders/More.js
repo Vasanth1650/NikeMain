@@ -32,6 +32,8 @@ function More() {
        
     }, [])
 
+    localStorage.setItem("Userid",data.id)
+
     const m = localStorage.getItem("Userid")
 
     console.log(m)

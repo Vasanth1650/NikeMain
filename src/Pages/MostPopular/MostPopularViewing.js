@@ -24,7 +24,7 @@ function MostPopularViewing() {
     const [image1, setImage1] = useState('')
     const [price, setPrice] = useState('')
     const [check, setCheck] = useState('')
-
+    const [productid, setProductid] = useState('')
 
     
 
@@ -35,27 +35,31 @@ function MostPopularViewing() {
         setImage1(product.productimage1)
         setPrice(product.productprice)
         setCheck(data.username);
+        setProductid(id)
     })
 
 
     const wishlist = (e) =>{
         e.preventDefault()
         if ((localStorage.getItem("USER_KEY")) && (check != "undefined")) {
-            const check = { id,userid, username, productname, image1}
-            if (size) {
-                fetch("http://localhost:8080/wishlist/addwishlist", {
+            const check = { productid,userid, username, productname, image1}
+            
+                fetch("https://nike-backend.herokuapp.com/wishlist/addwishlist", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(check)
-                }).then(() => {
-                    console.log("Everything Went Perfect")
-                    usenavigate("/")
+                }).then((res) => {
+                    if(!res.ok){
+                        throw Error('Something Went Wrong')
+                    }
+                    if(res.ok){
+                        alert("Item Added To Wishlist");
+                    }
                 }).catch(error => {
                     console.log("something went wrong")
+                    alert("Item Already Exists In Wishlist")
                 })
-            } else {
-                alert("Please Select Size Of The Product")
-            }
+            
         } else {
             usenavigate('/login')
         }

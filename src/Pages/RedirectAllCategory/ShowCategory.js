@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { fetchUserData } from '../../Api/AuthenticationService';
 import Headers from '../Headers/Header';
 import Footer from '../Footer/Footer';
+import CategoryService from './Services/CategoryService';
 
 
 
@@ -37,10 +38,7 @@ function ShowCategory() {
         getByCollection(option);
     }, [])
 
-    function logout(){
-        localStorage.clear();
-        usenavigate('/')
-    }
+    
 
     const getByGender = (option) =>{
         OptionPageService.findByGender(option).then((response)=>{
@@ -85,8 +83,30 @@ function ShowCategory() {
     }, [])
 
 
-    
+    const deleteById = (productid) =>{
+        if(productid){
+            const confirmBox = window.confirm("Do Your Really Want To Delete This Product");
+        
+        if(confirmBox === true){
+            const confirmation = window.confirm("Click Ok To Continue TO Delete");
+        
+        if(confirmation === true){
+            CategoryService.deleted(productid).then((response)=>{
+                getByCategory()
+                getByCollection()
+                getByGender()
+                alert("Product Deleted SuccessFully");
+            }).catch(error =>{
+                console.log(error)
+            })
+        }
+    }
+    }
+    }
 
+    function UpdateDetails(id){
+        usenavigate('/update/productnormal/'+id)
+    }
 
     
 
@@ -129,6 +149,10 @@ function ShowCategory() {
                                             <BootStrap.Button onClick={()=> Nextstep(product.id)}>
                                                 Buy Now
                                             </BootStrap.Button>
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                            <BootStrap.NavLink onClick={()=>deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                            <BootStrap.NavLink onClick={()=>UpdateDetails(gentle.id)}>Update</BootStrap.NavLink>}
                                         </BootStrap.Card>
                                     </BootStrap.CardGroup>
                                     <br />
@@ -168,6 +192,10 @@ function ShowCategory() {
                                             <BootStrap.Button onClick={()=> Nextstep(gentle.id)}>
                                                 Buy Now
                                             </BootStrap.Button>
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                            <BootStrap.NavLink onClick={()=>deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                            <BootStrap.NavLink onClick={()=>UpdateDetails(gentle.id)}>Update</BootStrap.NavLink>}
                                         </BootStrap.Card>
                                     </BootStrap.CardGroup>
                                     <br />

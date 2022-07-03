@@ -22,10 +22,6 @@ class DashboardService{
     findByCollection(option){
         return axios.get(VIEW_BASE_REST_API_URL+'/collection/'+option);
     }
-
-    deleted(id){
-        return axios.delete(VIEW_BASE_REST_API_URL+'/delete/'+id);
-    }
 }
 
 export default new DashboardService();

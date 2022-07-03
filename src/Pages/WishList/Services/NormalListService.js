@@ -1,7 +1,7 @@
 import axios from "axios";
-const VIEW_BASE_REST_API_URL = 'https://nike-backend.herokuapp.com/wishlist';
+const VIEW_BASE_REST_API_URL = 'https://nike-backend.herokuapp.com/normalwishing';
 
-class WishListService{
+class NormalListService{
 
     findByUserid(userid){
         return axios.get(VIEW_BASE_REST_API_URL+'/userid/'+userid);
@@ -14,4 +14,4 @@ class WishListService{
 
 }
 
-export default new WishListService();
+export default new NormalListService();

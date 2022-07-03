@@ -131,7 +131,7 @@ function Header() {
 
                         </BootStrap.Nav>
                         <BootStrap.Nav.Link href="/" className='dum'><AiOutlineUser/></BootStrap.Nav.Link>
-                        <BootStrap.Nav.Link href="/" className='dum'><AiOutlineHeart /></BootStrap.Nav.Link>
+                        <BootStrap.Nav.Link href="/wishlist" className='dum'><AiOutlineHeart /></BootStrap.Nav.Link>
                         <BootStrap.Nav.Link href="/checkout" className='dum'><BsHandbag /></BootStrap.Nav.Link>
                         <BootStrap.Nav.Link onClick={() => logout()} className='dum'><BiLogOut /></BootStrap.Nav.Link>
                         <BootStrap.Nav.Link href='/search'><BsSearch /></BootStrap.Nav.Link>

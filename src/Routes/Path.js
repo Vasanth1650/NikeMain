@@ -23,6 +23,9 @@ import Category from '../Pages/TrendingRedirect/Category';
 import UpdateProduct from '../Pages/MostPopularService/UpdateProduct';
 import PageBugFix from '../BugFixer/PageBugFix';
 import Delivery from '../Pages/Delivery/Delivery';
+import WishList from '../Pages/WishList/WishList';
+import NormalProductViewing from '../Pages/NormalProducts/NormalProductViewing';
+import NormalProductService from '../Pages/NormalProductService/NormalProductService';
 
 function Path() {
   return (
@@ -52,6 +55,9 @@ function Path() {
         <Route path='/section/:option' element={<ShowCategory/>}/>
         <Route path='/mostpopular/:gender' element={<Category/>}/>
         <Route path='/update/product/:id' element={<UpdateProduct/>}/>
+        <Route path='/wishlist' element={<WishList/>}/>
+        <Route path='/nextsteps/:id' element={<NormalProductViewing/>}/>
+        <Route path='/update/productnormal/:id' element={<NormalProductService/>}/>
       </Routes>
       </PageBugFix>
     </BrowserRouter>

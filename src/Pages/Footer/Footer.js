@@ -49,34 +49,6 @@ function Footer() {
                     <div class="container">
                         <div class="footer-cta pt-5 pb-5">
                             <div class="row">
-                                <div class="col-xl-4 col-md-4 mb-30">
-                                    <div class="single-cta">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <div class="cta-text">
-                                            <h6>FIND A STORE</h6>
-                                            <h6>BECOME A MEMBER</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-4 col-md-4 mb-30">
-                                    <div class="single-cta">
-                                        <i class="fas fa-phone"></i>
-                                        <div class="cta-text">
-                                            <h6>SIGN UP FOR EMAIL</h6>
-                                            <h6>SEND US FEEDBACK</h6>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-4 col-md-4 mb-30">
-                                    <div class="single-cta">
-                                        <i class="far fa-envelope-open"></i>
-                                        <div class="cta-text">
-                                            <h6>STUDENT DISCOUNT</h6>
-                                            <h6>ABOUT NIKE</h6>
-                                        </div>
-                                    </div>
-                                </div>
                                 {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                     <BootStrap.Button onClick={RefundRequest} variant="warning" type="submit">Refund Requests</BootStrap.Button>}
                                 <div>----------------------------------------------------------------------------------------------------------------------------</div>

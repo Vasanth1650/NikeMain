@@ -3,7 +3,7 @@ ul {
     padding: 0px;
   }
   .footer-section {
-  background: whitesmoke;
+  background: white;
   background-image:-moz-repeating-linear-gradient();
   position: relative;
   }
@@ -120,15 +120,17 @@ ul {
   .subscribe-form input {
   width: 100%;
   padding: 14px 28px;
-  background: #2E2E2E;
+  background: white;
   border: 1px solid #2E2E2E;
+  border-radius: 30px;
   color: black;
   }
   .subscribe-form button {
     position: absolute;
     right: 0;
-    background: #ff5e14;
+    background: black;
     padding: 13px 20px;
+    border-radius: 30px;
     border: 1px solid #ff5e14;
     top: 0;
   }

@@ -4,12 +4,13 @@ import TotService from './SearchService/TotService';
 import Headers from '../Headers/Header';
 import Footer from '../Footer/Footer';
 import './Styles/Search.scss'
+import { useNavigate } from 'react-router-dom';
 
 function AllSearch() {
     const [product, setProduct] = useState([])
     const [normal, setNormal] = useState([])
     const [query, setQuery] = useState("")
-    
+    const usenavigate = useNavigate()
    
 
 
@@ -45,9 +46,15 @@ function AllSearch() {
     }
 
 
+    function openup (id){
+        usenavigate('/most/'+id)
+    }
 
+    function normaling (id){
+        usenavigate('/nextsteps/'+id)
+    }
 
-
+    
 
     return (
         <div>
@@ -101,8 +108,8 @@ function AllSearch() {
                     }).map(product =>
                         <div>
 
-                            <div class="search-results">
-                                <h2><a href="#">{product.productname} ({product.category1})</a>
+                            <div class="search-results" onClick={() => openup(product.id)}>
+                                <h2><a >{product.productname} ({product.category1})</a>
                                     <img className='productimage' style={{ width: 100 }} src={product.productimage1} />
                                     <div>₹{product.productprice}</div>
                                     <div>{product.size1} || {product.size2} || {product.size3}</div>
@@ -126,8 +133,8 @@ function AllSearch() {
                     }).map(normal =>
                         <div>
 
-                            <div class="search-results">
-                                <h2><a href="#">{normal.productname} ({normal.category1})</a>
+                            <div onClick={() => normaling(normal.id)} class="search-results">
+                                <h2><a href='' >{normal.productname} ({normal.category1})</a>
                                     <img className='productimage' style={{ width: 100 }} src={normal.image1} />
                                     <div>₹{normal.price}</div>
                                     <div>{normal.size1} || {normal.size2} || {normal.size3}</div>

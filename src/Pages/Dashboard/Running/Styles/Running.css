@@ -1,0 +1,50 @@
+.Running{
+    background-color: white;
+    text-align: center;
+    padding-top: 5%;
+    cursor: pointer;
+    padding-bottom: 3%;
+}
+
+.bad{
+    background-color: white;
+    color: black;
+}
+
+.mainrun{
+    font-family: fantasy;
+    text-align: center;
+    font-size: 400%;
+}
+
+.smalltext{
+    text-align: center;
+}
+
+.butns{
+    padding-top: 3%;
+    text-align: center;
+    padding-bottom: 3%;
+    
+}
+
+.bikes{
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    width: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: none;
+}
+
+.dropin{
+    background-color: black;
+    color: black;
+    margin-top: -6%;
+    margin-left: -1%;
+}
+
+.dawd{
+    color: white;
+}

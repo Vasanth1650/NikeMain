@@ -1,0 +1,78 @@
+.gendering{
+    background-color: white;
+}
+
+.gendertect{
+    font-size: x-large;
+    color: black;
+    margin-left: 7%;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+
+.aranimg{
+    text-align: center;
+    
+}
+
+.imgsis{
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+.lkj{
+    margin-left: 10%;
+    margin-top: -50%;
+}
+
+
+  
+
+  .rowings{
+    display: flex;
+    text-align: center;
+  }
+
+  .dwada{
+    color: black;
+    margin-bottom: -50%;
+  }
+
+  .firt{
+    background-color: black;
+    color: white;
+    width: 8%;
+    border-radius: 30px;
+    margin-left: 8%;
+    border: none;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+  }
+
+  .seond{
+    background-color: black;
+    color: white;
+    width: 8%;
+    border-radius: 30px;
+    margin-left: 25%;
+    border: none;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+  }
+
+  .thrd{
+    background-color: black;
+    color: white;
+    width: 6%;
+    border-radius: 30px;
+    border: none;
+    margin-left: 25%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    
+  }
+
+  .adwa{
+    padding-top: 2%;
+    padding-bottom: 0%;
+  }

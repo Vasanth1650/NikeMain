@@ -142,9 +142,9 @@ function ShowCategory() {
                                                 <BootStrap.Card.Text>
                                                     {product.category}
                                                 </BootStrap.Card.Text>
-                                                <BootStrap.Card.Text>
-                                                    {product.price}
-                                                </BootStrap.Card.Text>
+                                                <div>
+                                                ₹{product.price}
+                                                </div>
                                             </BootStrap.Card.Body>
                                             <BootStrap.Button onClick={()=> Nextstep(product.id)}>
                                                 Buy Now

@@ -5,7 +5,7 @@ import { SiNike } from "react-icons/si";
 import { BsHandbag } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
-import { fetchUserData } from  '../../Api/AuthenticationService';
+import { fetchUserData } from '../../Api/AuthenticationService';
 import { BiLogOut } from "react-icons/bi";
 import './Styles/Header.css';
 import { SiJordan } from "react-icons/si";
@@ -79,7 +79,7 @@ function Header() {
     });
 
 
-    
+
     $(document).ready(function () {
         $('.popup-btn').click(function (e) {
             $('.popup-wrap').fadeIn(500);
@@ -96,13 +96,13 @@ function Header() {
         });
     });
 
-    
+
 
     return (
         <div>
             <BootStrap.Navbar className='bg'>
                 <BootStrap.Container className='cont'>
-                    <BootStrap.Navbar.Brand href="/"><SiJordan /></BootStrap.Navbar.Brand>
+                    <BootStrap.Navbar.Brand href="/Jordan"><SiJordan /></BootStrap.Navbar.Brand>
                     {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                         <BootStrap.Button href='dashboard/add' className='gradient-text'>ADD</BootStrap.Button>}
                     <BootStrap.Navbar.Collapse id="responsive-navbar-nav">
@@ -114,13 +114,13 @@ function Header() {
                     </BootStrap.Navbar.Collapse>
                 </BootStrap.Container>
             </BootStrap.Navbar>
-            <BootStrap.Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+            <BootStrap.Navbar collapseOnSelect expand="lg" className='mainnav'>
                 <BootStrap.Container>
-                    <BootStrap.Navbar.Brand href="/"><SiNike /></BootStrap.Navbar.Brand>
+                    <BootStrap.Navbar.Brand href="/"><SiNike className='nikesymbol' /></BootStrap.Navbar.Brand>
                     <BootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <BootStrap.Navbar.Collapse id="responsive-navbar-nav">
+                    <BootStrap.Navbar.Collapse id="responsive-navbar-nav" className='mainnavitems'>
                         <BootStrap.Nav className="me-auto">
-                            <BootStrap.Nav.Link onClick={() => AllSection("Men's")} >MEN</BootStrap.Nav.Link>
+                            <BootStrap.Nav.Link className='mainnavtext' onClick={() => AllSection("Men's")} >MEN</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link onClick={() => AllSection("Women's")} >WOMEN</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link onClick={() => AllSection("Kids's")} >KIDS</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link onClick={() => AllSection("Sport's")}>SPORTS</BootStrap.Nav.Link>
@@ -130,11 +130,11 @@ function Header() {
 
 
                         </BootStrap.Nav>
-                        <BootStrap.Nav.Link href="/" className='dum'><AiOutlineUser/></BootStrap.Nav.Link>
+
                         <BootStrap.Nav.Link href="/wishlist" className='dum'><AiOutlineHeart /></BootStrap.Nav.Link>
                         <BootStrap.Nav.Link href="/checkout" className='dum'><BsHandbag /></BootStrap.Nav.Link>
-                        <BootStrap.Nav.Link onClick={() => logout()} className='dum'><BiLogOut /></BootStrap.Nav.Link>
-                        <BootStrap.Nav.Link href='/search'><BsSearch /></BootStrap.Nav.Link>
+
+                        <BootStrap.Nav.Link href='/search' className='dum'><BsSearch /></BootStrap.Nav.Link>
                     </BootStrap.Navbar.Collapse>
                 </BootStrap.Container>
             </BootStrap.Navbar>
@@ -143,7 +143,6 @@ function Header() {
 
 
 
-            
 
 
 

@@ -1,0 +1,39 @@
+.ess{
+    padding-top: 3%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.imagesizes{
+    margin-left: 1.5%;
+}
+
+.esstext{
+    padding-top: 5%;
+    font-size: x-large;
+    color: black;
+    margin-left: 4%;
+}
+
+.clothing{
+    font-size: x-large;
+    color: black;
+    margin-left: 5%;
+}
+
+.shoes{
+    font-size: x-large;
+    color: black;
+    margin-left: 25%;
+}
+
+.gear{
+    font-size: x-large;
+    color: black;
+    margin-left: 25%;
+}
+
+.alltext{
+    padding-top: 4%;
+    display: flex;
+}

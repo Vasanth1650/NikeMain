@@ -31,4 +31,26 @@
 }
 
 
+.nikesymbol{
+    width: 200%;
+    height: 50%;
+    margin-left: -100%;
+}
 
+
+.mainnav{
+    background-color: white;
+}
+
+.mainnavitems{
+    margin-left: 30%;
+    letter-spacing:normal;
+}
+
+.dum{
+    color: black;
+}
+
+.offer{
+    cursor: pointer;
+}

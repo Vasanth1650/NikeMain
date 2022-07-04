@@ -11,6 +11,23 @@
   .jordan{
     background-color: white;
   }
+
+  .offer{
+    background-color: whitesmoke;
+    
+  }
+  .offertext{
+    color: #000;
+    text-align: center;
+    padding-top: 1%;
+    background-color: whitesmoke;
+  }
+  .offertext1{
+    color: #000;
+    text-align: center;
+    padding-bottom: 0.5%;
+    background-color: whitesmoke;
+  }
   
   
   .headpops{background-image: url("http://res.cloudinary.com/rinma/image/upload/v1498143792/Clouds-Background-HD-min_y126nz.jpg");

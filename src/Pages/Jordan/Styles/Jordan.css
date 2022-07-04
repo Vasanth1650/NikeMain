@@ -1,0 +1,78 @@
+.jordanback{
+    padding-top: 4%;
+    padding-bottom: 2%;
+    margin-left: 46%;
+    width: 7%;
+    height: 8%;
+}
+
+.bac{
+    background-color: white;
+    overflow: hidden;
+}
+
+.jordanlinks{
+    
+    margin-left: 30%;
+    display:flex;
+    
+}
+
+.mainnavtext{
+    color: black;
+    font-size:medium;
+    padding-bottom: 4%;
+}
+
+.jordanimage{
+    text-align: center;
+    padding-bottom: 2%;
+}
+
+
+.shopeing{
+    width: 7%;
+    height: 8%;
+    position: absolute;
+    margin-left: -42%;
+    bottom: 7%;
+    background-color: white;
+    border-radius: 35px;
+    border: none;
+  }
+
+
+  .shopeings{
+    width: 7%;
+    height: 8%;
+    position: absolute;
+    margin-left: 2%;
+    bottom: 7%;
+    background-color: white;
+    border-radius: 35px;
+    border: none;
+  }
+
+  .shopse{
+    width: 7%;
+    height: 8%;
+    position: absolute;
+    margin-left: -80%;
+    bottom: 7%;
+    background-color: white;
+    border-radius: 35px;
+    border: none;
+    
+  }
+
+  .cardss{
+    cursor: pointer;
+  }
+
+  .cardsss{
+    cursor: pointer;
+  }
+
+  .cards{
+    cursor: pointer;
+  }

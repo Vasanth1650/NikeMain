@@ -57,7 +57,7 @@ function UpdateProduct() {
         console.log(addproduct)
         if(id){
             DashboardService.update(id,addproduct).then((response)=>{
-                usenavigate(-1)
+                usenavigate("/")
             }).catch((error)=>{
                 console.log(error)
             })

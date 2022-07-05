@@ -52,10 +52,11 @@ function NormalProductService() {
         e.preventDefault()
         const addproduct={productname,productdescription,price,size1,size2,size3,size4,size5,
         productspecification1,productspecification2,productspecification3,productspecification4,productspecification5,image1
-        ,image2,image3,gender,category1,category2,category3,delivery,collection}
+        ,image2,image3,image4,image5,image6,image7,image8,image9,image10,image11,image12,gender,category1,category2,category3,delivery,collection}
+        console.log(addproduct)
         if(id){
             NormalProductServices.update(id,addproduct).then((response)=>{
-                usenavigate(-1)
+                usenavigate("/")
             }).catch((error)=>{
                 console.log(error)
             })

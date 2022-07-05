@@ -267,7 +267,7 @@ function NormalProductViewing() {
             <div className='explore'>Explore the {product.productname}</div>
             <br /><br />
             <div className='explore'>
-                <img width="1150" src={product.image10} />
+                <img width="1000" src={product.image10} />
             </div>
             <br /><br />
             <div className='explore'>Light Flex</div>
@@ -277,7 +277,7 @@ function NormalProductViewing() {
             <div className='asd'>comfort.</div>
             <br /><br /><br />
             <div className='explore'>
-                <img width="1150" src={product.image11} />
+                <img width="1000" src={product.image11} />
             </div>
             <br /><br /><br />
             <div className='explore'>Light Feel, Big Energy</div>
@@ -288,7 +288,7 @@ function NormalProductViewing() {
             <div className='asd'>forefoot to add an extra burst of responsiveness off the dribble.</div>
             <br /><br /><br /><br />
             <div className='explore'>
-                <img width="1150" src={product.image12} />
+                <img width="1000" src={product.image12} />
             </div>
             <br /><br /><br />
             <div className='explore'>Secure for Take-Off</div>

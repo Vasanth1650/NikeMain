@@ -132,8 +132,8 @@ function ShowCategory() {
                                 <div className='items'>
                                     <BootStrap.CardGroup>
                                         <BootStrap.Card >
-                                            <BootStrap.Card.Img variant="top" src={product.image1} />
-                                            <BootStrap.Card.Body>
+                                            <BootStrap.Card.Img onClick={()=> Nextstep(product.id)} variant="top" src={product.image1} />
+                                            <BootStrap.Card.Body onClick={()=> Nextstep(product.id)} >
                                                 <BootStrap.Card.Text style={{color:"red"}}>
                                                     {product.gender}
                                                     ({product.category3})
@@ -175,8 +175,8 @@ function ShowCategory() {
                                 <div className='items'>
                                     <BootStrap.CardGroup>
                                         <BootStrap.Card >
-                                            <BootStrap.Card.Img variant="top" src={gentle.image1} />
-                                            <BootStrap.Card.Body>
+                                            <BootStrap.Card.Img onClick={()=> Nextstep(gentle.id)} variant="top" src={gentle.image1} />
+                                            <BootStrap.Card.Body onClick={()=> Nextstep(gentle.id)}>
                                                 <BootStrap.Card.Text style={{color:"red"}}>
                                                     {gentle.gender}
                                                     ({gentle.category3})
@@ -218,8 +218,8 @@ function ShowCategory() {
                                 <div className='items'>
                                     <BootStrap.CardGroup>
                                         <BootStrap.Card >
-                                            <BootStrap.Card.Img variant="top" src={collection.image1} />
-                                            <BootStrap.Card.Body>
+                                            <BootStrap.Card.Img onClick={()=> Nextstep(collection.id)} variant="top" src={collection.image1} />
+                                            <BootStrap.Card.Body onClick={()=> Nextstep(collection.id)}>
                                                 <BootStrap.Card.Text style={{color:"red"}}>
                                                     {collection.gender}
                                                     ({collection.category3})

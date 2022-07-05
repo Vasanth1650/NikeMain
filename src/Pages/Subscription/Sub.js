@@ -15,7 +15,7 @@ function Sub() {
                 <div class="pricing-table">
                     <h2 class="pricing-table__header">- BASIC -</h2>
                     <h3 class="pricing-table__price">₹5000</h3>
-                    <a target="_blank" class="pricing-table__button" href="http://www.digimadmedia.com">
+                    <a target="_blank" class="pricing-table__button" href="https://www.nike.com/sg/membership">
                         Join Now!
                     </a>
                     <ul class="pricing-table__list">
@@ -26,9 +26,9 @@ function Sub() {
                     </ul>
                 </div>
                 <div class="pricing-table featured-table">
-                    <h2 class="pricing-table__header">- BUSINESS -</h2>
+                    <h2 class="pricing-table__header">- Tip-Top -</h2>
                     <h3 class="pricing-table__price">₹8000</h3>
-                    <a target="_blank" class="pricing-table__button" href="http://www.digimadmedia.com">
+                    <a target="_blank" class="pricing-table__button" href="https://www.nike.com/sg/membership">
                         Join Now!
                     </a>
                     <ul class="pricing-table__list">
@@ -39,9 +39,9 @@ function Sub() {
                     </ul>
                 </div>
                 <div class="pricing-table">
-                    <h2 class="pricing-table__header">- PREMIUM -</h2>
+                    <h2 class="pricing-table__header">- Suprise -</h2>
                     <h3 class="pricing-table__price">₹12000</h3>
-                    <a target="_blank" class="pricing-table__button" href="http://www.digimadmedia.com">
+                    <a target="_blank" class="pricing-table__button" href="https://www.nike.com/sg/membership">
                         Join Now!
                     </a>
                     <ul class="pricing-table__list">

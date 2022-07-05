@@ -30,7 +30,7 @@ function Chatbots() {
   }
 
   const Tees = () =>{
-    usenavigate('/trail')
+    usenavigate('/section/T Shirt')
   }
 
   const AirJordanXXXVI = () =>{

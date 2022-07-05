@@ -771,6 +771,24 @@ function UpdateProduct() {
                                     </div>
                                 </div>
 
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="group">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="group">
+                                                <input type="text" 
+                                                required /><span class="highlight"></span><span class="bar"></span>
+                                                <label>Checking</label>
+                                                <div className='invalid-feedback'>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+
                                 <div class="col-xs-12 col-sm-12 right">
                                     <button type="button" id="nazad1" class="btn previous">Previous</button>
                                     

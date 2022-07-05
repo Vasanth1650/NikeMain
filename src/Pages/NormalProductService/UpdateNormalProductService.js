@@ -244,6 +244,7 @@ function NormalProductService() {
             setProductspecification3(response.data.productspecification3)
             setProductspecification4(response.data.productspecification4)
             setProductspecification5(response.data.productspecification5)
+            setDelivery(response.data.delivery)
             setimage1(response.data.image1)
             setimage2(response.data.image2)
             setimage3(response.data.image3)
@@ -362,11 +363,13 @@ function NormalProductService() {
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
                                     <div class="group">
-                                        <input type="text" id='delivery' name='delivery' 
+                                        <input type="text" id='delivery' name='delivery' value={delivery}
                                         onChange={(e)=>setDelivery(e.target.value)} required/>
                                         <label>Delivery Expected</label> 
                                     </div>                                 
                                 </div>
+
+                            
 
 
                                 <div class="col-xs-12 col-sm-12 right">
@@ -764,6 +767,21 @@ function NormalProductService() {
                                                 <label>Image 12</label>
                                                 <div className='invalid-feedback'>
                                                     Required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="group">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="group">
+                                                <input type="text" 
+                                                required /><span class="highlight"></span><span class="bar"></span>
+                                                <label>Checking</label>
+                                                <div className='invalid-feedback'>
+                                                    
                                                 </div>
                                             </div>
                                         </div>

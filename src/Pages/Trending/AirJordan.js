@@ -103,7 +103,7 @@ function AirJordan() {
 
                         </div>
                         
-                        <button class="btn popup-btn">Hlooooo</button>
+                        <button class="btn popup-btn">Product Details</button>
 
             <div class="popup-wrap">
                             <div class="popup-box">

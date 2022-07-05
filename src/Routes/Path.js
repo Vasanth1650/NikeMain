@@ -27,6 +27,7 @@ import WishList from '../Pages/WishList/WishList';
 import NormalProductViewing from '../Pages/NormalProducts/NormalProductViewing';
 import UpdateNormalProductService from '../Pages/NormalProductService/UpdateNormalProductService';
 import MainJordan from '../Pages/Jordan/MainJordan';
+import PaymentOptions from '../Pages/Delivery/PaymentOptions';
 
 function Path() {
   return (
@@ -60,6 +61,7 @@ function Path() {
         <Route path='/nextsteps/:id' element={<NormalProductViewing/>}/>
         <Route path='/update/productnormal/:id' element={<UpdateNormalProductService/>}/>
         <Route path='/Jordan' element={<MainJordan/>}/>
+        <Route path='/paymentoptions' element={<PaymentOptions/>}/>
         <Route path='*' element={<Dashboard/>}/>
       </Routes>
       </PageBugFix>

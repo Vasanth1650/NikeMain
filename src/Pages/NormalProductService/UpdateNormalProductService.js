@@ -1,17 +1,17 @@
 import React from 'react';
 import $ from 'jquery';
-import './Styles/DashboardAdd.css';
-import './Styles/DashboardAdd.scss';
 import formReset from 'jquery';
 import { useEffect } from 'react';
 import * as BootStrap from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { fetchUserData } from '../../Api/AuthenticationService'
+import Footer from '../Footer/Footer';
 import Headers from '../Headers/Header';
 import NormalProductServices from './Services/NormalProductServices';
 
 function NormalProductService() {
+    const {id} = useParams()
     const usenavigate = useNavigate();
     const [data, setData] = useState({});
     const [check, setCheck] = useState('');
@@ -29,34 +29,34 @@ function NormalProductService() {
     const[productspecification4,setProductspecification4] = useState('')
     const[productspecification5,setProductspecification5] = useState('')
     const[delivery,setDelivery] = useState('')
-    const[image1,setImage1] = useState('')
-    const[image2,setImage2] = useState('')
-    const[image3,setImage3] = useState('')
-    const[image4,setImage4] = useState('')
-    const[image5,setImage5] = useState('')
-    const[image6,setImage6] = useState('')
-    const[image7,setImage7] = useState('')
-    const[image8,setImage8] = useState('')
-    const[image9,setImage9] = useState('')
-    const[image10,setImage10] = useState('')
-    const[image11,setImage11] = useState('')
-    const[image12,setImage12] = useState('')
+    const[image1,setimage1] = useState('')
+    const[image2,setimage2] = useState('')
+    const[image3,setimage3] = useState('')
+    const[image4,setimage4] = useState('')
+    const[image5,setimage5] = useState('')
+    const[image6,setimage6] = useState('')
+    const[image7,setimage7] = useState('')
+    const[image8,setimage8] = useState('')
+    const[image9,setimage9] = useState('')
+    const[image10,setimage10] = useState('')
+    const[image11,setimage11] = useState('')
+    const[image12,setimage12] = useState('')
     const[gender,setGender] = useState('')
     const[category1,setCategory1] = useState('')
     const[category2,setCategory2] = useState('')
     const[category3,setCategory3] = useState('')
     const[collection,setCollection] = useState('')
-    const {id} = useParams()
 
-    const dummy = (e)=>{
+    const handleClick = (e)=>{
         e.preventDefault()
         const addproduct={productname,productdescription,price,size1,size2,size3,size4,size5,
         productspecification1,productspecification2,productspecification3,productspecification4,productspecification5,image1
-        ,image2,image3,image4,image5,image6,image7,image8,image9,image10,image11,image12,gender,category1,category2,category3,delivery,collection}
+        ,image2,image3,image4,image5,image6,image7,image8,image9,image10,image11,image12,gender,category1,category2,category3,
+        delivery,collection}
         console.log(addproduct)
         if(id){
             NormalProductServices.update(id,addproduct).then((response)=>{
-                usenavigate("/")
+                usenavigate(-1)
             }).catch((error)=>{
                 console.log(error)
             })
@@ -229,8 +229,6 @@ function NormalProductService() {
         value += 35
     }, [])
 
-
-
     useEffect(()=>{
         NormalProductServices.getByIds(id).then((response)=>{
             setProductname(response.data.productname)
@@ -246,24 +244,23 @@ function NormalProductService() {
             setProductspecification3(response.data.productspecification3)
             setProductspecification4(response.data.productspecification4)
             setProductspecification5(response.data.productspecification5)
-            setImage1(response.data.image1)
-            setImage2(response.data.image2)
-            setImage3(response.data.image3)
-            setImage4(response.data.image4)
-            setImage5(response.data.image5)
-            setImage6(response.data.image6)
-            setImage7(response.data.image7)
-            setImage8(response.data.image8)
-            setImage9(response.data.image9)
-            setImage10(response.data.image10)
-            setImage11(response.data.image11)
-            setImage12(response.data.image12)
+            setimage1(response.data.image1)
+            setimage2(response.data.image2)
+            setimage3(response.data.image3)
+            setimage4(response.data.image4)
+            setimage5(response.data.image5)
+            setimage6(response.data.image6)
+            setimage7(response.data.image7)
+            setimage8(response.data.image8)
+            setimage9(response.data.image9)
+            setimage10(response.data.image10)
+            setimage11(response.data.image11)
+            setimage12(response.data.image12)
             setGender(response.data.gender)
             setCategory1(response.data.category1)
             setCategory2(response.data.category2)
             setCategory3(response.data.category3)
-            setCollection(response.data.collection)
-            setDelivery(response.data.delivery)
+
         })
     },[])
 
@@ -271,16 +268,7 @@ function NormalProductService() {
     return (
         <div className='adding'>
 
-                <Headers/>
-
-
-
-            
-
-
-
-
-
+            <Headers/>
             <div class="container">
 
                 <div class="form-progress">
@@ -295,7 +283,7 @@ function NormalProductService() {
                 </div>
 
 
-                <form id="claim" onClick={dummy} noValidate={false}>
+                <form class="container" id="claim" onSubmit={handleClick} noValidate={false}>
                     <section id="step1" class="form-step" data-step="1">
                         <fieldset>
                             <div class="row">
@@ -305,7 +293,7 @@ function NormalProductService() {
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
                                     <div class="group">
-                                        <input type="text" id='productname' name='productname' value={productname}
+                                        <input type="text" id='productname' name='productname' value={productname} 
                                         onChange={(e)=>setProductname(e.target.value)} required/>
                                         <label>Product Name</label>
 
@@ -374,7 +362,7 @@ function NormalProductService() {
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
                                     <div class="group">
-                                        <input type="text" id='delivery' name='delivery' value={delivery}
+                                        <input type="text" id='delivery' name='delivery' 
                                         onChange={(e)=>setDelivery(e.target.value)} required/>
                                         <label>Delivery Expected</label> 
                                     </div>                                 
@@ -382,7 +370,7 @@ function NormalProductService() {
 
 
                                 <div class="col-xs-12 col-sm-12 right">
-                                    <BootStrap.Button type="submit" id="korak2" class="btn next">Next</BootStrap.Button></div>
+                                    <button type="submit" id="korak2" class="btn next">Next</button></div>
                             </div>
 
                         </fieldset>
@@ -471,7 +459,7 @@ function NormalProductService() {
                                 </div>
 
                                 <div class="col-xs-12 col-sm-6">
-                                    <div class="group" onChange={(e)=>setGender(e.target.value)}>
+                                    <div class="group"  onChange={(e)=>setGender(e.target.value)}>
                                         <BootStrap.Form.Label htmlFor="gender">Select Gender Category</BootStrap.Form.Label>
                                         <br />
                                         <br />
@@ -513,9 +501,9 @@ function NormalProductService() {
                                                 <option>Football</option>
                                                 <option>BasketBall</option>
                                                 <option>Sneakers</option>
+                                                <option>T Shirt</option>
                                                 <option>Pants</option>
                                                 <option>Tops</option>
-                                                <option>T Shirt</option>
                                                 <option>Shorts</option>
                                                 <option>Socks</option>
                                             </BootStrap.Form.Select>
@@ -607,7 +595,7 @@ function NormalProductService() {
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="group">
                                                 <input type="text" id='image1' name='image1' value={image1}
-                                                onChange={(e)=>setImage1(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                onChange={(e)=>setimage1(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 1</label>
                                                 <div className='invalid-feedback'>
                                                     Required
@@ -622,7 +610,7 @@ function NormalProductService() {
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="group">
                                                 <input type="text" id='image2' name='image2' value={image2}
-                                                onChange={(e)=>setImage2(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                onChange={(e)=>setimage2(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 2</label>
                                                 <div className='invalid-feedback'>
                                                     Required
@@ -637,7 +625,7 @@ function NormalProductService() {
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="group">
                                                 <input type="text" id='image3' name='image3' value={image3}
-                                                onChange={(e)=>setImage3(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                onChange={(e)=>setimage3(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 3</label>
                                                 <div className='invalid-feedback'>
                                                     Required
@@ -652,7 +640,7 @@ function NormalProductService() {
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="group">
                                                 <input type="text" id='image4' name='image4' value={image4}
-                                                onChange={(e)=>setImage4(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                onChange={(e)=>setimage4(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 4</label>
                                                 <div className='invalid-feedback'>
                                                     Required
@@ -667,7 +655,7 @@ function NormalProductService() {
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="group">
                                                 <input type="text" id='image5' name='image5' value={image5}
-                                                onChange={(e)=>setImage5(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                onChange={(e)=>setimage5(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 5</label>
                                                 <div className='invalid-feedback'>
                                                     Required
@@ -682,7 +670,7 @@ function NormalProductService() {
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="group">
                                                 <input type="text" id='image6' name='image6' value={image6}
-                                                onChange={(e)=>setImage6(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                onChange={(e)=>setimage6(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 6</label>
                                                 <div className='invalid-feedback'>
                                                     Required
@@ -697,7 +685,7 @@ function NormalProductService() {
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="group">
                                                 <input type="text" id='image7' name='image7' value={image7}
-                                                onChange={(e)=>setImage7(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                onChange={(e)=>setimage7(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 7</label>
                                                 <div className='invalid-feedback'>
                                                     Required
@@ -712,7 +700,7 @@ function NormalProductService() {
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="group">
                                                 <input type="text" id='image8' name='image8' value={image8}
-                                                onChange={(e)=>setImage8(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                onChange={(e)=>setimage8(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 8</label>
                                                 <div className='invalid-feedback'>
                                                     Required
@@ -727,7 +715,7 @@ function NormalProductService() {
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="group">
                                                 <input type="text" id='image9' name='image9' value={image9}
-                                                onChange={(e)=>setImage9(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                onChange={(e)=>setimage9(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 9</label>
                                                 <div className='invalid-feedback'>
                                                     Required
@@ -737,13 +725,12 @@ function NormalProductService() {
                                     </div>
                                 </div>
 
-
                                 <div class="col-xs-12 col-sm-6">
                                     <div class="group">
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="group">
                                                 <input type="text" id='image10' name='image10' value={image10}
-                                                onChange={(e)=>setImage10(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                onChange={(e)=>setimage10(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 10</label>
                                                 <div className='invalid-feedback'>
                                                     Required
@@ -758,7 +745,7 @@ function NormalProductService() {
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="group">
                                                 <input type="text" id='image11' name='image11' value={image11}
-                                                onChange={(e)=>setImage11(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                onChange={(e)=>setimage11(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 11</label>
                                                 <div className='invalid-feedback'>
                                                     Required
@@ -768,13 +755,12 @@ function NormalProductService() {
                                     </div>
                                 </div>
 
-
                                 <div class="col-xs-12 col-sm-6">
                                     <div class="group">
                                         <div class="col-xs-12 col-sm-6">
                                             <div class="group">
                                                 <input type="text" id='image12' name='image12' value={image12}
-                                                onChange={(e)=>setImage12(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                onChange={(e)=>setimage12(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 12</label>
                                                 <div className='invalid-feedback'>
                                                     Required
@@ -798,6 +784,8 @@ function NormalProductService() {
 
                 </form>
             </div>
+
+            <Footer/>
         </div>
     )
 }

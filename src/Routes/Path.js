@@ -25,7 +25,7 @@ import PageBugFix from '../BugFixer/PageBugFix';
 import Delivery from '../Pages/Delivery/Delivery';
 import WishList from '../Pages/WishList/WishList';
 import NormalProductViewing from '../Pages/NormalProducts/NormalProductViewing';
-import NormalProductService from '../Pages/NormalProductService/NormalProductService';
+import UpdateNormalProductService from '../Pages/NormalProductService/UpdateNormalProductService';
 import MainJordan from '../Pages/Jordan/MainJordan';
 
 function Path() {
@@ -58,7 +58,7 @@ function Path() {
         <Route path='/update/product/:id' element={<UpdateProduct/>}/>
         <Route path='/wishlist' element={<WishList/>}/>
         <Route path='/nextsteps/:id' element={<NormalProductViewing/>}/>
-        <Route path='/update/productnormal/:id' element={<NormalProductService/>}/>
+        <Route path='/update/productnormal/:id' element={<UpdateNormalProductService/>}/>
         <Route path='/Jordan' element={<MainJordan/>}/>
         <Route path='*' element={<Dashboard/>}/>
       </Routes>

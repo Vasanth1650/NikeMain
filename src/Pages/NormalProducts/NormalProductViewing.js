@@ -153,7 +153,7 @@ function NormalProductViewing() {
                 <div className='carding'>
 
                     <BootStrap.Card.Img className='imgBxs' variant="top" src={product.image1} />
-
+        
                     <BootStrap.Card.Img className='imgBx1' variant="top" src={product.image2} />
                     <div className='conenting'>
                         <div className="produ">{product.productname}</div>

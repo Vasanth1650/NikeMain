@@ -156,7 +156,7 @@ function Header() {
                 <br />
                 <a href='/nikesupport' className='dum'>Guide Tour</a>
                 <br />
-                <a href='/' className='dum'>Privacy And Policy</a>
+                <a onClick={() => logout()} className='dum'>logout</a>
             </div>
 
 

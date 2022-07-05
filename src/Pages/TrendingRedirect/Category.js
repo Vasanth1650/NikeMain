@@ -18,6 +18,7 @@ import $ from 'jquery'
 function Category() {
     const { gender } = useParams()
     const [gentle,setGentle] = useState([])
+    const [category1,setCategory1] = useState([])
     const [check,setCheck] = useState('')
     const [data,setData] = useState({})    
     const usenavigate = useNavigate()
@@ -26,6 +27,7 @@ function Category() {
     useEffect(() => {
         setCheck(data.username)
         findByGender(gender)
+        findByCategory1(gender)
     }, [])
 
     const deleteById = (productid) =>{
@@ -54,6 +56,15 @@ function Category() {
     const findByGender = (gender) =>{
         DashboardService.getByGender(gender).then((response)=>{
             setGentle(response.data)
+            console.log(response.data)
+        }).catch((error)=>{
+            console.log(error)
+        })
+    }
+
+    const findByCategory1 = (gender) =>{
+        DashboardService.getByCategory1(gender).then((response)=>{
+            setCategory1(response.data)
             console.log(response.data)
         }).catch((error)=>{
             console.log(error)
@@ -131,7 +142,51 @@ function Category() {
                             <BootStrap.Col>
                                 <div className='items'>
                                     <BootStrap.CardGroup>
-                                        <BootStrap.Card >
+                                        <BootStrap.Card onClick={()=> Nextstep(gentle.id)}>
+                                            <BootStrap.Card.Img style={{height:'30rem' }} variant="top" src={gentle.productimage1} />
+                                            <BootStrap.Card.Body>
+                                                <BootStrap.Card.Text style={{color:"red"}}>
+                                                    {gentle.gender}
+                                                    ({gentle.category3})
+                                                </BootStrap.Card.Text>
+                                                <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
+                                                <div>
+                                                    {gentle.category1}
+                                                </div>
+                                                <div>
+                                                ₹{gentle.productprice}
+                                                </div>
+                                            </BootStrap.Card.Body>
+                                            <BootStrap.Button onClick={()=> Nextstep(gentle.id)}>
+                                                Buy Now
+                                            </BootStrap.Button>
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                            <BootStrap.NavLink onClick={()=>deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                            <BootStrap.NavLink onClick={()=>UpdateDetails(gentle.id)}>Update</BootStrap.NavLink>}
+
+                                        </BootStrap.Card>
+                                    </BootStrap.CardGroup>
+                                    <br />
+                                </div>
+                            </BootStrap.Col>
+
+                        )
+                    }
+                </BootStrap.Row>
+            </div>
+            </div>
+
+
+            <div>
+            <div >
+                <BootStrap.Row xs={1} md={3} >
+                    {
+                        category1.map(gentle =>
+                            <BootStrap.Col>
+                                <div className='items'>
+                                    <BootStrap.CardGroup>
+                                        <BootStrap.Card onClick={()=> Nextstep(gentle.id)}>
                                             <BootStrap.Card.Img style={{height:'30rem' }} variant="top" src={gentle.productimage1} />
                                             <BootStrap.Card.Body>
                                                 <BootStrap.Card.Text style={{color:"red"}}>

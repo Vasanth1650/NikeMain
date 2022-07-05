@@ -36,6 +36,7 @@ function MostPopularViewing() {
         setPrice(product.productprice)
         setCheck(data.username);
         setProductid(id)
+
     })
 
 
@@ -102,6 +103,7 @@ function MostPopularViewing() {
         DashboardService.getByIds(id).then((response) => {
             setProduct(response.data)
             console.log(response.data)
+            
         }).catch(err => {
             console.log(err)
         })
@@ -153,7 +155,7 @@ function MostPopularViewing() {
                     <div className='carding'>
 
                         <BootStrap.Card.Img className='tre' variant="top" src={product.productimage1} />
-                        <div className='vido'>
+                        <div className='vido' style={{position : "static"}}>
                             <ReactPlayer width={500} height={451} muted type='video/mp4' playing={true} url={product.productimage2} playsinline/>
                         </div>
 
@@ -265,7 +267,7 @@ function MostPopularViewing() {
             </div>
 
 
-            <div className='explore'>Explore the Air Jordan XXXVI PF Basketball Shoes</div>
+            <div className='explore'>Explore the {product.productname}</div>
             <br /><br />
             <div className='explore'>
                 <img width="1150" src={product.productimage10} />

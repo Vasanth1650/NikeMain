@@ -152,6 +152,12 @@
   flex: 0 0 150px;
 }
 
+.imgBx12{
+    width: 30%;
+    margin-left: 2%;
+    flex: 0 0 150px;
+  }
+
 .conenting{
   margin-top: 10%;
   margin-left: 80px;

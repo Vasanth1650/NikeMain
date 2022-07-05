@@ -19,7 +19,7 @@ class NormalProductServices{
     }
 
     update(id,addproduct){
-        return axios.put(VIEW_BASE_REST_API_URL+'/update/'+id,addproduct)
+        return axios.put(VIEW_BASE_REST_API_URL+'/updateProduct/'+id,addproduct)
     }
 }
 

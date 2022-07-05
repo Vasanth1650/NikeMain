@@ -48,7 +48,7 @@ function NormalProductService() {
     const[collection,setCollection] = useState('')
     const {id} = useParams()
 
-    const handleClick = (e)=>{
+    const dummy = (e)=>{
         e.preventDefault()
         const addproduct={productname,productdescription,price,size1,size2,size3,size4,size5,
         productspecification1,productspecification2,productspecification3,productspecification4,productspecification5,image1
@@ -295,13 +295,13 @@ function NormalProductService() {
                 </div>
 
 
-                <form id="claim" onSubmit={handleClick} noValidate={false}>
+                <form id="claim" onClick={dummy} noValidate={false}>
                     <section id="step1" class="form-step" data-step="1">
                         <fieldset>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12">
                                     <h2>Just In / Most Searched Items</h2>
-                                    <h5>1/5</h5>
+                                    <h5>1/4</h5>
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
                                     <div class="group">
@@ -382,7 +382,7 @@ function NormalProductService() {
 
 
                                 <div class="col-xs-12 col-sm-12 right">
-                                    <button type="submit" id="korak2" class="btn next">Next</button></div>
+                                    <BootStrap.Button type="submit" id="korak2" class="btn next">Next</BootStrap.Button></div>
                             </div>
 
                         </fieldset>

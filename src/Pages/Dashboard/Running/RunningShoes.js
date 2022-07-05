@@ -11,6 +11,10 @@ function RunningShoes() {
     usenavigate('/section/' + variable);
   }
 
+  const Jordan = (variable) => {
+    usenavigate('/mostpopular/'+variable)
+  }
+
 
 
   return (
@@ -32,9 +36,12 @@ function RunningShoes() {
           </BootStrap.Dropdown.Toggle>
 
           <BootStrap.Dropdown.Menu className='dropin'>
-            <BootStrap.Dropdown.Item className='dawd' onClick={() => Options("mens training")}>Shop Men's</BootStrap.Dropdown.Item>
-            <BootStrap.Dropdown.Item className='dawd' onClick={() => Options("womens training")}>Shop Women's</BootStrap.Dropdown.Item>
-            <BootStrap.Dropdown.Item className='dawd' onClick={() => Options("kids training")}>Shop Kids's</BootStrap.Dropdown.Item>
+            <BootStrap.Dropdown.Item className='dawd' onClick={() => Options("Mens training")}>Shop Men's</BootStrap.Dropdown.Item>
+            <BootStrap.Dropdown.Item className='dawd' onClick={() => Options("Womens training")}>Shop Women's</BootStrap.Dropdown.Item>
+            <BootStrap.Dropdown.Item className='dawd' onClick={() => Options("Kids training")}>Shop Kids's</BootStrap.Dropdown.Item>
+            <BootStrap.Dropdown.Item className='dawd' onClick={() => Jordan("Womens training")}>Explore Jordan Womens Training</BootStrap.Dropdown.Item>
+            <BootStrap.Dropdown.Item className='dawd' onClick={() => Jordan("Mens training")}>Explore Jordan Mens Training</BootStrap.Dropdown.Item>
+            <BootStrap.Dropdown.Item className='dawd' onClick={() => Jordan("Kids training")}>Explore Jordan Kids Training</BootStrap.Dropdown.Item>
           </BootStrap.Dropdown.Menu>
         </BootStrap.Dropdown>
 

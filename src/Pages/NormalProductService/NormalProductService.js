@@ -32,6 +32,15 @@ function NormalProductService() {
     const[image1,setImage1] = useState('')
     const[image2,setImage2] = useState('')
     const[image3,setImage3] = useState('')
+    const[image4,setImage4] = useState('')
+    const[image5,setImage5] = useState('')
+    const[image6,setImage6] = useState('')
+    const[image7,setImage7] = useState('')
+    const[image8,setImage8] = useState('')
+    const[image9,setImage9] = useState('')
+    const[image10,setImage10] = useState('')
+    const[image11,setImage11] = useState('')
+    const[image12,setImage12] = useState('')
     const[gender,setGender] = useState('')
     const[category1,setCategory1] = useState('')
     const[category2,setCategory2] = useState('')
@@ -239,6 +248,15 @@ function NormalProductService() {
             setImage1(response.data.image1)
             setImage2(response.data.image2)
             setImage3(response.data.image3)
+            setImage4(response.data.image4)
+            setImage5(response.data.image5)
+            setImage6(response.data.image6)
+            setImage7(response.data.image7)
+            setImage8(response.data.image8)
+            setImage9(response.data.image9)
+            setImage10(response.data.image10)
+            setImage11(response.data.image11)
+            setImage12(response.data.image12)
             setGender(response.data.gender)
             setCategory1(response.data.category1)
             setCategory2(response.data.category2)
@@ -620,6 +638,143 @@ function NormalProductService() {
                                                 <input type="text" id='image3' name='image3' value={image3}
                                                 onChange={(e)=>setImage3(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
                                                 <label>Image 3</label>
+                                                <div className='invalid-feedback'>
+                                                    Required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="group">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="group">
+                                                <input type="text" id='image4' name='image4' value={image4}
+                                                onChange={(e)=>setImage4(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                <label>Image 4</label>
+                                                <div className='invalid-feedback'>
+                                                    Required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="group">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="group">
+                                                <input type="text" id='image5' name='image5' value={image5}
+                                                onChange={(e)=>setImage5(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                <label>Image 5</label>
+                                                <div className='invalid-feedback'>
+                                                    Required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="group">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="group">
+                                                <input type="text" id='image6' name='image6' value={image6}
+                                                onChange={(e)=>setImage6(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                <label>Image 6</label>
+                                                <div className='invalid-feedback'>
+                                                    Required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="group">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="group">
+                                                <input type="text" id='image7' name='image7' value={image7}
+                                                onChange={(e)=>setImage7(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                <label>Image 7</label>
+                                                <div className='invalid-feedback'>
+                                                    Required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="group">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="group">
+                                                <input type="text" id='image8' name='image8' value={image8}
+                                                onChange={(e)=>setImage8(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                <label>Image 8</label>
+                                                <div className='invalid-feedback'>
+                                                    Required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="group">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="group">
+                                                <input type="text" id='image9' name='image9' value={image9}
+                                                onChange={(e)=>setImage9(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                <label>Image 9</label>
+                                                <div className='invalid-feedback'>
+                                                    Required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="group">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="group">
+                                                <input type="text" id='image10' name='image10' value={image10}
+                                                onChange={(e)=>setImage10(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                <label>Image 10</label>
+                                                <div className='invalid-feedback'>
+                                                    Required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="group">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="group">
+                                                <input type="text" id='image11' name='image11' value={image11}
+                                                onChange={(e)=>setImage11(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                <label>Image 11</label>
+                                                <div className='invalid-feedback'>
+                                                    Required
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xs-12 col-sm-6">
+                                    <div class="group">
+                                        <div class="col-xs-12 col-sm-6">
+                                            <div class="group">
+                                                <input type="text" id='image12' name='image12' value={image12}
+                                                onChange={(e)=>setImage12(e.target.value)} required /><span class="highlight"></span><span class="bar"></span>
+                                                <label>Image 12</label>
                                                 <div className='invalid-feedback'>
                                                     Required
                                                 </div>

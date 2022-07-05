@@ -27,7 +27,7 @@ function Gender() {
         <div className='adwa'>
         <button onClick={() => AllSection("Men's")} className='firt'>Men's</button>
         <button onClick={() => AllSection("Women's")} className="seond">Women's</button>
-        <button onClick={() => AllSection("Kid's")} className='thrd'>Kid's</button>
+        <button onClick={() => AllSection("Kids's")} className='thrd'>Kid's</button>
         </div>
         
 

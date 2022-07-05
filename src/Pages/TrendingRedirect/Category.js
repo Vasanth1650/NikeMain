@@ -142,9 +142,9 @@ function Category() {
                             <BootStrap.Col>
                                 <div className='items'>
                                     <BootStrap.CardGroup>
-                                        <BootStrap.Card onClick={()=> Nextstep(gentle.id)}>
-                                            <BootStrap.Card.Img style={{height:'30rem' }} variant="top" src={gentle.productimage1} />
-                                            <BootStrap.Card.Body>
+                                        <BootStrap.Card>
+                                            <BootStrap.Card.Img  onClick={()=> Nextstep(gentle.id)} style={{height:'30rem' }} variant="top" src={gentle.productimage1} />
+                                            <BootStrap.Card.Body  onClick={()=> Nextstep(gentle.id)}>
                                                 <BootStrap.Card.Text style={{color:"red"}}>
                                                     {gentle.gender}
                                                     ({gentle.category3})
@@ -186,9 +186,9 @@ function Category() {
                             <BootStrap.Col>
                                 <div className='items'>
                                     <BootStrap.CardGroup>
-                                        <BootStrap.Card onClick={()=> Nextstep(gentle.id)}>
-                                            <BootStrap.Card.Img style={{height:'30rem' }} variant="top" src={gentle.productimage1} />
-                                            <BootStrap.Card.Body>
+                                        <BootStrap.Card >
+                                            <BootStrap.Card.Img onClick={()=> Nextstep(gentle.id)} style={{height:'30rem' }} variant="top" src={gentle.productimage1} />
+                                            <BootStrap.Card.Body onClick={()=> Nextstep(gentle.id)}>
                                                 <BootStrap.Card.Text style={{color:"red"}}>
                                                     {gentle.gender}
                                                     ({gentle.category3})

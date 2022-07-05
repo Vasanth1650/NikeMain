@@ -25,8 +25,18 @@ function RefundRequests() {
         })
     }
 
-    function statusrefund(refundid) {
-        usenavigate("/refundstatus/" + refundid);
+    function statusrefund(refundid,status) {
+        if(status==="Refund Completed"){
+            alert("Refund Has Been Completed For The Order")
+            var s = window.confirm("Still Want To Check With The Status Press Ok To Confirm")
+            if(s===true){
+                usenavigate("/refundstatus/" + refundid);
+            }
+        }
+        else{
+            usenavigate("/refundstatus/" + refundid);
+        }
+      
     }
 
 
@@ -59,7 +69,7 @@ function RefundRequests() {
                                 <td className='status1'>{refund.refundstatus}</td>
                                 <td>{refund.orderid}</td>
                                 <td><BootStrap.Button variant="warning" onClick={() => { navigator.clipboard.writeText(refund.paymentid) }} href='https://dashboard.razorpay.com/app/payments'>Proceed Request</BootStrap.Button></td>
-                                <td><BootStrap.Button variant="warning" onClick={() => statusrefund(refund.id)}>Update Status</BootStrap.Button></td>
+                                <td><BootStrap.Button variant="warning" onClick={() => statusrefund(refund.id,refund.refundstatus)}>Update Status</BootStrap.Button></td>
                             </tr>
                         )
                     }

@@ -464,7 +464,7 @@ function MainDBAdd() {
                                                 <option>Kids's Shoes</option>
                                                 <option>Mens training</option>
                                                 <option>Womens training</option>
-                                                <option>kids training</option>
+                                                <option>Kids training</option>
                                                 <option>Slides And Sandals</option>
                                                 <option>Football</option>
                                                 <option>BasketBall</option>

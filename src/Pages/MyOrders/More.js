@@ -16,7 +16,7 @@ function More() {
     const [product, setProduct] = useState([])
     const [username, setUsername] = useState('')
     const [refund, setRefund] = useState([])
-    const[check,setCheck] = useState('')
+    const [check, setCheck] = useState('')
 
     useEffect(() => {
         if (!localStorage.getItem("USER_KEY")) {
@@ -29,10 +29,10 @@ function More() {
         if (check === "undefined") {
             usenavigate('/login')
         }
-       
+
     }, [])
 
-    localStorage.setItem("Userid",data.id)
+    localStorage.setItem("Userid", data.id)
 
     const m = localStorage.getItem("Userid")
 
@@ -94,7 +94,7 @@ function More() {
                     }
                 }
             }
-        }else{
+        } else {
             alert("Your Package Is Out For Delivery To Cancel Or Replace Contact Further For Nike Support")
         }
 
@@ -111,10 +111,10 @@ function More() {
 
     return (
         <div>
-            
 
 
-            <Headers/>
+
+            <Headers />
 
 
 
@@ -122,19 +122,19 @@ function More() {
 
             <div class="table-users">
                 <div class="header">MyOrders</div>
-                {
-                    product.map(product =>
 
-                        <table cellspacing="0">
-                            <tr >
 
-                                <th>ProductName</th>
-                                <th>Total Price</th>
-                                <th >PaymentID</th>
-                                <th width="230"></th>
-                                <th width="230"></th>
-                            </tr>
+                <table cellspacing="0">
+                    <tr >
 
+                        <th>ProductName</th>
+                        <th>Total Price</th>
+                        <th >PaymentID</th>
+                        <th width="230"></th>
+                        <th width="230"></th>
+                    </tr>
+                    {
+                        product.map(product =>
                             <tr>
 
                                 <td>{product.productname}</td>
@@ -146,28 +146,28 @@ function More() {
                                 <td><BootStrap.Button variant="danger" onClick={() => Refund(data.id, data.username, product.id, product.productname, product.paymentid,
                                     product.payment, product.id, product.status4)}>Cancel Order</BootStrap.Button></td>
                             </tr>
+                        )
+                    }
 
+                </table>
 
-                        </table>
-                    )
-                }
             </div>
 
 
             <div class="table-users">
                 <div class="header">Refund Orders</div>
-                {
-                    refund.map(refund =>
 
-                        <table cellspacing="0">
-                            <tr >
+                <table cellspacing="0">
+                    <tr >
 
-                                <th>ProductName</th>
-                                <th>Total Price</th>
-                                <th >PaymentID</th>
-                                <th width="230">Refund Status</th>
-                                <th width="230">OrderId</th>
-                            </tr>
+                        <th>ProductName</th>
+                        <th>Total Price</th>
+                        <th >PaymentID</th>
+                        <th width="230">Refund Status</th>
+                        <th width="230">OrderId</th>
+                    </tr>
+                    {
+                        refund.map(refund =>
 
                             <tr>
 
@@ -178,10 +178,10 @@ function More() {
                                 <td>{refund.orderid}</td>
                             </tr>
 
+                        )
+                    }
+                </table>
 
-                        </table>
-                    )
-                }
             </div>
 
 
@@ -195,7 +195,7 @@ function More() {
 
 
 
-            <Footer/>
+            <Footer />
 
         </div>
     )

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import Myorderservice from './Service/Myorderservice';
 import Headers from '../Headers/Header';
 import Footer from '../Footer/Footer';
+import { BsWindowSidebar } from 'react-icons/bs';
 
 function OrderUpdates() {
     const usenavigate = useNavigate()
@@ -23,8 +24,17 @@ function OrderUpdates() {
         })
     }
 
-    function updateorderStatus(id) {
-        usenavigate('/orderstatus/' + id)
+    function updateorderStatus(id,status5) {
+        if(status5==="active"){
+            alert("Already Delivered")
+            var m = window.confirm("The Order Is Already In Delivered State Click Ok To Confirm Editing")
+            if(m===true){
+                usenavigate('/orderstatus/'+id)
+            }
+        }else{
+            usenavigate('/orderstatus/' + id)
+        }
+        
     }
 
     function logout() {
@@ -62,7 +72,7 @@ function OrderUpdates() {
                                 <td className='status1'>{orders.status}</td>
 
                                 <td>{orders.city}</td>
-                                <td><BootStrap.Button variant="warning" onClick={() => updateorderStatus(orders.id)}>Update Status</BootStrap.Button></td>
+                                <td><BootStrap.Button variant="warning" onClick={() => updateorderStatus(orders.id,orders.status5)}>Update Status</BootStrap.Button></td>
                             </tr>
                         )
                     }

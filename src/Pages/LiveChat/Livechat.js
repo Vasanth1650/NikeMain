@@ -20,7 +20,7 @@ function Livechat() {
         socket.emit("join_room", room);
         setShowChat(true);
         const createlive = {username,tunnelid}
-        fetch("http://localhost:8080/livechat/addnewrequest",{
+        fetch("https://nike-backend.herokuapp.com/livechat/addnewrequest",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(createlive)

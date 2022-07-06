@@ -2,7 +2,8 @@ import React from 'react'
 import { useState } from 'react';
 import io from 'socket.io-client';
 import Chat from './Chat'
-const socket = io.connect("https://nikelivechat.herokuapp.com/");
+import './Styles/Chat.css'
+const socket = io.connect("https://nikelivechat.herokuapp.com");
 
 
 function Livechat() {
@@ -24,7 +25,7 @@ function Livechat() {
             <h3>Join A Chat</h3>
             <input
               type="text"
-              placeholder="John..."
+              placeholder="Enter Your Name"
               onChange={(event) => {
                 setUsername(event.target.value);
               }}

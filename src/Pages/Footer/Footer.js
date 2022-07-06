@@ -83,10 +83,10 @@ function Footer() {
                                         <ul>
                                             <li><a onClick={refresh} href="/checking">Order Status</a></li>
                                             <li><a href="/delivery">Delivery</a></li>
-                                            <li><a href="#">Returns</a></li>
+                                            <li><a href="/livesupport">Returns</a></li>
                                             <li><a href="/paymentoptions">Payment Options</a></li>
-                                            <li><a href="#">Contact Us On Nike.com Inquiries</a></li>
-                                            <li><a href="#">Contact Us On All Other Inquiries</a></li>
+                                            <li><a href="/livesupport">Contact Us On Nike.com Inquiries</a></li>
+                                            <li><a href="/livesupport">Contact Us On All Other Inquiries</a></li>
                                             <li><a href="#">News</a></li>
                                             <li><a href="#">Careers</a></li>
                                             <li><a href="#">Investors</a></li>

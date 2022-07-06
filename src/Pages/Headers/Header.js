@@ -105,6 +105,9 @@ function Header() {
                     <BootStrap.Navbar.Brand href="/Jordan"><SiJordan /></BootStrap.Navbar.Brand>
                     {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                         <BootStrap.Button href='dashboard/add' className='gradient-text'>ADD</BootStrap.Button>}
+                    
+
+                    
                     <BootStrap.Navbar.Collapse id="responsive-navbar-nav">
                         <div className='navtext'>
                             <BootStrap.Nav.Link data-js="open" class="container" className='navtext'>Help</BootStrap.Nav.Link>
@@ -120,6 +123,7 @@ function Header() {
                     <BootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <BootStrap.Navbar.Collapse id="responsive-navbar-nav" className='mainnavitems'>
                         <BootStrap.Nav className="me-auto">
+                        
                             <BootStrap.Nav.Link className='mainnavtext' onClick={() => AllSection("Men's")} >MEN</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link onClick={() => AllSection("Women's")} >WOMEN</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link onClick={() => AllSection("Kids's")} >KIDS</BootStrap.Nav.Link>
@@ -155,6 +159,7 @@ function Header() {
                 <br />
                 <a href='/nikesupport' className='dum'>Guide Tour</a>
                 <br />
+                 
                 <a onClick={() => logout()} href='' className='dum'>logout</a>
             </div>
 

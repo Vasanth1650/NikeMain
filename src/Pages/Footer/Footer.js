@@ -87,7 +87,8 @@ function Footer() {
                                             <li><a href="/paymentoptions">Payment Options</a></li>
                                             <li><a href="/livesupport">Contact Us On Nike.com Inquiries</a></li>
                                             <li><a href="/livesupport">Contact Us On All Other Inquiries</a></li>
-                                            <li><a href="#">News</a></li>
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                        <BootStrap.Button href='/admin/support' className='gradient-text'>Custome Support Channel</BootStrap.Button>}
                                             <li><a href="#">Careers</a></li>
                                             <li><a href="#">Investors</a></li>
                                             <li><a href="#">Sustainability</a></li>

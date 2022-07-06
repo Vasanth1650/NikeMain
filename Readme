@@ -33,7 +33,7 @@ Tech User
 4. Heavy Process Database Supports Inheritance 0 to more tables
 3. POSTgreSQl And MySql (PostgreSql Has More Advantage Over Mysql Where Postgresql is object-relational database and opensource Mysql is relational database so postgresql can perform table inheritance and function overloading But Handling Is easy in mysql Where Hadling is harder in postgresql bcz of the handling easy the mysql is trending postgresql are used by apple skype instagram and spotify and nasa and reddit where these are used in the complex and custom procedures)
 4. Application Stores Under Aes Encryption Which Is Advanced Encryption Security
-5. Contians Logger
+5. Contians Log4j provided by apache
 6. Maintained Custom Run Time Exception
 7. Maintained Code Quality
 8. Making Unwanted Api to Unauthorized and blocking
@@ -42,5 +42,5 @@ Tech User
 Testing
 
 1. PostMan
-2. Junit
+2. Junit(Mocito)
 3. Ui Testing(Bug Found)

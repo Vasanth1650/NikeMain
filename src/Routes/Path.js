@@ -28,6 +28,8 @@ import NormalProductViewing from '../Pages/NormalProducts/NormalProductViewing';
 import UpdateNormalProductService from '../Pages/NormalProductService/UpdateNormalProductService';
 import MainJordan from '../Pages/Jordan/MainJordan';
 import PaymentOptions from '../Pages/Delivery/PaymentOptions';
+import Livechat from '../Pages/LiveChat/Livechat';
+
 
 function Path() {
   return (
@@ -62,6 +64,7 @@ function Path() {
         <Route path='/update/productnormal/:id' element={<UpdateNormalProductService/>}/>
         <Route path='/Jordan' element={<MainJordan/>}/>
         <Route path='/paymentoptions' element={<PaymentOptions/>}/>
+        <Route path='/livesupport' element={<Livechat/>}/>
         <Route path='*' element={<Dashboard/>}/>
       </Routes>
       </PageBugFix>

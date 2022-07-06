@@ -24,14 +24,41 @@ function ViewDelivery() {
     const [userid,setUserid] = useState('')
     const [product,setProduct] = useState([])
 
+    let m = localStorage.getItem("Userid")
 
+    console.log(m)
     
     useEffect(()=>{
-        
         getByUserid(id)
     },[id])
 
-    console.log(product)
+    console.log("product"+product.userid)
+
+    const [check,setCheck] = useState('')
+
+    console.log("Check"+check)
+
+    useEffect(()=>{
+        if(product.userid){
+            if(product.userid != check){
+                console.log("Trying To Data Theft")
+                usenavigate(-1)
+            }else{
+                console.log("Confirmed Correct User")
+            }
+        }
+    })
+
+
+    useEffect(()=>{
+        setUserid(product.userid)
+        setCheck(localStorage.getItem("Userid"))
+    })
+
+   
+
+    
+    
 
     const getByUserid = () =>{
         Myorderservice.finderById(id).then((response)=>{
@@ -43,11 +70,7 @@ function ViewDelivery() {
     }
 
 
-    function logout() {
-        localStorage.clear();
-        usenavigate('/')
-    }
-
+   
     React.useEffect(() => {
         fetchUserData().then((response) => {
             setData(response.data);

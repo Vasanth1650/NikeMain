@@ -20,6 +20,7 @@ function WishList() {
 
     let m = localStorage.getItem("Userid")
 
+
     const getAllWishlists = () => {
         WishListService.findByUserid(m).then((response) => {
             setWish(response.data)

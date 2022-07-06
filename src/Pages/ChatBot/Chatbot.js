@@ -18,7 +18,7 @@ function Chatbots() {
   
 
   const OrderStatus = () =>{
-    usenavigate('/myorders/'+id);
+    usenavigate('/checking');
   }
 
   const Delivery = () =>{

@@ -31,7 +31,6 @@ function Checkout() {
     const [userid, setUserid] = useState('')
     const [checkout, setCheckout] = useState([])
     const usenavigate = useNavigate()
-
     const[username,setUsername] = useState()
     const[address,setAddress] = useState()
     const[state,setState] = useState()
@@ -57,10 +56,9 @@ function Checkout() {
     })
 
 
-    function logout() {
-        localStorage.clear();
-        usenavigate('/')
-    }
+    
+
+    
 
     function CheckoutDelete(userid){
         CheckoutService.CheckoutDelete(userid).then((response) => {
@@ -98,8 +96,6 @@ function Checkout() {
             alert(price,"Price Has Received By Nike Corporation");
             alert("Your Order Has Been Placed Successfully")
             alert(response.razorpay_payment_id);
-            
-            alert(response.razorpay_signature)
             setPaymentid(response.razorpay_payment_id)
             console.log(response.razorpay_payment_id)
             PaymentProced(paymentid)
@@ -182,8 +178,8 @@ function Checkout() {
                 CheckoutDelete(userid)
                 usenavigate("/checking")
             })
-        }else{
-            alert("Something Went Wrong")
+        }else if(!paymentid){
+            alert("The System Will Procced When It Recevies The Payment Id This May Occur After Payment To")
         }
     }
 

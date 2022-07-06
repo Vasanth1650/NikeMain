@@ -1,0 +1,46 @@
+Nike World
+
+1. Global Search Under All Products With Both Capital And Non Capital
+2. Email Service
+3. Multiple Payment Service Options
+4. Chat Bot
+5. Filter Items
+6. Compatible With More Than 6 Inch Wide Screen
+7. Medium Level Of Ios compatible
+8. WishList
+9. Bag Features
+10. Login Token
+11. Order Status Real Time Updates
+12. Refund Service
+13. Single Page Header Footer Rendering With help of window.location.reload()
+14. And .scss used higher than css which provides nested styling and lesser code
+15. Deployed In A Compressed State It Would Be Faster In All Server as a(serve)
+16. jquery
+17. application security under delivery in myorder section increased
+
+
+Need to Work On
+1. Subscription and Reducing Price According TO Subscription Plan
+2. Include More Products
+3. Customer Service With Real Time Chat
+4. Converting Into User Experience Interface With The Help Of Search And Most Viewed Elements
+5. Splitting Every Part Into Separate Components To Lower The Code Size
+
+
+Tech User
+1. Java(Spring sts)
+2. NodeJs(For Payment In Vs Code)
+4. Heavy Process Database Supports Inheritance 0 to more tables
+3. POSTgreSQl And MySql (PostgreSql Has More Advantage Over Mysql Where Postgresql is object-relational database and opensource Mysql is relational database so postgresql can perform table inheritance and function overloading But Handling Is easy in mysql Where Hadling is harder in postgresql bcz of the handling easy the mysql is trending postgresql are used by apple skype instagram and spotify and nasa and reddit where these are used in the complex and custom procedures)
+4. Application Stores Under Aes Encryption Which Is Advanced Encryption Security
+5. Contians Logger
+6. Maintained Custom Run Time Exception
+7. Maintained Code Quality
+8. Making Unwanted Api to Unauthorized and blocking
+
+
+Testing
+
+1. PostMan
+2. Junit
+3. Ui Testing(Bug Found)

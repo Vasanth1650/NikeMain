@@ -34,7 +34,7 @@ function Chat({ socket, username, room }) {
 
     return (
         <div>
-            <Header />
+            
             <div className="chat-window">
 
                 <div className="chat-header">
@@ -79,7 +79,7 @@ function Chat({ socket, username, room }) {
 
             </div>
             <div className="pads"></div>
-            <Footer />
+            
         </div>
     );
 }

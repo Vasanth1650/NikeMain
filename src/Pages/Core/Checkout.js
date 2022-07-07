@@ -193,9 +193,11 @@ function Checkout() {
         })
     }, [])
 
-
-    const handler = () => {
-        usenavigate('/')
+    const deletebyClick = (checkoutid) =>{
+        CheckoutService.deleteById(checkoutid).then((response)=>{
+            getByCheck()
+            alert("The Product Removed From The Checkout")
+        })
     }
 
 
@@ -264,6 +266,7 @@ function Checkout() {
                             <div>{checkout.productname}</div>
                             <div>{checkout.price}</div>
                             <div>{checkout.size}</div>
+                            <button onClick={() => deletebyClick(checkout.id)}>Hlooooo</button>
                         </div>
                 )
             }

@@ -10,6 +10,10 @@ class Checkout{
     CheckoutDelete(userid){
         return axios.delete(VIEW_BASE_REST_API_URL+'/delete/'+userid)
     }
+
+    deleteById(id){
+        return axios.delete(VIEW_BASE_REST_API_URL+'/'+id)
+    }
 }
 
 export default new Checkout();

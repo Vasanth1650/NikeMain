@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 import io from 'socket.io-client';
+import Footer from '../Footer/Footer';
+import Header from '../Headers/Header';
 import Chat from './Chat';
 import './Styles/Chat.css';
 
@@ -32,9 +34,12 @@ function Livechat() {
       }
     };
 
+    
+
   
     return (
       <div className="App">
+      <Header/>
         {!showChat ? (
           <div className="joinChatContainer">
             <h3>Join A Chat</h3>
@@ -52,12 +57,14 @@ function Livechat() {
                 setRoom(event.target.value);
                 setTunnelId(event.target.value);
               }}
+              
             />
             <button onClick={joinRoom}>Join A Room</button>
           </div>
         ) : (
           <Chat socket={socket} username={username} room={room} />
         )}
+        <Footer/>
       </div>
     )
 }

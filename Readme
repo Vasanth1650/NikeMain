@@ -9,7 +9,7 @@ Nike World
 7. Medium Level Of Ios compatible
 8. WishList
 9. Bag Features
-10. Login Token
+10. Login Token JWT With Redux
 11. Order Status Real Time Updates
 12. Refund Service
 13. Single Page Header Footer Rendering With help of window.location.reload()
@@ -17,7 +17,9 @@ Nike World
 15. Deployed In A Compressed State It Would Be Faster In All Server as a(serve)
 16. jquery
 17. application security under delivery in myorder section increased
-18. Live Chat Support Socet.io bidirectional communication
+18. Live Chat Support Socket.io bidirectional communication
+19. Redux Used For Unidirectional data Flow
+20. Subscription Enabled (Order Over 15000 There Will Be Discount Accourding To The Plan) 
 
 
 Need to Work On
@@ -44,4 +46,11 @@ Testing
 
 1. PostMan
 2. Junit(Mocito)
-3. Ui Testing(Bug Found)
+3. Ui Testing
+4. snyk test frontend(Code Zero Vulnerabilties,4 .json open source dependencies vulnerablities Hight Level node-sass and react-simple-chat bot which is transitive dependencies and its open source it might easily vurnerable and 11 medium level from json sass)
+5. snyk test 2 high level vulnerabilties from gson google stripe and 1 from code which is csrf
+which is cross site request forgery This might allow hacker to execute requests on user's behalf
+6. and 3 Medium Level Bcz Not Storing Secret Information In Prevent State
+7. Csrf is defaulty enabled when we use @EnableWebSecurity instead of using csrf disable we can
+have a cookiecsrftokenrepository to prevent some vulnerable
+

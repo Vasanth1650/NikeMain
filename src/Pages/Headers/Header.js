@@ -79,7 +79,9 @@ function Header() {
     });
 
 
+    localStorage.setItem("Userid",data.id)
 
+    
     $(document).ready(function () {
         $('.popup-btn').click(function (e) {
             $('.popup-wrap').fadeIn(500);

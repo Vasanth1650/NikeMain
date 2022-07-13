@@ -130,7 +130,7 @@ const Login = ({loading,error, ...props})=> {
                                                 </div>
 
                                                 <div className="gradient">
-                                                    <input id="password" type="password" minLength={8}
+                                                    <input id="password" type="password" 
                                                        placeholder='Enter Password' value={values.password} onChange={handleChange} name="password" required />
                                                     <div className="invalid-feedback">
                                                         Password is required

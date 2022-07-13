@@ -27,11 +27,11 @@ function MainJordan() {
 
             <div className='jordanlinks'>
 
-                <BootStrap.Nav.Link className='mainnavtext' >New Releases</BootStrap.Nav.Link>
+                <BootStrap.Nav.Link className='mainnavtext'>New Releases</BootStrap.Nav.Link>
                 <BootStrap.Nav.Link className='mainnavtext'>Jordan Sport</BootStrap.Nav.Link>
-                <BootStrap.Nav.Link className='mainnavtext'>Men</BootStrap.Nav.Link>
-                <BootStrap.Nav.Link className='mainnavtext'>Women</BootStrap.Nav.Link>
-                <BootStrap.Nav.Link className='mainnavtext'>Kids</BootStrap.Nav.Link>
+                <BootStrap.Nav.Link className='mainnavtext' onClick={() => MostPopular("Men's")}>Men</BootStrap.Nav.Link>
+                <BootStrap.Nav.Link className='mainnavtext' onClick={() => MostPopular("Women's")}>Women</BootStrap.Nav.Link>
+                <BootStrap.Nav.Link className='mainnavtext' onClick={() => MostPopular("Kid's")}>Kids</BootStrap.Nav.Link>
 
             </div>
 

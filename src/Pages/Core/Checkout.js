@@ -39,6 +39,7 @@ function Checkout() {
     const[productname,setProductname] = useState()
     const[status] = useState("Order Placed Waiting For Seller To Confirm The Order")
     const[paymentid,setPaymentid] = useState()
+    const[subscription,setSubscription] = useState('')
     
 
     const [price, setPrice] = useState('')
@@ -52,12 +53,12 @@ function Checkout() {
         setState(data.state)
         setCity(data.city)
         setPayment(price)
-        
+        setSubscription(data.subscription)
     })
 
 
     
-
+    
     
 
     function CheckoutDelete(userid){
@@ -142,6 +143,18 @@ function Checkout() {
         checkout.map(checkout => 
             (ans += checkout.price,name +="|"+checkout.productname+"|")
         )
+        if(subscription==="Premium"){
+            pro = 5000
+        }
+        else if(subscription==="Normal"){
+            pro =3000
+        }
+        else if(subscription==="Regular"){
+            pro =1500
+        }
+        if(ans!=0 && ans>15000){
+            ans-=pro
+        }
         setProductname(name)
         setPrice(ans)
         console.log(ans)
@@ -204,22 +217,11 @@ function Checkout() {
     return (
         <div>
 
-        
-            
-
-
         <BootStrap.ModalTitle>Note: Your Order Is Being Processed To Enable Receipt And Further Processed
         Select The Link To Redirect Otherwise The Payment Will Be Cancelled</BootStrap.ModalTitle>
-        
-
 
         <div className='sa'>
-
-
-
-
             <aside class="profile-card">
-
                 <header>
                     <h1>₹{price}</h1>
 
@@ -229,32 +231,9 @@ function Checkout() {
                     <BootStrap.Button onClick={()=>PaymentProced(paymentid)}>{paymentid}</BootStrap.Button>
 
                     <h1>Check Out</h1>
-
-
-
-                </header>
-
-
-
-
-
-                
-
+             </header>
             </aside>
             </div>
-
-
-
-
-            
-
-
-
-
-
-
-
-
 
             {
 
@@ -266,12 +245,13 @@ function Checkout() {
                             <div>{checkout.productname}</div>
                             <div>{checkout.price}</div>
                             <div>{checkout.size}</div>
-                            <button onClick={() => deletebyClick(checkout.id)}>Hlooooo</button>
+                            <BootStrap.Button variant="warning" onClick={() => deletebyClick(checkout.id)}>Remove Item</BootStrap.Button>
                         </div>
                 )
             }
             
-
+            <h6>The BillAble Amount With Offer Included If Any Automatically</h6>
+            <div>{price}</div>
 
             <div>------------------------------------------------------------------
             -----------------------------------------------------------------------
@@ -282,11 +262,6 @@ function Checkout() {
             -----------------------------------------------------------------------
             -----------------------------------------------------------------------
             -----------------------------------------------------------------------</div>
-
-
-
-
-
            
         </div>
     )

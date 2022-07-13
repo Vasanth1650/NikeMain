@@ -30,6 +30,9 @@ import MainJordan from '../Pages/Jordan/MainJordan';
 import PaymentOptions from '../Pages/Delivery/PaymentOptions';
 import Livechat from '../Pages/LiveChat/Livechat';
 import LiveChatAdmin from '../Pages/LiveChat/Support/LiveChatAdmin';
+import Profile from '../Pages/Profile/Profile';
+import UpdateProfile from '../Pages/Profile/ProfileService/UpdateProfile';
+import Render from '../Pages/Subscription/SimpleRendering/Render';
 
 
 function Path() {
@@ -67,6 +70,9 @@ function Path() {
         <Route path='/paymentoptions' element={<PaymentOptions/>}/>
         <Route path='/livesupport' element={<Livechat/>}/>
         <Route path='/admin/support' element={<LiveChatAdmin/>}/>
+        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/updateprofile" element={<UpdateProfile/>}/>
+        <Route path='/render' element={<Render/>}/>
         <Route path='*' element={<Dashboard/>}/>
       </Routes>
       </PageBugFix>

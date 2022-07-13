@@ -71,7 +71,7 @@ function Signup() {
                                             <br></br>
                                             <h4 className="gradient">Signup</h4>
 
-                                            <form className="my-login-validation"  noValidate={false}>
+                                            <form className="my-login-validation" onSubmit={handleClick}   noValidate={false}>
                                                 <div className="gradient">
                                                     
                                                     <input id="username" type="email" minLength={8}
@@ -140,7 +140,7 @@ function Signup() {
 
 
                                                 <div className="form-group m-0">
-                                                    <button type="submit" onClick={handleClick} className="btn btn-primary">
+                                                    <button type="submit" className="btn btn-primary">
 
                                                         Login
 

@@ -19,18 +19,21 @@
     font-size: x-large;
     color: black;
     margin-left: 5%;
+    cursor: pointer;
 }
 
 .shoes{
     font-size: x-large;
     color: black;
     margin-left: 25%;
+    cursor: pointer;
 }
 
 .gear{
     font-size: x-large;
     color: black;
     margin-left: 25%;
+    cursor: pointer;
 }
 
 .alltext{

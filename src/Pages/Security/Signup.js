@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Alert, Spinner } from 'react-bootstrap';
+import Header from '../Headers/Header';
+import Footer from '../Footer/Footer';
 
 function Signup() {
     const usenavigate = useNavigate()
@@ -45,13 +47,13 @@ function Signup() {
 
     return (
         <div >
-            
+            <Header/>
 
             <div className='login'>
             <section>
                 <div class="container">
                     <div class="user signinBx">
-                        <div class="imgBx"><img src="https://www.insidehook.com/wp-content/uploads/2021/12/Nike-Cover-St.jpg?resize=1200%2C630" alt="" /></div>
+                        <div class="imgBx"><img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/c804f931-0c54-4be7-b286-f0e0f9fca67b/nike-just-do-it.png" alt="" /></div>
                         <div class="formBx">
 
 
@@ -62,7 +64,7 @@ function Signup() {
                                         <div >
                                             <ul className="nav nav-tabs nav-justified" id="myTab" role="tablist">
                                                 <li className="nav-item">
-                                                    <a className="nav-link " id="home-tab" data-toggle="tab" href="/" role="tab" aria-controls="home" aria-selected="true">Login</a>
+                                                    <a className="nav-link " id="home-tab" data-toggle="tab" href="/login" role="tab" aria-controls="home" aria-selected="true">Login</a>
                                                 </li>
                                                 <li className="nav-item">
                                                     <a className="nav-link active" id="home-tab" data-toggle="tab" href="/signup" role="tab" aria-controls="home" aria-selected="true">Signup</a>
@@ -164,6 +166,7 @@ function Signup() {
                     </div>
                 </div>
             </section>
+            <Footer/>
         </div>
 
 

@@ -15,12 +15,14 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  
   padding: 20px;
 }
 
 section .container {
+  border-radius: 30px;
   position: relative;
-  width: 800px;
+  width: 700px;
   height: 600px;
   background: white;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
@@ -171,6 +173,8 @@ section .container.active .signinBx .imgBx {
     width: 100%;
   }
 }
+
+
 
 .login{
   background-color: black;

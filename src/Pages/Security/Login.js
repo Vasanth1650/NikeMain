@@ -9,7 +9,8 @@ import { Alert, Spinner } from 'react-bootstrap';
 import { userLogin } from '../../Api/AuthenticationService'
 import { connect } from 'react-redux'
 import { fetchUserData } from '../../Api/AuthenticationService'
-
+import Headers from '../Headers/Header'
+import Footer from '../Footer/Footer'
 
 
 
@@ -92,6 +93,7 @@ const Login = ({loading,error, ...props})=> {
       
     return (
         <div className='login'>
+            <Headers/>
             <section>
                 <div class="container">
                     <div class="user signinBx">
@@ -170,6 +172,7 @@ const Login = ({loading,error, ...props})=> {
                     </div>
                 </div>
             </section>
+            <Footer/>
         </div>
     )
 }

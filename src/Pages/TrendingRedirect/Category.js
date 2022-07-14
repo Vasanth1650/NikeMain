@@ -158,10 +158,10 @@ function Category() {
                         {
                             gentle.map(gentle =>
                                 <BootStrap.Col>
-                                    <div className='items'>
+                                    <div>
                                         <BootStrap.CardGroup>
                                             <BootStrap.Card>
-                                                <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} style={{ height: '30rem' }} variant="top" src={gentle.productimage1} />
+                                                <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
                                                 <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
                                                     <BootStrap.Card.Text style={{ color: "red" }}>
                                                         {gentle.gender}
@@ -207,14 +207,14 @@ function Category() {
 
             <div>
                 <div >
-                    <BootStrap.Row xs={1} md={3} >
+                    <BootStrap.Row xs={1} md={4} >
                         {
                             category1.map(gentle =>
                                 <BootStrap.Col>
                                     <div className='items'>
                                         <BootStrap.CardGroup>
                                             <BootStrap.Card >
-                                                <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} style={{ height: '30rem' }} variant="top" src={gentle.productimage1} />
+                                                <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} style={{ height: '20rem' }} variant="top" src={gentle.productimage1} />
                                                 <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
                                                     <BootStrap.Card.Text style={{ color: "red" }}>
                                                         {gentle.gender}

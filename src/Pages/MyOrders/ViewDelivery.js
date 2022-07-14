@@ -42,7 +42,7 @@ function ViewDelivery() {
         if(product.userid){
             if(product.userid != check){
                 console.log("Trying To Data Theft")
-                usenavigate(-1)
+                
             }else{
                 console.log("Confirmed Correct User")
             }

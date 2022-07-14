@@ -52,10 +52,10 @@ function UpdateProfile() {
     
     
     
-
+    let m = localStorage.getItem("Userid")
 
     useEffect(() => {
-        Service.getUserById(localStorage.getItem("Userid")).then((response) => {
+        Service.getUserById(m).then((response) => {
             setAddress(response.data.address)
             setCity(response.data.city)
             setState(response.data.state)

@@ -17,7 +17,7 @@ function Render() {
     const [password,setPassword] = useState('')
     const ref = useRef(null);
 
-    
+    localStorage.setItem("Userid",data.id)
 
     React.useEffect(() => {
         fetchUserData().then((response) => {

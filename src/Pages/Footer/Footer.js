@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, { useState } from 'react'
 import { fetchUserData } from '../../Api/AuthenticationService';
 import * as BootStrap from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -10,7 +10,7 @@ function Footer() {
     const [data, setData] = useState({});
     const usenavigate = useNavigate()
 
-    function refresh(){
+    function refresh() {
         window.location.reload(false);
     }
 
@@ -22,20 +22,20 @@ function Footer() {
         })
     }, [])
 
-    const OrderUpdates = () =>{
+    const OrderUpdates = () => {
         usenavigate("/orderupdate")
         window.location.reload(false);
     }
 
-    function sendEmail(e){
+    function sendEmail(e) {
         e.preventDefault();
-        emailjs.sendForm('service_lc3a1or','template_it7jqmj',e.target,'0C3fg6Ghhl2fj0Jv4').then(response=>{
+        emailjs.sendForm('service_lc3a1or', 'template_it7jqmj', e.target, '0C3fg6Ghhl2fj0Jv4').then(response => {
             alert("Subscribed For New Lauch Products Information")
         })
     }
 
-    
-    const RefundRequest = () =>{
+
+    const RefundRequest = () => {
         usenavigate("/refund")
         window.location.reload(false);
     }
@@ -88,10 +88,13 @@ function Footer() {
                                             <li><a href="/livesupport">Contact Us On Nike.com Inquiries</a></li>
                                             <li><a href="/livesupport">Contact Us On All Other Inquiries</a></li>
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                        <BootStrap.Button href='/admin/support' className='gradient-text'>Custome Support Channel</BootStrap.Button>}
+                                                <BootStrap.Button href='/admin/support' className='gradient-text'>Custome Support Channel</BootStrap.Button>}
                                             <li><a href="/profile">Profile</a></li>
-                                            <li><a href="#">Investors</a></li>
-                                            <li><a href="#">Sustainability</a></li>
+                                            <br/>
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                <BootStrap.Button href='dashboard/add' variant="warning">ADD</BootStrap.Button>}
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                <BootStrap.Button href="/allsection/mainadd" variant="warning" type="submit">ADD PRODUCTS</BootStrap.Button>}
                                         </ul>
                                     </div>
                                 </div>

@@ -38,22 +38,30 @@ function ViewDelivery() {
 
     console.log("Check"+check)
 
+    let g;
+
     useEffect(()=>{
+        setTimeout(() => {
         if(product.userid){
-            if(product.userid != check){
+            if(product.userid != m){
                 console.log("Trying To Data Theft")
-                
+                usenavigate('/')
             }else{
                 console.log("Confirmed Correct User")
+                
             }
         }
+        
+    },1000)
     })
+
+    
 
 
     useEffect(()=>{
         setUserid(product.userid)
         setCheck(localStorage.getItem("Userid"))
-    })
+    },[])
 
    
 

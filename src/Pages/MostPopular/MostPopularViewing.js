@@ -174,13 +174,13 @@ function MostPopularViewing() {
                             <br />
                             <br />
                             <div>Size</div>
-                            <button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</button>
-                            <button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</button>
+                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>
+                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>
                             <div>---------------------------------</div>
-                            <button className='bus' onClick={(e) => setSize(product.size3)}>{product.size3}</button>
-                            <button className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</button>
+                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size3)}>{product.size3}</BootStrap.Button>
+                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>
                             <div>---------------------------------</div>
-                            <button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</button>
+                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>
 
                         </div>
                     </div>

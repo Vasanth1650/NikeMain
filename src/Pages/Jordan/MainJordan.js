@@ -27,7 +27,7 @@ function MainJordan() {
 
             <div className='jordanlinks'>
 
-                <BootStrap.Nav.Link className='mainnavtext'>New Releases</BootStrap.Nav.Link>
+                <BootStrap.Nav.Link className='mainnavtext'>BasketBall</BootStrap.Nav.Link>
                 <BootStrap.Nav.Link className='mainnavtext'>Jordan Sport</BootStrap.Nav.Link>
                 <BootStrap.Nav.Link className='mainnavtext' onClick={() => MostPopular("Men's")}>Men</BootStrap.Nav.Link>
                 <BootStrap.Nav.Link className='mainnavtext' onClick={() => MostPopular("Women's")}>Women</BootStrap.Nav.Link>

@@ -26,7 +26,7 @@ function MostPopularViewing() {
     const [check, setCheck] = useState('')
     const [productid, setProductid] = useState('')
 
-
+    
 
     useEffect(() => {
         setUserid(data.id);
@@ -40,27 +40,27 @@ function MostPopularViewing() {
     })
 
 
-    const wishlist = (e) => {
+    const wishlist = (e) =>{
         e.preventDefault()
         if ((localStorage.getItem("USER_KEY")) && (check != "undefined")) {
-            const check = { productid, userid, username, productname, image1 }
-
-            fetch("https://nike-backend.herokuapp.com/wishlist/addwishlist", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(check)
-            }).then((res) => {
-                if (!res.ok) {
-                    throw Error('Something Went Wrong')
-                }
-                if (res.ok) {
-                    alert("Item Added To Wishlist");
-                }
-            }).catch(error => {
-                console.log("something went wrong")
-                alert("Item Already Exists In Wishlist")
-            })
-
+            const check = { productid,userid, username, productname, image1}
+            
+                fetch("https://nike-backend.herokuapp.com/wishlist/addwishlist", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(check)
+                }).then((res) => {
+                    if(!res.ok){
+                        throw Error('Something Went Wrong')
+                    }
+                    if(res.ok){
+                        alert("Item Added To Wishlist");
+                    }
+                }).catch(error => {
+                    console.log("something went wrong")
+                    alert("Item Already Exists In Wishlist")
+                })
+            
         } else {
             usenavigate('/login')
         }
@@ -103,7 +103,7 @@ function MostPopularViewing() {
         DashboardService.getByIds(id).then((response) => {
             setProduct(response.data)
             console.log(response.data)
-
+            
         }).catch(err => {
             console.log(err)
         })
@@ -118,35 +118,24 @@ function MostPopularViewing() {
     }, [])
 
 
-    $(document).ready(function () {
-        $('.popup-btn').click(function (e) {
-            $('.popup-wrap').fadeIn(500);
-            $('.popup-box').removeClass('transform-out').addClass('transform-in');
-
-            e.preventDefault();
+    $(document).ready(function() {
+        $('.popup-btn').click(function(e) {
+          $('.popup-wrap').fadeIn(500);
+          $('.popup-box').removeClass('transform-out').addClass('transform-in');
+      
+          e.preventDefault();
         });
-
-        $('.popup-close').click(function (e) {
-            $('.popup-wrap').fadeOut(500);
-            $('.popup-box').removeClass('transform-in').addClass('transform-out');
-
-            e.preventDefault();
+      
+        $('.popup-close').click(function(e) {
+          $('.popup-wrap').fadeOut(500);
+          $('.popup-box').removeClass('transform-in').addClass('transform-out');
+      
+          e.preventDefault();
         });
-    });
+      });
 
-    
-    let hasPlayed = false;
-    function handleFirstPlay(event) {
-      if(hasPlayed === false) {
-        hasPlayed = true;
-    
-        let vid = event.target;
-    
-        vid.onplay = null;
-    
-        // Start whatever you need to do after first playback has started
-      }
-    }
+
+
 
 
     return (
@@ -166,11 +155,10 @@ function MostPopularViewing() {
                     <div className='carding'>
 
                         <BootStrap.Card.Img className='tre' variant="top" src={product.productimage1} />
-                        <div className='vido' style={{ position: "static" }}>
-                            <ReactPlayer width={500} height={451} muted type='video/mp4' onplay="handleFirstPlay(event)" onStart loop playing={true} url={product.productimage2} playsInline />
+                        <div className='vido' style={{position : "static"}}>
+                            <ReactPlayer width={500} height={451} muted type='video/mp4' loop playing={true} url={product.productimage2} playsinline/>
                         </div>
 
-                        
 
                         <div className='conenting'>
                             <div className="produ">{product.productname}</div>
@@ -213,50 +201,50 @@ function MostPopularViewing() {
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.productimage5} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.productimage6} />
                         <div className='conenting1'>
-                            <div>{product.productdescription}
-                                <div className='extra'>
-                                    <button class="btn popup-btn" href="#">View Details</button>
-                                </div></div>
-
+                        <div>{product.productdescription}
+                        <div className='extra'>  
+                            <button class="btn popup-btn" href="#">View Details</button>
+                        </div></div>
+                        
                         </div>
-
+                        
                         <div></div>
-
+                        
                         <div class="popup-wrap">
                             <div class="popup-box">
                                 <h2>Product Details</h2>
                                 <div>*Color Shown : {product.productspecification1}</div>
-                                <br />
+                                <br/>
                                 <div>*Style: {product.productspecification2}</div>
-                                <br />
+                                <br/>
                                 <div>Product Specifications</div>
                                 <div>{product.productspecification3}</div>
-                                <br />
+                                <br/>
                                 <div>Inspired Roads : {product.productspecification4}</div>
-                                <br />
-
+                                <br/>
+                                
                                 <a class="close-btn popup-close" href="#">x</a>
                             </div>
                         </div>
-
-                        <br />
-
-
+                        
+                        <br/>  
+                        
+                        
                     </div>
-
+                    
                     <div className='carding'>
 
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.productimage7} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.productimage8} />
                         <div className='conenting'>
-
+                            
                         </div>
+                     
 
 
 
 
-
-
+                       
 
 
 

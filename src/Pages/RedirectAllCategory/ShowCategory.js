@@ -150,9 +150,9 @@ function ShowCategory() {
                                                 Buy Now
                                             </BootStrap.Button>
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                            <BootStrap.NavLink onClick={()=>deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
+                                            <BootStrap.NavLink onClick={()=>deleteById(product.id)}>Delete</BootStrap.NavLink>}
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                            <BootStrap.NavLink onClick={()=>UpdateDetails(gentle.id)}>Update</BootStrap.NavLink>}
+                                            <BootStrap.NavLink onClick={()=>UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
                                         </BootStrap.Card>
                                     </BootStrap.CardGroup>
                                     <br />
@@ -235,6 +235,10 @@ function ShowCategory() {
                                             <BootStrap.Button onClick={()=> Nextstep(collection.id)}>
                                                 Buy Now
                                             </BootStrap.Button>
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                            <BootStrap.NavLink onClick={()=>deleteById(collection.id)}>Delete</BootStrap.NavLink>}
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                            <BootStrap.NavLink onClick={()=>UpdateDetails(collection.id)}>Update</BootStrap.NavLink>}
                                         </BootStrap.Card>
                                     </BootStrap.CardGroup>
                                     <br />

@@ -26,24 +26,26 @@ function ViewDelivery() {
 
     let m = localStorage.getItem("Userid")
 
-    console.log(m)
+  
     
     useEffect(()=>{
         getByUserid(id)
-    },[id])
-
-    console.log("product"+product.userid)
+    },[])
+    
+    m = localStorage.getItem("Userid")
+    
 
     const [check,setCheck] = useState('')
 
-    console.log("Check"+check)
 
     let g;
 
+    console.log(product.userid+"  "+data.id)
+
     useEffect(()=>{
-        setTimeout(() => {
-        if(product.userid){
-            if(product.userid != m){
+        
+        if(product.userid && data.id){
+            if(product.userid != data.id){
                 console.log("Trying To Data Theft")
                 usenavigate('/')
             }else{
@@ -52,7 +54,7 @@ function ViewDelivery() {
             }
         }
         
-    },1000)
+   
     })
 
     
@@ -60,7 +62,6 @@ function ViewDelivery() {
 
     useEffect(()=>{
         setUserid(product.userid)
-        setCheck(localStorage.getItem("Userid"))
     },[])
 
    

@@ -33,6 +33,7 @@ import LiveChatAdmin from '../Pages/LiveChat/Support/LiveChatAdmin';
 import Profile from '../Pages/Profile/Profile';
 import UpdateProfile from '../Pages/Profile/ProfileService/UpdateProfile';
 import Render from '../Pages/Subscription/SimpleRendering/Render';
+import JordanHistory from '../Pages/Jordan/HistoryJordan/JordanHistory';
 
 
 function Path() {
@@ -73,7 +74,9 @@ function Path() {
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/updateprofile" element={<UpdateProfile/>}/>
         <Route path='/render' element={<Render/>}/>
+        <Route path='/jordanHistory' element={<JordanHistory/>}/>
         <Route path='*' element={<Dashboard/>}/>
+        
       </Routes>
       </PageBugFix>
     </BrowserRouter>

@@ -12,6 +12,10 @@ function JordanBasket() {
         console.log(value)
         usenavigate('/mostpopular/' + value);
     }
+
+    const History = () => {
+        usenavigate('/jordanHistory')
+    }
   return (
     <div>
         <div className='bodying'>
@@ -23,11 +27,11 @@ function JordanBasket() {
                     <div className='bottom-text'>Explore Jordan BasketBall</div>
                     <button className='shopeing'>Shop</button>
                 </div>
-                <div class="column2" onClick={() => AllSection("Shorts")}>
+                <div class="column2" onClick={() => History()}>
                     <img className='image2s' src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_700,c_limit/e9d26132-dda6-4019-b5f1-05cc66a3a664/jordan.jpg"
                         alt="Forest" style={{ width: "127%" }} />
-                    <div className='bottom'>The Ultimate History of Air Jordan</div>
-                    <button className='shopeings'>Shop</button>
+                    <div  className='bottom'>The Ultimate History of Air Jordan</div>
+                    <button className='shopeings'>Explore</button>
                 </div>
 
             </div>  

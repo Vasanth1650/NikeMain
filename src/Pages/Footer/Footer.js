@@ -56,7 +56,7 @@ function Footer() {
                             <div class="row">
                                 {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                     <BootStrap.Button onClick={RefundRequest} variant="warning" type="submit">Refund Requests</BootStrap.Button>}
-                                <marquee>Check out The Latest Customer Orders</marquee>
+                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&<marquee>Check out The Latest Customer Orders</marquee>}
                                 {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                     <BootStrap.Button onClick={OrderUpdates} variant="warning" type="submit">Order Updates</BootStrap.Button>}
                             </div>

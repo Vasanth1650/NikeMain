@@ -2,6 +2,7 @@ import React from 'react'
 import './Styles/Running.css'
 import * as BootStrap from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import './Styles/Running.scss'
 
 function RunningShoes() {
   const usenavigate = useNavigate()

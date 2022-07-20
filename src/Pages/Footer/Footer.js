@@ -4,6 +4,11 @@ import * as BootStrap from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 import './Styles/Footer.css';
+import Magic from '../Dashboard/ScrollMagic/Magic';
+import { AiOutlineInstagram } from "react-icons/ai";
+import { AiOutlineFacebook } from "react-icons/ai";
+import { AiFillTwitterCircle } from "react-icons/ai";
+
 
 
 function Footer() {
@@ -51,7 +56,7 @@ function Footer() {
                             <div class="row">
                                 {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                     <BootStrap.Button onClick={RefundRequest} variant="warning" type="submit">Refund Requests</BootStrap.Button>}
-                                <div>----------------------------------------------------------------------------------------------------------------------------</div>
+                                <marquee>Check out The Latest Customer Orders</marquee>
                                 {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                     <BootStrap.Button onClick={OrderUpdates} variant="warning" type="submit">Order Updates</BootStrap.Button>}
                             </div>
@@ -60,19 +65,8 @@ function Footer() {
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 mb-50">
                                     <div class="footer-widget">
-                                        <div class="footer-logo">
-                                            <a href="index.html"><img src="https://img.etimg.com/thumb/msid-59738997,width-640,resizemode-4,imgsize-21421/nike.jpg" class="img-fluid" alt="logo" /></a>
-                                        </div>
-                                        <div class="footer-text">
-                                            <p>Nike, Inc. is an American multinational corporation that is engaged in the design, development, manufacturing, and worldwide marketing and sales of footwear, apparel, equipment, accessories, and services. The company is
-                                                headquartered near Beaverton, Oregon, in the Portland metropolitan area.</p>
-                                        </div>
-                                        <div class="footer-social-icon">
-                                            <span>Follow us</span>
-                                            <a href="https://www.facebook.com/nike/"><i class="fab fa-facebook-f facebook-bg"></i></a>
-                                            <a href="https://twitter.com/nikestore"><i class="fab fa-twitter twitter-bg"></i></a>
-                                            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
-                                        </div>
+                                    <Magic/>    
+                                        
                                     </div>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
@@ -114,6 +108,7 @@ function Footer() {
                             </div>
                         </div>
                     </div>
+                    
                     <div class="copyright-area">
                         <div class="container">
                             <div class="row">

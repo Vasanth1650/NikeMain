@@ -23,16 +23,16 @@ Nike World
 
 
 Need to Work On
-1. Subscription and Reducing Price According TO Subscription Plan
-2. Include More Products
-3. Customer Service With Real Time Chat
-4. Converting Into User Experience Interface With The Help Of Search And Most Viewed Elements
-5. Splitting Every Part Into Separate Components To Lower The Code Size
+1. Subscription and Reducing Price According TO Subscription Plan(done)
+2. Include More Products(done now 30)
+3. Customer Service With Real Time Chat(done)
+4. Converting Into User Experience Interface With The Help Of Search And Most Viewed Elements(working)
+5. Splitting Every Part Into Separate Components To for future user
 
 
-Tech User
+Tech Used
 1. Java(Spring sts)
-2. NodeJs(For Payment In Vs Code)
+2. NodeJs(For Payment In Vs Code) And (Socket io)
 4. Heavy Process Database Supports Inheritance 0 to more tables
 3. POSTgreSQl And MySql (PostgreSql Has More Advantage Over Mysql Where Postgresql is object-relational database and opensource Mysql is relational database so postgresql can perform table inheritance and function overloading But Handling Is easy in mysql Where Hadling is harder in postgresql bcz of the handling easy the mysql is trending postgresql are used by apple skype instagram and spotify and nasa and reddit where these are used in the complex and custom procedures)
 4. Application Stores Under Aes Encryption Which Is Advanced Encryption Security
@@ -40,6 +40,7 @@ Tech User
 6. Maintained Custom Run Time Exception
 7. Maintained Code Quality
 8. Making Unwanted Api to Unauthorized and blocking
+9. Synk test to find(open dependencies)
 
 
 Testing

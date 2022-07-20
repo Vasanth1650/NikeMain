@@ -4,18 +4,23 @@
     padding-top: 5%;
     cursor: pointer;
     padding-bottom: 3%;
+    transition-property: background-color;
+    transition-duration: inherit;
+}
+
+.Running:hover{
+   
 }
 
 .bad{
     background-color: white;
     color: black;
+    
 }
 
-.mainrun{
-    font-family: fantasy;
-    text-align: center;
-    font-size: 400%;
-}
+
+
+
 
 .smalltext{
     text-align: center;

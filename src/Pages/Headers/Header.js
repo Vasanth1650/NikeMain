@@ -101,7 +101,7 @@ function Header() {
 
 
     return (
-        <div>
+        <div className='headerss'>
             <BootStrap.Navbar className='bg'>
                 <BootStrap.Container className='cont'>
                     <BootStrap.Navbar.Brand href="/Jordan"><SiJordan /></BootStrap.Navbar.Brand>

@@ -34,6 +34,7 @@ import Profile from '../Pages/Profile/Profile';
 import UpdateProfile from '../Pages/Profile/ProfileService/UpdateProfile';
 import Render from '../Pages/Subscription/SimpleRendering/Render';
 import JordanHistory from '../Pages/Jordan/HistoryJordan/JordanHistory';
+import Magic from '../Pages/Dashboard/ScrollMagic/Magic';
 
 
 function Path() {
@@ -75,6 +76,7 @@ function Path() {
         <Route path="/updateprofile" element={<UpdateProfile/>}/>
         <Route path='/render' element={<Render/>}/>
         <Route path='/jordanHistory' element={<JordanHistory/>}/>
+        <Route path='/magic' element={<Magic/>}/>
         <Route path='*' element={<Dashboard/>}/>
         
       </Routes>

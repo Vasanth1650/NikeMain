@@ -1,0 +1,110 @@
+
+
+:root {
+  --first-color: ;
+  --first-color-light: red;
+  --first-color-lighten: black;
+  --body-font: "Ubuntu", sans-serif;
+  --normal-font-size: 1rem;
+  --smaller-font-size: 0.813rem;
+}
+
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+
+
+h1 {
+  margin: 0;
+  color: white;
+}
+
+a {
+  text-decoration:dashed;
+}
+
+.whatsapp {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+.drop,
+.drop_container {
+  display:flex;
+}
+
+
+
+.drop_container {
+  row-gap: 1rem;
+ 
+  box-shadow: 4px 4px 16px black;
+  
+}
+
+.drop_card,
+.drop_data {
+  display: flex;
+  align-items: center;
+}
+
+.drop_card {
+  width: 360px;
+  justify-content: space-between;
+  padding: 0.100rem 0.25rem.5rem 0.75rem;
+  background-color: var(--first-color-lighten);
+  box-shadow: 4px 4px 16px red, -2px -2px 16px wheat;
+  border-radius: 2.5rem;
+  
+}
+
+.drop_img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  
+}
+
+.drop_name {
+  font-size: var(--normal-font-size);
+  color: var(--first-color);
+  font-weight: 500;
+  color: white;
+}
+
+.drop_profession {
+  font-size: var(--smaller-font-size);
+  color: var(--first-color-light);
+}
+
+.drop_social {
+  margin: 0 0.375rem;
+  color: var(--first-color-light);
+  transition: 0.4s;
+  
+}
+
+.drop_social:hover {
+  color: var(--first-color);
+}
+
+
+/* Class name for the chosen item */
+
+.sortable-chosen {
+  box-shadow: 8px 8px 32px green;
+}
+
+
+/* Class name for the dragging item */
+
+.sortable-drag {
+  opacity: 0;
+}

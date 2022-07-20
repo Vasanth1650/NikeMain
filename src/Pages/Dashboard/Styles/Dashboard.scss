@@ -578,7 +578,10 @@
     font-size: 25vw;
     font-style: italic;
     color: lightblue;
+    transition-property: color;
   }
+
+  
   
   .parallax-text::after{
     content: attr(text);

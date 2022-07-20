@@ -15,6 +15,7 @@ import Footer from '../Footer/Footer';
 import Offer from '../Headers/Offers/Offer';
 import RunningShoes from './Running/RunningShoes';
 import Gender from './Gender/Gender';
+import Magic from './ScrollMagic/Magic';
 
 
 function Dashboard() {
@@ -117,9 +118,17 @@ function Dashboard() {
             <Tops/>
 
             <br/><br/><br/><br/>
+
+            
+
+            
+
             </div>
 
             <Footer/>
+
+            
+            
         
     </div>
   )

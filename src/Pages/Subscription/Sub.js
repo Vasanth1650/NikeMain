@@ -36,7 +36,7 @@ function Sub() {
     
     
     async function displayRazorpay(valuess) {
-        if(data.username){
+        if(localStorage.getItem("Userid")){
         if(data.subscription==="Premium" || data.subscription==="Normal" || data.subscription==="Regular"){
             alert("You Already Have A Subscription"+" "+data.subscription)
         }else{ 

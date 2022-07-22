@@ -17,7 +17,7 @@ function Render() {
     const [password,setPassword] = useState('')
     const ref = useRef(null);
 
-    localStorage.setItem("Userid",data.id)
+    
 
     React.useEffect(() => {
         fetchUserData().then((response) => {
@@ -31,6 +31,8 @@ function Render() {
     let m = localStorage.getItem("Subscription")
 
     let i = 0
+
+    
     
     useEffect(()=>{
         if(m==="12000"){
@@ -46,27 +48,28 @@ function Render() {
         
     })
 
+    
+
+      const updatedetails = (e) => {
+        e.preventDefault()
+        const addproduct = { username,email, address, city, state, phonenumber, password, subscription}
+        console.log(addproduct)
+        if (localStorage.getItem("Userid")) {
+            SubscriptionService.updateUser(localStorage.getItem("Userid"), addproduct).then((response) => {
+                usenavigate(-1)
+            }).catch((error) => {
+                console.log(error)
+            })
+        } else {
+
+        }
+    }
+
     useEffect(() => {
         setTimeout(() => {
           ref.current.click();
         }, 1000); 
       }, []);
-
-    const updatedetails = () =>{
-       
-       console.log(subscription)
-       const addproduct = { username,email, address, city, state, phonenumber, password, subscription}
-       console.log(addproduct)
-       if (localStorage.getItem("Userid")) {
-           SubscriptionService.updateUser(localStorage.getItem("Userid"), addproduct).then((response) => {
-               usenavigate(-1)
-           }).catch((error) => {
-               console.log(error)
-           })
-       } else {
-
-       }
-    }
 
     useEffect(() => {
         SubscriptionService.getUserById(localStorage.getItem("Userid")).then((response) => {

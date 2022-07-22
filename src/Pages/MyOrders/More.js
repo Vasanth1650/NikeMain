@@ -130,6 +130,7 @@ function More() {
                         <th>ProductName</th>
                         <th>Total Price</th>
                         <th >PaymentID</th>
+                        <th>Status</th>
                         <th width="230"></th>
                         <th width="230"></th>
                     </tr>
@@ -140,6 +141,7 @@ function More() {
                                 <td>{product.productname}</td>
                                 <td>{product.payment}</td>
                                 <td>{product.paymentid}</td>
+                                <td>{product.status}</td>
 
                                 <td><BootStrap.Button onClick={() => OrderId(product.id)}>View Details</BootStrap.Button></td>
 

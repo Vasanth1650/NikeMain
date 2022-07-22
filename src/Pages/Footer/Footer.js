@@ -63,12 +63,7 @@ function Footer() {
                         </div>
                         <div class="footer-content pt-5 pb-5">
                             <div class="row">
-                                <div class="col-xl-4 col-lg-4 mb-50">
-                                    <div class="footer-widget">
-                                    <Magic/>    
-                                        
-                                    </div>
-                                </div>
+                                
                                 <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                                     <div class="footer-widget">
                                         <div class="footer-widget-heading">
@@ -87,6 +82,13 @@ function Footer() {
                                             <li><a href="#">Investors</a></li>
                                             <li><a href="#">Sustainability</a></li>
                                         </ul>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-xl-4 col-lg-4 mb-50">
+                                    <div class="footer-widget">
+                                     
+                                        
                                     </div>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-6 mb-50">

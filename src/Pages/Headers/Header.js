@@ -18,6 +18,8 @@ function Header() {
     const usenavigate = useNavigate();
     const [data, setData] = useState({});
 
+    localStorage.setItem("Userid",data.id)
+
     const AllSection = (value) => {
         console.log(value)
 

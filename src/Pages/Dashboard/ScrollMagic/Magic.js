@@ -18,11 +18,11 @@ function Magic() {
                 <div class="drop_container" id="drop-items">
                     <div class="drop_card">
                         <div class="drop_data">
-                            <img className='whatsapp' src="https://pps.whatsapp.net/v/t61.24694-24/293655963_813922023100550_758547687890113788_n.jpg?ccb=11-4&oh=01_AVw_ikJOcFnEqShJ1i9QKPrB-lHIiYAtkpIxIL5H57o-6g&oe=62E77E34" alt="img1" class="drop_img"/>
+                            <img className='whatsapp' src="https://pps.whatsapp.net/v/t61.24694-24/294659456_5595586197153341_8123743333505911618_n.jpg?ccb=11-4&oh=01_AVzd2z8j03WSc7YPe5ACYeZPlcv1Qt7u4XRX0q0Z0ZNZzA&oe=62E837B9" alt="img1" class="drop_img"/>
 
                                 <div>
                                     <h1 class="drop_name">Vasanth S</h1>
-                                    <span class="drop_profession">Nike World Controller</span>
+                                    <span class="drop_profession">Nike Organizer</span>
                                 </div>
                         </div>
 

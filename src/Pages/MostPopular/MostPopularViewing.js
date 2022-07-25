@@ -6,10 +6,13 @@ import { AiOutlineHeart } from "react-icons/ai";
 import './Styles/ViewPage.scss'
 import DashboardService from './Services/DashboardService';
 import { fetchUserData } from '../../Api/AuthenticationService';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ReactPlayer from 'react-player';
 import Headers from '../Headers/Header';
 import Footer from '../Footer/Footer';
 import $ from 'jquery'
+
 
 
 function MostPopularViewing() {
@@ -70,11 +73,14 @@ function MostPopularViewing() {
 
     console.log(userid, username, productname, image1, price, size)
 
+
+    
+
     const handleClick = (e) => {
         e.preventDefault()
         if ((localStorage.getItem("USER_KEY")) && (check != "undefined")) {
             const check = { userid, username, productname, image1, price, size }
-            if (size) {
+            if (size && size!="-") {
                 fetch("https://nike-backend.herokuapp.com/charging/checkout", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -85,8 +91,11 @@ function MostPopularViewing() {
                 }).catch(error => {
                     console.log("something went wrong")
                 })
-            } else {
-                alert("Please Select Size Of The Product")
+            } else if(size === "-"){
+                
+                toast.dark("Please Select Size Of The Product")
+            }else{
+                toast("Please Choose Size For Your Product")
             }
         } else {
             usenavigate('/login')
@@ -167,9 +176,9 @@ function MostPopularViewing() {
                                 <div>Includes All Taxes</div>
 
                             </div>
-                            <img width="75" src={product.productimage3}></img>
+                            <img width="75" className='kutti' src={product.productimage3}></img>
                             <img width="75" className='kutti' src={product.productimage1}></img>
-                            <img width="75" src='https://static.nike.com/a/images/t_PDP_144_v1/f_auto/6be5ac0f-7994-4774-8845-6680199ff47d/air-jordan-xxxvi-pf-basketball-shoes-fjPfDg.png'></img>
+                            <img width="75" className='kutti' src={product.productimage9}></img>
                             <br />
                             <br />
                             <br />
@@ -302,7 +311,7 @@ function MostPopularViewing() {
             <br /><br /><br /><br />
 
 
-
+            <ToastContainer/>
             <Footer />
 
 

@@ -132,6 +132,8 @@ function Header() {
                             <BootStrap.Nav.Link onClick={() => AllSection("Women's")} >WOMEN</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link onClick={() => AllSection("Kids's")} >KIDS</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link onClick={() => AllSection("Sport's")}>SPORTS</BootStrap.Nav.Link>
+                            
+                            
                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                 <BootStrap.Button href="/allsection/mainadd" variant="warning" type="submit">ADD PRODUCTS</BootStrap.Button>}
 

@@ -14,7 +14,7 @@ function Tees() {
 
     return (
         <div className='bodying'>
-        <div className='title'>Trending</div>
+        <div className='titlesssssss'>Trending</div>
             <div class="row">
                 <div class="column" onClick={() => AllSection("T Shirt")}>
                     <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_700,c_limit/eac3b5ce-8580-4ff9-985a-9d6ecf6ed07e/nike-just-do-it.png"

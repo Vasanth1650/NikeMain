@@ -7,7 +7,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useState } from 'react';
 import { fetchUserData } from '../../Api/AuthenticationService'
 import Footer from '../Footer/Footer';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import DashboardService from './Services/DashboardService';
 import Headers from '../Headers/Header';
 
@@ -57,7 +58,9 @@ function UpdateProduct() {
         console.log(addproduct)
         if(id){
             DashboardService.update(id,addproduct).then((response)=>{
+                toast("The Product Updated Sucessfully")
                 usenavigate(-1)
+                
             }).catch((error)=>{
                 console.log(error)
             })
@@ -803,7 +806,7 @@ function UpdateProduct() {
 
                 </form>
             </div>
-
+            <ToastContainer/>
             <Footer/>
         </div>
     )

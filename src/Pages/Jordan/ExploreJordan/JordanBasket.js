@@ -19,7 +19,7 @@ function JordanBasket() {
   return (
     <div>
         <div className='bodying'>
-        <div className='title'>EXPLORE MORE FROM JORDAN</div>
+        <div className='titlesssssss'>EXPLORE MORE FROM JORDAN</div>
             <div class="row">
                 <div class="column" onClick={() => AllSection("BasketBall")}>
                     <img className='image1s' src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_700,c_limit/3dcd862e-9bb4-466a-af53-897001cf82dd/jordan.jpg"

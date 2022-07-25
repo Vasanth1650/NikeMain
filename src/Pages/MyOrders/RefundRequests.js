@@ -4,6 +4,8 @@ import * as BootStrap from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'
 import Headers from '../Headers/Header';
 import Footer from '../Footer/Footer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function RefundRequests() {
     const [refund, setRefund] = useState([])
@@ -27,7 +29,7 @@ function RefundRequests() {
 
     function statusrefund(refundid,status) {
         if(status==="Refund Completed"){
-            alert("Refund Has Been Completed For The Order")
+            toast("Refund Has Been Completed For The Order")
             var s = window.confirm("Still Want To Check With The Status Press Ok To Confirm")
             if(s===true){
                 usenavigate("/refundstatus/" + refundid);
@@ -76,6 +78,7 @@ function RefundRequests() {
                 </table>
 
             </div>
+            <ToastContainer/>
             <Footer />
         </div>
     )

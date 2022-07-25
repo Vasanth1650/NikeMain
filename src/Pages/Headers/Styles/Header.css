@@ -39,6 +39,7 @@
 
 
 .mainnav{
+    
     background-color: white;
 }
 
@@ -53,4 +54,13 @@
 
 .offer{
     cursor: pointer;
+}
+
+.headerss{
+    
+}
+
+
+.oojne{
+    font-size: small;
 }

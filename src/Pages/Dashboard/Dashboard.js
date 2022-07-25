@@ -48,7 +48,8 @@ function Dashboard() {
         usenavigate('/section/' + variable);
     }
     
-
+    
+    
  
 
 
@@ -58,7 +59,7 @@ function Dashboard() {
         <Header/>
         <Offer/>
 
-        
+      
 
         <div className='nikes'>
 
@@ -74,6 +75,7 @@ function Dashboard() {
 
             <RunningShoes/>
 
+        
 
 
             <div>

@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { fetchUserData } from '../../Api/AuthenticationService'
 import Headers from '../Headers/Header';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function MainDBAdd() {
     const usenavigate = useNavigate();
@@ -61,6 +63,7 @@ function MainDBAdd() {
             if(res.ok){
                 usenavigate('/dashboard')
                 console.log("New Product Added")
+                toast("Hello New Product Added"+productname)
             }
         }).catch(err=>{
             alert("Something Went Wrong")
@@ -754,7 +757,7 @@ function MainDBAdd() {
 
                 </form>
             </div>
-
+            <ToastContainer/>
             
         </div>
     )

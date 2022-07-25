@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { fetchUserData } from '../../Api/AuthenticationService'
 import Headers from '../Headers/Header';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function NormalProductAdd() {
     const usenavigate = useNavigate();
@@ -60,11 +62,12 @@ function NormalProductAdd() {
                 throw Error("Some Error Has Occured While Adding Product")
             }
             if(res.ok){
+                toast("Sucessfully Added")
                 usenavigate('/dashboard')
                 console.log("New Product Added")
             }
         }).catch(err=>{
-            alert("Something Went Wrong")
+            toast.error("Something Went Wrong")
             console.log(err)
         })
     }
@@ -764,6 +767,7 @@ function NormalProductAdd() {
 
                 </form>
             </div>
+            <ToastContainer/>
         </div>
     )
 }

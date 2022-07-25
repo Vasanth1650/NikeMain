@@ -13,6 +13,8 @@ import { fetchUserData } from '../../Api/AuthenticationService';
 import './Styles/ViewPage.scss'
 import Headers from '../Headers/Header';
 import Footer from '../Footer/Footer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -34,13 +36,13 @@ function NormalProductViewing() {
 
     console.log("Hi", size)
 
-    const [productid,setProductid] = useState('')
+    const [productid, setProductid] = useState('')
 
     const handleClick = (e) => {
         e.preventDefault()
         if ((localStorage.getItem("USER_KEY")) && (check != "undefined")) {
             const checkouts = { userid, username, productname, image1, price, size }
-            if (size) {
+            if (size && size!="-") {
                 fetch("https://nike-backend.herokuapp.com/charging/checkout", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -51,8 +53,10 @@ function NormalProductViewing() {
                 }).catch(error => {
                     console.log("something went wrong")
                 })
-            } else {
-                alert("Please Select Size Of The Product")
+            } else if(size==="-"){
+                toast("These Size Are Unavailable")
+            }else{
+                toast("Please Choose Size For Your Product")
             }
         } else {
             usenavigate('/login')
@@ -62,34 +66,34 @@ function NormalProductViewing() {
     }
 
 
-    const wishlist = (e) =>{
+    const wishlist = (e) => {
         e.preventDefault()
         if ((localStorage.getItem("USER_KEY")) && (check != "undefined")) {
-            const check = { productid,userid, username, productname, image1}
-            
-                fetch("https://nike-backend.herokuapp.com/normalwishing/addwishlist", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(check)
-                }).then((res) => {
-                    if(!res.ok){
-                        throw Error('Something Went Wrong')
-                    }
-                    if(res.ok){
-                        alert("Item Added To Wishlist");
-                    }
-                }).catch(error => {
-                    console.log("something went wrong")
-                    alert("Item Already Exists In Wishlist")
-                })
-            
+            const check = { productid, userid, username, productname, image1 }
+
+            fetch("https://nike-backend.herokuapp.com/normalwishing/addwishlist", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(check)
+            }).then((res) => {
+                if (!res.ok) {
+                    throw Error('Something Went Wrong')
+                }
+                if (res.ok) {
+                    toast("Item Added To Wishlist");
+                }
+            }).catch(error => {
+                console.log("something went wrong")
+                toast("Item Already Exists In Wishlist")
+            })
+
         } else {
             usenavigate('/login')
         }
     }
 
 
-    
+
 
 
 
@@ -97,7 +101,7 @@ function NormalProductViewing() {
 
     const usenavigate = useNavigate()
 
-    
+
 
     useEffect(() => {
         setUserid(data.id);
@@ -115,7 +119,7 @@ function NormalProductViewing() {
 
     }, [])
 
-    
+
 
     const getById = (id) => {
         OptionPage.productbyID(id).then((response) => {
@@ -166,7 +170,7 @@ function NormalProductViewing() {
                                 <div>Includes All Taxes</div>
 
                             </div>
-                            
+
                             <br />
                             <br />
                             <br />
@@ -198,50 +202,74 @@ function NormalProductViewing() {
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.image5} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.image6} />
                         <div className='conenting1'>
-                        <div>{product.productdescription}
-                        <div className='extra'>  
-                            <button class="btn popup-btn" href="#">View Details</button>
-                        </div></div>
-                        
+                            <div>{product.productdescription}
+                                <div className='extra'>
+                                    <button  class="btn popup-btn" href="#">View Details</button>
+                                    <br/><br/>
+                                    <button className='sizechartss'>Size Chart</button>
+                                    <br />
+                                    <br/>
+                                    <div>
+                                        <div className='dropingheadeers'>Free Delivery And Returns
+                                    <BootStrap.DropdownButton className='dropsin' variant="dark">
+                                        <br/>
+                                        <div> • Your order of ₹14,000 or more gets free standard delivery.</div>
+                                        <br />
+                                        <div> • Standard Delivery for Postal Codes: 100000-399999, 500000-699999 and 800000-899999 : 4 – 16 business days</div>
+                                        <br />
+                                        <div> • Standard Delivery for Postal Codes: 400000-499999 : 3 – 15 business days</div>
+                                        <br />
+                                        <div> • Standard Delivery for Postal Codes: 700000-799999 and 900000-999999: 5 – 21 business days</div>
+                                        <br />
+                                        <div> • Orders are processed and delivered Monday-Friday (excluding public holidays).</div>
+                                        <br /><br />
+
+                                        <div >Nike Members enjoy free returns. Exclusions apply.<a href='/subscription'> Learn More</a></div>
+                                    </BootStrap.DropdownButton>
+                                    </div>
+                                    
+                                    </div>
+                                </div></div>
+
                         </div>
-                        
+
                         <div></div>
-                        
+
                         <div class="popup-wrap">
                             <div class="popup-box">
                                 <h2>Product Details</h2>
                                 <div>*Color Shown : {product.productspecification1}</div>
-                                <br/>
+                                <br />
                                 <div>*Style: {product.productspecification2}</div>
-                                <br/>
+                                <br />
                                 <div>Product Specifications</div>
                                 <div>{product.productspecification3}</div>
-                                <br/>
+                                <br />
                                 <div>Inspired Roads : {product.productspecification4}</div>
-                                <br/>
-                                
+                                <br />
+
                                 <a class="close-btn popup-close" href="#">x</a>
                             </div>
                         </div>
-                        
-                        <br/>  
-                        
-                        
+
+                        <br />
+
+
                     </div>
-                    
+
                     <div className='carding'>
 
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.image7} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.image8} />
                         <div className='conenting'>
-                            
+
                         </div>
-                     
 
 
 
 
-                       
+
+
 
 
 
@@ -300,7 +328,7 @@ function NormalProductViewing() {
 
             <Footer />
 
-
+        <ToastContainer/>
 
         </div>
 

@@ -7,6 +7,8 @@ import * as BootStrap from 'react-bootstrap'
 import NormalListService from './Services/NormalListService';
 import { useNavigate } from 'react-router-dom';
 import { MdCancel } from "react-icons/md";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function WishList() {
     const [wish, setWish] = useState([])
@@ -50,7 +52,7 @@ function WishList() {
     const deletefromwish = (id) =>{
         WishListService.deleting(id).then((response)=>{
             getAllWishlists();
-            alert("Item Removed From Wishlist")
+            toast("Item Removed From Wishlist")
         }).catch((error)=>{
             console.log(error)
         })
@@ -59,7 +61,7 @@ function WishList() {
     const deletefromnormal = (id) =>{
         NormalListService.deleting(id).then((response)=>{
             getAllNormal()
-            alert("Item Removed From WishList")
+            toast("Item Removed From WishList")
         }).catch((error)=>{
             console.log(error)
         })
@@ -130,7 +132,7 @@ function WishList() {
 
 
             
-            
+            <ToastContainer/>
 
 
             <Footer />

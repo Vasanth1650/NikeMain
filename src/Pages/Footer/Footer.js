@@ -4,10 +4,9 @@ import * as BootStrap from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 import './Styles/Footer.css';
-import Magic from '../Dashboard/ScrollMagic/Magic';
-import { AiOutlineInstagram } from "react-icons/ai";
-import { AiOutlineFacebook } from "react-icons/ai";
-import { AiFillTwitterCircle } from "react-icons/ai";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -35,7 +34,7 @@ function Footer() {
     function sendEmail(e){
         e.preventDefault();
         emailjs.sendForm('service_lc3a1or','template_it7jqmj',e.target,'0C3fg6Ghhl2fj0Jv4').then(response=>{
-            alert("Subscribed For New Lauch Products Information")
+            toast("Subscribed For New Launch Products Information")
         })
     }
 
@@ -134,6 +133,7 @@ function Footer() {
                     </div>
                 </footer>
             </div>
+            <ToastContainer/>
         </div>
     )
 }

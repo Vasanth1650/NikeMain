@@ -8,6 +8,9 @@ import Myorderservice from './Service/Myorderservice';
 import RefundServicee from './Service/RefundServicee';
 import Headers from '../Headers/Header';
 import Footer from '../Footer/Footer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function More() {
     const usenavigate = useNavigate()
@@ -88,14 +91,14 @@ function More() {
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify(details)
                         }).then(() => {
-                            alert("Refund Request Has Been Requested")
+                            toast("Refund Request Has Been Requested")
                             Myorderservice.deleting(orderid)
                         })
                     }
                 }
             }
         } else {
-            alert("Your Package Is Out For Delivery To Cancel Or Replace Contact Further For Nike Support")
+            toast("Your Package Is Out For Delivery To Cancel Or Replace Contact Further For Nike Support")
         }
 
     }
@@ -128,8 +131,7 @@ function More() {
                     <tr >
 
                         <th>ProductName</th>
-                        <th>Total Price</th>
-                        <th >PaymentID</th>
+                        
                         <th>Status</th>
                         <th width="230"></th>
                         <th width="230"></th>
@@ -139,8 +141,7 @@ function More() {
                             <tr>
 
                                 <td>{product.productname}</td>
-                                <td>{product.payment}</td>
-                                <td>{product.paymentid}</td>
+                                
                                 <td>{product.status}</td>
 
                                 <td><BootStrap.Button onClick={() => OrderId(product.id)}>View Details</BootStrap.Button></td>
@@ -189,7 +190,7 @@ function More() {
 
 
 
-
+            <ToastContainer/>
 
 
 

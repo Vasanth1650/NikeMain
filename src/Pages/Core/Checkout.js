@@ -224,11 +224,12 @@ function Checkout() {
             <aside class="profile-card">
                 <header>
                     <h1>₹{price}</h1>
-
+                    <br/>
                     <a onClick={displayRazorpay}>
-                        <img src="https://img.etimg.com/thumb/msid-59738997,width-640,resizemode-4,imgsize-21421/nike.jpg" />
+                        <img className='nikescroll' src="https://img.etimg.com/thumb/msid-59738997,width-640,resizemode-4,imgsize-21421/nike.jpg" />    
                     </a>
-                    <BootStrap.Button onClick={()=>PaymentProced(paymentid)}>{paymentid}</BootStrap.Button>
+                    {paymentid &&
+                    <BootStrap.Button onClick={()=>PaymentProced(paymentid)}>{paymentid}</BootStrap.Button>}
 
                     <h1>Check Out</h1>
              </header>
@@ -250,18 +251,12 @@ function Checkout() {
                 )
             }
             
+            <br/>
             <h6>The BillAble Amount With Offer Included If Any Automatically</h6>
             <div>{price}</div>
-
-            <div>------------------------------------------------------------------
-            -----------------------------------------------------------------------
-            -----------------------------------------------------------------------
-            -----------------------------------------------------------------------
-            -----------------------------------------------------------------------
-            -----------------------------------------------------------------------
-            -----------------------------------------------------------------------
-            -----------------------------------------------------------------------
-            -----------------------------------------------------------------------</div>
+            
+            <br/><br/><br/>
+            
            
         </div>
     )

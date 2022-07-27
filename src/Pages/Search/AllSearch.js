@@ -109,7 +109,7 @@ function AllSearch() {
                         <div>
 
                             <div class="search-results" onClick={() => openup(product.id)}>
-                                <h2><a >{product.productname} ({product.category1})</a>
+                                <h2><a href=''>{product.productname} ({product.category1})</a>
                                     <img className='productimage' style={{ width: 100 }} src={product.productimage1} />
                                     <div>₹{product.productprice}</div>
                                     <div>{product.size1} || {product.size2} || {product.size3}</div>

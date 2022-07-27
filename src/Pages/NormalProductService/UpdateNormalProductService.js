@@ -503,6 +503,8 @@ function NormalProductService() {
                                                 <option>Slides And Sandals</option>
                                                 <option>Football</option>
                                                 <option>BasketBall</option>
+                                                <option>Clothing</option>
+                                                <option>Gear</option>
                                                 <option>Sneakers</option>
                                                 <option>T Shirt</option>
                                                 <option>Pants</option>

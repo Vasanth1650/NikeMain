@@ -153,14 +153,14 @@ function Category() {
 
 
             <div>
-                <div >
-                    <BootStrap.Row xs={1} md={3} >
+                <div>
+                    <BootStrap.Row xs={1} md={4} >
                         {
                             gentle.map(gentle =>
                                 <BootStrap.Col>
                                     <div>
                                         <BootStrap.CardGroup>
-                                            <BootStrap.Card>
+                                            <BootStrap.Card   className='lmknej'>
                                                 <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
                                                 <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
                                                     <BootStrap.Card.Text style={{ color: "red" }}>

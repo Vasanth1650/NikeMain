@@ -333,6 +333,12 @@
 
 
 
+.lmknej{
+  display: flex;
+  margin: 16;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
 
 

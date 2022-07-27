@@ -21,7 +21,7 @@ function Gender() {
           
       
             <img onClick={() => AllSection("Women's")} className='imgsis' style={{width:"28%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/e64cc521-c652-49bd-bf62-f04cf9cb6b60/nike-just-do-it.png'/>
-            <img onClick={() => AllSection("Kid's")}  className='imgsis' style={{width:"28%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/aa8d60e4-d556-4022-9f83-9058601c20a4/nike-just-do-it.png'/>
+            <img onClick={() => AllSection("Kids's")}  className='imgsis' style={{width:"28%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/aa8d60e4-d556-4022-9f83-9058601c20a4/nike-just-do-it.png'/>
         </div>
 
         <div className='adwa'>

@@ -181,6 +181,15 @@ function Checkout() {
         })
     }
 
+    useEffect(()=>{
+        setTimeout(()=>{
+            if(paymentid){
+                PaymentProced(paymentid) 
+             }
+        },1000)
+        
+    })
+
     function PaymentProced(paymentid){
         if(paymentid){
             fetch("https://nike-backend.herokuapp.com/ordered/generateorder",{
@@ -229,7 +238,7 @@ function Checkout() {
                         <img className='nikescroll' src="https://img.etimg.com/thumb/msid-59738997,width-640,resizemode-4,imgsize-21421/nike.jpg" />    
                     </a>
                     {paymentid &&
-                    <BootStrap.Button onClick={()=>PaymentProced(paymentid)}>{paymentid}</BootStrap.Button>}
+                    <BootStrap.Button  onClick={()=>PaymentProced(paymentid)}>{paymentid}</BootStrap.Button>}
 
                     <h1>Check Out</h1>
              </header>

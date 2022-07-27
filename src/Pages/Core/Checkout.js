@@ -5,8 +5,6 @@ import { fetchUserData } from '../../Api/AuthenticationService';
 import CheckoutService from './Services/Checkout';
 import { useNavigate } from 'react-router-dom';
 import * as BootStrap from 'react-bootstrap';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -96,9 +94,9 @@ function Checkout() {
           description: "Checkout",
           image: "https://img.etimg.com/thumb/msid-59738997,width-640,resizemode-4,imgsize-21421/nike.jpg",
           handler: function (response) {
-            toast.sucess(price,"Price Has Received By Nike Corporation");
-            toast.sucess("Your Order Has Been Placed Successfully")
-            toast(response.razorpay_payment_id);
+            alert(price,"Price Has Received By Nike Corporation");
+            alert("Your Order Has Been Placed Successfully")
+            alert(response.razorpay_payment_id);
             setPaymentid(response.razorpay_payment_id)
             console.log(response.razorpay_payment_id)
             PaymentProced(paymentid)
@@ -106,7 +104,14 @@ function Checkout() {
             console.log(username,address,state,city,payment,productname,response.razorpay_payment_id)
             
           },
-          
+          prefill:{
+              name:"Vasanth",
+              email:"vasanth16756@gmail.com",   
+              contact:"1234567890"
+          },
+          notes:{
+              address:"dabjbawjdn"
+          },
           theme: {
             color: "#3399cc",
             hide_topbar:true
@@ -187,7 +192,7 @@ function Checkout() {
                 usenavigate("/checking")
             })
         }else if(!paymentid){
-            toast("The System Will Procced When It Recevies The Payment Id This May Occur After Payment To")
+            alert("The System Will Procced When It Recevies The Payment Id This May Occur After Payment To")
         }
     }
 
@@ -223,7 +228,7 @@ function Checkout() {
                     <a onClick={displayRazorpay}>
                         <img src="https://img.etimg.com/thumb/msid-59738997,width-640,resizemode-4,imgsize-21421/nike.jpg" />
                     </a>
-                    <BootStrap.Button  onClick={()=>PaymentProced(paymentid)}>{paymentid}</BootStrap.Button>
+                    <BootStrap.Button onClick={()=>PaymentProced(paymentid)}>{paymentid}</BootStrap.Button>
 
                     <h1>Check Out</h1>
              </header>
@@ -247,7 +252,7 @@ function Checkout() {
             
             <h6>The BillAble Amount With Offer Included If Any Automatically</h6>
             <div>{price}</div>
-            <ToastContainer/>
+
             <div>------------------------------------------------------------------
             -----------------------------------------------------------------------
             -----------------------------------------------------------------------

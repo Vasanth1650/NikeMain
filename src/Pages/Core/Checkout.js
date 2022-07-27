@@ -182,12 +182,9 @@ function Checkout() {
     }
 
     useEffect(()=>{
-        setTimeout(()=>{
             if(paymentid){
                 PaymentProced(paymentid) 
              }
-        },1000)
-        
     })
 
     function PaymentProced(paymentid){

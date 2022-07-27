@@ -144,7 +144,15 @@ function MostPopularViewing() {
       });
 
 
-
+      function sizeChart(areaCategory){
+        if(areaCategory==="Men's Shoes" || areaCategory==="Kid's Shoes" || areaCategory==="Women's Shoes" || areaCategory==="Mens training" || areaCategory==="Womens training" || areaCategory==="Kids training" || areaCategory==="Slides And Sandals"){
+            usenavigate('/size')
+        }else if(areaCategory==="T Shirt" || areaCategory==="Tops"){
+            usenavigate('/sizetops')
+        }else{
+            usenavigate('/allsize')
+        }
+    }
 
 
     return (
@@ -190,6 +198,7 @@ function MostPopularViewing() {
                             <BootStrap.Button className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>
                             <div>---------------------------------</div>
                             <BootStrap.Button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>
+                            <button className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
 
                         </div>
                     </div>

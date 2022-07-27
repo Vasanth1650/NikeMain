@@ -6,16 +6,44 @@ import Headers from '../Headers/Header';
 import Footer from '../Footer/Footer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { fetchUserData } from '../../Api/AuthenticationService'
 
 function RefundRequests() {
     const [refund, setRefund] = useState([])
     const usenavigate = useNavigate()
+    const [data,setData] = useState('')
 
+    const [checker,setChecker] = useState('')
 
+    useEffect(()=>{
+        async function demo(){
+            fetchUserData().then((response)=>{
+                setChecker(response.data.roleCode)
+            }).catch((error)=>{
+                usenavigate('/')
+            })
+        }
+        demo()
+        
+    },[])
    
+    React.useEffect(() => {
+        fetchUserData().then((response) => {
+
+            setData(response.data);
+            
+            
+        }).catch((e) => {
+            localStorage.clear();
+        })
+    }, [])
+
+
 
     useEffect(() => {
-        gettingAllRequest()
+        
+            gettingAllRequest()
+        
     }, [])
 
     const gettingAllRequest = () => {

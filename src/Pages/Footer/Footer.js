@@ -27,6 +27,7 @@ function Footer() {
     }, [])
 
     const OrderUpdates = () =>{
+        localStorage.setItem("Role","permit")
         usenavigate("/orderupdate")
         window.location.reload(false);
     }
@@ -78,8 +79,7 @@ function Footer() {
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                         <BootStrap.Button href='/admin/support' className='gradient-text'>Custome Support Channel</BootStrap.Button>}
                                             <li><a href="/profile">Profile</a></li>
-                                            <li><a href="#">Investors</a></li>
-                                            <li><a href="#">Sustainability</a></li>
+                                            
                                         </ul>
                                     </div>
                                     

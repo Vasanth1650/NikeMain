@@ -35,6 +35,9 @@ import UpdateProfile from '../Pages/Profile/ProfileService/UpdateProfile';
 import Render from '../Pages/Subscription/SimpleRendering/Render';
 import JordanHistory from '../Pages/Jordan/HistoryJordan/JordanHistory';
 import Magic from '../Pages/Dashboard/ScrollMagic/Magic';
+import Size from '../Pages/Size/Size';
+import SizeTshirt from '../Pages/Size/SizeTshirt';
+import AllSize from '../Pages/Size/AllSize';
 
 
 function Path() {
@@ -77,6 +80,9 @@ function Path() {
         <Route path='/render' element={<Render/>}/>
         <Route path='/jordanHistory' element={<JordanHistory/>}/>
         <Route path='/magic' element={<Magic/>}/>
+        <Route path='/size' element={<Size/>}/>
+        <Route path='/allsize' element={<AllSize/>}/>
+        <Route path='/sizetops' element={<SizeTshirt/>}/>
         <Route path='*' element={<Dashboard/>}/>
         
       </Routes>

@@ -80,15 +80,19 @@ h1:last-of-type {
 
 .cyan {
     border-top: 3px solid var(--cyan);
+    border-bottom: 3px solid var(--cyan);
 }
 .red {
     border-top: 3px solid var(--red);
+    border-bottom: 3px solid var(--red);
 }
 .blue {
     border-top: 3px solid var(--blue);
+    border-bottom: 3px solid var(--blue);
 }
 .orange {
     border-top: 3px solid var(--orange);
+    border-bottom: 3px solid var(--orange);
 }
 
 h2 {

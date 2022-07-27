@@ -1,0 +1,78 @@
+.sizeui{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.tablesize{
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.table-scroll {
+    
+	position:relative;
+	max-width:600px;
+	margin:auto;
+	overflow:hidden;
+	border:none;
+}
+.table-wrap {
+	width:100%;
+	overflow:auto;
+}
+.table-scroll table {
+	width:100%;
+	margin:auto;
+	border-collapse:separate;
+	border-spacing:0;
+}
+.table-scroll th, .table-scroll td {
+	padding:10px 10px;
+	border:1px solid lightslategray;
+	
+	white-space:nowrap;
+	vertical-align:top;
+}
+.table-scroll thead, .table-scroll tfoot {
+	background:gray;
+}
+.clone {
+	position:absolute;
+	top:0;
+	left:0;
+	pointer-events:none;
+}
+.clone th, .clone td {
+	visibility:hidden
+}
+.clone td, .clone th {
+	border-color:transparent
+    
+}
+.clone tbody th {
+	visibility:visible;
+	color:black
+}
+.clone .fixed-side {
+	border:1px solid rgba(0, 0, 0, 0.475);
+  
+	background:white;
+	visibility:visible;
+}
+.clone thead, .clone tfoot{background:transparent;}
+
+
+.firstroes{
+    background-color: lightgray;
+    
+}
+
+.secondroes{
+    background-color: white;
+    
+}
+
+.sijaw{
+    text-align: center;
+}

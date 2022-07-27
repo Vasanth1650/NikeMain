@@ -7,9 +7,9 @@ import { useNavigate } from 'react-router-dom';
 
 function Profile() {
 
-    const [data,setData] = useState({})
+    const [data,setData] = useState('')
     const usenavigate = useNavigate()
-
+    
     
     useEffect(()=>{
         if(!localStorage.getItem("USER_KEY")){
@@ -22,11 +22,21 @@ function Profile() {
     React.useEffect(() => {
         fetchUserData().then((response) => {
             setData(response.data);
-
+            
         }).catch((e) => {
             localStorage.clear();
         })
-    }, [])
+    },[])
+
+
+    console.log(data.roleCode)
+  
+    
+   
+
+    
+    
+    
   return (
     <div>
         <Header/>
@@ -97,6 +107,8 @@ function Profile() {
                                                     <input id="subscription" name="subscription" placeholder="subscription" class="form-control here" value={data && `${data.subscription} `} required="required" type="text" />
                                                 </div>
                                             </div>
+
+                                            
                                             
                                             <div class="form-group row">
                                                 <label for="phonenumber" class="col-4 col-form-label">Update Profile*</label>
@@ -119,9 +131,9 @@ function Profile() {
 
 
 
+            
 
-
-
+            
 
 
 

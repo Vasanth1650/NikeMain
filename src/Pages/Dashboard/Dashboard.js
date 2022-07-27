@@ -47,8 +47,9 @@ function Dashboard() {
         console.log(variable);
         usenavigate('/section/' + variable);
     }
+
     
-    
+
     
  
 

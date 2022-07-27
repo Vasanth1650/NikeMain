@@ -3,11 +3,10 @@ import './Styles/Order.scss';
 import './Styles/Order.css';
 import Myorderservice from './Service/Myorderservice';
 import { useParams } from 'react-router-dom';
-import * as BootStrap from 'react-bootstrap';
 import { fetchUserData } from '../../Api/AuthenticationService'
 import {useNavigate} from 'react-router-dom'
 import Headers from '../Headers/Header';
-import Footer from '../Footer/Footer';
+
 
 
 
@@ -29,7 +28,9 @@ function ViewDelivery() {
   
     
     useEffect(()=>{
-        getByUserid(id)
+        setTimeout(()=>{
+            getByUserid(id)
+        },3000)
     },[])
     
     m = localStorage.getItem("Userid")
@@ -42,6 +43,10 @@ function ViewDelivery() {
 
     console.log(product.userid+"  "+data.id)
 
+
+    
+    
+
     useEffect(()=>{
         
         if(product.userid && data.id){
@@ -49,10 +54,13 @@ function ViewDelivery() {
                 console.log("Trying To Data Theft")
                 usenavigate('/')
             }else{
+                
                 console.log("Confirmed Correct User")
                 
             }
         }
+
+        
         
    
     })
@@ -70,12 +78,15 @@ function ViewDelivery() {
     
 
     const getByUserid = () =>{
-        Myorderservice.finderById(id).then((response)=>{
-            setProduct(response.data);
-            
-        }).catch((error)=>{
-            console.log(error);
-        })
+        
+            Myorderservice.finderById(id).then((response)=>{
+                setProduct(response.data);
+                
+            }).catch((error)=>{
+                console.log(error);
+            })
+        
+        
     }
 
 
@@ -98,7 +109,7 @@ function ViewDelivery() {
 
 
 
-
+        
         <div className='order'>
             <div class="table">
                 <div class="table-cell">

@@ -139,7 +139,15 @@ function NormalProductViewing() {
     }, [])
 
 
-
+    function sizeChart(areaCategory){
+        if(areaCategory==="Men's Shoes" || areaCategory==="Kid's Shoes" || areaCategory==="Women's Shoes" || areaCategory==="Mens training" || areaCategory==="Womens training" || areaCategory==="Kids training" || areaCategory==="Slides And Sandals"){
+            usenavigate('/size')
+        }else if(areaCategory==="T Shirt" || areaCategory==="Tops"){
+            usenavigate('/sizetops')
+        }else{
+            usenavigate('/allsize')
+        }
+    }
 
 
 
@@ -174,6 +182,7 @@ function NormalProductViewing() {
                             <br />
                             <br />
                             <br />
+                            
                             <div>Size</div>
                             <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>
                             <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>
@@ -182,6 +191,7 @@ function NormalProductViewing() {
                             <BootStrap.Button className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>
                             <div>---------------------------------</div>
                             <BootStrap.Button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>
+                            <button className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
 
                         </div>
                     </div>
@@ -206,10 +216,20 @@ function NormalProductViewing() {
                                 <div className='extra'>
                                     <button  class="btn popup-btn" href="#">View Details</button>
                                     <br/><br/>
-                                    <button className='sizechartss'>Size Chart</button>
+                                    
                                     <br />
                                     <br/>
-                                    <div>
+                                    
+                                </div></div>
+
+                        </div>
+
+                        <div></div>
+
+                        <div class="popup-wrap">
+                            <div class="popup-box">
+                                <h2>Product Details</h2>
+                                <div>
                                         <div className='dropingheadeers'>Free Delivery And Returns
                                     <BootStrap.DropdownButton className='dropsin' variant="dark">
                                         <br/>
@@ -222,22 +242,14 @@ function NormalProductViewing() {
                                         <div> • Standard Delivery for Postal Codes: 700000-799999 and 900000-999999: 5 – 21 business days</div>
                                         <br />
                                         <div> • Orders are processed and delivered Monday-Friday (excluding public holidays).</div>
-                                        <br /><br />
+                                        <br />
 
                                         <div >Nike Members enjoy free returns. Exclusions apply.<a href='/subscription'> Learn More</a></div>
                                     </BootStrap.DropdownButton>
                                     </div>
                                     
                                     </div>
-                                </div></div>
-
-                        </div>
-
-                        <div></div>
-
-                        <div class="popup-wrap">
-                            <div class="popup-box">
-                                <h2>Product Details</h2>
+                                <br/>
                                 <div>*Color Shown : {product.productspecification1}</div>
                                 <br />
                                 <div>*Style: {product.productspecification2}</div>
@@ -247,6 +259,7 @@ function NormalProductViewing() {
                                 <br />
                                 <div>Inspired Roads : {product.productspecification4}</div>
                                 <br />
+                                
 
                                 <a class="close-btn popup-close" href="#">x</a>
                             </div>

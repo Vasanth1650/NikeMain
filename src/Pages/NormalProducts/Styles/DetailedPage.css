@@ -327,8 +327,9 @@
 
 
 .dropsin{
-  background-color: #333333;
+  
   border-radius: 20px;
+  width: 150%;
 }
 
 .dropingheadeers{
@@ -338,7 +339,10 @@
 .sizechartss{
   background-color: transparent;
   border: none;
-  margin-left: 4%;
+  color: red;
+  width: 40%;
+    
+   
 }
 
 

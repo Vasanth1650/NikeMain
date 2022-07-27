@@ -56,7 +56,7 @@ function JordanHistory() {
                         />
 
                         <Carousel.Caption>
-                        <img className='secondimage' style={{width:"80%"}} src='https://imgs.search.brave.com/tRjy3spOc37bWSXiO0k3Hq1HJZx4l9Ht98_YoiMiCLg/rs:fit:940:478:1/g:ce/aHR0cDovL3d3dy5w/bmdhbGwuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy8yMDE2LzA0/L1J1bm5pbmctU2hv/ZXMtVHJhbnNwYXJl/bnQucG5n'/>
+                        <img className='secondimage' style={{width:"50%"}} src='https://imgs.search.brave.com/BkfqRL7b53LZEtIE-t-vm16Kodx4GzYgNMmXJ2a_Jro/rs:fit:1023:971:1/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvYmFza2V0YmFs/bC9iYXNrZXRiYWxs/X1BORzEwMjUwNC5w/bmc'/>
                         <p>To Celebrate The Tribute Of The Jordan</p>
                             <br/>
                             <div>
@@ -87,12 +87,12 @@ function JordanHistory() {
                         <img
                             className="d-block w-100"
                             
-                            src="https://imgs.search.brave.com/IRrq-5WUEmKr7OsjtjRQf3kUtoWWEM9IN290wxEvKqQ/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9pbWFn/ZXM4LmFscGhhY29k/ZXJzLmNvbS8zNjQv/MzY0MTY3LmpwZw"
+                            src="https://imgs.search.brave.com/XzucQn6yH8KCJLOiOLNst-hK8jFgDiYa6iDw3IO2cYo/rs:fit:1200:800:1/g:ce/aHR0cHM6Ly9jZG4u/c2hvcGlmeS5jb20v/cy9maWxlcy8xLzA1/ODgvNjc0NS9wcm9k/dWN0cy9CYXNrZXRf/QmFsbF9jb3VydF8x/XzE0ODB4ODAwLmpw/Zz92PTE1MzM1OTQ0/NTQ"
                             alt="Third slide"
                         />
 
                         <Carousel.Caption>
-                        <img className='secondimage1' style={{width:"80%"}} src='https://imgs.search.brave.com/eSnktzQRpXNZHAeTJPB_Jd6OHgCxQH-znmS0tn5xBho/rs:fit:1000:600:1/g:ce/aHR0cHM6Ly9zbmVh/a2VyYmFyZGV0cm9p/dC5jb20vd3AtY29u/dGVudC91cGxvYWRz/LzIwMTYvMTAvYWly/LWpvcmRhbi0xMS1j/b25jb3JkLnBuZw'/>
+                        <img className='secondimage1' style={{width:"50%"}} src='https://imgs.search.brave.com/IT_Gh2Z7IeybmxWWG1l3g_U4ypfMeyBiQri-XvQcC4w/rs:fit:1200:1080:1/g:ce/aHR0cDovL3d3dy5w/bmdhbGwuY29tL3dw/LWNvbnRlbnQvdXBs/b2Fkcy81L01pY2hh/ZWwtSm9yZGFuLVBO/Ry1JbWFnZS5wbmc'/>
                         <p>To Celebrate The Tribute Of The Jordan</p>
                             <br/>
                             <div>

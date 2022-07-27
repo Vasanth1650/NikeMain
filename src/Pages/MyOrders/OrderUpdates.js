@@ -4,16 +4,48 @@ import { useNavigate } from 'react-router-dom'
 import Myorderservice from './Service/Myorderservice';
 import Headers from '../Headers/Header';
 import Footer from '../Footer/Footer';
-import { BsWindowSidebar } from 'react-icons/bs';
+import {fetchUserData} from '../../Api/AuthenticationService'
 
 function OrderUpdates() {
     const usenavigate = useNavigate()
     const [orders, setOrders] = useState([])
+    const [data,setData] = useState('')
 
+    const [checker,setChecker] = useState('')
+
+    useEffect(()=>{
+        async function demo(){
+            fetchUserData().then((response)=>{
+                setChecker(response.data.roleCode)
+            }).catch((error)=>{
+                usenavigate('/')
+            })
+        }
+        demo()
+        
+    },[])
+
+    
+    React.useEffect(() => {
+        fetchUserData().then((response) => {
+
+            setData(response.data);
+            
+            
+        }).catch((e) => {
+            localStorage.clear();
+        })
+    }, [])
 
     useEffect(() => {
-        getOrderedDetails()
-    }, [])
+        if(data.roleCode==="ADMIN"){
+            getOrderedDetails()
+        }else if(data.roleCode==="USER"){
+            usenavigate('/')
+        }
+        
+        
+    },[data])
 
     const getOrderedDetails = () => {
         Myorderservice.getAllOrders().then((response) => {

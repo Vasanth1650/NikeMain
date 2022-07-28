@@ -1,3 +1,12 @@
+Before Coming To Project Quality Matters
+1. Security For User Data(Quality 1)(Worked For This 2-3 days)
+2. tests code quality and opensource dependency check (junit only 1 method, Snyk test, code quality standard sonar and indication of methods, postman)
+3. Bugs Removed Auto Rendering
+4. token utilization
+5. Logger
+6. Database recovery on set
+
+
 Nike World
 
 1. Global Search Under All Products With Both Capital And Non Capital
@@ -20,6 +29,7 @@ Nike World
 18. Live Chat Support Socket.io bidirectional communication
 19. Redux Used For Unidirectional data Flow
 20. Subscription Enabled (Order Over 15000 There Will Be Discount Accourding To The Plan) 
+21. Dedicated Size Chart
 
 
 Need to Work On
@@ -27,7 +37,7 @@ Need to Work On
 2. Include More Products(done now 30)
 3. Customer Service With Real Time Chat(done)
 4. Converting Into User Experience Interface With The Help Of Search And Most Viewed Elements(working)
-5. Splitting Every Part Into Separate Components To for future user
+5. Splitting Every Part Into Separate Components To for future user(done)
 
 
 Tech Used

@@ -11,7 +11,7 @@ function PaymentOptions() {
 
             <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-            <title>Frontend Mentor | Four card feature section</title>
+ 
             <link rel="stylesheet" href="styles.css" />
             <link
                 href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap"

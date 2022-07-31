@@ -16,6 +16,8 @@ import Offer from '../Headers/Offers/Offer';
 import RunningShoes from './Running/RunningShoes';
 import Gender from './Gender/Gender';
 import Magic from './ScrollMagic/Magic';
+import Popular from './Popular/Popular';
+import Trending from './Trending/Trending';
 
 
 function Dashboard() {
@@ -72,7 +74,14 @@ function Dashboard() {
             </div>
 
 
-            
+            <div className="jordan">
+                <div ><br /></div>
+                <div className="jordan"></div>
+
+                <Popular/>
+
+                <div><br /></div>
+            </div>
 
             <RunningShoes/>
 
@@ -99,15 +108,11 @@ function Dashboard() {
             <Gender/>
 
 
-
-    
-            <div className="jordan">
-                <div ><br /></div>
-                <div className="jordan"></div>
+            
 
 
-                <div><br /></div>
-            </div>
+
+
 
             
 

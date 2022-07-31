@@ -1,4 +1,14 @@
-Before Coming To Project Quality Matters
+technology used
+1. React
+2. Spring
+3. Mysql
+4. Postgresql
+5. Node js
+
+
+
+
+Before Coming To Application Quality
 1. Security For User Data(Quality 1)(Worked For This 2-3 days)
 2. tests code quality and opensource dependency check (junit only 1 method, Snyk test, code quality standard sonar and indication of methods, postman)
 3. Bugs Removed Auto Rendering
@@ -26,7 +36,7 @@ Nike World
 15. Deployed In A Compressed State It Would Be Faster In All Server as a(serve)
 16. jquery
 17. application security under delivery in myorder section increased
-18. Live Chat Support Socket.io bidirectional communication
+18. Live Chat Support Socket.io bidirectional communication(like java independent server side implementation serversocket)
 19. Redux Used For Unidirectional data Flow
 20. Subscription Enabled (Order Over 15000 There Will Be Discount Accourding To The Plan) 
 21. Dedicated Size Chart

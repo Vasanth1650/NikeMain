@@ -65,12 +65,12 @@ function Dashboard() {
       
 
         <div className='nikes'>
-
+                
                 <span class="parallax-text" text="NIKE">
                     NIKE
                 </span>
 
-                <img className="given" src="https://i.imgur.com/6DWEblv.png" alt="Nike sneaker" />
+               
             </div>
 
 

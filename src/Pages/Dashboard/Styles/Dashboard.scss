@@ -566,6 +566,8 @@
   .nikes{
     height: 100vh;
     margin: 0;
+    background: fixed;
+    background-image: url(https://imgs.search.brave.com/7RqbMVJo18vYmNR59TWkhFb8nuQISOMpAiLSPlshfJg/rs:fit:1200:1080:1/g:ce/aHR0cHM6Ly93d3cu/dGVhaHViLmlvL3Bo/b3Rvcy9mdWxsLzM0/Ny0zNDcwMzU4X2ph/dmVsaW4tdGhyb3cu/anBn);
     background-color: white;
     display: flex;
     align-items: center;
@@ -575,9 +577,9 @@
   .parallax-text{
     position: absolute;
     font-family: 'Montserrat', sans-serif;
-    font-size: 25vw;
+    font-size: 20vw;
     font-style: italic;
-    color: lightblue;
+    color:white;
     transition-property: color;
   }
 
@@ -590,7 +592,7 @@
     top: 0;
     left: 0;
     color: transparent;
-    -webkit-text-stroke: 0.15vw white;
+    -webkit-text-stroke: 0.15vw black;
   }
   
   .given{

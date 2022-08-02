@@ -10,7 +10,7 @@ function JordanHistory() {
             <Header/>
             <div className='carsoal'>
                 <Carousel fade>
-                    <Carousel.Item interval={5000}>
+                    <Carousel.Item interval={5000} className='cardsolandwa'>
                         <img
                             className="d-block w-100"
                             src="https://imgs.search.brave.com/IRrq-5WUEmKr7OsjtjRQf3kUtoWWEM9IN290wxEvKqQ/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9pbWFn/ZXM4LmFscGhhY29k/ZXJzLmNvbS8zNjQv/MzY0MTY3LmpwZw"

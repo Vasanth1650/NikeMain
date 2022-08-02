@@ -27,6 +27,7 @@ function Dashboard() {
     const [data, setData] = useState({});
     const [check, setCheck] = useState('');
     const [searchl, setSearchl] = useState([]);
+    const [roles,setRoles] = useState('')
 
     //useEffect to set username
     useEffect(() => {
@@ -39,10 +40,15 @@ function Dashboard() {
         fetchUserData().then((response) => {
 
             setData(response.data);
+            console.log(response.data)
+            setRoles(response.data.roles)
+          
         }).catch((e) => {
             localStorage.clear();
         })
     }, [])
+
+
 
 
     const Options = (variable) => {
@@ -51,7 +57,13 @@ function Dashboard() {
     }
 
     
+console.log(roles)
+    
 
+      
+    
+    
+    
     
  
 
@@ -60,7 +72,11 @@ function Dashboard() {
   return (
     <div className='body'>
         <Header/>
+
+        
         <Offer/>
+
+       
 
       
 

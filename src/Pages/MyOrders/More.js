@@ -20,6 +20,8 @@ function More() {
     const [username, setUsername] = useState('')
     const [refund, setRefund] = useState([])
     const [check, setCheck] = useState('')
+    const [roles,setRoles] = useState([])
+    const [ordered,setOrdered] = useState([])
 
     useEffect(() => {
         if (!localStorage.getItem("USER_KEY")) {
@@ -42,20 +44,13 @@ function More() {
     console.log(m)
 
     useEffect(() => {
-        getByUserid()
+        
         refundid()
     }, [m])
 
     console.log(product)
 
-    const getByUserid = () => {
-        Myorderservice.getting(m).then((response) => {
-            setProduct(response.data);
-
-        }).catch((error) => {
-            console.log(error);
-        })
-    }
+    
 
     const refundid = () => {
         RefundServicee.getDetails(m).then((response) => {
@@ -106,6 +101,8 @@ function More() {
     React.useEffect(() => {
         fetchUserData().then((response) => {
             setData(response.data);
+            setRoles(response.data.roles)
+            setOrdered(response.data.ordered)
         }).catch((e) => {
             localStorage.clear();
         })
@@ -137,20 +134,21 @@ function More() {
                         <th width="230"></th>
                     </tr>
                     {
-                        product.map(product =>
+                        ordered.map(ordered =>
                             <tr>
 
-                                <td>{product.productname}</td>
+                                <td>{ordered.productname}</td>
                                 
-                                <td>{product.status}</td>
+                                <td>{ordered.status}</td>
 
-                                <td><BootStrap.Button onClick={() => OrderId(product.id)}>View Details</BootStrap.Button></td>
-
-                                <td><BootStrap.Button variant="danger" onClick={() => Refund(data.id, data.username, product.id, product.productname, product.paymentid,
-                                    product.payment, product.id, product.status4)}>Cancel Order</BootStrap.Button></td>
+                                <td><BootStrap.Button onClick={() => OrderId(ordered.id)}>View Details</BootStrap.Button></td>
+                                {ordered.status4===null && 
+                                <td><BootStrap.Button variant="danger" onClick={() => Refund(data.id, data.username, ordered.id, ordered.productname, ordered.paymentid,
+                                    ordered.payment, ordered.id, ordered.status4)}>Cancel Order</BootStrap.Button></td>}
                             </tr>
                         )
                     }
+                    
 
                 </table>
 
@@ -186,6 +184,9 @@ function More() {
                 </table>
 
             </div>
+
+
+           
 
 
 

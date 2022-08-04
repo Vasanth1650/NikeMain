@@ -21,6 +21,10 @@ class DashboardService{
     update(id,addproduct){
         return axios.put(VIEW_BASE_REST_API_URL+'/update/'+id,addproduct)
     }
+
+    getByCategory1(category1){
+        return axios.get(VIEW_BASE_REST_API_URL+'/productunder/'+category1)
+    }
 }
 
 export default new DashboardService();

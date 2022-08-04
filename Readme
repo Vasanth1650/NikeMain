@@ -9,7 +9,7 @@ technology used
 
 
 Before Coming To Application Quality
-1. Security For User Data(Quality 1)(Worked For This 2-3 days)
+1. Security For User Data
 2. tests code quality and opensource dependency check (junit only 1 method, Snyk test, code quality standard sonar and indication of methods, postman)
 3. Bugs Removed Auto Rendering
 4. token utilization

@@ -1,35 +1,112 @@
-.bodyd{
+.bodyd {
     background-color: white;
 }
 
-.tre{
+.tre {
     width: 30%;
     height: 1%;
-    
-  }
 
-.tres{
+}
+
+.tres {
     width: 30%;
     height: 1%;
     margin-left: 2%;
 }
 
 
-.asd{
+.asd {
     text-align: center;
     font-weight: 500;
     font-size: larger;
 }
-.vido{
+
+.vido {
     margin-left: -4%;
-   height: 1%;
-   -webkit-transition-property: all;
+    height: 1%;
+    -webkit-transition-property: all;
 }
 
-.produ{
+.produ {
     font-size: large;
 }
 
-.kutti{
+.kutti {
     padding-left: 2%;
+}
+
+
+
+.MultiCarousel {
+    float: left;
+    position: relative;
+    
+    cursor: pointer;
+    
+}
+
+.MultiCarousel {
+    height: 100px;
+    width: 930px;
+}
+
+
+
+
+.MultiCarousel .MultiCarousel-inner {
+    transition: 1s ease all;
+    
+    float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item {
+    float: left;
+    
+}
+
+.MultiCarousel .MultiCarousel-inner .item>div {
+    text-align: center;
+    width: 130%;
+    background: white;
+    color: #666;
+   
+}
+
+
+
+.MultiCarousel .leftLst{
+    margin-left: 115%;
+    margin-top: -123%;
+    border-radius: 50%;
+    top: calc(50% - 100px);
+    background-color: black;
+    border: none;
+}
+.MultiCarousel .rightLst {
+    margin-left: 120%;
+    margin-top: -128.3%;
+    border-radius: 30px;
+    top: calc(50% - 100px);
+    background-color: black;
+    border: none;
+}
+
+.MultiCarousel .leftLst {
+    right: 0;
+}
+
+.MultiCarousel .rightLst {
+    
+    right: 0;
+}
+
+.MultiCarousel .leftLst.over,.MultiCarousel .rightLst.over {
+    pointer-events: none;
+
+}
+
+.similars{
+    margin-left: 5%;
+    font-weight: bolder;
+    font-size: xx-large;
 }

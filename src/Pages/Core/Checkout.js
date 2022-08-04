@@ -222,10 +222,6 @@ function Checkout() {
 
     return (
         <div>
-
-        <BootStrap.ModalTitle>Note: Your Order Is Being Processed To Enable Receipt And Further Processed
-        Select The Link To Redirect Otherwise The Payment Will Be Cancelled</BootStrap.ModalTitle>
-
         <div className='sa'>
             <aside class="profile-card">
                 <header>

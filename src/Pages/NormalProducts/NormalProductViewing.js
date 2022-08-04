@@ -253,7 +253,7 @@ function NormalProductViewing() {
         setCheck(data.username)
         getById(id);
 
-    }, [])
+    }, [id])
 
 
 

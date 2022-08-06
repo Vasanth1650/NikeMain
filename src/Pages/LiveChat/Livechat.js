@@ -7,6 +7,7 @@ import Chat from './Chat';
 import './Styles/Chat.css';
 import ReactPlayer from 'react-player';
 import { fetchUserData } from '../../Api/AuthenticationService';
+import { useNavigate } from 'react-router-dom';
 
 const socket = io.connect("https://nikelivechat.herokuapp.com");
 
@@ -17,14 +18,20 @@ function Livechat() {
   const [showChat, setShowChat] = useState(false);
   const [tunnelid, setTunnelId] = useState("")
   const [data,setData] = useState({})
-
+  const usenavigate = useNavigate()
   
 
   useEffect(()=>{
-    setRoom(data.phonenumber)
+    setRoom(data.id)
     setTunnelId(data.id)
     setUsername(data.username)
   },[data])
+
+  useEffect(()=>{
+    if(!localStorage.getItem("USER_KEY")){
+      usenavigate('/login')
+    }
+  },[])
 
 
   React.useEffect(()=>{
@@ -78,6 +85,12 @@ function Livechat() {
       <div className='bjdwawjnd'>
       {!showChat ? (
         <div className="joinChatContainer">
+          {data.roleCode==="ADMIN" &&
+          <input
+            
+            onChange={(e) => setRoom(e.target.value)}
+          >
+          </input>}
 
           
           <button  onClick={joinRoom}>Join A Room</button>

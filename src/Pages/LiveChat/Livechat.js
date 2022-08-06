@@ -81,6 +81,7 @@ function Livechat() {
       ) : (
         <Chat socket={socket} username={username} room={room} />
       )}
+      <br/><br/><br/><br/><br/><br/>
       <Footer />
     </div>
   )

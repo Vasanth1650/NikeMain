@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useState } from 'react';
 import io from 'socket.io-client';
 import Footer from '../Footer/Footer';
@@ -6,8 +6,6 @@ import Header from '../Headers/Header';
 import Chat from './Chat';
 import './Styles/Chat.css';
 import ReactPlayer from 'react-player';
-import { fetchUserData } from '../../Api/AuthenticationService';
-import { useNavigate } from 'react-router-dom';
 
 const socket = io.connect("https://nikelivechat.herokuapp.com");
 
@@ -17,37 +15,8 @@ function Livechat() {
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
   const [tunnelid, setTunnelId] = useState("")
-  const [data,setData] = useState({})
-  const usenavigate = useNavigate()
-  
-
-  useEffect(()=>{
-    if(data.roleCode==="USER"){
-      setRoom(data.id)
-      setTunnelId(data.id)
-      setUsername(data.username)
-    }else if(data.roleCode==="ADMIN"){
-      setUsername(data.username)
-      setTunnelId(room);
-    }
-    
-  },[data,room])
-
-  useEffect(()=>{
-    if(!localStorage.getItem("USER_KEY")){
-      usenavigate('/login')
-    }
-  },[])
 
 
-  React.useEffect(()=>{
-    fetchUserData().then((response)=>{
-      setData(response.data)
-      console.log(response.data)
-    }).catch(err=>{
-      console.log(err)
-    })
-  },[])
 
   const joinRoom = () => {
     if (username !== "" && room !== "") {
@@ -87,31 +56,31 @@ function Livechat() {
 
       <br/><br/>
       <div className='featuesa'>CUSTOMER SUPPORT CHANNEL THATS IT THE SITE ENDS HERE</div>
-      <br/><br/>
-      {data.roleCode==="ADMIN"&&
-      <div className='bjdwawjnd'>
+
       {!showChat ? (
         <div className="joinChatContainer">
-          {data.roleCode==="ADMIN" &&
+
           <input
-          type="text"
-          placeholder="Room ID..."
-          onChange={(event) => {
-            setRoom(event.target.value);
-            
-          }}
+            type="text"
+            placeholder="Enter Your Name"
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Room ID..."
+            onChange={(event) => {
+              setRoom(event.target.value);
+              setTunnelId(event.target.value);
+            }}
 
-        />}
-
-          
-          <button  onClick={joinRoom}>Join A Room</button>
+          />
+          <button onClick={joinRoom}>Join A Room</button>
         </div>
       ) : (
         <Chat socket={socket} username={username} room={room} />
       )}
-      </div>}
-
-      <br/><br/><br/><br/><br/>
       <Footer />
     </div>
   )

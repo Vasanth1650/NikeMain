@@ -28,9 +28,10 @@ function Livechat() {
       setUsername(data.username)
     }else if(data.roleCode==="ADMIN"){
       setUsername(data.username)
+      setTunnelId(room);
     }
     
-  },[data])
+  },[data,room])
 
   useEffect(()=>{
     if(!localStorage.getItem("USER_KEY")){
@@ -87,6 +88,7 @@ function Livechat() {
       <br/><br/>
       <div className='featuesa'>CUSTOMER SUPPORT CHANNEL THATS IT THE SITE ENDS HERE</div>
       <br/><br/>
+      {data.roleCode==="ADMIN"&&
       <div className='bjdwawjnd'>
       {!showChat ? (
         <div className="joinChatContainer">
@@ -96,7 +98,7 @@ function Livechat() {
           placeholder="Room ID..."
           onChange={(event) => {
             setRoom(event.target.value);
-            setTunnelId(event.target.value);
+            
           }}
 
         />}
@@ -107,7 +109,7 @@ function Livechat() {
       ) : (
         <Chat socket={socket} username={username} room={room} />
       )}
-      </div>
+      </div>}
 
       <br/><br/><br/><br/><br/>
       <Footer />

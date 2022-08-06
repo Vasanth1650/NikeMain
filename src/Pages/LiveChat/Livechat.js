@@ -22,9 +22,14 @@ function Livechat() {
   
 
   useEffect(()=>{
-    setRoom(data.id)
-    setTunnelId(data.id)
-    setUsername(data.username)
+    if(data.roleCode==="USER"){
+      setRoom(data.id)
+      setTunnelId(data.id)
+      setUsername(data.username)
+    }else if(data.roleCode==="ADMIN"){
+      setUsername(data.username)
+    }
+    
   },[data])
 
   useEffect(()=>{
@@ -87,10 +92,14 @@ function Livechat() {
         <div className="joinChatContainer">
           {data.roleCode==="ADMIN" &&
           <input
-            
-            onChange={(e) => setRoom(e.target.value)}
-          >
-          </input>}
+          type="text"
+          placeholder="Room ID..."
+          onChange={(event) => {
+            setRoom(event.target.value);
+            setTunnelId(event.target.value);
+          }}
+
+        />}
 
           
           <button  onClick={joinRoom}>Join A Room</button>

@@ -4,6 +4,8 @@ import Myorderservice from '../Service/Myorderservice';
 import * as BootStrap from 'react-bootstrap';
 import Headers from '../../Headers/Header';
 import Footer from '../../Footer/Footer';
+import { fetchUserData } from '../../../Api/AuthenticationService';
+
 
 
 function OrderStatus() {
@@ -23,9 +25,22 @@ function OrderStatus() {
     const [status4, setStatus4] = useState('')
     const [status5, setStatus5] = useState('')
     const usenavigate = useNavigate()
+    const [data,setData] = useState([])
+
 
     
+    React.useEffect(() => {
+        fetchUserData().then((response) => {
 
+            setData(response.data);
+            
+            
+        }).catch((e) => {
+            localStorage.clear();
+        })
+    }, [])
+
+    
 
     const UpdateStatus = (e) => {
         e.preventDefault();
@@ -45,6 +60,7 @@ function OrderStatus() {
     }
 
     useEffect(() => {
+       
         Myorderservice.finderById(id).then((response) => {
             setUserid(response.data.userid)
             setUsername(response.data.username)
@@ -61,6 +77,7 @@ function OrderStatus() {
             setStatus4(response.data.status4)
             setStatus5(response.data.status5)
         })
+        
     }, [])
 
     return (

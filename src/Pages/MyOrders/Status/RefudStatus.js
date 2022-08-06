@@ -5,6 +5,7 @@ import '../Styles/RefundStatus.scss'
 import * as BootStrap from 'react-bootstrap';
 import Headers from '../../Headers/Header';
 import Footer from '../../Footer/Footer';
+import { fetchUserData } from '../../../Api/AuthenticationService';
 
 function RefundStatus() {
     const { refundid } = useParams()
@@ -16,6 +17,63 @@ function RefundStatus() {
     const [orderid, setOrderid] = useState('')
     const [refundstatus, setRefundstatus] = useState('')
     const usenavigate = useNavigate()
+    const [data,setData] = useState([])
+    const [checker,setChecker] = useState('')
+
+    useEffect(()=>{
+        async function demo(){
+            fetchUserData().then((response)=>{
+                setChecker(response.data.roleCode)
+            }).catch((error)=>{
+                usenavigate('/')
+            })
+        }
+        demo()
+        
+    },[])
+
+    useEffect(() => {
+        if (!localStorage.getItem("Authority")) {
+            
+                localStorage.clear();
+                usenavigate('/')
+            
+            
+        }
+    }, [])
+
+    useEffect(() => {
+        if (!localStorage.getItem("USER_KEY")) {
+            localStorage.clear();
+            usenavigate('/login')
+        }
+    }, [])
+
+    
+
+    
+    React.useEffect(() => {
+        fetchUserData().then((response) => {
+
+            setData(response.data);
+            
+            
+        }).catch((e) => {
+            localStorage.clear();
+        })
+    }, [])
+
+    useEffect(() => {
+        if(data.roleCode==="ADMIN"){
+            
+        }else if(data.roleCode==="USER"){
+            usenavigate('/')
+        }
+        
+        
+    },[data])
+
+    
 
 
 
@@ -34,7 +92,10 @@ function RefundStatus() {
         }
     }
 
+    
+
     useEffect(() => {
+        if(data.roleCode==="ADMIN"){
         RefundServicee.getById(refundid).then((response) => {
             setUserid(response.data.userid)
             setUsername(response.data.username)
@@ -44,13 +105,15 @@ function RefundStatus() {
             setOrderid(response.data.orderid)
             setRefundstatus(response.data.refundstatus)
         })
-    }, [])
+    }
+    }, [data])
 
-
+   
     return (
         <div className='body'>
-
+        
         <Headers/>
+        
             <div class="c-glitch" data-text="More Details">More Details</div>
 
             <div>
@@ -86,9 +149,9 @@ function RefundStatus() {
 
 
 
-
+        
             </div>
-
+            
             <Footer/>
         </div>
     )

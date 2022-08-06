@@ -13,19 +13,7 @@ function RefundRequests() {
     const usenavigate = useNavigate()
     const [data,setData] = useState('')
 
-    const [checker,setChecker] = useState('')
-
-    useEffect(()=>{
-        async function demo(){
-            fetchUserData().then((response)=>{
-                setChecker(response.data.roleCode)
-            }).catch((error)=>{
-                usenavigate('/')
-            })
-        }
-        demo()
-        
-    },[])
+    
    
     React.useEffect(() => {
         fetchUserData().then((response) => {
@@ -38,13 +26,17 @@ function RefundRequests() {
         })
     }, [])
 
-
-
     useEffect(() => {
         
             gettingAllRequest()
         
-    }, [])
+        
+        
+    },[data])
+
+
+
+    
 
     const gettingAllRequest = () => {
         RefundServicee.getAllRefund().then((response) => {
@@ -71,15 +63,16 @@ function RefundRequests() {
 
 
     return (
-        <div className='body'>
+        <div >
 
             <Headers />
 
+            <br/><br/>
             <div class="table-users">
                 <div class="header">Refund Orders</div>
 
-                <table cellspacing="0">
-                    <tr className='trs'>
+                <table className='table'>
+                    <tr >
 
                         <th width="230">ProductName</th>
                         <th width="230">Total Price</th>
@@ -107,6 +100,8 @@ function RefundRequests() {
 
             </div>
             <ToastContainer/>
+
+            <br/><br/>
             <Footer />
         </div>
     )

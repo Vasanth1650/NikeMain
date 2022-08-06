@@ -70,12 +70,7 @@ function UpdateProduct() {
     }
 
 
-    useEffect(() => {
-        if (!localStorage.getItem("USER_KEY")) {
-            localStorage.clear();
-            usenavigate('/')
-        }
-    }, [])
+    
 
     useEffect(() => {
         if (check === "undefined") {

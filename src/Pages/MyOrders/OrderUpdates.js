@@ -11,19 +11,11 @@ function OrderUpdates() {
     const [orders, setOrders] = useState([])
     const [data,setData] = useState('')
 
-    const [checker,setChecker] = useState('')
+    
 
-    useEffect(()=>{
-        async function demo(){
-            fetchUserData().then((response)=>{
-                setChecker(response.data.roleCode)
-            }).catch((error)=>{
-                usenavigate('/')
-            })
-        }
-        demo()
-        
-    },[])
+    
+
+    
 
     
     React.useEffect(() => {
@@ -38,11 +30,9 @@ function OrderUpdates() {
     }, [])
 
     useEffect(() => {
-        if(data.roleCode==="ADMIN"){
+        
             getOrderedDetails()
-        }else if(data.roleCode==="USER"){
-            usenavigate('/')
-        }
+        
         
         
     },[data])
@@ -75,15 +65,16 @@ function OrderUpdates() {
     }
 
     return (
-        <div className='body'>
+        <div>
 
             <Headers />
 
+            <br/><br/>
 
             <div class="table-users">
                 <div class="header">Orders Received</div>
 
-                <table cellspacing="0">
+                <table className='table'>
                     <tr >
                         <th>Order Id</th>
                         <th width="230">Username</th>

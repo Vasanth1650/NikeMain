@@ -17,6 +17,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import DashboardService from '../MostPopular/Services/DashboardService';
 import OptionPageService from '../RedirectAllCategory/Services/CategoryService'
+import NormalProductService from './Services/NormalProductService';
 
 
 
@@ -37,20 +38,31 @@ function NormalProductViewing() {
     const [productid, setProductid] = useState('')
     const [gentle,setGentle] = useState([])
     const [bottom,setBottom] = useState([])
-    const [dummy,setDummy] = useState('')
+    const [similar,setSimilar] = useState([])
 
 
     useEffect(() => {
         getByCategory(product.category1);
         findByGender(product.category1)
+        findByName(product.productname)
     }, [product])
 
+    const findByName = () => {
+        NormalProductService.findByName(product.productname).then((response)=>{
+            setSimilar(response.data)
+            console.log("Hello",response.data)
+        }).catch((error)=>{
+            console.log(error)
+        })
+    }
+
+    
     
     const findByGender = () => {
         DashboardService.getByCategory1(product.category1).then((response) => {
             setGentle(response.data)
             
-            console.log(response.data)
+           
         }).catch((error) => {
             console.log(error)
         })
@@ -61,7 +73,7 @@ function NormalProductViewing() {
         OptionPageService.findByCategory(product.category1).then((response) => {
             setBottom(response.data);
           
-            console.log(response.data);
+            
         }).catch(error => {
             console.log(error)
         })
@@ -263,6 +275,7 @@ function NormalProductViewing() {
             console.log(response.data);
         }).catch(error => {
             console.log(error)
+            usenavigate(-1)
         })
     }
 
@@ -299,7 +312,7 @@ function NormalProductViewing() {
 
 
 
-    console.log(data.username)
+ 
 
 
     return (
@@ -314,8 +327,8 @@ function NormalProductViewing() {
                 <div class="containers">
                     <div className='carding'>
 
-                        <BootStrap.Card.Img className='imgBxs' variant="top" src={product.image1} />
-                        <BootStrap.Card.Img className='imgBx1' variant="top" src={product.image2} />
+                        <BootStrap.Card.Img className='tre' variant="top" src={product.image1} />
+                        <BootStrap.Card.Img className='tre111' variant="top" src={product.image2} />
 
 
                         <div className='conenting'>
@@ -325,7 +338,20 @@ function NormalProductViewing() {
                                 <div>Includes All Taxes</div>
 
                             </div>
-
+                            <br/>
+                            {
+                                similar.map(similar=>
+                                    
+                                    <div className='kuttsdes'>
+                                        
+                                        <img width="75" height="80" className='kutti' onClick={()=>Nextstep(similar.id)}  src={similar.image1}></img>
+                                        {product.id===similar.id &&
+                                        <div>--------</div>}
+                                    </div>
+                                    
+                                )
+                            }
+                            <br/><br/>
                             <br />
                             <br />
                             <br />

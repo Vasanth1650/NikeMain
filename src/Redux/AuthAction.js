@@ -1,3 +1,4 @@
+import { fetchUserData } from '../Api/AuthenticationService';
 import {AUTH_REQ,AUTH_SUCCESS,AUTH_FAILURE} from './Types';
 
 
@@ -6,6 +7,7 @@ export const authenticate=()=>{
         type:AUTH_REQ
     }
 }
+
 
 
 export const authSuccess= (content)=>{
@@ -22,4 +24,5 @@ export const authFailure=(error)=>{
         payload:error
     }
 }
+
 

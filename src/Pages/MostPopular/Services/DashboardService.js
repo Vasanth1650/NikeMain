@@ -25,6 +25,10 @@ class DashboardService{
     getByCategory1(category1){
         return axios.get(VIEW_BASE_REST_API_URL+'/productunder/'+category1)
     }
+
+    getByName(name){
+        return axios.get(VIEW_BASE_REST_API_URL+'/name/'+name)
+    }
 }
 
 export default new DashboardService();

@@ -181,6 +181,13 @@
   margin-left: 2%;
   background: transparent;
   color: #333333;
+  border-color: grey;
+}
+
+.tre111 {
+  width: 32%;
+  height: 1%;
+  padding-left: 2%;
 }
 
 .bags{

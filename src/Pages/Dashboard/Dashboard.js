@@ -77,7 +77,7 @@ console.log(roles)
         <Offer/>
 
        
-
+    
       
 
         <div className='nikes'>
@@ -91,13 +91,18 @@ console.log(roles)
 
 
             <div className="jordan">
-                <div ><br /></div>
+                
                 <div className="jordan"></div>
 
                 <Popular/>
 
                 <div><br /></div>
             </div>
+            
+
+           <Magic/>
+
+          
 
             <RunningShoes/>
 
@@ -110,6 +115,7 @@ console.log(roles)
                     <div className='popi'>POPULAR RIGHT NOW</div>
                     <div className='popularbut'>
                         <BootStrap.Button variant="outline-secondary" onClick={() => Options("Slides And Sandals")}>SLIDES AND SANDALS</BootStrap.Button>
+
                         <BootStrap.Button variant="outline-secondary" onClick={() => Options("T Shirt")}>T-SHIRTS AND SHORTS</BootStrap.Button>
                         <BootStrap.Button variant="outline-secondary" onClick={() => Options("Football")}>FOOTBALL</BootStrap.Button>
                         <BootStrap.Button variant="outline-secondary" onClick={() => Options("Sneakers")}>WHITE SNEAKERS</BootStrap.Button>

@@ -19,18 +19,18 @@ import Headers from '../Headers/Header';
 function ViewDelivery() {
     const usenavigate = useNavigate()
     const {id} = useParams()
+    const isFormEdited = id.isDirty;
     const [data,setData] = useState({})
     const [userid,setUserid] = useState('')
     const [product,setProduct] = useState([])
 
     let m = localStorage.getItem("Userid")
 
-  
     
     useEffect(()=>{
         setTimeout(()=>{
             getByUserid(id)
-        },3000)
+        },2000)
     },[])
     
     m = localStorage.getItem("Userid")
@@ -111,7 +111,7 @@ function ViewDelivery() {
 
         
         <div className='order'>
-            <div class="table">
+            <div class="tableingss">
                 <div class="table-cell">
                     <div class="box">
                         <div class="row">

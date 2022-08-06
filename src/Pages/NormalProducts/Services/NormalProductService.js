@@ -22,6 +22,10 @@ class DashboardService{
     findByCollection(option){
         return axios.get(VIEW_BASE_REST_API_URL+'/collection/'+option);
     }
+
+    findByName(productname){
+        return axios.get(VIEW_BASE_REST_API_URL+'/name/'+productname)
+    }
 }
 
 export default new DashboardService();

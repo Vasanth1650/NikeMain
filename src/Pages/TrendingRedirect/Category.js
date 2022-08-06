@@ -23,6 +23,8 @@ function Category() {
     const [data, setData] = useState({})
     const usenavigate = useNavigate()
 
+    
+
 
     useEffect(() => {
         setCheck(data.username)
@@ -159,6 +161,7 @@ function Category() {
                             gentle.map(gentle =>
                                 <BootStrap.Col>
                                     <div>
+                                        {gentle.productname!=="Air Jordan XXXVI PF" &&
                                         <BootStrap.CardGroup>
                                             <BootStrap.Card   className='lmknej'>
                                                 <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
@@ -194,6 +197,7 @@ function Category() {
 
                                             </BootStrap.Card>
                                         </BootStrap.CardGroup>
+                                        }
                                         <br />
                                     </div>
                                 </BootStrap.Col>

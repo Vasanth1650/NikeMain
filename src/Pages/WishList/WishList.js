@@ -20,6 +20,12 @@ function WishList() {
         getAllNormal()
     }, [])
 
+    useEffect(()=>{
+        if(!localStorage.getItem("USER_KEY")){
+            usenavigate('/login')
+        }
+    },[])
+
     let m = localStorage.getItem("Userid")
 
 

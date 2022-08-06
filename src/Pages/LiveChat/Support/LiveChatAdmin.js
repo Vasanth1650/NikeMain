@@ -8,6 +8,8 @@ function LiveChatAdmin() {
     const [lives,setLives] = useState([])
     const usenavigate = useNavigate()
 
+    
+
     useEffect(()=>{
         getAllLives()
     },[])
@@ -35,10 +37,10 @@ function LiveChatAdmin() {
 
 
         <div class="table-users">
-                <div class="header">MyOrders</div>
+                <div class="header">LiveChat</div>
 
 
-                <table cellspacing="0">
+                <table className='table'>
                     <tr >
 
                         <th>Id</th>
@@ -68,7 +70,7 @@ function LiveChatAdmin() {
 
             </div>
 
-
+                    <br/><br/>
 
         <Footer/>
     </div>

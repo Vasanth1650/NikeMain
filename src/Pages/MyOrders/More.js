@@ -10,8 +10,12 @@ import Headers from '../Headers/Header';
 import Footer from '../Footer/Footer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import _ from 'lodash'
 
 
+
+
+const pageSize = 5
 function More() {
     const usenavigate = useNavigate()
     const [data, setData] = useState({})
@@ -22,12 +26,23 @@ function More() {
     const [check, setCheck] = useState('')
     const [roles,setRoles] = useState([])
     const [ordered,setOrdered] = useState([])
+    const [paginatedOrders,setPaginatedOrders] = useState([])
+    const [currentPage,setCurrentPage] =useState(1)
+
+    
+    const pageCount = ordered ? Math.ceil(ordered.length/pageSize) : 0
+
+   
+
+    const pages = _.range(1,pageCount+1)
+
 
     useEffect(() => {
         if (!localStorage.getItem("USER_KEY")) {
             localStorage.clear();
             usenavigate('/login')
         }
+        if(pageCount===1) return null;
     }, [])
 
     useEffect(() => {
@@ -36,6 +51,13 @@ function More() {
         }
 
     }, [])
+
+    const pagination = (pageNo)=>{
+        setCurrentPage(pageNo);
+        const startIndex = (pageNo - 1) * pageSize
+        const paginatedOrder = _(ordered).slice(startIndex).take(pageSize).value();
+        setPaginatedOrders(paginatedOrder)
+    }
 
     localStorage.setItem("Userid", data.id)
 
@@ -103,6 +125,7 @@ function More() {
             setData(response.data);
             setRoles(response.data.roles)
             setOrdered(response.data.ordered)
+            setPaginatedOrders(_(response.data.ordered).slice(0).take(pageSize).value())
         }).catch((e) => {
             localStorage.clear();
         })
@@ -117,14 +140,15 @@ function More() {
             <Headers />
 
 
+            <br/><br/>
 
 
 
             <div class="table-users">
-                <div class="header">MyOrders</div>
+                <div class="header">Live Support</div>
 
 
-                <table cellspacing="0">
+                <table className='table'>
                     <tr >
 
                         <th>ProductName</th>
@@ -134,17 +158,21 @@ function More() {
                         <th width="230"></th>
                     </tr>
                     {
-                        ordered.map(ordered =>
+                        paginatedOrders.map(ordered =>
                             <tr>
 
                                 <td>{ordered.productname}</td>
                                 
                                 <td>{ordered.status}</td>
-
-                                <td><BootStrap.Button onClick={() => OrderId(ordered.id)}>View Details</BootStrap.Button></td>
+                                <div className='omfed'>
+                                    <BootStrap.Button className='kneab' variant='warning' onClick={() => OrderId(ordered.id)}>View Details</BootStrap.Button>
+                                </div>
                                 {ordered.status4===null && 
-                                <td><BootStrap.Button variant="danger" onClick={() => Refund(data.id, data.username, ordered.id, ordered.productname, ordered.paymentid,
-                                    ordered.payment, ordered.id, ordered.status4)}>Cancel Order</BootStrap.Button></td>}
+                                <div className='omfed'>
+                                <BootStrap.Button variant="danger" onClick={() => Refund(data.id, data.username, ordered.id, ordered.productname, ordered.paymentid,
+                                    ordered.payment, ordered.id, ordered.status4)}>Cancel Order</BootStrap.Button>
+                                </div>
+                                    }
                             </tr>
                         )
                     }
@@ -152,13 +180,30 @@ function More() {
 
                 </table>
 
+                <nav className='d-flex justify-content-center'>
+                    <ul className='pagination'>
+                        {
+                            pages.map((page)=>(
+                                <li className={
+                                    page === currentPage?"page-item active" : "page-item"
+                                }>
+                                    <p className='page-link' onClick={()=>pagination(page)}>{page}</p>
+                                </li>
+                            ))
+                        }
+                        
+                        
+                    </ul>
+                </nav>
+
             </div>
 
+            <br/><br/>
 
             <div class="table-users">
                 <div class="header">Refund Orders</div>
 
-                <table cellspacing="0">
+                <table className='table'>
                     <tr >
 
                         <th>ProductName</th>
@@ -188,7 +233,7 @@ function More() {
 
            
 
-
+                    <br/><br/>
 
 
             <ToastContainer/>

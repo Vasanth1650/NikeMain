@@ -31,7 +31,7 @@ function MostPopularViewing() {
     const [productid, setProductid] = useState('')
     const [gentle, setGentle] = useState([])
     const [bottom, setBottom] = useState([])
-
+    const [similar, setSimilar] = useState([])
 
 
     useEffect(() => {
@@ -48,6 +48,7 @@ function MostPopularViewing() {
     useEffect(() => {
         getByCategory(product.category1);
         findByGender(product.category1)
+        findByName(product.productname)
     }, [product])
 
     const findByGender = () => {
@@ -55,6 +56,15 @@ function MostPopularViewing() {
             setGentle(response.data)
             console.log(response.data)
         }).catch((error) => {
+            console.log(error)
+        })
+    }
+
+    const findByName = () =>{
+        DashboardService.getByName(product.productname).then((response)=>{
+            setSimilar(response.data)
+            console.log("Hello",response.data)
+        }).catch((error)=>{
             console.log(error)
         })
     }
@@ -142,6 +152,7 @@ function MostPopularViewing() {
 
         }).catch(err => {
             console.log(err)
+            usenavigate(-1)
         })
     }
 
@@ -332,12 +343,24 @@ function MostPopularViewing() {
                                 <div>Includes All Taxes</div>
 
                             </div>
-                            <img width="75" className='kutti' src={product.productimage3}></img>
-                            <img width="75" className='kutti' src={product.productimage1}></img>
-                            <img width="75" className='kutti' src={product.productimage9}></img>
+                            <br/>
+                            {
+                                similar.map(similar=>
+                                    
+                                    <div className='kuttsdes'>
+                                        
+                                        <img width="75" className='kutti' onClick={()=>Nextsteps(similar.id)} src={similar.productimage1}></img>
+                                        {product.id===similar.id &&
+                                        <div>--------</div>}
+                                    </div>
+                                    
+                                )
+                            }
+                            
                             <br />
                             <br />
                             <br />
+                            <br/><br/>
                             <div>Size</div>
                             <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>
                             <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>

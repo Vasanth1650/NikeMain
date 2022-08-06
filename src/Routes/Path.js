@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Dashboard from '../Pages/Dashboard/Dashboard';
 import DashboardAdd from '../Pages/Dashboard/DashboardAdd';
@@ -38,51 +38,141 @@ import Magic from '../Pages/Dashboard/ScrollMagic/Magic';
 import Size from '../Pages/Size/Size';
 import SizeTshirt from '../Pages/Size/SizeTshirt';
 import AllSize from '../Pages/Size/AllSize';
+import { fetchUserData } from '../Api/AuthenticationService';
 
 
 function Path() {
+  const [data,setData] = useState([])
+
+  React.useEffect(()=>{
+    fetchUserData().then((response)=>{
+      setData(response.data)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  },[])
+
   return (
     <div>
     <BrowserRouter>
       <PageBugFix>
       <Routes>
         <Route path='/' element={<Dashboard/>}/>
-        <Route path="/dashboard/add" element={<DashboardAdd/>}/>
+
+
+        {data.roleCode==="ADMIN" &&
+        <Route path="/dashboard/add" element={<DashboardAdd/>}/>}
+
         <Route path="/login" element={<Login/>}/>
+
+
         <Route path="/signup" element={<Signup/>}/>
+
+
         <Route path='/search' element={<AllSearch/>}/>
+
+
         <Route path='/nikesupport' element={<Chatbot/>}/>
+
+
         <Route path='/myorders/:id' element={<ViewDelivery/>}/>
+
+
         <Route path='/delivery' element={<Delivery/>}/>
+
+
         <Route path='/checking' element={<More/>}/>
-        <Route path='/refund' element={<RefundRequests/>}/>
-        <Route path='/orderupdate' element={<OrderUpdates/>}/>
-        <Route path='/refundstatus/:refundid' element={<RefundStatus/>}/>
-        <Route path='/orderstatus/:id' element={<OrderStatus/>}/>
+
+
+        {data.roleCode==="ADMIN" &&
+        <Route path='/refund' element={<RefundRequests/>}/>}
+
+
+        {data.roleCode==="ADMIN" &&
+        <Route path='/orderupdate' element={<OrderUpdates/>}/>}
+
+
+        {data.roleCode==="ADMIN" &&
+        <Route path='/refundstatus/:refundid' element={<RefundStatus/>}/>}
+
+
+        {data.roleCode==="ADMIN" &&
+        <Route path='/orderstatus/:id' element={<OrderStatus/>}/>}
+
+
         <Route path='/subscription' element={<Sub/>}/>
+
+
         <Route path='/checkout' element={<Checkout/>}/>
+
+
         <Route path="/nextstep/:id" element={<NormalProduct/>}/>
+
+
         <Route path='/allsection/mainadd' element={<NormalProductAdd/>}/>
+
+
         <Route path="/most/:id" element={<MostPopularViewing/>}/>
+
+
         <Route path='/AirJordanXXXVI' element={<AirJordan/>}/>
+
+
         <Route path='/section/:option' element={<ShowCategory/>}/>
+
+
         <Route path='/mostpopular/:gender' element={<Category/>}/>
-        <Route path='/update/product/:id' element={<UpdateProduct/>}/>
+
+
+        {data.roleCode==="ADMIN" &&
+        <Route path='/update/product/:id' element={<UpdateProduct/>}/>}
+
+
         <Route path='/wishlist' element={<WishList/>}/>
+
+
         <Route path='/nextsteps/:id' element={<NormalProductViewing/>}/>
-        <Route path='/update/productnormal/:id' element={<UpdateNormalProductService/>}/>
+
+        {data.roleCode==="ADMIN" &&
+        <Route path='/update/productnormal/:id' element={<UpdateNormalProductService/>}/>}
+
+
         <Route path='/Jordan' element={<MainJordan/>}/>
+
+
         <Route path='/paymentoptions' element={<PaymentOptions/>}/>
+
+
         <Route path='/livesupport' element={<Livechat/>}/>
-        <Route path='/admin/support' element={<LiveChatAdmin/>}/>
+
+        {data.roleCode==="ADMIN" &&
+        <Route path='/admin/support' element={<LiveChatAdmin/>}/>}
+
+
         <Route path="/profile" element={<Profile/>}/>
+
+
         <Route path="/updateprofile" element={<UpdateProfile/>}/>
+
+
         <Route path='/render' element={<Render/>}/>
+
+
         <Route path='/jordanHistory' element={<JordanHistory/>}/>
+
+
         <Route path='/magic' element={<Magic/>}/>
+
+
         <Route path='/size' element={<Size/>}/>
+
+
         <Route path='/allsize' element={<AllSize/>}/>
+
+
         <Route path='/sizetops' element={<SizeTshirt/>}/>
+
+
         <Route path='*' element={<Dashboard/>}/>
         
       </Routes>

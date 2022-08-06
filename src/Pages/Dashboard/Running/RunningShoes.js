@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Styles/Running.css'
 import * as BootStrap from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import DashboardService from '../../MostPopular/Services/DashboardService'
 import './Styles/Running.scss'
 
 function RunningShoes() {
   const usenavigate = useNavigate()
+
+  const [gentle, setGentle] = useState([])
+
+    useEffect(() => {
+        getTrend()
+    }, [])
+
+    const getTrend = () => {
+        DashboardService.getAllProducts().then((response) => {
+            setGentle(response.data)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+
+    
 
   const Options = (variable) => {
     console.log(variable);

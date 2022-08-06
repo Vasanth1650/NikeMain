@@ -22,12 +22,12 @@
 
 h1:first-of-type {
     font-weight: var(--weight1);
-    color: var(--varyDarkBlue);
+    color: var(--veryLightGray);
 
 }
 
 h1:last-of-type {
-    color: var(--varyDarkBlue);
+    color: var(--veryLightGray);
 }
 
 @media (max-width: 400px) {
@@ -40,7 +40,7 @@ h1:last-of-type {
     text-align: center;
     line-height: 0.8;
     margin-bottom: 50px;
-    
+    background-color: var(--varyDarkBlue);
 }
 
 .header p {

@@ -17,6 +17,10 @@ function MainJordan() {
         usenavigate('/mostpopular/'+value);
     }
 
+    const Trending = () =>{
+        usenavigate("/most/28")
+    }
+
 
     return (
         <div className='bac'>
@@ -28,7 +32,7 @@ function MainJordan() {
             <div className='jordanlinks'>
 
                 <BootStrap.Nav.Link className='mainnavtext' href='/mostpopular/BasketBall'>BasketBall</BootStrap.Nav.Link>
-                <BootStrap.Nav.Link className='mainnavtext' href='/mostpopular/BasketBall'>Jordan Sport</BootStrap.Nav.Link>
+                <BootStrap.Nav.Link className='mainnavtext' href='/mostpopular/Football'>FootBall</BootStrap.Nav.Link>
                 <BootStrap.Nav.Link className='mainnavtext' onClick={() => MostPopular("Men's")}>Men</BootStrap.Nav.Link>
                 <BootStrap.Nav.Link className='mainnavtext' onClick={() => MostPopular("Women's")}>Women</BootStrap.Nav.Link>
                 <BootStrap.Nav.Link className='mainnavtext' onClick={() => MostPopular("Kid's")}>Kids</BootStrap.Nav.Link>
@@ -47,13 +51,13 @@ function MainJordan() {
             <div className='design'>
             <div className='jordantitle'>Jordan Collaboration</div>
             <br/>
-                    <div class="cards">
+                    <div class="cards" onClick={()=>Trending()}>
                     
-                        <div  class="cards-content">
+                        <div  class="cards-content" >
                             <h2 class="cards-title">AIR JORDAN XXXVI LOW</h2>
                             <p class="cards-desc">New Infrared ReImagines The Vibrant Colorway Of The Iconic Jordan VI To Celebrate The Invisible Light</p>
                             <p class="cards-desc">Radiating Within The Game's Greatest Players</p>
-                            <a href='/AirJordanXXXVI' class="btns">Shop</a>
+                            <a href='/most/28' class="btns">Shop</a>
                         </div>
                     </div>
             <br/>
@@ -61,7 +65,7 @@ function MainJordan() {
                         <div class="cardss-content">
                             <h2 class="cardss-title">GRAPHIC TEES</h2>
                             <p class="cardss-desc">Fresh Graphic Tees For The Summer(For Mens).</p>
-                            <a class="btns">Shop</a>
+                            <a href='' class="btns">Shop</a>
                         </div>
                     </div>
             <br/>
@@ -69,7 +73,7 @@ function MainJordan() {
                         <div class="cardsss-content">
                             <h2 class="cardsss-title">TANK TOP READY</h2>
                             <p class="cardsss-desc">Get Fresh In Our Lighweight Tops(For Womens).</p>
-                            <a  class="btns">Shop</a>
+                            <a href='' class="btns">Shop</a>
                         </div>
                     </div>       
                 
@@ -82,6 +86,7 @@ function MainJordan() {
             <JordanBasket/>
 
             <Essential/>
+            <br/><br/><br/>
 
 
             <Footer />

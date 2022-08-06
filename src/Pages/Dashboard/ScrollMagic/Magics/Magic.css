@@ -1,110 +1,86 @@
+.MultiCarousel {
+    float: left;
+    position: relative;
+    
+    cursor: pointer;
+    
+}
 
+.MultiCarousel {
+    height: 100px;
+    width: 930px;
+}
 
-:root {
-  --first-color: ;
-  --first-color-light: red;
-  --first-color-lighten: black;
-  --body-font: "Ubuntu", sans-serif;
-  --normal-font-size: 1rem;
-  --smaller-font-size: 0.813rem;
+.containeriknjein{
+  margin-left: 3%;
+}
+
+.bodydkmkdkwa{
+  background-color: white;
+
+}
+
+.similarsbudwaw{
+  font-size: x-large;
+  color: black;
+  margin-left: 4%;
+  font-weight: bolder;
 }
 
 
-*,
-::before,
-::after {
-  box-sizing: border-box;
+.MultiCarousel .MultiCarousel-inner {
+    transition: 1s ease all;
+    
+    float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item {
+    float: left;
+    
+}
+
+.efecb{
+  margin-left: 2%;
+}
+
+.MultiCarousel .MultiCarousel-inner .item>div {
+    text-align: center;
+    width: 130%;
+    background: white;
+    color: #666;
+   
 }
 
 
 
-h1 {
-  margin: 0;
-  color: white;
+.MultiCarousel .leftLsts{
+    margin-left: 115%;
+    margin-top: -110%;
+    border-radius: 50%;
+    top: calc(50% - 100px);
+    background-color: black;
+    border: none;
+}
+.MultiCarousel .rightLsts {
+    margin-left: 120%;
+    margin-top: -115.3%;
+    border-radius: 30px;
+    top: calc(50% - 100px);
+    background-color: black;
+    border: none;
 }
 
-a {
-  text-decoration:dashed;
+.MultiCarousel .leftLsts {
+    right: 0;
 }
 
-.whatsapp {
-  max-width: 100%;
-  height: auto;
+.MultiCarousel .rightLsts {
+    
+    right: 0;
 }
 
+.MultiCarousel .leftLsts.over,.MultiCarousel .rightLsts.over {
+    pointer-events: none;
 
-
-.drop,
-.drop_container {
-  display:flex;
 }
 
-
-
-.drop_container {
-  row-gap: 1rem;
- 
-  box-shadow: 4px 4px 16px black;
-  
-}
-
-.drop_card,
-.drop_data {
-  display: flex;
-  align-items: center;
-}
-
-.drop_card {
-  width: 360px;
-  justify-content: space-between;
-  padding: 0.100rem 0.25rem.5rem 0.75rem;
-  background-color: var(--first-color-lighten);
-  box-shadow: 4px 4px 16px red, -2px -2px 16px wheat;
-  border-radius: 2.5rem;
-  
-}
-
-.drop_img {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  margin-right: 1rem;
-  
-}
-
-.drop_name {
-  font-size: var(--normal-font-size);
-  color: var(--first-color);
-  font-weight: 500;
-  color: white;
-}
-
-.drop_profession {
-  font-size: var(--smaller-font-size);
-  color: var(--first-color-light);
-}
-
-.drop_social {
-  margin: 0 0.375rem;
-  color: var(--first-color-light);
-  transition: 0.4s;
-  
-}
-
-.drop_social:hover {
-  color: var(--first-color);
-}
-
-
-/* Class name for the chosen item */
-
-.sortable-chosen {
-  box-shadow: 8px 8px 32px green;
-}
-
-
-/* Class name for the dragging item */
-
-.sortable-drag {
-  opacity: 0;
-}

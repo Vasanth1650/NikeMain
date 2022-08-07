@@ -14,7 +14,6 @@ function Livechat() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
-  const [tunnelid, setTunnelId] = useState("")
 
 
 
@@ -22,7 +21,7 @@ function Livechat() {
     if (username !== "" && room !== "") {
       socket.emit("join_room", room);
       setShowChat(true);
-      const createlive = { username, tunnelid }
+      const createlive = { username, room }
       fetch("https://nike-backend.herokuapp.com/livechat/addnewrequest", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -72,7 +71,6 @@ function Livechat() {
             placeholder="Room ID..."
             onChange={(event) => {
               setRoom(event.target.value);
-              setTunnelId(event.target.value);
             }}
 
           />

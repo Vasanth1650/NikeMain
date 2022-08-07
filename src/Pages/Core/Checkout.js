@@ -40,13 +40,14 @@ function Checkout() {
     const [payment, setPayment] = useState()
     const [productname, setProductname] = useState()
     const [status] = useState("Order Placed Waiting For Seller To Confirm The Order")
+    const [size, setSize] = useState('')
     const [paymentid, setPaymentid] = useState()
     const [subscription, setSubscription] = useState('')
 
 
     const [price, setPrice] = useState('')
 
-    const confirm = { username, address, state, city, payment, productname, price, userid, status, paymentid }
+    const confirm = { username, address, state, city, payment, productname, price, userid, status, paymentid, size }
 
     useEffect(() => {
         setUserid(data.id)
@@ -141,9 +142,10 @@ function Checkout() {
     const handlePrice = () => {
         let ans = 0;
         let name = "";
+        let size = "";
         let pro = 0;
         checkout.map(checkout =>
-            (ans += checkout.price, name += "|" + checkout.productname + "|")
+            (ans += checkout.price, name += "|" + checkout.productname + "|" , size += "|" + checkout.size + "|")
         )
         if (subscription === "Premium") {
             pro = 5000
@@ -159,6 +161,7 @@ function Checkout() {
         }
         setProductname(name)
         setPrice(ans)
+        setSize(size)
         console.log(ans)
     }
 

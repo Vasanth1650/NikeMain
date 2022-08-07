@@ -50,7 +50,7 @@ function Chat({ socket, username, room }) {
                                 >
                                     <div>
                                         <div className="message-content">
-                                            <p>{messageContent.message}</p>
+                                            <div>{messageContent.message}</div>
                                         </div>
                                         <div className="message-meta">
                                             <p id="time">{messageContent.time}</p>

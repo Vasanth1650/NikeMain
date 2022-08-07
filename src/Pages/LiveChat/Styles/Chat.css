@@ -177,7 +177,7 @@
     background: transparent;
     outline: none;
     font-size: 25px;
-    color: lightgray;
+    color: black;
   }
   
   .chat-window .chat-footer button:hover {

@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { fetchUserData } from '../../../Api/AuthenticationService'
 import Footer from '../../Footer/Footer'
 import Header from '../../Headers/Header'
 import LiveService from  '../Services/LiveService'
@@ -7,7 +8,7 @@ import LiveService from  '../Services/LiveService'
 function LiveChatAdmin() {
     const [lives,setLives] = useState([])
     const usenavigate = useNavigate()
-
+    
     
 
     useEffect(()=>{
@@ -21,8 +22,8 @@ function LiveChatAdmin() {
         })
     }
 
-    const deleteTunnel = (tunnelid) =>{
-        LiveService.deletebytunnel(tunnelid).then((response)=>{
+    const deleteTunnel = (room) =>{
+        LiveService.deletebytunnel(room).then((response)=>{
             getAllLives()
         }).catch((error)=>{
             console.log(error)

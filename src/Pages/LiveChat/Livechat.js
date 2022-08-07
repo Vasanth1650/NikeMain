@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import io from 'socket.io-client';
 import Footer from '../Footer/Footer';
@@ -6,6 +6,8 @@ import Header from '../Headers/Header';
 import Chat from './Chat';
 import './Styles/Chat.css';
 import ReactPlayer from 'react-player';
+import { fetchUserData } from '../../Api/AuthenticationService';
+import { useNavigate } from 'react-router-dom';
 
 const socket = io.connect("https://nikelivechat.herokuapp.com");
 
@@ -14,6 +16,34 @@ function Livechat() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
+  const usenavigate = useNavigate()
+  const [data, setData] = useState({})
+
+  useEffect(() => {
+    if (!localStorage.getItem("USER_KEY")) {
+      usenavigate('/login')
+    }
+  }, [])
+
+  
+
+  useEffect(() => {
+    if (data.roleCode === "ADMIN") {
+      setUsername(data.email)
+    } else if (data.roleCode === "USER") {
+      setUsername(data.email)
+      setRoom(data.id)
+    }
+  }, [data])
+
+  React.useEffect(() => {
+    fetchUserData().then((response) => {
+      setData(response.data)
+      console.log(response.data)
+    }).catch((err) => {
+      console.log(err)
+    })
+  }, [])
 
 
 
@@ -41,7 +71,7 @@ function Livechat() {
     <div className="Apphjbj">
       <Header />
       <div>
-        <br/>
+        <br />
         <div className='featuesa'>ONE VIDEO FOR SURE YOU GONNAA LOVE IT</div>
 
         <div className='knjdwanjdna' style={{ position: "static" }}>
@@ -53,19 +83,13 @@ function Livechat() {
         <div className='smalltext'>IS GETTING THE RECOGNITION TO MY WORK</div>
       </div>
 
-      <br/><br/>
+      <br /><br />
       <div className='featuesa'>CUSTOMER SUPPORT CHANNEL THATS IT THE SITE ENDS HERE</div>
 
       {!showChat ? (
         <div className="joinChatContainer">
 
-          <input
-            type="text"
-            placeholder="Enter Your Name"
-            onChange={(event) => {
-              setUsername(event.target.value);
-            }}
-          />
+          { data.roleCode==="ADMIN" &&
           <input
             type="text"
             placeholder="Room ID..."
@@ -73,13 +97,13 @@ function Livechat() {
               setRoom(event.target.value);
             }}
 
-          />
+          />}
           <button onClick={joinRoom}>Join A Room</button>
         </div>
       ) : (
         <Chat socket={socket} username={username} room={room} />
       )}
-      <br/><br/><br/><br/><br/><br/>
+      <br /><br /><br /><br /><br /><br />
       <Footer />
     </div>
   )

@@ -8,8 +8,8 @@ class LiveService{
         return axios.get(VIEW_BASE_REST_API_URL+'/getAllId')
     }
 
-    deletebytunnel(tunnelid){
-        return axios.delete(VIEW_BASE_REST_API_URL+'/deletetunnel/'+tunnelid)
+    deletebytunnel(room){
+        return axios.delete(VIEW_BASE_REST_API_URL+'/deletetunnel/'+room)
     }
 
 }

@@ -65,7 +65,7 @@ function Livechat() {
   };
 
 
-
+console.log(room)
 
   return (
     <div className="Apphjbj">
@@ -89,7 +89,26 @@ function Livechat() {
       {!showChat ? (
         <div className="joinChatContainer">
 
-          { data.roleCode==="ADMIN" &&
+          <input
+            type="text"
+            placeholder="Enter Your Name"
+            value={data.username}
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+          />
+          {data.roleCode==="USER" &&
+          <input
+            type="text"
+            placeholder="Room ID..."
+            value={data.id}
+            onChange={(event) => {
+              setRoom(event.target.value);
+            }}
+
+          />}
+
+          {data.roleCode==="ADMIN" &&
           <input
             type="text"
             placeholder="Room ID..."
@@ -98,6 +117,7 @@ function Livechat() {
             }}
 
           />}
+
           <button onClick={joinRoom}>Join A Room</button>
         </div>
       ) : (

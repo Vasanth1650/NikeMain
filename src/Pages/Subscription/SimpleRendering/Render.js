@@ -6,15 +6,9 @@ import {fetchUserData} from '../../../Api/AuthenticationService'
 
 function Render() {
     const usenavigate = useNavigate()
-    const [address, setAddress] = useState('')
-    const [city, setCity] = useState('')
-    const [state, setState] = useState('')
-    const [phonenumber, setPhonenumber] = useState('')
-    const [username,setUsername] = useState('')
-    const [email,setEmail] = useState('')
+
     const [subscription,setSubscription] = useState('')
     const [data, setData] = useState({})
-    const [password,setPassword] = useState('')
     const ref = useRef(null);
 
     
@@ -52,7 +46,7 @@ function Render() {
 
       const updatedetails = (e) => {
         e.preventDefault()
-        const addproduct = { username,email, address, city, state, phonenumber, password, subscription}
+        const addproduct = {subscription}
         console.log(addproduct)
         if (localStorage.getItem("Userid")) {
             SubscriptionService.updateUser(localStorage.getItem("Userid"), addproduct).then((response) => {
@@ -73,13 +67,7 @@ function Render() {
 
     useEffect(() => {
         SubscriptionService.getUserById(localStorage.getItem("Userid")).then((response) => {
-            setAddress(response.data.address)
-            setCity(response.data.city)
-            setState(response.data.state)
-            setPhonenumber(response.data.phonenumber)
-            setUsername(response.data.username)
-            setEmail(response.data.email)
-            setPassword(response.data.password)
+            
             setSubscription(response.data.subscription)
         })
     },[])

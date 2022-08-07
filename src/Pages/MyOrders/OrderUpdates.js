@@ -72,7 +72,7 @@ function OrderUpdates() {
             <br/><br/>
 
             <div class="table-users">
-                <div class="header">Orders Received</div>
+                <div class="headerdwada">Orders Received</div>
 
                 <table className='table'>
                     <tr >
@@ -87,6 +87,8 @@ function OrderUpdates() {
                     </tr>
                     {
                         orders.map(orders =>
+                            <>
+                            {orders.status!=="Order Delivered" &&
                             <tr>
                                 <td>{orders.id}</td>
                                 <td>{orders.username}</td>
@@ -97,8 +99,32 @@ function OrderUpdates() {
                                 <td>{orders.city}</td>
                                 <td><BootStrap.Button variant="warning" onClick={() => updateorderStatus(orders.id,orders.status5)}>Update Status</BootStrap.Button></td>
                             </tr>
+                            }
+                            </>
                         )
                     }
+
+
+{
+                        orders.map(orders =>
+                            <>
+                            {orders.status==="Order Delivered" &&
+                            <tr>
+                                <td>{orders.id}</td>
+                                <td>{orders.username}</td>
+                                <td>{orders.productname}</td>
+                                <td>{orders.payment}</td>
+                                <td className='status1'>{orders.status}</td>
+
+                                <td>{orders.city}</td>
+                                <td><BootStrap.Button variant="warning" onClick={() => updateorderStatus(orders.id,orders.status5)}>Update Status</BootStrap.Button></td>
+                            </tr>
+                            }
+                            </>
+                        )
+                    }
+
+
                 </table>
 
             </div>

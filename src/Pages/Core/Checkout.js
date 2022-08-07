@@ -41,13 +41,14 @@ function Checkout() {
     const [productname, setProductname] = useState()
     const [status] = useState("Order Placed Waiting For Seller To Confirm The Order")
     const [size, setSize] = useState('')
+    const [color, setColor] = useState('')
     const [paymentid, setPaymentid] = useState()
     const [subscription, setSubscription] = useState('')
-
-
+    const [dummy,setDummy]= useState()
+    const [dummy1,setDummy1] = useState()
     const [price, setPrice] = useState('')
 
-    const confirm = { username, address, state, city, payment, productname, price, userid, status, paymentid, size }
+    const confirm = { username, address, state, city, payment, productname, price, userid, status, paymentid, size ,color}
 
     useEffect(() => {
         setUserid(data.id)
@@ -56,6 +57,8 @@ function Checkout() {
         setState(data.state)
         setCity(data.city)
         setPayment(price)
+        setSize(dummy)
+        setColor(dummy1)
         setSubscription(data.subscription)
     })
 
@@ -97,24 +100,15 @@ function Checkout() {
             description: "Checkout",
             image: "https://img.etimg.com/thumb/msid-59738997,width-640,resizemode-4,imgsize-21421/nike.jpg",
             handler: function (response) {
-                alert(price, "Price Has Received By Nike Corporation");
-                alert("Your Order Has Been Placed Successfully")
-                alert(response.razorpay_payment_id);
+               
                 setPaymentid(response.razorpay_payment_id)
                 console.log(response.razorpay_payment_id)
                 PaymentProced(paymentid)
 
-                console.log(username, address, state, city, payment, productname, response.razorpay_payment_id)
+                console.log(username, address, state, city, payment, productname, response.razorpay_payment_id, size,color)
 
             },
-            prefill: {
-                name: "Vasanth",
-                email: "vasanth16756@gmail.com",
-                contact: "1234567890"
-            },
-            notes: {
-                address: "dabjbawjdn"
-            },
+            
             theme: {
                 color: "#3399cc",
                 hide_topbar: true
@@ -144,8 +138,9 @@ function Checkout() {
         let name = "";
         let size = "";
         let pro = 0;
+        let color = "";
         checkout.map(checkout =>
-            (ans += checkout.price, name += "|" + checkout.productname + "|" , size += "|" + checkout.size + "|")
+            (ans += checkout.price, name += "|" + checkout.productname + "|" , size += "|" + checkout.size + "|", color += "|" + checkout.color + "|")
         )
         if (subscription === "Premium") {
             pro = 5000
@@ -161,7 +156,8 @@ function Checkout() {
         }
         setProductname(name)
         setPrice(ans)
-        setSize(size)
+        setDummy(size)
+        setDummy1(color)
         console.log(ans)
     }
 
@@ -208,9 +204,7 @@ function Checkout() {
                 CheckoutDelete(userid)
                 usenavigate("/checking")
             })
-        } else if (!paymentid) {
-            alert("The System Will Procced When It Recevies The Payment Id This May Occur After Payment To")
-        }
+        } 
     }
 
 
@@ -263,7 +257,7 @@ function Checkout() {
                                     <img className='hu' src={checkout.image1}></img>
                                     <div>{checkout.productname}</div>
                                     <div>₹{checkout.price}</div>
-                                    <div>{checkout.size}</div>
+                                    <div>Size : {checkout.size}</div>
                                     <BootStrap.Button variant="warning" onClick={() => deletebyClick(checkout.id)}>Remove Item</BootStrap.Button>
                                 </Card.Body>
                             </Card>

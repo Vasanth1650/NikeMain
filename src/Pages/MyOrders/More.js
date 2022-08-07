@@ -108,8 +108,9 @@ function More() {
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify(details)
                         }).then(() => {
-                            toast("Refund Request Has Been Requested")
                             Myorderservice.deleting(orderid)
+                            usenavigate('/')
+                            toast("Refund Request Has Been Requested")
                         })
                     }
                 }
@@ -119,6 +120,8 @@ function More() {
         }
 
     }
+
+    
 
     React.useEffect(() => {
         fetchUserData().then((response) => {
@@ -145,7 +148,7 @@ function More() {
 
 
             <div class="table-users">
-                <div class="header">Live Support</div>
+                <div class="headerudbaw">My Orders</div>
 
 
                 <table className='table'>
@@ -167,12 +170,15 @@ function More() {
                                 <div className='omfed'>
                                     <BootStrap.Button className='kneab' variant='warning' onClick={() => OrderId(ordered.id)}>View Details</BootStrap.Button>
                                 </div>
+                                <br/>
                                 {ordered.status4===null && 
                                 <div className='omfed'>
-                                <BootStrap.Button variant="danger" onClick={() => Refund(data.id, data.username, ordered.id, ordered.productname, ordered.paymentid,
+                                <BootStrap.Button className='kneab' variant="danger" onClick={() => Refund(data.id, data.username, ordered.id, ordered.productname, ordered.paymentid,
                                     ordered.payment, ordered.id, ordered.status4)}>Cancel Order</BootStrap.Button>
+                                    
                                 </div>
                                     }
+                                    <br/>
                             </tr>
                         )
                     }
@@ -195,13 +201,13 @@ function More() {
                         
                     </ul>
                 </nav>
-
+                
             </div>
 
             <br/><br/>
 
             <div class="table-users">
-                <div class="header">Refund Orders</div>
+                <div class="headerdwada">Refund Orders</div>
 
                 <table className='table'>
                     <tr >
@@ -222,8 +228,9 @@ function More() {
                                 <td>{refund.paymentid}</td>
                                 <td>{refund.refundstatus}</td>
                                 <td>{refund.orderid}</td>
+                                
                             </tr>
-
+                            
                         )
                     }
                 </table>

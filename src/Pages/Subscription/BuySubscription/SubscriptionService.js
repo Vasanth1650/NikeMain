@@ -4,7 +4,7 @@ const VIEW_BASE_REST_API_URL = "https://nike-backend.herokuapp.com/addnew"
 class SubscriptionService{
 
     updateUser(id,user){
-        return axios.put(VIEW_BASE_REST_API_URL+'/updateuser/'+id,user);
+        return axios.put(VIEW_BASE_REST_API_URL+'/updateSubs/'+id,user);
     }
 
     getUserById(id){

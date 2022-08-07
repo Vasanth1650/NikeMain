@@ -142,8 +142,7 @@ function ViewDelivery() {
                                 <div>------------------------------------------------</div>
                                 <div>Paid : {product.payment}Rupees</div>
                                 <div>------------------------------------------------</div>
-                                <div>Size : {product.size}</div>
-                                <div>------------------------------------------------</div>
+                                
                             </div>
                             
                             

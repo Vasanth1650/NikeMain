@@ -57,9 +57,9 @@ function LiveChatAdmin() {
 
                                 <td>{lives.id}</td>
                                 <td>{lives.username}</td>
-                                <td>{lives.tunnelid}</td>
-                                <td><a onClick={() => { navigator.clipboard.writeText(lives.tunnelid) }}  href='/livesupport'>Chat</a></td>
-                                <td><a onClick={() => deleteTunnel(lives.tunnelid)} href=''>Clear Tunnel Under{lives.tunnelid}</a></td>
+                                <td>{lives.room}</td>
+                                <td><a onClick={() => { navigator.clipboard.writeText(lives.room) }}  href='/livesupport'>Chat</a></td>
+                                <td><a onClick={() => deleteTunnel(lives.room)} href=''>Clear Tunnel Under{lives.room}</a></td>
                                 
                                 
                             </tr>

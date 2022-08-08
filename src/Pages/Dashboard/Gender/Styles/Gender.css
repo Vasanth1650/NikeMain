@@ -45,6 +45,7 @@
     border-radius: 30px;
     margin-left: 8%;
     border: none;
+    
     padding-top: 0.5%;
     padding-bottom: 0.5%;
   }
@@ -54,8 +55,9 @@
     color: white;
     width: 8%;
     border-radius: 30px;
-    margin-left: 25%;
+    margin-left: 22%;
     border: none;
+    
     padding-top: 0.5%;
     padding-bottom: 0.5%;
   }
@@ -66,7 +68,8 @@
     width: 6%;
     border-radius: 30px;
     border: none;
-    margin-left: 25%;
+    
+    margin-left: 22%;
     padding-top: 0.5%;
     padding-bottom: 0.5%;
     

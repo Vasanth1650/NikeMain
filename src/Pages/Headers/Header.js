@@ -137,7 +137,7 @@ function Header() {
                             <BootStrap.Nav.Link className='mainnavtext' onClick={() => AllSection("Men's")} >MEN</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link onClick={() => AllSection("Women's")} >WOMEN</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link onClick={() => AllSection("Kids's")} >KIDS</BootStrap.Nav.Link>
-                            <BootStrap.Nav.Link onClick={() => AllSection("Sport's")}>SPORTS</BootStrap.Nav.Link>
+                            <BootStrap.Nav.Link onClick={() => AllSection("Gear")}>Gear</BootStrap.Nav.Link>
                             
                             
                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&

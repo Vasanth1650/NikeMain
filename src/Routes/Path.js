@@ -39,6 +39,7 @@ import Size from '../Pages/Size/Size';
 import SizeTshirt from '../Pages/Size/SizeTshirt';
 import AllSize from '../Pages/Size/AllSize';
 import { fetchUserData } from '../Api/AuthenticationService';
+import Sidebar from '../Pages/RedirectAllCategory/Sidebar';
 
 
 function Path() {
@@ -171,6 +172,8 @@ function Path() {
 
 
         <Route path='/sizetops' element={<SizeTshirt/>}/>
+
+        <Route path='/sidebar' element={<Sidebar/>}/>
 
 
         <Route path='*' element={<Dashboard/>}/>

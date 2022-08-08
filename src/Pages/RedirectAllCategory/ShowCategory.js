@@ -27,7 +27,12 @@ function ShowCategory() {
     const [color, setColor] = useState("")
     const usenavigate = useNavigate()
 
-    console.log(color)
+
+
+    let size = product.length + gentle.length + collection.length
+    useEffect(()=>{
+        
+    },[size])
 
 
 
@@ -40,6 +45,8 @@ function ShowCategory() {
         
         
     }, [])
+
+    
 
 
 
@@ -113,6 +120,8 @@ function ShowCategory() {
 
 
 
+
+
     console.log(data.username)
 
 
@@ -122,7 +131,20 @@ function ShowCategory() {
             <Headers />
 
             <div className='sidebardwadwadaw'>
-                <header>Filter</header>
+                <header>{option}({size})</header>
+                <div className='jfefwinda'>
+                        <div className='nidnwa'><a href="/section/Men's Shoes">Mens Shoes</a></div>
+                        <div className='nidnwa'><a href="/section/Mens training">Mens Training</a></div>
+                        <div className='nidnwa'><a href="/section/Kids's Shoes">Kids Shoes</a></div>
+                        <div className='nidnwa'><a href="/section/Women's">Womens Shoes</a></div>
+                        <div className='nidnwa'><a href="/section/Womens training">Womens Training</a></div>
+                        <div className='nidnwa'><a href="/section/Shorts">Shorts</a></div>
+                        <div className='nidnwa'><a href="/section/Tops">Tops</a></div>
+                        <div className='nidnwa'><a href="/section/T Shirt">T Shirts</a></div>
+                        <div className='nidnwa'><a href="/section/Socks">Socks</a></div>
+                    </div>
+                
+                <br/>
                 <div class="sidebardawdwadwa">
                     <header>Color's Available</header>
                     {
@@ -138,9 +160,9 @@ function ShowCategory() {
                     {
                         gentle.map(product =>
                             <div className='uwinajn'>
-                                {color!== product.productspecification1 &&
-                                <span class="dot" onClick={() => setColor(product.productspecification1)} style={{ backgroundColor: `${product.productspecification1}` }}></span>}
                                 
+                                <span class="dot" onClick={() => setColor(product.productspecification1)} style={{ backgroundColor: `${product.productspecification1}` }}></span>
+                           
                             </div>
 
                         )
@@ -158,36 +180,12 @@ function ShowCategory() {
                     }
                     
                 </div>
+                
                 {color!=="" &&
                 <BootStrap.Button className='njwnak' onClick={()=>setColor("")}>View All Color</BootStrap.Button>}
-                <div class="sidebardwadwadaw">
-                    <header>Category</header>
-                    <Dropdown>
-                        <Dropdown.Toggle className='bjdwanka' id="dropdown-basic">
-                            Category Available
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu >
-                            <Dropdown.Item href="/section/Men's Shoes">Mens Shoes</Dropdown.Item>
-                            <Dropdown.Item href="/section/Mens training">Mens Training</Dropdown.Item>
-                            <Dropdown.Item href="/section/Kids's Shoes">Kids Shoes</Dropdown.Item>
-                            <Dropdown.Item href="/section/Women's">Womens Shoes</Dropdown.Item>
-                            <Dropdown.Item href="/section/Tops">Tops</Dropdown.Item>
-                            <Dropdown.Item href="/section/Womens training">Womens Training</Dropdown.Item>
-                            <Dropdown.Item href="/section/Shorts">Shorts</Dropdown.Item>
-                            <Dropdown.Item href="/section/T Shirt">T Shirts</Dropdown.Item>
-                            <Dropdown.Item href="/section/Socks">Socks</Dropdown.Item>
-                        </Dropdown.Menu>
-
-
-
-                    </Dropdown>
-
-                    
-
-                </div>
+                
             </div>
-
+            
 
 
 
@@ -202,54 +200,54 @@ function ShowCategory() {
                                 <BootStrap.Col>
                                     <div className='items'>
                                         {color === "" &&
-                                            <BootStrap.CardGroup>
-                                                <BootStrap.Card >
-                                                    <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
-                                                    <BootStrap.Card.Body onClick={() => Nextstep(product.id)} >
-                                                        <BootStrap.Card.Text style={{ color: "red" }}>
-                                                            {product.gender}
-                                                            ({product.category3})
-                                                        </BootStrap.Card.Text>
-                                                        <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
-                                                        <div>
-                                                            {product.category1}
-                                                        </div>
-                                                        <div>
-                                                            ₹{product.price}
-                                                        </div>
-                                                    </BootStrap.Card.Body>
-                                                    <BootStrap.Button onClick={() => Nextstep(product.id)}>
-                                                        Buy Now
-                                                    </BootStrap.Button>
-                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                        <BootStrap.NavLink onClick={() => deleteById(product.id)}>Delete</BootStrap.NavLink>}
-                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                        <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
-                                                </BootStrap.Card>
-                                            </BootStrap.CardGroup>
+                                           <BootStrap.CardGroup >
+                                           <BootStrap.Card className='jawdjawd'>
+                                               <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
+                                               <BootStrap.Card.Body onClick={() => Nextstep(product.id)} >
+                                                   
+                                                   <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
+                                                   
+                                                   <div className='categoryandcategory'>
+                                                       {product.category1}
+                                                   </div>
+                                                   <div className='categoryandcategory'>
+                                                       {product.category2} Colors
+                                                   </div>
+                                                   
+                                                   <div className='kwjdnjwakwn'>
+                                                   ₹{product.price}
+                                                   </div>
+                                               </BootStrap.Card.Body>
+                                               
+                                               {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                   <BootStrap.NavLink onClick={() => deleteById(product.id)}>Delete</BootStrap.NavLink>}
+                                               {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                   <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
+                                           </BootStrap.Card>
+                                       </BootStrap.CardGroup>
                                         }
 
 
                                         {color === product.productspecification1 &&
-                                            <BootStrap.CardGroup>
-                                                <BootStrap.Card >
+                                            <BootStrap.CardGroup >
+                                                <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
                                                     <BootStrap.Card.Body onClick={() => Nextstep(product.id)} >
-                                                        <BootStrap.Card.Text style={{ color: "red" }}>
-                                                            {product.gender}
-                                                            ({product.category3})
-                                                        </BootStrap.Card.Text>
+                                                        
                                                         <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
-                                                        <div>
+                                                        
+                                                        <div className='categoryandcategory'>
                                                             {product.category1}
                                                         </div>
-                                                        <div>
-                                                            ₹{product.price}
+                                                        <div className='categoryandcategory'>
+                                                            {product.category2} Colors
+                                                        </div>
+                                                        
+                                                        <div className='kwjdnjwakwn'>
+                                                        ₹{product.price}
                                                         </div>
                                                     </BootStrap.Card.Body>
-                                                    <BootStrap.Button onClick={() => Nextstep(product.id)}>
-                                                        Buy Now
-                                                    </BootStrap.Button>
+                                                    
                                                     {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                                         <BootStrap.NavLink onClick={() => deleteById(product.id)}>Delete</BootStrap.NavLink>}
                                                     {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
@@ -285,60 +283,60 @@ function ShowCategory() {
                                 <BootStrap.Col>
                                     <div className='items'>
                                         {color === "" &&
-                                            <BootStrap.CardGroup>
-                                                <BootStrap.Card >
-                                                    <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
-                                                    <BootStrap.Card.Body onClick={() => Nextstep(product.id)} >
-                                                        <BootStrap.Card.Text style={{ color: "red" }}>
-                                                            {product.gender}
-                                                            ({product.category3})
-                                                        </BootStrap.Card.Text>
-                                                        <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
-                                                        <div >
-                                                            {product.category1}
-                                                        </div>
-                                                        <div>
-                                                            ₹{product.price}
-                                                        </div>
-                                                    </BootStrap.Card.Body>
-                                                    <BootStrap.Button onClick={() => Nextstep(product.id)}>
-                                                        Buy Now
-                                                    </BootStrap.Button>
-                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                        <BootStrap.NavLink onClick={() => deleteById(product.id)}>Delete</BootStrap.NavLink>}
-                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                        <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
-                                                </BootStrap.Card>
-                                            </BootStrap.CardGroup>
+                                            <BootStrap.CardGroup >
+                                            <BootStrap.Card className='jawdjawd'>
+                                                <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
+                                                <BootStrap.Card.Body onClick={() => Nextstep(product.id)} >
+                                                    
+                                                    <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
+                                                    
+                                                    <div className='categoryandcategory'>
+                                                        {product.category1}
+                                                    </div>
+                                                    <div className='categoryandcategory'>
+                                                        {product.category2} Colors
+                                                    </div>
+                                                    
+                                                    <div className='kwjdnjwakwn'>
+                                                    ₹{product.price}
+                                                    </div>
+                                                </BootStrap.Card.Body>
+                                                
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.NavLink onClick={() => deleteById(product.id)}>Delete</BootStrap.NavLink>}
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
+                                            </BootStrap.Card>
+                                        </BootStrap.CardGroup>
                                         }
 
 
                                         {color === product.productspecification1 &&
-                                            <BootStrap.CardGroup>
-                                                <BootStrap.Card >
-                                                    <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
-                                                    <BootStrap.Card.Body onClick={() => Nextstep(product.id)} >
-                                                        <BootStrap.Card.Text style={{ color: "red" }}>
-                                                            {product.gender}
-                                                            ({product.category3})
-                                                        </BootStrap.Card.Text>
-                                                        <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
-                                                        <div>
-                                                            {product.category1}
-                                                        </div>
-                                                        <div>
-                                                            ₹{product.price}
-                                                        </div>
-                                                    </BootStrap.Card.Body>
-                                                    <BootStrap.Button onClick={() => Nextstep(product.id)}>
-                                                        Buy Now
-                                                    </BootStrap.Button>
-                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                        <BootStrap.NavLink onClick={() => deleteById(product.id)}>Delete</BootStrap.NavLink>}
-                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                        <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
-                                                </BootStrap.Card>
-                                            </BootStrap.CardGroup>
+                                            <BootStrap.CardGroup >
+                                            <BootStrap.Card className='jawdjawd'>
+                                                <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
+                                                <BootStrap.Card.Body onClick={() => Nextstep(product.id)} >
+                                                    
+                                                    <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
+                                                    
+                                                    <div className='categoryandcategory'>
+                                                        {product.category1}
+                                                    </div>
+                                                    <div className='categoryandcategory'>
+                                                        {product.category2} Colors
+                                                    </div>
+                                                    
+                                                    <div className='kwjdnjwakwn'>
+                                                    ₹{product.price}
+                                                    </div>
+                                                </BootStrap.Card.Body>
+                                                
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.NavLink onClick={() => deleteById(product.id)}>Delete</BootStrap.NavLink>}
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
+                                            </BootStrap.Card>
+                                        </BootStrap.CardGroup>
                                         }
 
 
@@ -369,25 +367,25 @@ function ShowCategory() {
                                 <BootStrap.Col>
                                     
                                         {color === "" &&
-                                            <BootStrap.CardGroup>
-                                                <BootStrap.Card >
+                                            <BootStrap.CardGroup >
+                                                <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
                                                     <BootStrap.Card.Body onClick={() => Nextstep(product.id)} >
-                                                        <BootStrap.Card.Text style={{ color: "red" }}>
-                                                            {product.gender}
-                                                            ({product.category3})
-                                                        </BootStrap.Card.Text>
+                                                        
                                                         <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
-                                                        <div>
+                                                        
+                                                        <div className='categoryandcategory'>
                                                             {product.category1}
                                                         </div>
-                                                        <div>
-                                                            ₹{product.price}
+                                                        <div className='categoryandcategory'>
+                                                            {product.category2} Colors
+                                                        </div>
+                                                        
+                                                        <div className='kwjdnjwakwn'>
+                                                        ₹{product.price}
                                                         </div>
                                                     </BootStrap.Card.Body>
-                                                    <BootStrap.Button onClick={() => Nextstep(product.id)}>
-                                                        Buy Now
-                                                    </BootStrap.Button>
+                                                    
                                                     {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                                         <BootStrap.NavLink onClick={() => deleteById(product.id)}>Delete</BootStrap.NavLink>}
                                                     {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
@@ -398,25 +396,25 @@ function ShowCategory() {
 
 
                                         {color === product.productspecification1 &&
-                                            <BootStrap.CardGroup>
-                                                <BootStrap.Card >
+                                            <BootStrap.CardGroup >
+                                                <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
                                                     <BootStrap.Card.Body onClick={() => Nextstep(product.id)} >
-                                                        <BootStrap.Card.Text style={{ color: "red" }}>
-                                                            {product.gender}
-                                                            ({product.category3})
-                                                        </BootStrap.Card.Text>
+                                                        
                                                         <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
-                                                        <div>
+                                                        
+                                                        <div className='categoryandcategory'>
                                                             {product.category1}
                                                         </div>
-                                                        <div>
-                                                            ₹{product.price}
+                                                        <div className='categoryandcategory'>
+                                                            {product.category2} Colors
+                                                        </div>
+                                                        
+                                                        <div className='kwjdnjwakwn'>
+                                                        ₹{product.price}
                                                         </div>
                                                     </BootStrap.Card.Body>
-                                                    <BootStrap.Button onClick={() => Nextstep(product.id)}>
-                                                        Buy Now
-                                                    </BootStrap.Button>
+                                                    
                                                     {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                                         <BootStrap.NavLink onClick={() => deleteById(product.id)}>Delete</BootStrap.NavLink>}
                                                     {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
@@ -455,7 +453,7 @@ function ShowCategory() {
 
 
 
-            <br />
+            <br /> <br/>   <br/>   <br/>   <br/>  <br/> <br/>
 
             <Footer />
 

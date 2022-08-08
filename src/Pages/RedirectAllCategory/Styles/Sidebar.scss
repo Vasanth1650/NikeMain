@@ -16,7 +16,8 @@
   .uwinajn{
     float: left;
     color: black;
-    padding-left: 2%;
+    padding-left: 15%;
+    padding-top: 2%;
   }
 
   .bjdwanka{
@@ -33,6 +34,12 @@
   .uwinajnsds{
     color: black;
   }
+  .jawdjawd{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+  }
 
   .dot {
     height: 35px;
@@ -45,10 +52,32 @@
    
   }
 
+  .jfefwinda{
+    font-weight: 400;
+    margin-left: 14%;
+  }
+
+  .nidnwa{
+    padding-top: 0%;
+  }
+
   .njwnak{
     margin-left: 25%;
     background-color: #353535;
     border: none;
+  }
+
+  .jawdjawd{
+    text-align: left;
+  }
+
+  .kwjdnjwakwn{
+    padding-top: 5%;
+    font-weight: 500;
+  }
+
+  .categoryandcategory{
+    color: grey;
   }
  
   
@@ -60,6 +89,7 @@
     height: 100%;
     background-color: #fff;
     transition: all .5s ease;
+    
   }
   .sidebardwadwadaw header{
     font-size: 28px;
@@ -72,7 +102,7 @@
   }
   .sidebardwadwadaw a{
     display: block;
-    height: 65px;
+    height: 45px;
     width: 100%;
     color: #353535;
     line-height: 65px;
@@ -148,7 +178,7 @@
       visibility: hidden;
     }
     .sidebardwadwadaw a{
-      height: 60px;
+      height: 20px;
     }
     .sidebardwadwadaw a i{
       margin-left: -10px;

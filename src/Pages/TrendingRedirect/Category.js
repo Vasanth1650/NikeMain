@@ -25,6 +25,12 @@ function Category() {
     const usenavigate = useNavigate()
     const [color, setColor] = useState("")
 
+    let size = category1.length+gentle.length
+
+    useEffect(()=>{
+
+    },[size])
+
 
 
     useEffect(() => {
@@ -149,7 +155,16 @@ function Category() {
 
 
             <div className='sidebardwadwadaw'>
-                <header>Filter</header>
+                <header>{gender}({size})</header>
+                <div className='jfefwinda'>
+                        <div className='nidnwa'><a href="/mostpopular/Men's Shoes">Mens Shoes</a></div>
+                        <div className='nidnwa'><a href="/mostpopular/Mens training">Mens Training</a></div>
+                        <div className='nidnwa'><a href="/mostpopular/Sneakers">Sneakers</a></div>
+                        <div className='nidnwa'><a href="/mostpopular/Women's Shoes">Womens Shoes</a></div>
+                        <div className='nidnwa'><a href="/mostpopular/Womens training">Womens Training</a></div>
+                        <div className='nidnwa'><a href="/mostpopular/BasketBall">BasketBall</a></div>
+                    </div>
+                <br/>
                 <div class="sidebardwadwadaw">
                     <header>Color's Available</header>
                     {
@@ -175,28 +190,7 @@ function Category() {
                 </div>
                 {color !== "" &&
                     <BootStrap.Button className='njwnak' onClick={() => setColor("")}>View All Color</BootStrap.Button>}
-                <div class="sidebardwadwadaw">
-                    <header>Category</header>
-                    <Dropdown>
-                        <Dropdown.Toggle className='bjdwanka' id="dropdown-basic">
-                            Category Available
-                        </Dropdown.Toggle>
-
-                        <Dropdown.Menu >
-                            <Dropdown.Item >Mens Shoes</Dropdown.Item>
-                            <Dropdown.Item href="/mostpopular/Mens training">Mens Training</Dropdown.Item>
-                            <Dropdown.Item href="/mostpopular/BasketBall">Basketball</Dropdown.Item>
-                            <Dropdown.Item href="/mostpopular/Sneakers">Sneakers</Dropdown.Item>
-                            <Dropdown.Item href="/mostpopular/Men's Shoes">Mens Shoes</Dropdown.Item>
-                        </Dropdown.Menu>
-
-
-
-                    </Dropdown>
-
-
-
-                </div>
+                
             </div>
 
 
@@ -217,24 +211,21 @@ function Category() {
 
                                         {color === "" &&
                                             <BootStrap.CardGroup>
-                                                <BootStrap.Card className='lmknej'>
+                                                <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
                                                     <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
-                                                        <BootStrap.Card.Text style={{ color: "red" }}>
-                                                            {gentle.gender}
-                                                            ({gentle.category3})
-                                                        </BootStrap.Card.Text>
                                                         <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
-                                                        <div>
+                                                        <div className='categoryandcategory'>
                                                             {gentle.category1}
                                                         </div>
-                                                        <div>
+                                                        <div className='categoryandcategory'>
+                                                            {gentle.category2} Colors
+                                                        </div>
+                                                        <div className='kwjdnjwakwn'>
                                                             ₹{gentle.productprice}
                                                         </div>
                                                     </BootStrap.Card.Body>
-                                                    <BootStrap.Button onClick={() => Nextstep(gentle.id)}>
-                                                        Buy Now
-                                                    </BootStrap.Button>
+                                                    
                                                     {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                                         <BootStrap.NavLink onClick={() => deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
 
@@ -256,40 +247,37 @@ function Category() {
 
                                         {color === gentle.productspecification1 &&
                                             <BootStrap.CardGroup>
-                                                <BootStrap.Card className='lmknej'>
-                                                    <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
-                                                    <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
-                                                        <BootStrap.Card.Text style={{ color: "red" }}>
-                                                            {gentle.gender}
-                                                            ({gentle.category3})
-                                                        </BootStrap.Card.Text>
-                                                        <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
-                                                        <div>
-                                                            {gentle.category1}
-                                                        </div>
-                                                        <div>
-                                                            ₹{gentle.productprice}
-                                                        </div>
-                                                    </BootStrap.Card.Body>
-                                                    <BootStrap.Button onClick={() => Nextstep(gentle.id)}>
-                                                        Buy Now
-                                                    </BootStrap.Button>
-                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                        <BootStrap.NavLink onClick={() => deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
+                                            <BootStrap.Card className='jawdjawd'>
+                                                <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
+                                                <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
+                                                    <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
+                                                    <div className='categoryandcategory'>
+                                                        {gentle.category1}
+                                                    </div>
+                                                    <div className='categoryandcategory'>
+                                                        {gentle.category2} Colors
+                                                    </div>
+                                                    <div className='kwjdnjwakwn'>
+                                                        ₹{gentle.productprice}
+                                                    </div>
+                                                </BootStrap.Card.Body>
+                                                
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.NavLink onClick={() => deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
 
 
-                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                        <BootStrap.Form.Check
-                                                            type="switch"
-                                                            id="custom-switch"
-                                                            label=""
-                                                            value={gentle.id}
-                                                            onChange={handleChange}
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.Form.Check
+                                                        type="switch"
+                                                        id="custom-switch"
+                                                        label=""
+                                                        value={gentle.id}
+                                                        onChange={handleChange}
 
-                                                        />}
+                                                    />}
 
-                                                </BootStrap.Card>
-                                            </BootStrap.CardGroup>}
+                                            </BootStrap.Card>
+                                        </BootStrap.CardGroup>}
 
                                         <br />
                                     </div>
@@ -311,62 +299,74 @@ function Category() {
                                     <div className='items'>
                                         {color === "" &&
                                             <BootStrap.CardGroup>
-                                                <BootStrap.Card >
-                                                    <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} style={{ height: '20rem' }} variant="top" src={gentle.productimage1} />
-                                                    <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
-                                                        <BootStrap.Card.Text style={{ color: "red" }}>
-                                                            {gentle.gender}
-                                                            ({gentle.category3})
-                                                        </BootStrap.Card.Text>
-                                                        <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
-                                                        <div>
-                                                            {gentle.category1}
-                                                        </div>
-                                                        <div>
-                                                            ₹{gentle.productprice}
-                                                        </div>
-                                                    </BootStrap.Card.Body>
-                                                    <BootStrap.Button onClick={() => Nextstep(gentle.id)}>
-                                                        Buy Now
-                                                    </BootStrap.Button>
-                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                        <BootStrap.NavLink onClick={() => deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
-                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                        <BootStrap.NavLink onClick={() => UpdateDetails(gentle.id)}>Update</BootStrap.NavLink>}
+                                            <BootStrap.Card className='jawdjawd'>
+                                                <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
+                                                <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
+                                                    <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
+                                                    <div className='categoryandcategory'>
+                                                        {gentle.category1}
+                                                    </div>
+                                                    <div className='categoryandcategory'>
+                                                        {gentle.category2} Colors
+                                                    </div>
+                                                    <div className='kwjdnjwakwn'>
+                                                        ₹{gentle.productprice}
+                                                    </div>
+                                                </BootStrap.Card.Body>
+                                                
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.NavLink onClick={() => deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
 
-                                                </BootStrap.Card>
-                                            </BootStrap.CardGroup>
+
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.Form.Check
+                                                        type="switch"
+                                                        id="custom-switch"
+                                                        label=""
+                                                        value={gentle.id}
+                                                        onChange={handleChange}
+
+                                                    />}
+
+                                            </BootStrap.Card>
+                                        </BootStrap.CardGroup>
                                         }
 
 
 
                                         {color === gentle.productspecification1 &&
                                             <BootStrap.CardGroup>
-                                                <BootStrap.Card >
-                                                    <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} style={{ height: '20rem' }} variant="top" src={gentle.productimage1} />
-                                                    <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
-                                                        <BootStrap.Card.Text style={{ color: "red" }}>
-                                                            {gentle.gender}
-                                                            ({gentle.category3})
-                                                        </BootStrap.Card.Text>
-                                                        <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
-                                                        <div>
-                                                            {gentle.category1}
-                                                        </div>
-                                                        <div>
-                                                            ₹{gentle.productprice}
-                                                        </div>
-                                                    </BootStrap.Card.Body>
-                                                    <BootStrap.Button onClick={() => Nextstep(gentle.id)}>
-                                                        Buy Now
-                                                    </BootStrap.Button>
-                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                        <BootStrap.NavLink onClick={() => deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
-                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                        <BootStrap.NavLink onClick={() => UpdateDetails(gentle.id)}>Update</BootStrap.NavLink>}
+                                            <BootStrap.Card className='jawdjawd'>
+                                                <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
+                                                <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
+                                                    <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
+                                                    <div className='categoryandcategory'>
+                                                        {gentle.category1}
+                                                    </div>
+                                                    <div className='categoryandcategory'>
+                                                        {gentle.category2} Colors
+                                                    </div>
+                                                    <div className='kwjdnjwakwn'>
+                                                        ₹{gentle.productprice}
+                                                    </div>
+                                                </BootStrap.Card.Body>
+                                                
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.NavLink onClick={() => deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
 
-                                                </BootStrap.Card>
-                                            </BootStrap.CardGroup>
+
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.Form.Check
+                                                        type="switch"
+                                                        id="custom-switch"
+                                                        label=""
+                                                        value={gentle.id}
+                                                        onChange={handleChange}
+
+                                                    />}
+
+                                            </BootStrap.Card>
+                                        </BootStrap.CardGroup>
 
 
 
@@ -391,7 +391,7 @@ function Category() {
 
 
 
-            <br />
+            <br /><br/><br/><br/><br/><br/><br/><br/><br/>
 
 
             <Footer />

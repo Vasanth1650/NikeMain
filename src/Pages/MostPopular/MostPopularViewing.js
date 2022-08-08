@@ -94,11 +94,11 @@ function MostPopularViewing() {
                     throw Error('Something Went Wrong')
                 }
                 if (res.ok) {
-                    alert("Item Added To Wishlist");
+                    toast("Item Added To Wishlist");
                 }
             }).catch(error => {
                 console.log("something went wrong")
-                alert("Item Already Exists In Wishlist")
+                toast("Item Already Exists In Wishlist")
             })
 
         } else {
@@ -108,7 +108,6 @@ function MostPopularViewing() {
 
 
 
-    console.log(userid, username, productname, image1, price, size)
 
 
 

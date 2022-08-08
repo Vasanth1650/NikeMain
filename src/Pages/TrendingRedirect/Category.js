@@ -148,9 +148,9 @@ function Category() {
             <Headers />
 
 
-            <div className='sidebar'>
+            <div className='sidebardwadwadaw'>
                 <header>Filter</header>
-                <div class="sidebar">
+                <div class="sidebardwadwadaw">
                     <header>Color's Available</header>
                     {
                         gentle.map(product =>
@@ -175,7 +175,7 @@ function Category() {
                 </div>
                 {color !== "" &&
                     <BootStrap.Button className='njwnak' onClick={() => setColor("")}>View All Color</BootStrap.Button>}
-                <div class="sidebar">
+                <div class="sidebardwadwadaw">
                     <header>Category</header>
                     <Dropdown>
                         <Dropdown.Toggle className='bjdwanka' id="dropdown-basic">

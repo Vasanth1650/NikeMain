@@ -121,9 +121,9 @@ function ShowCategory() {
 
             <Headers />
 
-            <div className='sidebar'>
+            <div className='sidebardwadwadaw'>
                 <header>Filter</header>
-                <div class="sidebar">
+                <div class="sidebardawdwadwa">
                     <header>Color's Available</header>
                     {
                         product.map(product =>
@@ -160,7 +160,7 @@ function ShowCategory() {
                 </div>
                 {color!=="" &&
                 <BootStrap.Button className='njwnak' onClick={()=>setColor("")}>View All Color</BootStrap.Button>}
-                <div class="sidebar">
+                <div class="sidebardwadwadaw">
                     <header>Category</header>
                     <Dropdown>
                         <Dropdown.Toggle className='bjdwanka' id="dropdown-basic">
@@ -168,7 +168,7 @@ function ShowCategory() {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu >
-                            <Dropdown.Item >Mens Shoes</Dropdown.Item>
+                            <Dropdown.Item href="/section/Men's Shoes">Mens Shoes</Dropdown.Item>
                             <Dropdown.Item href="/section/Mens training">Mens Training</Dropdown.Item>
                             <Dropdown.Item href="/section/Kids's Shoes">Kids Shoes</Dropdown.Item>
                             <Dropdown.Item href="/section/Women's">Womens Shoes</Dropdown.Item>

@@ -52,7 +52,7 @@
   }
  
   
-  .sidebar{
+  .sidebardwadwadaw{
     
     float: left;
     width: 260px;
@@ -61,7 +61,7 @@
     background-color: #fff;
     transition: all .5s ease;
   }
-  .sidebar header{
+  .sidebardwadwadaw header{
     font-size: 28px;
     color: #353535;
     line-height: 70px;
@@ -70,7 +70,7 @@
     user-select: none;
     font-family: 'Lato', sans-serif;
   }
-  .sidebar a{
+  .sidebardwadwadaw a{
     display: block;
     height: 65px;
     width: 100%;
@@ -83,11 +83,11 @@
     transition: all .5s ease;
   }
   
-  .sidebar a i{
+  .sidebardwadwadaw a i{
     font-size: 23px;
     margin-right: 12px;
   }
-  .sidebar a span{
+  .sidebardwadwadaw a span{
     letter-spacing: 0.5px;
     text-transform: uppercase;
   }
@@ -132,7 +132,7 @@
     visibility: visible;
   }
   @media(max-width : 860px){
-    .sidebar{
+    .sidebardwadwadaw{
       height: auto;
       width: 70px;
       left: 0;
@@ -147,27 +147,27 @@
       opacity: 0;
       visibility: hidden;
     }
-    .sidebar a{
+    .sidebardwadwadaw a{
       height: 60px;
     }
-    .sidebar a i{
+    .sidebardwadwadaw a i{
       margin-left: -10px;
     }
     a:hover {
       width: 200px;
       background: inherit;
     }
-    .sidebar a:hover span{
+    .sidebardwadwadaw a:hover span{
       opacity: 1;
       visibility: visible;
     }
   }
   
-  .sidebar > a.active,.sidebar > a:hover:nth-child(even) {
+  .sidebardwadwadaw > a.active,.sidebardwadwadaw > a:hover:nth-child(even) {
     --accent-color: #52d6f4;
     --gradient-color: #c1b1f7;
   }
-  .sidebar a.active,.sidebar > a:hover:nth-child(odd) {
+  .sidebardwadwadaw a.active,.sidebardwadwadaw > a:hover:nth-child(odd) {
     --accent-color: #c1b1f7;
     --gradient-color: #A890FE;
   }

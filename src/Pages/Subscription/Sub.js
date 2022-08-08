@@ -76,14 +76,7 @@ function Sub() {
                         updatinguser(valuess)
 
                     },
-                    prefill: {
-                        name: "Vasanth",
-                        email: "vasanth16756@gmail.com",
-                        contact: "1234567890"
-                    },
-                    notes: {
-                        address: "dabjbawjdn"
-                    },
+                    
                     theme: {
                         color: "#3399cc",
                         hide_topbar: true
@@ -137,7 +130,7 @@ function Sub() {
                     <span>Where</span>
                     <span>All</span>
                     <span>Athletes</span>
-                    <div>Belong</div>
+                    <div style={{color:"black"}}>Belong</div>
                     <span>Welcome</span>
                 </h1>
 

@@ -31,7 +31,7 @@ function Signup() {
                 
             }
             if(response.ok){
-                usenavigate('/')
+                usenavigate('/login')
                 console.log("User Added")
             }
         }).catch((error)=>{
@@ -144,15 +144,16 @@ function Signup() {
                                                 <div className="form-group m-0">
                                                     <button type="submit" className="btn btn-primary">
 
-                                                        Login
+                                                        Register
 
 
                                                     </button>
                                                 </div>
-                                                <p class="signup">
-                                                    Have account? Login
-                                                    <a href="/login" onclick="toggleForm();">Sign Up.</a>
-                                                </p>
+                                                
+                                                <br/>
+                                                    
+                                                   <div>Already Have An Account?<a href="/login" >Login.</a></div> 
+                                                
                                             </form>
                                             
 

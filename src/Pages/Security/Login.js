@@ -150,10 +150,11 @@ const Login = ({loading,error, ...props})=> {
 
                                                     </button>
                                                 </div>
-                                                <p class="signup">
+                                                <br/>
+                                                <div>
                                                     Don't have an account ?
-                                                    <a href="/signup" onclick="toggleForm();">Sign Up.</a>
-                                                </p>
+                                                    <a href="/signup">Sign Up.</a>
+                                                </div>
                                             </form>
                                             {error &&
                                                 <Alert style={{ marginTop: '20px' }} variant="danger">

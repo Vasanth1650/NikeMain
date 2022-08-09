@@ -11,6 +11,7 @@ import Headers from '../Headers/Header';
 import Footer from '../Footer/Footer';
 import $ from 'jquery'
 import Dropdown from 'react-bootstrap/Dropdown';
+import ProductService from './Services/ProductService';
 
 
 
@@ -24,12 +25,24 @@ function Category() {
     const [data, setData] = useState({})
     const usenavigate = useNavigate()
     const [color, setColor] = useState("")
-
+    const [trending, setTrending] = useState([])
+    const [trend,setTrend] = useState("")
+    const [coloring, setColoring] = useState([])
     let size = category1.length+gentle.length
 
     useEffect(()=>{
 
     },[size])
+
+    
+    useEffect(() => {
+        if (color) {
+            if (coloring.length === 0) {
+                alert("No Product Available In This Color")
+                setColor("")
+            }
+        }
+    }, [coloring])
 
 
 
@@ -37,7 +50,29 @@ function Category() {
         setCheck(data.username)
         findByGender(gender)
         findByCategory1(gender)
-    }, [])
+        getBySpecification1(color);
+    }, [color])
+
+    useEffect(()=>{
+        getByTrends()
+    },[trend])
+
+    const getByTrends = () =>{
+        ProductService.getByTrend(trend).then((response)=>{
+            setTrending(response.data)
+        }).catch((err)=>{
+            console.log(err)
+        })
+    }
+
+
+    const getBySpecification1 = () =>{
+        ProductService.getByColor(color).then((response)=>{
+            setColoring(response.data)
+        }).catch((err)=>{
+            console.log(err)
+        })
+    }
 
     const deleteById = (productid) => {
         if (productid) {
@@ -121,9 +156,7 @@ function Category() {
         })
     }, [])
 
-
-
-
+    
 
 
 
@@ -141,6 +174,22 @@ function Category() {
             console.log("Not")
         }
         setDummy(current => !current)
+    }
+
+
+    const [dummys, setDummys] = useState('')
+
+
+    const handleChanger = event => {
+        if (event.target.checked) {
+            console.log("Yes")
+            console.log(event.target.value)
+            setTrend(event.target.value)
+        } else {
+            console.log("Not")
+            setTrend("")
+        }
+        setDummys(current => !current)
     }
 
 
@@ -165,33 +214,111 @@ function Category() {
                         <div className='nidnwa'><a href="/mostpopular/BasketBall">BasketBall</a></div>
                     </div>
                 <br/>
-                <div class="sidebardwadwadaw">
-                    <header>Color's Available</header>
-                    {
-                        gentle.map(product =>
-                            <div className='uwinajn'>
-                                <span class="dot" onClick={() => setColor(product.productspecification1)} style={{ backgroundColor: `${product.productspecification1}` }}></span>
-                            </div>
+                
+                <div class="line-3">
+                    <hr></hr>
+                </div>
 
-                        )
-                    }
-                    {
-                        category1.map(product =>
-                            <div className='uwinajn'>
-                                {color !== product.productspecification1 &&
-                                    <span class="dot" onClick={() => setColor(product.productspecification1)} style={{ backgroundColor: `${product.productspecification1}` }}></span>}
+                <div class="sidebardawdwadwa">
+                    <div className='colorsector'>Colour</div>
 
-                            </div>
+                    <div className='uwinajn'>
 
-                        )
-                    }
+                        <span class="dot" onClick={() => setColor("red")} style={{ backgroundColor: "red" }}></span>
+                        <div className='redcolor'>Red</div>
+                    </div>
+                    <div className='uwinajn'>
+                        <span class="dot" onClick={() => setColor("black")} style={{ backgroundColor: "black" }}></span>
+                        <div className='redcolor'>Black</div>
+
+                    </div>
+                    <div className='uwinajn'>
+                        <span class="dot" onClick={() => setColor("blue")} style={{ backgroundColor: "blue" }}></span>
+                        <div className='redcolor'>Blue</div>
+                    </div>
+
+                    <div className='uwinajn'>
+                        <span class="dot1" onClick={() => setColor("white")} style={{ backgroundColor: "white" }}></span>
+                        <div className='whitecolor'>White</div>
+                    </div>
+
+                    <div className='uwinajn'>
+                        <span class="dot4" onClick={() => setColor("purple")} style={{ backgroundColor: "purple" }}></span>
+                        <div className='purplecolor'>Violet</div>
+                    </div>
+
+                    <div className='uwinajn'>
+                       
+                        <span class="dot5" onClick={() => setColor("brown")} style={{ backgroundColor: "brown" }}></span>
+                        <div className='browncolor'>Brown</div>
+                    </div>
+
+
+
+                    <br /><br /><br /><br /><br /><br />
+                </div>
+
+
+                {color !== "" &&
+                    <BootStrap.Button className='njwnak' onClick={() => setColor("")}>View All Color</BootStrap.Button>}
+
+
+
+                <br />
+                <div class="line-3">
+                    <hr></hr>
+                </div>
+                <div className='sidebardawdwadwa'>
+                    <div className='colorsector'>Current</div>
+                    <div> 
+                    <BootStrap.Form.Check
+                        className='switchswift'
+                        
+                        id="custom-switch"
+                        label=""
+                        value="Trend"
+                        onChange={handleChanger}
+                    />
+                    <div className='trendswitch'>Trend</div>
+                    </div>
+                    <br/>
+                    <div> 
+                    <BootStrap.Form.Check
+                        className='switchswift'
+                        
+                        id="custom-switch"
+                        label=""
+                        value="Most Popular"
+                        onChange={handleChanger}
+                    />
+                    <div className='trendswitch'>Most Popular</div>
+                    </div>
+
+                    <br/>
+                    <div> 
+                    <BootStrap.Form.Check
+                        className='switchswift'
+                        
+                        id="custom-switch"
+                        label=""
+                        value="Just In"
+                        onChange={handleChanger}
+                    />
+                    <div className='trendswitch'>Just In</div>
+                    </div>
 
 
                 </div>
-                {color !== "" &&
-                    <BootStrap.Button className='njwnak' onClick={() => setColor("")}>View All Color</BootStrap.Button>}
-                
+
+                <br /><br />
+                <div class="line-3">
+                    <hr></hr>
+                </div>
+
+
             </div>
+
+
 
 
 
@@ -209,7 +336,7 @@ function Category() {
                                 <BootStrap.Col>
                                     <div>
 
-                                        {color === "" &&
+                                        {color === "" && trend ==="" &&
                                             <BootStrap.CardGroup>
                                                 <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
@@ -244,41 +371,6 @@ function Category() {
                                             </BootStrap.CardGroup>
                                         }
 
-
-                                        {color === gentle.productspecification1 &&
-                                            <BootStrap.CardGroup>
-                                            <BootStrap.Card className='jawdjawd'>
-                                                <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
-                                                <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
-                                                    <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
-                                                    <div className='categoryandcategory'>
-                                                        {gentle.category1}
-                                                    </div>
-                                                    <div className='categoryandcategory'>
-                                                        {gentle.category2} Colors
-                                                    </div>
-                                                    <div className='kwjdnjwakwn'>
-                                                        ₹{gentle.productprice}
-                                                    </div>
-                                                </BootStrap.Card.Body>
-                                                
-                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                    <BootStrap.NavLink onClick={() => deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
-
-
-                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                    <BootStrap.Form.Check
-                                                        type="switch"
-                                                        id="custom-switch"
-                                                        label=""
-                                                        value={gentle.id}
-                                                        onChange={handleChange}
-
-                                                    />}
-
-                                            </BootStrap.Card>
-                                        </BootStrap.CardGroup>}
-
                                         <br />
                                     </div>
                                 </BootStrap.Col>
@@ -297,7 +389,7 @@ function Category() {
                             category1.map(gentle =>
                                 <BootStrap.Col>
                                     <div className='items'>
-                                        {color === "" &&
+                                        {color === "" && trend === "" &&
                                             <BootStrap.CardGroup>
                                             <BootStrap.Card className='jawdjawd'>
                                                 <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
@@ -334,7 +426,28 @@ function Category() {
 
 
 
-                                        {color === gentle.productspecification1 &&
+                                        
+
+                                        <br />
+                                    </div>
+                                </BootStrap.Col>
+
+                            )
+                        }
+                    </BootStrap.Row>
+                </div>
+            </div>
+
+
+
+            <div>
+                <div >
+                    <BootStrap.Row xs={1} md={3} >
+                        {
+                            coloring.map(gentle =>
+                                <BootStrap.Col>
+                                    <div className='items'>
+                                        {color !== "" && trend==="" &&
                                             <BootStrap.CardGroup>
                                             <BootStrap.Card className='jawdjawd'>
                                                 <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
@@ -367,10 +480,126 @@ function Category() {
 
                                             </BootStrap.Card>
                                         </BootStrap.CardGroup>
-
-
-
                                         }
+
+
+
+                                        
+
+                                        <br />
+                                    </div>
+                                </BootStrap.Col>
+
+                            )
+                        }
+                    </BootStrap.Row>
+                </div>
+            </div>
+
+
+
+            <div>
+                <div >
+                    <BootStrap.Row xs={1} md={3} >
+                        {
+                            trending.map(gentle =>
+                                <BootStrap.Col>
+                                    <div className='items'>
+                                        {color === "" && trend!=="" &&
+                                            <BootStrap.CardGroup>
+                                            <BootStrap.Card className='jawdjawd'>
+                                                <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
+                                                <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
+                                                    <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
+                                                    <div className='categoryandcategory'>
+                                                        {gentle.category1}
+                                                    </div>
+                                                    <div className='categoryandcategory'>
+                                                        {gentle.category2} Colors
+                                                    </div>
+                                                    <div className='kwjdnjwakwn'>
+                                                        ₹{gentle.productprice}
+                                                    </div>
+                                                </BootStrap.Card.Body>
+                                                
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.NavLink onClick={() => deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
+
+
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.Form.Check
+                                                        type="switch"
+                                                        id="custom-switch"
+                                                        label=""
+                                                        value={gentle.id}
+                                                        onChange={handleChange}
+
+                                                    />}
+
+                                            </BootStrap.Card>
+                                        </BootStrap.CardGroup>
+                                        }
+
+
+
+                                        
+
+                                        <br />
+                                    </div>
+                                </BootStrap.Col>
+
+                            )
+                        }
+                    </BootStrap.Row>
+                </div>
+            </div>
+
+
+            <div>
+                <div >
+                    <BootStrap.Row xs={1} md={3} >
+                        {
+                            trending.map(gentle =>
+                                <BootStrap.Col>
+                                    <div className='items'>
+                                        {color === gentle.productspecification1 && trend !=="" &&
+                                            <BootStrap.CardGroup>
+                                            <BootStrap.Card className='jawdjawd'>
+                                                <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
+                                                <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
+                                                    <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
+                                                    <div className='categoryandcategory'>
+                                                        {gentle.category1}
+                                                    </div>
+                                                    <div className='categoryandcategory'>
+                                                        {gentle.category2} Colors
+                                                    </div>
+                                                    <div className='kwjdnjwakwn'>
+                                                        ₹{gentle.productprice}
+                                                    </div>
+                                                </BootStrap.Card.Body>
+                                                
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.NavLink onClick={() => deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
+
+
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.Form.Check
+                                                        type="switch"
+                                                        id="custom-switch"
+                                                        label=""
+                                                        value={gentle.id}
+                                                        onChange={handleChange}
+
+                                                    />}
+
+                                            </BootStrap.Card>
+                                        </BootStrap.CardGroup>
+                                        }
+
+
+
+                                        
 
                                         <br />
                                     </div>

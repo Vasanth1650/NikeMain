@@ -63,7 +63,7 @@ function NormalProductAdd() {
             }
             if(res.ok){
                 toast("Sucessfully Added")
-                usenavigate('/dashboard')
+                usenavigate(-1)
                 console.log("New Product Added")
             }
         }).catch(err=>{
@@ -479,6 +479,10 @@ function NormalProductAdd() {
                                                 <option>Womens training</option>
                                                 <option>kids training</option>
                                                 <option>Slides And Sandals</option>
+                                                <option>Road Racing Shoes</option>
+                                                <option>Running Clothing</option>
+                                                <option>Womens Clothing</option>
+                                                <option>training</option>
                                                 <option>Clothing</option>
                                                 <option>Gear</option>
                                                 <option>Football</option>

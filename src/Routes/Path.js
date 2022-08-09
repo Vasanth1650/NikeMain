@@ -40,6 +40,8 @@ import SizeTshirt from '../Pages/Size/SizeTshirt';
 import AllSize from '../Pages/Size/AllSize';
 import { fetchUserData } from '../Api/AuthenticationService';
 import Sidebar from '../Pages/RedirectAllCategory/Sidebar';
+import Mens from '../Pages/Mens/Mens';
+import Womens from '../Pages/Womens/Womens';
 
 
 function Path() {
@@ -103,6 +105,10 @@ function Path() {
 
         <Route path='/subscription' element={<Sub/>}/>
 
+
+        <Route path='/mens' element={<Mens/>}/>
+
+        <Route path='/womens' element={<Womens/>}/>
 
         <Route path='/checkout' element={<Checkout/>}/>
 
@@ -172,6 +178,7 @@ function Path() {
 
 
         <Route path='/sizetops' element={<SizeTshirt/>}/>
+
 
         <Route path='/sidebar' element={<Sidebar/>}/>
 

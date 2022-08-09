@@ -26,6 +26,14 @@ class DashboardService{
     update(id,addproduct){
         return axios.put(VIEW_BASE_REST_API_URL+'/update/'+id,addproduct)
     }
+
+    getByColor(color){
+        return axios.get(VIEW_BASE_REST_API_URL+'/specification/'+color)
+    }
+
+    getByTrend(trend){
+        return axios.get(VIEW_BASE_REST_API_URL+'/productunderthis/'+trend)
+    }
 }
 
 export default new DashboardService();

@@ -36,9 +36,9 @@ function NormalProductViewing() {
     const [price, setPrice] = useState('')
     const [size, setSize] = useState('')
     const [productid, setProductid] = useState('')
-    const [gentle,setGentle] = useState([])
-    const [bottom,setBottom] = useState([])
-    const [similar,setSimilar] = useState([])
+    const [gentle, setGentle] = useState([])
+    const [bottom, setBottom] = useState([])
+    const [similar, setSimilar] = useState([])
 
 
     useEffect(() => {
@@ -47,22 +47,30 @@ function NormalProductViewing() {
         findByName(product.productname)
     }, [product])
 
+    let sizeign = bottom.length + gentle.length
+
+
+
+    useEffect(() => {
+
+    }, [sizeign])
+
     const findByName = () => {
-        NormalProductService.findByName(product.productname).then((response)=>{
+        NormalProductService.findByName(product.productname).then((response) => {
             setSimilar(response.data)
-            console.log("Hello",response.data)
-        }).catch((error)=>{
+            console.log("Hello", response.data)
+        }).catch((error) => {
             console.log(error)
         })
     }
 
-    
-    
+
+
     const findByGender = () => {
         DashboardService.getByCategory1(product.category1).then((response) => {
             setGentle(response.data)
-            
-           
+
+
         }).catch((error) => {
             console.log(error)
         })
@@ -72,8 +80,8 @@ function NormalProductViewing() {
     const getByCategory = () => {
         OptionPageService.findByCategory(product.category1).then((response) => {
             setBottom(response.data);
-          
-            
+
+
         }).catch(error => {
             console.log(error)
         })
@@ -85,7 +93,7 @@ function NormalProductViewing() {
         e.preventDefault()
         if ((localStorage.getItem("USER_KEY")) && (check != "undefined")) {
             const checkouts = { userid, username, productname, image1, price, size }
-            if (size && size!="-") {
+            if (size && size != "-") {
                 fetch("https://nike-backend.herokuapp.com/charging/checkout", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -96,9 +104,9 @@ function NormalProductViewing() {
                 }).catch(error => {
                     console.log("something went wrong")
                 })
-            } else if(size==="-"){
+            } else if (size === "-") {
                 toast("These Size Are Unavailable")
-            }else{
+            } else {
                 toast("Please Choose Size For Your Product")
             }
         } else {
@@ -288,12 +296,12 @@ function NormalProductViewing() {
     }, [])
 
 
-    function sizeChart(areaCategory){
-        if(areaCategory==="Men's Shoes" || areaCategory==="Kid's Shoes" || areaCategory==="Women's Shoes" || areaCategory==="Mens training" || areaCategory==="Womens training" || areaCategory==="Kids training" || areaCategory==="Slides And Sandals"){
+    function sizeChart(areaCategory) {
+        if (areaCategory === "Men's Shoes" || areaCategory === "Kid's Shoes" || areaCategory === "Women's Shoes" || areaCategory === "Mens training" || areaCategory === "Womens training" || areaCategory === "Kids training" || areaCategory === "Slides And Sandals") {
             usenavigate('/size')
-        }else if(areaCategory==="T Shirt" || areaCategory==="Tops"){
+        } else if (areaCategory === "T Shirt" || areaCategory === "Tops") {
             usenavigate('/sizetops')
-        }else{
+        } else {
             usenavigate('/allsize')
         }
     }
@@ -312,7 +320,7 @@ function NormalProductViewing() {
 
 
 
- 
+
 
 
     return (
@@ -338,24 +346,24 @@ function NormalProductViewing() {
                                 <div>Includes All Taxes</div>
 
                             </div>
-                            <br/>
+                            <br />
                             {
-                                similar.map(similar=>
-                                    
+                                similar.map(similar =>
+
                                     <div className='kuttsdes'>
-                                        
-                                        <img width="75" height="80" className='kutti' onClick={()=>Nextstep(similar.id)}  src={similar.image1}></img>
-                                        {product.id===similar.id &&
-                                        <div>--------</div>}
+
+                                        <img width="75" height="80" className='kutti' onClick={() => Nextstep(similar.id)} src={similar.image1}></img>
+                                        {product.id === similar.id &&
+                                            <div>--------</div>}
                                     </div>
-                                    
+
                                 )
                             }
-                            <br/><br/>
+                            <br /><br />
                             <br />
                             <br />
                             <br />
-                            
+
                             <div>Size</div>
                             <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>
                             <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>
@@ -387,12 +395,12 @@ function NormalProductViewing() {
                         <div className='conenting1'>
                             <div>{product.productdescription}
                                 <div className='extra'>
-                                    <button  class="btn popup-btn" href="#">View Details</button>
-                                    <br/><br/>
-                                    
+                                    <button class="btn popup-btn" href="#">View Details</button>
+                                    <br /><br />
+
                                     <br />
-                                    <br/>
-                                    
+                                    <br />
+
                                 </div></div>
 
                         </div>
@@ -403,26 +411,26 @@ function NormalProductViewing() {
                             <div class="popup-box">
                                 <h2>Product Details</h2>
                                 <div>
-                                        <div className='dropingheadeers'>Free Delivery And Returns
-                                    <BootStrap.DropdownButton className='dropsin' variant="dark">
-                                        <br/>
-                                        <div> • Your order of ₹14,000 or more gets free standard delivery.</div>
-                                        <br />
-                                        <div> • Standard Delivery for Postal Codes: 100000-399999, 500000-699999 and 800000-899999 : 4 – 16 business days</div>
-                                        <br />
-                                        <div> • Standard Delivery for Postal Codes: 400000-499999 : 3 – 15 business days</div>
-                                        <br />
-                                        <div> • Standard Delivery for Postal Codes: 700000-799999 and 900000-999999: 5 – 21 business days</div>
-                                        <br />
-                                        <div> • Orders are processed and delivered Monday-Friday (excluding public holidays).</div>
-                                        <br />
+                                    <div className='dropingheadeers'>Free Delivery And Returns
+                                        <BootStrap.DropdownButton className='dropsin' variant="dark">
+                                            <br />
+                                            <div> • Your order of ₹14,000 or more gets free standard delivery.</div>
+                                            <br />
+                                            <div> • Standard Delivery for Postal Codes: 100000-399999, 500000-699999 and 800000-899999 : 4 – 16 business days</div>
+                                            <br />
+                                            <div> • Standard Delivery for Postal Codes: 400000-499999 : 3 – 15 business days</div>
+                                            <br />
+                                            <div> • Standard Delivery for Postal Codes: 700000-799999 and 900000-999999: 5 – 21 business days</div>
+                                            <br />
+                                            <div> • Orders are processed and delivered Monday-Friday (excluding public holidays).</div>
+                                            <br />
 
-                                        <div >Nike Members enjoy free returns. Exclusions apply.<a href='/subscription'> Learn More</a></div>
-                                    </BootStrap.DropdownButton>
+                                            <div >Nike Members enjoy free returns. Exclusions apply.<a href='/subscription'> Learn More</a></div>
+                                        </BootStrap.DropdownButton>
                                     </div>
-                                    
-                                    </div>
-                                <br/>
+
+                                </div>
+                                <br />
                                 <div>*Color Shown : {product.productspecification1}</div>
                                 <br />
                                 <div>*Style: {product.productspecification2}</div>
@@ -432,7 +440,7 @@ function NormalProductViewing() {
                                 <br />
                                 <div>Inspired Roads : {product.productspecification4}</div>
                                 <br />
-                                
+
 
                                 <a class="close-btn popup-close" href="#">x</a>
                             </div>
@@ -477,110 +485,209 @@ function NormalProductViewing() {
                 </div>
             </div>
 
+            {product.image10 !== "-" &&
+                <div className='explore'>Explore the {product.productname}</div>}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {product.image10 !== "-" &&
+                <div className='explore'>
+                    <img width="1000" src={product.image10} />
+                </div>}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {product.image10 !== "-" &&
+                <div className='explore'>Light Flex</div>}
+            {sizeign !== 1 &&
+                <br />}
+            {product.image10 !== "-" &&
+                <div className='asd'>{product.productspecification3}</div>}
+            {product.image10 !== "-" &&
+                <div className='asd'>dynamic flexible tongue provides a lightweight fit and plush</div>}
+            {product.image10 !== "-" &&
+                <div className='asd'>comfort.</div>}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {product.image10 !== "-" &&
+                <div className='explore'>
+                    <img width="1000" src={product.image11} />
+                </div>}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {product.image10 !== "-" &&
+                <div className='explore'>Light Feel, Big Energy</div>}
+            {sizeign !== 1 &&
+                <br />}
+            {product.image10 !== "-" &&
+                <div className='asd'>A full-length Zoom Air Strobel unit is stitched directly to the</div>}
+            {product.image10 !== "-" &&
+                <div className='asd'>upper, sitting right under your foot to minimise weight. An</div>}
+            {product.image10 !== "-" &&
+                <div className='asd'>energy-returning Zoom Air unit is stacked underneath the</div>}
+            {product.image10 !== "-" &&
+                <div className='asd'>forefoot to add an extra burst of responsiveness off the dribble.</div>}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {product.image10 !== "-" &&
+                <div className='explore'>
+                    <img width="1000" src={product.image12} />
+                </div>}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {product.image10 !== "-" &&
+                <div className='explore'>Secure for Take-Off</div>}
+            {sizeign !== 1 &&
+                <br />}
+            {product.image10 !== "-" &&
+                <div className='asd'>Color : {product.productspecification1}</div>}
+            {product.image10 !== "-" &&
+                <div className='asd'>{product.productspecification3}</div>}
+            {product.image10 !== "-" &&
+                <div className='asd'>taking off to finish on offence.</div>}
 
-            <div className='explore'>Explore the {product.productname}</div>
-            <br /><br />
-            <div className='explore'>
-                <img width="1000" src={product.image10} />
-            </div>
-            <br /><br />
-            <div className='explore'>Light Flex</div>
-            <br />
-            <div className='asd'>{product.productspecification3}</div>
-            <div className='asd'>dynamic flexible tongue provides a lightweight fit and plush</div>
-            <div className='asd'>comfort.</div>
-            <br /><br /><br />
-            <div className='explore'>
-                <img width="1000" src={product.image11} />
-            </div>
-            <br /><br /><br />
-            <div className='explore'>Light Feel, Big Energy</div>
-            <br />
-            <div className='asd'>A full-length Zoom Air Strobel unit is stitched directly to the</div>
-            <div className='asd'>upper, sitting right under your foot to minimise weight. An</div>
-            <div className='asd'>energy-returning Zoom Air unit is stacked underneath the</div>
-            <div className='asd'>forefoot to add an extra burst of responsiveness off the dribble.</div>
-            <br /><br /><br /><br />
-            <div className='explore'>
-                <img width="1000" src={product.image12} />
-            </div>
-            <br /><br /><br />
-            <div className='explore'>Secure for Take-Off</div>
-            <br />
-            <div className='asd'>Color : {product.productspecification1}</div>
-            <div className='asd'>{product.productspecification3}</div>
-            <div className='asd'>taking off to finish on offence.</div>
-            <br /><br /><br /><br />
 
-            
-            <div className='similars'>You May Also Like This</div>
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
 
-            <br /><br />
+            {sizeign !== 1 &&
+                <div className='similars'>You May Also Like This</div>}
+
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
 
             <div>
-                <div class="containeriknje">
-                    <div class="row">
-                        <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
-                            <div class="MultiCarousel-inner">
+                {sizeign !== 1 &&
+                    <div class="containeriknje">
+                        <div class="row">
+                            <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
+                                <div class="MultiCarousel-inner">
 
 
 
-                                {
-                                    bottom.map(bottom =>
-                                        <div className="item">
-                                            {product.productname !== bottom.productname && 
-                                            <BootStrap.Card className='cardcarsol' style={{ width: '100%'}}>
-                                                <div class="pad15" onClick={() => Nextstep(bottom.id)}>
-                                                <BootStrap.Card.Img variant="top" src={bottom.image1} />
-                                                <BootStrap.Card.Body>
-                                                    <div>{bottom.productname}</div>
-                                                    <div>{bottom.category1}</div>
-                                                    <div style={{color:"red"}}>₹{bottom.price}</div>
-                                                </BootStrap.Card.Body>
-                                            
-                                                </div>
-                                            </BootStrap.Card>
-                                            }
-                                        </div>
+                                    {
+                                        bottom.map(bottom =>
+                                            <div className="item">
+                                                {product.productname !== bottom.productname &&
+                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+                                                        <div class="pad15" onClick={() => Nextstep(bottom.id)}>
+                                                            <BootStrap.Card.Img variant="top" src={bottom.image1} />
+                                                            <BootStrap.Card.Body>
+                                                            <div className='mensproductname'>{bottom.productname}</div>
+                                                                <div className='mensproductgender'>{bottom.gender}</div>
+                                                                <div className='mensproductprice'>₹{bottom.price}</div>
+                                                            </BootStrap.Card.Body>
+
+                                                        </div>
+                                                    </BootStrap.Card>
+                                                }
+                                            </div>
 
 
-                                    )
-                                }
+                                        )
+                                    }
 
-                                {
-                                    gentle.map(gentle =>
-                                        <div className="item">
-                                            {product.productname !== gentle.productname && 
-                                            <BootStrap.Card className='cardcarsol' style={{ width: '100%'}}>
-                                                <div class="pad15" onClick={() => Nextsteps(gentle.id)}>
-                                                <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
-                                                <BootStrap.Card.Body>
-                                                    <div>{gentle.productname}</div>
-                                                    <div>{gentle.category1}</div>
-                                                    <div style={{color:"red"}}>₹{gentle.productprice}</div>
-                                                </BootStrap.Card.Body>
-                                                </div>
-                                            </BootStrap.Card>
-                                            }
-                                        </div>
-                                    )
-                                }
+                                    {
+                                        gentle.map(gentle =>
+                                            <div className="item">
+                                                {product.productname !== gentle.productname &&
+                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+                                                        <div class="pad15" onClick={() => Nextsteps(gentle.id)}>
+                                                            <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
+                                                            <BootStrap.Card.Body>
+                                                            <div className='mensproductname'>{gentle.productname}</div>
+                                                            <div className='mensproductgender'>{gentle.gender}</div>
+                                                            <div className='mensproductprice'>₹{gentle.productprice}</div>
+                                                            </BootStrap.Card.Body>
+                                                        </div>
+                                                    </BootStrap.Card>
+                                                }
+                                            </div>
+                                        )
+                                    }
+
+                                </div>
+                                {sizeign !== 1 &&
+                                    <button class="btn btn-primary leftLst"> ← </button>}
+                                {sizeign !== 1 &&
+                                    <button class="btn btn-primary rightLst"> → </button>}
+
 
                             </div>
-                            <button class="btn btn-primary leftLst"> ← </button>
-                            <button class="btn btn-primary rightLst"> → </button>
-
-
                         </div>
-                    </div>
-                </div>
+                    </div>}
             </div>
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
 
-            <br /><br /><br /><br /><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
             <Footer />
 
-        <ToastContainer/>
+            <ToastContainer />
 
         </div>
 

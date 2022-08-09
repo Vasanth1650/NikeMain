@@ -1,1 +1,28 @@
-dwad
+Removed Styles
+
+Dashboard
+div className='nikes'
+
+                <span class="parallax-text" text="NIKE">
+                    NIKE
+                </span>
+
+                <img className="given" src="https://i.imgur.com/6DWEblv.png" alt="Nike sneaker" />
+div
+
+
+<div>
+                <div className='jordan'>
+                    <br></br>
+                    <div className='popi'>POPULAR RIGHT NOW</div>
+                    <div className='popularbut'>
+                        <BootStrap.Button variant="outline-secondary" onClick={() => Options("Slides And Sandals")}>SLIDES AND SANDALS</BootStrap.Button>
+
+                        <BootStrap.Button variant="outline-secondary" onClick={() => Options("T Shirt")}>T-SHIRTS AND SHORTS</BootStrap.Button>
+                        <BootStrap.Button variant="outline-secondary" onClick={() => Options("Football")}>FOOTBALL</BootStrap.Button>
+                        <BootStrap.Button variant="outline-secondary" onClick={() => Options("Sneakers")}>WHITE SNEAKERS</BootStrap.Button>
+                        <BootStrap.Button variant="outline-secondary" onClick={() => Options("Socks")}>Socks</BootStrap.Button>
+                    </div>
+                    <br></br>
+                </div>
+             </div>

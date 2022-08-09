@@ -134,14 +134,14 @@ function Header() {
                     <BootStrap.Navbar.Collapse id="responsive-navbar-nav" className='mainnavitems'>
                         <BootStrap.Nav className="me-auto">
                         
-                            <BootStrap.Nav.Link className='mainnavtext' onClick={() => AllSection("Men's")} >MEN</BootStrap.Nav.Link>
-                            <BootStrap.Nav.Link onClick={() => AllSection("Women's")} >WOMEN</BootStrap.Nav.Link>
-                            <BootStrap.Nav.Link onClick={() => AllSection("Kids's")} >KIDS</BootStrap.Nav.Link>
-                            <BootStrap.Nav.Link onClick={() => AllSection("Gear")}>GEAR</BootStrap.Nav.Link>
+                            <BootStrap.Nav.Link className='mainnavtext' href='/mens'>Men</BootStrap.Nav.Link>
+                            <BootStrap.Nav.Link href='/womens'>Women</BootStrap.Nav.Link>
+                            <BootStrap.Nav.Link onClick={() => AllSection("Kids's")} >Kids</BootStrap.Nav.Link>
+                            <BootStrap.Nav.Link onClick={() => AllSection("Gear")}>Gear</BootStrap.Nav.Link>
                             
                             
                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                <BootStrap.Button href="/allsection/mainadd" variant="warning" type="submit">ADD PRODUCTS</BootStrap.Button>}
+                                <BootStrap.Nav.Link href="/allsection/mainadd"  type="submit">Add products</BootStrap.Nav.Link>}
 
 
                         </BootStrap.Nav>

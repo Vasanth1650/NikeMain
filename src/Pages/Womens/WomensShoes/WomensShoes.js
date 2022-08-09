@@ -2,15 +2,10 @@ import React, { useEffect, useState } from 'react'
 import $ from 'jquery'
 import * as BootStrap from 'react-bootstrap'
 import DashboardService from '../../MostPopular/Services/DashboardService'
-import './Magics/Magic.css'
-import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom'
 
-function Magic() {
-    const [product, setProduct] = useState([])
+function WomensShoes() {
     const [gentle, setGentle] = useState([])
-    const [bottom, setBottom] = useState([])
-    const [similar, setSimilar] = useState([])
     const usenavigate = useNavigate()
 
     useEffect(() => {
@@ -103,7 +98,7 @@ function Magic() {
             var divStyle = $(el + ' ' + itemsDiv).css('transform');
             var values = divStyle.match(/-?[\d\.]+/g);
             var xds = Math.abs(values[4]);
-            if (e == 0) {
+            if (e === 0) {
                 translateXval = parseInt(xds) - parseInt(itemWidth * s);
                 $(el + ' ' + rightBtn).removeClass("over");
 
@@ -112,7 +107,7 @@ function Magic() {
                     $(el + ' ' + leftBtn).addClass("over");
                 }
             }
-            else if (e == 1) {
+            else if (e === 1) {
                 var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
                 translateXval = parseInt(xds) + parseInt(itemWidth * s);
                 $(el + ' ' + leftBtn).removeClass("over");
@@ -144,7 +139,7 @@ function Magic() {
         <div className='bodyd'>
             <div>
                 <br /><br /><br />
-                <div className='similarsbudwaw'>Most Selling</div>
+                <div className='similarsbudwaw'>Outdoor Festival</div>
                 <br /><br />
 
                 <div>
@@ -156,28 +151,27 @@ function Magic() {
 
                                     {
                                         gentle.map(gentle =>
-
+                                            
                                             <div className="item" onClick={() => Nextsteps(gentle.id)}>
-                                                {gentle.category3 === "Trend" &&
+                                                {gentle.category1 === "Women's Shoes" &&
                                                     <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
                                                         <div class="pad15">
-                                                            <BootStrap.Card.Img variant="top" src={gentle.productimage9} />
+                                                        <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
                                                             <BootStrap.Card.Body>
                                                                 <div className='mensproductname'>{gentle.productname}</div>
                                                                 <div className='mensproductgender'>{gentle.gender}</div>
                                                                 <div className='mensproductprice'>₹{gentle.productprice}</div>
-
                                                             </BootStrap.Card.Body>
                                                         </div>
                                                     </BootStrap.Card>
                                                 }
-
+                                            
                                             </div>
                                         )
                                     }
 
 
-
+                                    
 
                                 </div>
                                 <button class="btn btn-primary leftLsts"> ← </button>
@@ -191,9 +185,9 @@ function Magic() {
 
             </div>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /> <br /><br /><br /><br /> <br /><br />
-
+            
         </div>
     )
 }
 
-export default Magic
+export default WomensShoes

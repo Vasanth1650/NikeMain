@@ -60,11 +60,11 @@ function MostPopularViewing() {
         })
     }
 
-    const findByName = () =>{
-        DashboardService.getByName(product.productname).then((response)=>{
+    const findByName = () => {
+        DashboardService.getByName(product.productname).then((response) => {
             setSimilar(response.data)
-            console.log("Hello",response.data)
-        }).catch((error)=>{
+            console.log("Hello", response.data)
+        }).catch((error) => {
             console.log(error)
         })
     }
@@ -342,24 +342,24 @@ function MostPopularViewing() {
                                 <div>Includes All Taxes</div>
 
                             </div>
-                            <br/>
+                            <br />
                             {
-                                similar.map(similar=>
-                                    
+                                similar.map(similar =>
+
                                     <div className='kuttsdes'>
-                                        
-                                        <img width="75" className='kutti' onClick={()=>Nextsteps(similar.id)} src={similar.productimage1}></img>
-                                        {product.id===similar.id &&
-                                        <div>--------</div>}
+
+                                        <img width="75" className='kutti' onClick={() => Nextsteps(similar.id)} src={similar.productimage1}></img>
+                                        {product.id === similar.id &&
+                                            <div>--------</div>}
                                     </div>
-                                    
+
                                 )
                             }
-                            
+
                             <br />
                             <br />
                             <br />
-                            <br/><br/>
+                            <br /><br />
                             <div>Size</div>
                             <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>
                             <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>
@@ -503,18 +503,18 @@ function MostPopularViewing() {
                                 {
                                     bottom.map(bottom =>
                                         <div className="item">
-                                            {product.productname !== bottom.productname && 
-                                            <BootStrap.Card className='cardcarsol' style={{ width: '100%'}}>
-                                                <div class="pad15" onClick={() => Nextstep(bottom.id)}>
-                                                <BootStrap.Card.Img variant="top" src={bottom.image1} />
-                                                <BootStrap.Card.Body>
-                                                    <div>{bottom.productname}</div>
-                                                    <div>{bottom.category1}</div>
-                                                    <div style={{color:"red"}}>₹{bottom.price}</div>
-                                                </BootStrap.Card.Body>
-                                                </div>
-                                            </BootStrap.Card>
-                                            } 
+                                            {product.productname !== bottom.productname &&
+                                                <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+                                                    <div class="pad15" onClick={() => Nextstep(bottom.id)}>
+                                                        <BootStrap.Card.Img variant="top" src={bottom.image1} />
+                                                        <BootStrap.Card.Body>
+                                                            <div className='mensproductname'>{bottom.productname}</div>
+                                                            <div className='mensproductgender'>{bottom.gender}</div>
+                                                            <div className='mensproductprice'>₹{bottom.price}</div>
+                                                        </BootStrap.Card.Body>
+                                                    </div>
+                                                </BootStrap.Card>
+                                            }
                                         </div>
 
 
@@ -524,18 +524,18 @@ function MostPopularViewing() {
                                 {
                                     gentle.map(gentle =>
                                         <div className="item">
-                                            {product.productname !== gentle.productname && 
-                                            <BootStrap.Card className='cardcarsol' style={{ width: '100%'}}>
-                                                <div class="pad15" onClick={() => Nextsteps(gentle.id)}>
-                                                <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
-                                                <BootStrap.Card.Body>
-                                                    <div>{gentle.productname}</div>
-                                                    <div>{gentle.category1}</div>
-                                                    <div style={{color:"red"}}>₹{gentle.productprice}</div>
-                                                </BootStrap.Card.Body>
-                                                </div>
-                                            </BootStrap.Card>
-}
+                                            {product.productname !== gentle.productname &&
+                                                <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+                                                    <div class="pad15" onClick={() => Nextsteps(gentle.id)}>
+                                                        <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
+                                                        <BootStrap.Card.Body>
+                                                            <div className='mensproductname'>{gentle.productname}</div>
+                                                            <div className='mensproductgender'>{gentle.gender}</div>
+                                                            <div className='mensproductprice'>₹{gentle.productprice}</div>
+                                                        </BootStrap.Card.Body>
+                                                    </div>
+                                                </BootStrap.Card>
+                                            }
                                         </div>
                                     )
                                 }
@@ -550,7 +550,7 @@ function MostPopularViewing() {
                 </div>
             </div>
 
-            <br /><br /><br /><br /><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
             <ToastContainer />
             <Footer />

@@ -469,6 +469,7 @@ function MainDBAdd() {
                                                 <option>Womens training</option>
                                                 <option>Kids training</option>
                                                 <option>Slides And Sandals</option>
+                                                <option>Nike Air Max</option>
                                                 <option>Clothing</option>
                                                 <option>Gear</option>
                                                 <option>Football</option>

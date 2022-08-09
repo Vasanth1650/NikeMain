@@ -23,8 +23,16 @@ class DashboardService{
         return axios.get(VIEW_BASE_REST_API_URL+'/collection/'+option);
     }
 
+    getByColor(color){
+        return axios.get(VIEW_BASE_REST_API_URL+'/specification/'+color)
+    }
+
     deleted(id){
         return axios.delete(VIEW_BASE_REST_API_URL+'/delete/'+id);
+    }
+
+    getByTrend(trend){
+        return axios.get(VIEW_BASE_REST_API_URL+'/categoryunder/'+trend)
     }
 }
 

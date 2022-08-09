@@ -27,14 +27,14 @@ function Dashboard() {
     const [data, setData] = useState({});
     const [check, setCheck] = useState('');
     const [searchl, setSearchl] = useState([]);
-    const [roles,setRoles] = useState('')
+    const [roles, setRoles] = useState('')
 
     //useEffect to set username
     useEffect(() => {
         setCheck(data.username)
     }, [])
 
-    localStorage.setItem("Userid",data.id)
+    localStorage.setItem("Userid", data.id)
 
     React.useEffect(() => {
         fetchUserData().then((response) => {
@@ -42,7 +42,7 @@ function Dashboard() {
             setData(response.data);
             console.log(response.data)
             setRoles(response.data.roles)
-          
+
         }).catch((e) => {
             localStorage.clear();
         })
@@ -56,112 +56,62 @@ function Dashboard() {
         usenavigate('/section/' + variable);
     }
 
-    
-console.log(roles)
-    
 
-      
-    
-    
-    
-    
- 
+    console.log(roles)
 
 
 
-  return (
-    <div className='body'>
-        <Header/>
-
-        
-        <Offer/>
-
-       
-    
-      
-
-        <div className='nikes'>
-
-                <span class="parallax-text" text="NIKE">
-                    NIKE
-                </span>
-
-                <img className="given" src="https://i.imgur.com/6DWEblv.png" alt="Nike sneaker" />
-            </div>
 
 
+
+
+
+
+
+
+    return (
+        <div className='body'>
+            <Header />
+            <Offer />
             <div className="jordan">
-                
+
                 <div className="jordan"></div>
 
-                <Popular/>
+                <Popular />
 
                 <div><br /></div>
             </div>
-            
-
-           <Magic/>
-
-          
-
-            <RunningShoes/>
-
-        
-
-
-            <div>
-                <div className='jordan'>
-                    <br></br>
-                    <div className='popi'>POPULAR RIGHT NOW</div>
-                    <div className='popularbut'>
-                        <BootStrap.Button variant="outline-secondary" onClick={() => Options("Slides And Sandals")}>SLIDES AND SANDALS</BootStrap.Button>
-
-                        <BootStrap.Button variant="outline-secondary" onClick={() => Options("T Shirt")}>T-SHIRTS AND SHORTS</BootStrap.Button>
-                        <BootStrap.Button variant="outline-secondary" onClick={() => Options("Football")}>FOOTBALL</BootStrap.Button>
-                        <BootStrap.Button variant="outline-secondary" onClick={() => Options("Sneakers")}>WHITE SNEAKERS</BootStrap.Button>
-                        <BootStrap.Button variant="outline-secondary" onClick={() => Options("Socks")}>Socks</BootStrap.Button>
-                    </div>
-                    <br></br>
-                </div>
-             </div>
 
             
-
-            <Gender/>
-
-
-            
+            <Magic />
 
 
+            <RunningShoes />
 
-
-
-            
 
             <div className="jordan">
-            <br/><br/><br/>
-            <Tees/>
-            
+                <br /><br /><br />
+                <Tees />
+                <br /><br /><br /><br />
+                <Tops />
 
-            <br/><br/><br/><br/>
 
-            <Tops/>
 
-            <br/><br/><br/><br/>
+                <Gender />
 
-            
+                <br /><br /><br /><br />
 
-            
+
 
             </div>
 
-            <Footer/>
+            <Footer />
 
-            
-            
-        
-    </div>
-  )
+
+
+
+        </div>
+    )
 }
 
 export default Dashboard

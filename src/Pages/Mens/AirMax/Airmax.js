@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react'
 import $ from 'jquery'
 import * as BootStrap from 'react-bootstrap'
 import DashboardService from '../../MostPopular/Services/DashboardService'
-import './Magics/Magic.css'
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom'
 
-function Magic() {
+function Airmax() {
     const [product, setProduct] = useState([])
     const [gentle, setGentle] = useState([])
     const [bottom, setBottom] = useState([])
@@ -144,7 +143,7 @@ function Magic() {
         <div className='bodyd'>
             <div>
                 <br /><br /><br />
-                <div className='similarsbudwaw'>Most Selling</div>
+                <div className='similarsbudwaw'>Nike Air Apparel</div>
                 <br /><br />
 
                 <div>
@@ -156,28 +155,27 @@ function Magic() {
 
                                     {
                                         gentle.map(gentle =>
-
+                                            
                                             <div className="item" onClick={() => Nextsteps(gentle.id)}>
-                                                {gentle.category3 === "Trend" &&
+                                                {gentle.category1 === "Nike Air Max" &&
                                                     <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
                                                         <div class="pad15">
-                                                            <BootStrap.Card.Img variant="top" src={gentle.productimage9} />
+                                                        <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
                                                             <BootStrap.Card.Body>
                                                                 <div className='mensproductname'>{gentle.productname}</div>
                                                                 <div className='mensproductgender'>{gentle.gender}</div>
                                                                 <div className='mensproductprice'>₹{gentle.productprice}</div>
-
                                                             </BootStrap.Card.Body>
                                                         </div>
                                                     </BootStrap.Card>
                                                 }
-
+                                            
                                             </div>
                                         )
                                     }
 
 
-
+                                    
 
                                 </div>
                                 <button class="btn btn-primary leftLsts"> ← </button>
@@ -191,9 +189,9 @@ function Magic() {
 
             </div>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /> <br /><br /><br /><br /> <br /><br />
-
+            
         </div>
     )
 }
 
-export default Magic
+export default Airmax

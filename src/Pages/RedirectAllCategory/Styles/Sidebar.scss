@@ -12,12 +12,52 @@
     color: black;
     text-align: center;
   }
+  .redcolor{
+    margin-left: 35%;
+    font-size: small;
+  }
+  .whitecolor{
+    margin-left: 20%;
+    font-size: small;
+    
+  }
+  .colorsector{
+   
+    margin-left: 15%;
+    padding-bottom: 10%;
+    font-weight: 410;
+  }
+
+  .line-3{
+    margin-left: 15%;
+  }
+
+  .orangecolor{
+    margin-left: 1%;
+    font-size: small;
+  }
+
+  .browncolor{
+    margin-left: -35%;
+    font-size: small;
+  }
 
   .uwinajn{
     float: left;
     color: black;
     padding-left: 15%;
     padding-top: 2%;
+  }
+
+  .trendswitch{
+    margin-top: -9%;
+    margin-left: 45%;
+    cursor: pointer;
+  }
+
+  .switchswift{
+    margin-left: 30%;
+    cursor: pointer;
   }
 
   .bjdwanka{
@@ -33,6 +73,7 @@
 
   .uwinajnsds{
     color: black;
+   
   }
   .jawdjawd{
     background-color: transparent;
@@ -42,14 +83,53 @@
   }
 
   .dot {
-    height: 35px;
-    width: 35px;
+    height: 30px;
+    width: 30px;
     background-color: #bbb;
     border-radius: 50%;
     margin-left: 35%;
     display: inline-block;
     cursor: pointer;
    
+  }
+
+  .dot1 {
+    height: 30px;
+    width: 30px;
+    margin-top: 32%;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 30%;
+    display: inline-block;
+    cursor: pointer;
+    border:0.5px solid;
+    border-color: black;
+    
+  }
+
+  .dot2 {
+    height: 30px;
+    width: 30px;
+    margin-top: 25%;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 10%;
+    display: inline-block;
+    cursor: pointer;
+    
+  }
+
+
+  .dot3 {
+    height: 30px;
+    width: 30px;
+    margin-top: 33%;
+    background-color: white;
+    border-radius: 50%;
+    margin-left: -25%;
+    display: inline-block;
+    cursor: pointer;
+    
   }
 
   .jfefwinda{

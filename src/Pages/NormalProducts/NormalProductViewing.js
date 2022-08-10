@@ -340,7 +340,7 @@ function NormalProductViewing() {
 
 
                         <div className='conenting'>
-                            <div className="produ">{product.productname}</div>
+                            <div style={{ color: "black" }} className="produ">{product.productname}</div>
                             <div>{product.category1}</div>
                             <div>₹{product.price}
                                 <div>Includes All Taxes</div>
@@ -365,13 +365,20 @@ function NormalProductViewing() {
                             <br />
 
                             <div>Size</div>
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>
+                            {product.size1 !== "-" &&
+                                <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>}
+                            {product.size2 !== "-" &&
+                                <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>}
+                            {product.size3 !== "-" &&
+                                <div>---------------------------------</div>}
+                            {product.size3 !== "-" &&
+                                <BootStrap.Button className='bus' onClick={(e) => setSize(product.size3)}>{product.size3}</BootStrap.Button>}
+                            {product.size4 !== "-" &&
+                                <BootStrap.Button className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>}
+
                             <div>---------------------------------</div>
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size3)}>{product.size3}</BootStrap.Button>
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>
-                            <div>---------------------------------</div>
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>
+                            {product.size5 !== "-" &&
+                                <BootStrap.Button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>}
                             <button className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
 
                         </div>
@@ -487,90 +494,85 @@ function NormalProductViewing() {
 
             {product.image10 !== "-" &&
                 <div className='explore'>Explore the {product.productname}</div>}
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
                 <br />}
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
                 <div className='explore'>
                     <img width="1000" src={product.image10} />
                 </div>}
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
                 <br />}
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
                 <div className='explore'>Light Flex</div>}
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
-                <div className='asd'>{product.productspecification3}</div>}
+                <div className='asd'>{product.productdescription}</div>}
+
+
             {product.image10 !== "-" &&
-                <div className='asd'>dynamic flexible tongue provides a lightweight fit and plush</div>}
+                <br />}
             {product.image10 !== "-" &&
-                <div className='asd'>comfort.</div>}
-            {sizeign !== 1 &&
                 <br />}
-            {sizeign !== 1 &&
-                <br />}
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
                 <div className='explore'>
                     <img width="1000" src={product.image11} />
                 </div>}
-            {sizeign !== 1 &&
-                <br />}
-            {sizeign !== 1 &&
-                <br />}
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
-                <div className='explore'>Light Feel, Big Energy</div>}
-            {sizeign !== 1 &&
                 <br />}
             {product.image10 !== "-" &&
-                <div className='asd'>A full-length Zoom Air Strobel unit is stitched directly to the</div>}
-            {product.image10 !== "-" &&
-                <div className='asd'>upper, sitting right under your foot to minimise weight. An</div>}
-            {product.image10 !== "-" &&
-                <div className='asd'>energy-returning Zoom Air unit is stacked underneath the</div>}
-            {product.image10 !== "-" &&
-                <div className='asd'>forefoot to add an extra burst of responsiveness off the dribble.</div>}
-            {sizeign !== 1 &&
                 <br />}
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
+                <div className='explore'>Made By, Big Energy</div>}
+            {product.image10 !== "-" &&
                 <br />}
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
+                <div className='asd'>{product.productspecification4}</div>}
+
+            {product.image10 !== "-" &&
                 <br />}
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
+                <br />}
+            {product.image10 !== "-" &&
+                <br />}
+            {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
                 <div className='explore'>
                     <img width="1000" src={product.image12} />
                 </div>}
-            {sizeign !== 1 &&
-                <br />}
-            {sizeign !== 1 &&
-                <br />}
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
-                <div className='explore'>Secure for Take-Off</div>}
-            {sizeign !== 1 &&
                 <br />}
             {product.image10 !== "-" &&
-                <div className='asd'>Color : {product.productspecification1}</div>}
+                <br />}
             {product.image10 !== "-" &&
-                <div className='asd'>{product.productspecification3}</div>}
+                <div className='explore'>Secure for Take-Off {product.productname}</div>}
             {product.image10 !== "-" &&
-                <div className='asd'>taking off to finish on offence.</div>}
+                <br />}
+
+            {product.image10 !== "-" &&
+                <div className='asd'>{product.productspecification5}</div>}
 
 
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
                 <br />}
-            {sizeign !== 1 &&
+            {product.image10 !== "-" &&
                 <br />}
+            {product.image10 !== "-" &&
+                <br />}
+            {product.image10 !== "-" &&
+                <br />}
+
             {sizeign !== 1 &&
                 <br />}
             {sizeign !== 1 &&
@@ -583,6 +585,7 @@ function NormalProductViewing() {
                 <br />}
             {sizeign !== 1 &&
                 <br />}
+
 
             <div>
                 {sizeign !== 1 &&
@@ -601,7 +604,7 @@ function NormalProductViewing() {
                                                         <div class="pad15" onClick={() => Nextstep(bottom.id)}>
                                                             <BootStrap.Card.Img variant="top" src={bottom.image1} />
                                                             <BootStrap.Card.Body>
-                                                            <div className='mensproductname'>{bottom.productname}</div>
+                                                                <div className='mensproductname'>{bottom.productname}</div>
                                                                 <div className='mensproductgender'>{bottom.gender}</div>
                                                                 <div className='mensproductprice'>₹{bottom.price}</div>
                                                             </BootStrap.Card.Body>
@@ -623,9 +626,9 @@ function NormalProductViewing() {
                                                         <div class="pad15" onClick={() => Nextsteps(gentle.id)}>
                                                             <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
                                                             <BootStrap.Card.Body>
-                                                            <div className='mensproductname'>{gentle.productname}</div>
-                                                            <div className='mensproductgender'>{gentle.gender}</div>
-                                                            <div className='mensproductprice'>₹{gentle.productprice}</div>
+                                                                <div className='mensproductname'>{gentle.productname}</div>
+                                                                <div className='mensproductgender'>{gentle.gender}</div>
+                                                                <div className='mensproductprice'>₹{gentle.productprice}</div>
                                                             </BootStrap.Card.Body>
                                                         </div>
                                                     </BootStrap.Card>

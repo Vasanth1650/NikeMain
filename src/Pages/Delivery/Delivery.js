@@ -56,7 +56,7 @@ function Delivery() {
             </div>
             <footer>
                 <p class="attribution">
-                    Challenge by <a href="https://www.nike.com/sg/" target="_blank">Nike Corporation Lead</a>.
+                    Organised by <a href="https://www.nike.com/sg/" target="_blank">Nike Corporation Lead</a>.
                     Coded by <a href="#">Vasanth</a>.
                 </p>
             </footer>

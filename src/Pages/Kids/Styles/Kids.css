@@ -1,0 +1,67 @@
+.kidsheader{
+    background-color: white;
+    overflow: hidden;
+}
+
+
+.imageboy{
+    padding-left: 2%;
+    cursor: pointer;
+}
+
+.imagehoodie{
+    padding-left: 2%;
+    cursor: pointer;
+}
+
+.imagegirl{
+    padding-left: 2%;
+    cursor: pointer;
+}
+
+.imagehoodiebutton{
+    padding-left: 5%;
+    margin-top: -28%;
+
+}
+
+.imageshortsbutton{
+    padding-left: 35%;
+    margin-top: 12%;
+    color: white;
+}
+
+.imagetshirtbutton{
+    padding-left: 75%;
+    margin-top: -25%;
+    color: white;
+}
+
+.kidsbutton{
+    border: none;
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 8%;
+    border-radius: 30px;
+}
+
+.kids1button{
+    border: none;
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 10%;
+    border-radius: 30px;
+}
+
+.kids3button{
+
+    border: none;
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 30%;
+    border-radius: 30px;
+
+}

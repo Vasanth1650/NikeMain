@@ -136,7 +136,7 @@ function Header() {
                         
                             <BootStrap.Nav.Link className='mainnavtext' href='/mens'>Men</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link href='/womens'>Women</BootStrap.Nav.Link>
-                            <BootStrap.Nav.Link onClick={() => AllSection("Kids's")} >Kids</BootStrap.Nav.Link>
+                            <BootStrap.Nav.Link href='/kids' >Kids</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link onClick={() => AllSection("Gear")}>Gear</BootStrap.Nav.Link>
                             
                             

@@ -1,13 +1,18 @@
 .menssections{
     background-color: white;
     overflow: hidden;
+    
 }
 
 .menssectiontitle{
     padding-top: 2%;
     margin-left: 5%;
+    
     font-size: x-large;
     font-weight: 400;
+    
+    z-index: 1;
+    background-color: white;
 }
 
 .essentailsmen{

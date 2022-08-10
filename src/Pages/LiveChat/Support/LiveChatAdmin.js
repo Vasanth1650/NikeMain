@@ -38,7 +38,7 @@ function LiveChatAdmin() {
 
 
         <div class="table-users">
-                <div class="header">LiveChat</div>
+                <div>LiveChat</div>
 
 
                 <table className='table'>

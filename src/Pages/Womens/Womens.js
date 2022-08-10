@@ -25,13 +25,19 @@ function Womens() {
     function ThreeSection(option){
         usenavigate("/section/"+option)
     }
+
+   
+
+    function sportswear(){
+        usenavigate("/section/ Womens sportswear")
+    }
     return (
         <div className='womenssection'>
             <Header />
             <Offer />
 
             <br />
-            <div className='womensvideo'>
+            <div className='womensvideo' onClick={()=>sportswear()}>
                 <div className='featuesa'>Women</div>
                 <br /><br />
 
@@ -87,12 +93,12 @@ function Womens() {
                     <img style={{ width: "95%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/3caec76b-0055-4398-9c90-a3fe7c5d31de/women-s-shoes-clothing-accessories.png' />
                 </div>
                 
-                <div className='mainrun'>NIKE ZOOMX INVINCIBLE RUN</div>
-                <div className='mainrun'>FLYKNIT 2</div>
-                <div className='smalltext'>Breathable, lightweight comfort, support, softness and a
+                <div className='mainrun'onClick={()=>Road()} >NIKE ZOOMX INVINCIBLE RUN</div>
+                <div className='mainrun' onClick={()=>Road()}>FLYKNIT 2</div>
+                <div className='smalltext' onClick={()=>Road()}>Breathable, lightweight comfort, support, softness and a
                 snappy response in a shoe that's designed to keep you running.</div>
-                <div className='smalltext'>It's the total package</div>
-                <div className='butns'>
+                <div className='smalltext' onClick={()=>Road()}>It's the total package</div>
+                <div className='butns' onClick={()=>Road()}>
                     <button className='bikes'>Shop</button>
                 </div>
 
@@ -104,17 +110,17 @@ function Womens() {
                 <div className='gendertect'>The Essentials</div>
                 <div className='essentailsmen'>
 
-                    <img  onClick={()=>ThreeSection("T Shirt")} className='imgsis' style={{ width: "22%" }} src='https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/2b937c0f-e298-4da0-afdf-84af7562a583/sportswear-icon-clash-short-sleeve-tie-top-GdbMh0.png' />
+                    <img  onClick={()=>ThreeSection("Womens tshirts")} className='imgsis' style={{ width: "22%" }} src='https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/2b937c0f-e298-4da0-afdf-84af7562a583/sportswear-icon-clash-short-sleeve-tie-top-GdbMh0.png' />
 
 
-                    <img  onClick={()=>ThreeSection("Shorts")} className='imgsis' style={{ width: "28%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/e5fb5e37-80cc-4e61-bd8d-da5c1a894e9a/women-s-shoes-clothing-accessories.png' />
-                    <img  onClick={()=>ThreeSection("Clothing")} className='imgsis' style={{ width: "22%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/548998d9-390d-4b56-8991-4536f65c1c18/women-s-shoes-clothing-accessories.png' />
+                    <img  onClick={()=>ThreeSection("Womens Shorts")} className='imgsis' style={{ width: "28%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/e5fb5e37-80cc-4e61-bd8d-da5c1a894e9a/women-s-shoes-clothing-accessories.png' />
+                    <img  onClick={()=>ThreeSection("Womens Clothing")} className='imgsis' style={{ width: "22%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/548998d9-390d-4b56-8991-4536f65c1c18/women-s-shoes-clothing-accessories.png' />
                 </div>
 
                 <div className='adwa'>
-                    <button  className='firt' onClick={()=>ThreeSection("T Shirt")}>T-Shirts</button>
-                    <button  className="seond" onClick={()=>ThreeSection("Shorts")}>Shorts</button>
-                    <button  className='thrd' style={{width:"10%"}} onClick={()=>ThreeSection("Clothing")}>Clothing</button>
+                    <button  className='firt' onClick={()=>ThreeSection("Womens tshirts")}>T-Shirts</button>
+                    <button  className="seond" onClick={()=>ThreeSection("Womens Shorts")}>Shorts</button>
+                    <button  className='thrd' style={{width:"10%"}} onClick={()=>ThreeSection("Womens Clothing")}>Clothing</button>
                 </div>
             </div>
 

@@ -42,6 +42,7 @@ import { fetchUserData } from '../Api/AuthenticationService';
 import Sidebar from '../Pages/RedirectAllCategory/Sidebar';
 import Mens from '../Pages/Mens/Mens';
 import Womens from '../Pages/Womens/Womens';
+import Kids from '../Pages/Kids/Kids';
 
 
 function Path() {
@@ -109,6 +110,8 @@ function Path() {
         <Route path='/mens' element={<Mens/>}/>
 
         <Route path='/womens' element={<Womens/>}/>
+
+        <Route path='/kids' element={<Kids/>}/>
 
         <Route path='/checkout' element={<Checkout/>}/>
 

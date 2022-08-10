@@ -45,6 +45,14 @@ function MostPopularViewing() {
 
     })
 
+    let sizeign = bottom.length + gentle.length
+
+
+
+    useEffect(() => {
+
+    }, [sizeign])
+
     useEffect(() => {
         getByCategory(product.category1);
         findByGender(product.category1)
@@ -361,13 +369,19 @@ function MostPopularViewing() {
                             <br />
                             <br /><br />
                             <div>Size</div>
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>
+                            {product.size1 !== "-" &&
+                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>}
+                            {product.size2 !== "-" &&
+                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>}
+                            {product.size3 !=="-" &&
+                            <div>---------------------------------</div>}
+                            {product.size3 !=="-" &&
+                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size3)}>{product.size3}</BootStrap.Button>}
+                            {product.size4 !=="-" &&
+                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>}
                             <div>---------------------------------</div>
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size3)}>{product.size3}</BootStrap.Button>
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>
-                            <div>---------------------------------</div>
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>
+                            {product.size5 !=="-" &&
+                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>}
                             <button className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
 
                         </div>
@@ -454,39 +468,77 @@ function MostPopularViewing() {
                 </div>
             </div>
 
+            {product.productimage10 !== "-" &&
+                <div className='explore'>Explore the {product.productname}</div>}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-"  &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <div className='explore'>
+                    <img width="1000" src={product.productimage10} />
+                </div>}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <div className='explore'>Light Flex</div>}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <div className='asd'>{product.productdescription}</div>}
 
-            <div className='explore'>Explore the {product.productname}</div>
-            <br /><br />
-            <div className='explore'>
-                <img width="1150" src={product.productimage10} />
-            </div>
-            <br /><br />
-            <div className='explore'>Light Flex</div>
-            <br />
-            <div className='asd'>A minimal but durable Jacquard leno-weave upper paired with a</div>
-            <div className='asd'>dynamic flexible tongue provides a lightweight fit and plush</div>
-            <div className='asd'>comfort.</div>
-            <br /><br /><br />
-            <div className='explore'>
-                <img width="1150" src={product.productimage11} />
-            </div>
-            <br /><br /><br />
-            <div className='explore'>Light Feel, Big Energy</div>
-            <br />
-            <div className='asd'>A full-length Zoom Air Strobel unit is stitched directly to the</div>
-            <div className='asd'>upper, sitting right under your foot to minimise weight. An</div>
-            <div className='asd'>energy-returning Zoom Air unit is stacked underneath the</div>
-            <div className='asd'>forefoot to add an extra burst of responsiveness off the dribble.</div>
-            <br /><br /><br /><br />
-            <div className='explore'>
-                <img width="1150" src={product.productimage12} />
-            </div>
-            <br /><br /><br />
-            <div className='explore'>Secure for Take-Off</div>
-            <br />
-            <div className='asd'>A 2-loop band system paired with high sidewalls provides side-</div>
-            <div className='asd'>to-side stability, whether you're cutting off the ball on defence or</div>
-            <div className='asd'>taking off to finish on offence.</div>
+            
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <div className='explore'>
+                    <img width="1000" src={product.productimage11} />
+                </div>}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <div className='explore'>Made By, Big Energy</div>}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <div className='asd'>{product.productspecification4}</div>}
+            
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <div className='explore'>
+                    <img width="1000" src={product.productimage12} />
+                </div>}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <br />}
+            {product.productimage10 !== "-" &&
+                <div className='explore'>Secure for Take-Off {product.productname}</div>}
+            {product.productimage10 !== "-" &&
+                <br />}
+            
+            {product.productimage10 !== "-" &&
+                <div className='asd'>{product.productspecification5}</div>}
+            
             <br /><br /><br /><br />
 
             <div className='similars'>You May Also Like This</div>

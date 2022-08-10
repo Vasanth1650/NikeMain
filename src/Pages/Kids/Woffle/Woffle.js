@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import $ from 'jquery'
 import * as BootStrap from 'react-bootstrap'
 import DashboardService from '../../MostPopular/Services/DashboardService'
-import './Magics/Magic.css'
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom'
+import NormalProductService from '../../NormalProducts/Services/NormalProductService';
 
-function Magic() {
+function Woffle() {
     const [product, setProduct] = useState([])
     const [gentle, setGentle] = useState([])
     const [bottom, setBottom] = useState([])
@@ -18,7 +18,7 @@ function Magic() {
     }, [])
 
     const getTrend = () => {
-        DashboardService.getAllProducts().then((response) => {
+        NormalProductService.allProducts().then((response) => {
             setGentle(response.data)
         }).catch((err) => {
             console.log(err)
@@ -136,7 +136,7 @@ function Magic() {
 
     const Nextsteps = (ids) => {
         console.log(ids);
-        usenavigate('/most/' + ids);
+        usenavigate('/nextsteps/' + ids);
     }
 
 
@@ -144,7 +144,7 @@ function Magic() {
         <div className='bodyd'>
             <div>
                 <br /><br /><br />
-                <div className='similarsbudwaw'>Most Selling</div>
+                <div className='similarsbudwaw'>Nike Air Apparel</div>
                 <br /><br />
 
                 <div>
@@ -156,28 +156,27 @@ function Magic() {
 
                                     {
                                         gentle.map(gentle =>
-
+                                            
                                             <div className="item" onClick={() => Nextsteps(gentle.id)}>
-                                                {gentle.category3 === "Trend" &&
+                                                {gentle.category1 === "Older Kids Shoes" &&
                                                     <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
                                                         <div class="pad15">
-                                                            <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
+                                                        <BootStrap.Card.Img variant="top" src={gentle.image1} />
                                                             <BootStrap.Card.Body>
                                                                 <div className='mensproductname'>{gentle.productname}</div>
                                                                 <div className='mensproductgender'>{gentle.gender}</div>
-                                                                <div className='mensproductprice'>₹{gentle.productprice}</div>
-
+                                                                <div className='mensproductprice'>₹{gentle.price}</div>
                                                             </BootStrap.Card.Body>
                                                         </div>
                                                     </BootStrap.Card>
                                                 }
-
+                                            
                                             </div>
                                         )
                                     }
 
 
-
+                                    
 
                                 </div>
                                 <button class="btn btn-primary leftLsts"> ← </button>
@@ -191,9 +190,9 @@ function Magic() {
 
             </div>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /> <br /><br /><br /><br /> <br /><br />
-
+            
         </div>
     )
 }
 
-export default Magic
+export default Woffle

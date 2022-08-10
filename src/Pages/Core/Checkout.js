@@ -69,7 +69,7 @@ function Checkout() {
 
     function CheckoutDelete(userid) {
         CheckoutService.CheckoutDelete(userid).then((response) => {
-            getByCheck();
+            window.location.reload();
             console.log("Products Removed from Checkout")
         })
     }
@@ -166,21 +166,10 @@ function Checkout() {
     }, [handlePrice])
 
 
-    useEffect(() => {
-
-        getByCheck(data.id);
-    }, [userid])
 
 
 
-    const getByCheck = () => {
-        CheckoutService.findByUserid(data.id).then((response) => {
-            setCheckout(response.data)
-
-        }).catch((error) => {
-            console.log(error)
-        })
-    }
+    
 
     useEffect(()=>{
         if(!localStorage.getItem("USER_KEY")){
@@ -211,7 +200,7 @@ function Checkout() {
     React.useEffect(() => {
         fetchUserData().then((response) => {
             setData(response.data);
-
+            setCheckout(response.data.bag)
         }).catch((e) => {
             localStorage.clear();
         })
@@ -219,7 +208,7 @@ function Checkout() {
 
     const deletebyClick = (checkoutid) => {
         CheckoutService.deleteById(checkoutid).then((response) => {
-            getByCheck()
+            window.location.reload();
             alert("The Product Removed From The Checkout")
         })
     }

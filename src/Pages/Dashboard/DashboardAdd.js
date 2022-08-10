@@ -45,13 +45,14 @@ function MainDBAdd() {
     const[category2,setCategory2] = useState('')
     const[category3,setCategory3] = useState('')
     const[collection,setCollection] = useState('')
+    const [buyingoption,setBuyingoption] = useState('')
 
     const handleClick = (e)=>{
         e.preventDefault()
         const addproduct={productname,productdescription,productprice,size1,size2,size3,size4,size5,
         productspecification1,productspecification2,productspecification3,productspecification4,productspecification5,productimage1
         ,productimage2,productimage3,productimage4,productimage5,productimage6,productimage7,productimage8,productimage9,productimage10,productimage11,productimage12,gender,category1,category2,category3,
-        delivery,collection}
+        delivery,collection,buyingoption}
         fetch("https://nike-backend.herokuapp.com/product/save",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
@@ -410,6 +411,16 @@ function MainDBAdd() {
                                             Required
                                         </div>
                                     </div>
+                                </div>
+
+                                <div className='buyingoption' style={{width:"45%"}} onChange={(e)=>setBuyingoption(e.target.value)}>
+                                    <BootStrap.Form.Group className="mb-3"  required>
+                                        <BootStrap.Form.Select id='category1' name='category1'>
+                                                    <option></option>
+                                                    <option>Membership</option>
+                                                   
+                                        </BootStrap.Form.Select>
+                                    </BootStrap.Form.Group>
                                 </div>
 
                                 <div class="col-xs-12 col-sm-12 right">

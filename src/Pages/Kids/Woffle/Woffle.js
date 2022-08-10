@@ -5,6 +5,7 @@ import DashboardService from '../../MostPopular/Services/DashboardService'
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom'
 import NormalProductService from '../../NormalProducts/Services/NormalProductService';
+import { FcLock } from "react-icons/fc";
 
 function Woffle() {
     const [product, setProduct] = useState([])
@@ -164,7 +165,9 @@ function Woffle() {
                                                         <BootStrap.Card.Img variant="top" src={gentle.image1} />
                                                             <BootStrap.Card.Body>
                                                                 <div className='mensproductname'>{gentle.productname}</div>
-                                                                <div className='mensproductgender'>{gentle.gender}</div>
+                                                                <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
+                                                                    <FcLock />
+                                                                }</div>
                                                                 <div className='mensproductprice'>₹{gentle.price}</div>
                                                             </BootStrap.Card.Body>
                                                         </div>

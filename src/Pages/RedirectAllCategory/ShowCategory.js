@@ -14,6 +14,8 @@ import Sibebar from './Sidebar'
 import Dropdown from 'react-bootstrap/Dropdown';
 import './Styles/Sidebar.scss'
 import $ from 'jquery'
+import { FcLock } from "react-icons/fc";
+import { MdCardMembership } from "react-icons/md";
 
 
 
@@ -34,7 +36,7 @@ function ShowCategory() {
     let size = product.length + gentle.length + collection.length
     useEffect(() => {
 
-    }, [size,trend])
+    }, [size, trend])
 
 
 
@@ -44,12 +46,12 @@ function ShowCategory() {
         getByGender(option);
         getByCollection(option);
         getBySpecification1(color);
-        
+
     }, [color])
 
-    useEffect(()=>{
+    useEffect(() => {
         getByTrender(trend);
-    },[trend])
+    }, [trend])
 
     console.log(trend)
 
@@ -169,7 +171,7 @@ function ShowCategory() {
 
 
 
-    
+
 
 
     return (
@@ -225,7 +227,7 @@ function ShowCategory() {
                     </div>
 
                     <div className='uwinajn'>
-                       
+
                         <span class="dot3" onClick={() => setColor("brown")} style={{ backgroundColor: "brown" }}></span>
                         <div className='browncolor'>Brown</div>
                     </div>
@@ -247,41 +249,41 @@ function ShowCategory() {
                 </div>
                 <div className='sidebardawdwadwa'>
                     <div className='colorsector'>Current</div>
-                    <div> 
-                    <BootStrap.Form.Check
-                        className='switchswift'
-                        
-                        id="custom-switch"
-                        label=""
-                        value="Trend"
-                        onChange={handleChange}
-                    />
-                    <div className='trendswitch'>Trend</div>
+                    <div>
+                        <BootStrap.Form.Check
+                            className='switchswift'
+
+                            id="custom-switch"
+                            label=""
+                            value="Trend"
+                            onChange={handleChange}
+                        />
+                        <div className='trendswitch'>Trend</div>
                     </div>
-                    <br/>
-                    <div> 
-                    <BootStrap.Form.Check
-                        className='switchswift'
-                        
-                        id="custom-switch"
-                        label=""
-                        value="Most Popular"
-                        onChange={handleChange}
-                    />
-                    <div className='trendswitch'>Most Popular</div>
+                    <br />
+                    <div>
+                        <BootStrap.Form.Check
+                            className='switchswift'
+
+                            id="custom-switch"
+                            label=""
+                            value="Most Popular"
+                            onChange={handleChange}
+                        />
+                        <div className='trendswitch'>Most Popular</div>
                     </div>
 
-                    <br/>
-                    <div> 
-                    <BootStrap.Form.Check
-                        className='switchswift'
-                        
-                        id="custom-switch"
-                        label=""
-                        value="Just In"
-                        onChange={handleChange}
-                    />
-                    <div className='trendswitch'>Just In</div>
+                    <br />
+                    <div>
+                        <BootStrap.Form.Check
+                            className='switchswift'
+
+                            id="custom-switch"
+                            label=""
+                            value="Just In"
+                            onChange={handleChange}
+                        />
+                        <div className='trendswitch'>Just In</div>
                     </div>
 
 
@@ -308,7 +310,7 @@ function ShowCategory() {
                             product.map(product =>
                                 <BootStrap.Col>
                                     <div className='items'>
-                                        {color === "" && trend ==="" &&
+                                        {color === "" && trend === "" &&
                                             <BootStrap.CardGroup >
                                                 <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
@@ -319,9 +321,16 @@ function ShowCategory() {
                                                         <div className='categoryandcategory'>
                                                             {product.category1}
                                                         </div>
-                                                        <div className='categoryandcategory'>
-                                                            {product.category2} Colors
-                                                        </div>
+                                                        {product.buyingoption === "Membership" &&
+                                                            <div className='categoryandcategory'>
+                                                                <MdCardMembership />
+                                                            </div>
+                                                        }
+
+                                                        {product.buyingoption !== "Membership" &&
+                                                            <div className='categoryandcategory'>
+                                                                {product.category2} Colors
+                                                            </div>}
 
                                                         <div className='kwjdnjwakwn'>
                                                             ₹{product.price}
@@ -365,7 +374,7 @@ function ShowCategory() {
                             collection.map(product =>
                                 <BootStrap.Col>
                                     <div className='items'>
-                                        {color === "" && trend ==="" &&
+                                        {color === "" && trend === "" &&
                                             <BootStrap.CardGroup >
                                                 <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
@@ -376,9 +385,16 @@ function ShowCategory() {
                                                         <div className='categoryandcategory'>
                                                             {product.category1}
                                                         </div>
-                                                        <div className='categoryandcategory'>
-                                                            {product.category2} Colors
-                                                        </div>
+                                                        {product.buyingoption === "Membership" &&
+                                                            <div className='categoryandcategory'>
+                                                                <MdCardMembership />
+                                                            </div>
+                                                        }
+
+                                                        {product.buyingoption !== "Membership" &&
+                                                            <div className='categoryandcategory'>
+                                                                {product.category2} Colors
+                                                            </div>}
 
                                                         <div className='kwjdnjwakwn'>
                                                             ₹{product.price}
@@ -422,7 +438,7 @@ function ShowCategory() {
                             gentle.map(product =>
                                 <BootStrap.Col>
 
-                                    {color === "" && trend ==="" &&
+                                    {color === "" && trend === "" &&
                                         <BootStrap.CardGroup >
                                             <BootStrap.Card className='jawdjawd'>
                                                 <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
@@ -433,9 +449,16 @@ function ShowCategory() {
                                                     <div className='categoryandcategory'>
                                                         {product.category1}
                                                     </div>
-                                                    <div className='categoryandcategory'>
-                                                        {product.category2} Colors
-                                                    </div>
+                                                    {product.buyingoption === "Membership" &&
+                                                        <div className='categoryandcategory'>
+                                                            <MdCardMembership />
+                                                        </div>
+                                                    }
+
+                                                    {product.buyingoption !== "Membership" &&
+                                                        <div className='categoryandcategory'>
+                                                            {product.category2} Colors
+                                                        </div>}
 
                                                     <div className='kwjdnjwakwn'>
                                                         ₹{product.price}
@@ -478,7 +501,7 @@ function ShowCategory() {
                             coloring.map(product =>
                                 <BootStrap.Col>
 
-                                    {color !== "" && trend ==="" &&
+                                    {color !== "" && trend === "" &&
                                         <BootStrap.CardGroup >
                                             <BootStrap.Card className='jawdjawd'>
                                                 <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
@@ -489,9 +512,16 @@ function ShowCategory() {
                                                     <div className='categoryandcategory'>
                                                         {product.category1}
                                                     </div>
-                                                    <div className='categoryandcategory'>
-                                                        {product.category2} Colors
-                                                    </div>
+                                                    {product.buyingoption === "Membership" &&
+                                                        <div className='categoryandcategory'>
+                                                            <MdCardMembership />
+                                                        </div>
+                                                    }
+
+                                                    {product.buyingoption !== "Membership" &&
+                                                        <div className='categoryandcategory'>
+                                                            {product.category2} Colors
+                                                        </div>}
 
                                                     <div className='kwjdnjwakwn'>
                                                         ₹{product.price}
@@ -525,7 +555,7 @@ function ShowCategory() {
                             trending.map(product =>
                                 <BootStrap.Col>
 
-                                    {trend !== "" && color==="" &&
+                                    {trend !== "" && color === "" &&
                                         <BootStrap.CardGroup >
                                             <BootStrap.Card className='jawdjawd'>
                                                 <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
@@ -536,9 +566,16 @@ function ShowCategory() {
                                                     <div className='categoryandcategory'>
                                                         {product.category1}
                                                     </div>
-                                                    <div className='categoryandcategory'>
-                                                        {product.category2} Colors
-                                                    </div>
+                                                    {product.buyingoption === "Membership" &&
+                                                        <div className='categoryandcategory'>
+                                                            <MdCardMembership />
+                                                        </div>
+                                                    }
+
+                                                    {product.buyingoption !== "Membership" &&
+                                                        <div className='categoryandcategory'>
+                                                            {product.category2} Colors
+                                                        </div>}
 
                                                     <div className='kwjdnjwakwn'>
                                                         ₹{product.price}
@@ -572,7 +609,7 @@ function ShowCategory() {
                             trending.map(product =>
                                 <BootStrap.Col>
 
-                                    {trend !== "" && color===product.productspecification1 &&
+                                    {trend !== "" && color === product.productspecification1 &&
                                         <BootStrap.CardGroup >
                                             <BootStrap.Card className='jawdjawd'>
                                                 <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
@@ -583,9 +620,16 @@ function ShowCategory() {
                                                     <div className='categoryandcategory'>
                                                         {product.category1}
                                                     </div>
-                                                    <div className='categoryandcategory'>
-                                                        {product.category2} Colors
-                                                    </div>
+                                                    {product.buyingoption === "Membership" &&
+                                                        <div className='categoryandcategory'>
+                                                            <MdCardMembership />
+                                                        </div>
+                                                    }
+
+                                                    {product.buyingoption !== "Membership" &&
+                                                        <div className='categoryandcategory'>
+                                                            {product.category2} Colors
+                                                        </div>}
 
                                                     <div className='kwjdnjwakwn'>
                                                         ₹{product.price}

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Alert, Spinner } from 'react-bootstrap';
 import Header from '../Headers/Header';
 import Footer from '../Footer/Footer';
+import * as BootStrap from 'react-bootstrap'
 
 function Signup() {
     const usenavigate = useNavigate()
@@ -12,13 +13,14 @@ function Signup() {
     const [phonenumber,setPhonenumber] = useState('')
     const [password,setPassword] = useState('')
     const [address,setAddress] = useState('')
+    const [gender,setGender] = useState('')
     const [state,setState] = useState('')
     const [city,setCity] = useState('')
     const authorities = [{roleCode:"USER",roleDescription:"USER"}]
 
     const handleClick = (e) =>{
         e.preventDefault()
-        const adddetails = {username,email,phonenumber,password,address,state,city,authorities}
+        const adddetails = {username,email,phonenumber,password,address,state,city,authorities,gender}
         fetch("https://nike-backend.herokuapp.com/addnew/save",{
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -41,7 +43,7 @@ function Signup() {
     }
 
 
-    
+    console.log("Gender",gender)
 
 
 
@@ -90,6 +92,20 @@ function Signup() {
                                                 <div className="gradient">
                                                     <input id="username" type="username" minLength={5}
                                                        placeholder='Enter Username' onChange={(e)=>setEmail(e.target.value)} value={email} required />
+                                                    <div className="invalid-feedback">
+                                                        Username is required
+                                                    </div>
+                                                </div>
+                                                <br/>
+                                                <div className="gradient" onChange={(e)=>setGender(e.target.value)}>
+                                                <BootStrap.Form.Group className="mb-3"  required>
+                                                <BootStrap.Form.Select id='category1' name='category1'>
+                                                    <option></option>
+                                                    <option>Men</option>
+                                                    <option>Women</option>
+                                                    <option>Kids</option>
+                                                </BootStrap.Form.Select>
+                                                </BootStrap.Form.Group>
                                                     <div className="invalid-feedback">
                                                         Username is required
                                                     </div>

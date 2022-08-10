@@ -73,6 +73,14 @@ function Profile() {
                                                     <input id="email" name="email" placeholder="Email" class="form-control here" value={data && `${data.username} `} required="required" type="text" />
                                                 </div>
                                             </div>
+
+                                            <div class="form-group row">
+                                                <label for="email" class="col-4 col-form-label">Gender*</label>
+                                                <div class="col-8">
+                                                    <input id="email" name="email" placeholder="Email" class="form-control here" value={data && `${data.gender} `} required="required" type="text" />
+                                                </div>
+                                            </div>
+
                                             <div class="form-group row">
                                                 <label for="phonenumber" class="col-4 col-form-label">Phonenumber*</label>
                                                 <div class="col-8">

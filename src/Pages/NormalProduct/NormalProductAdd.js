@@ -47,12 +47,13 @@ function NormalProductAdd() {
     const[category2,setCategory2] = useState('')
     const[category3,setCategory3] = useState('')
     const[collection,setCollection] = useState('')
+    const[buyingoption,setBuyingoption] = useState('')
 
     const handleClick = (e)=>{
         e.preventDefault()
         const addproduct={productname,productdescription,price,size1,size2,size3,size4,size5,
         productspecification1,productspecification2,productspecification3,productspecification4,productspecification5,image1
-        ,image2,image3,image4,image5,image6,image7,image8,image9,image10,image11,image12,gender,category1,category2,category3,delivery,collection}
+        ,image2,image3,image4,image5,image6,image7,image8,image9,image10,image11,image12,gender,category1,category2,category3,delivery,collection,buyingoption}
         fetch("https://nike-backend.herokuapp.com/totalproducts/addproducts",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
@@ -422,6 +423,16 @@ function NormalProductAdd() {
                                     </div>
                                 </div>
 
+                                <div className='buyingoption' style={{width:"45%"}} onChange={(e)=>setBuyingoption(e.target.value)}>
+                                    <BootStrap.Form.Group className="mb-3"  required>
+                                        <BootStrap.Form.Select id='category1' name='category1'>
+                                                    <option></option>
+                                                    <option>Membership</option>
+                                                   
+                                        </BootStrap.Form.Select>
+                                    </BootStrap.Form.Group>
+                                </div>
+
                                 <div class="col-xs-12 col-sm-12 right">
                                     <button type="button" id="nazad1" class="btn previous">Previous</button>
                                     <button type="submit" id="korak2" class="btn next">Next</button>
@@ -498,6 +509,7 @@ function NormalProductAdd() {
                                                 <option>Football</option>
                                                 <option>BasketBall</option>
                                                 <option>Sneakers</option>
+                                                <option>FirstDay</option>
                                                 <option>Pants</option>
                                                 <option>Tops</option>
                                                 <option>T Shirt</option>

@@ -4,11 +4,12 @@ import * as BootStrap from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import DashboardService from '../../MostPopular/Services/DashboardService'
 import './Styles/Running.scss'
+import { fetchUserData } from '../../../Api/AuthenticationService'
 
 function RunningShoes() {
   const usenavigate = useNavigate()
-
-  const [gentle, setGentle] = useState([])
+  const [data,setData] = useState({})
+  const [gentle, setGentle] = useState("")
 
     useEffect(() => {
         getTrend()
@@ -21,6 +22,14 @@ function RunningShoes() {
             console.log(err)
         })
     }
+
+    React.useEffect(()=>{
+      fetchUserData().then((response)=>{
+        setData(response.data)
+      }).catch(err=>{
+        console.log(err)
+      })
+    },[])
 
     
 
@@ -37,9 +46,25 @@ function RunningShoes() {
 
   return (
     <div className='bad'>
+      {data.gender==="Men" &&
       <div className='Running'>
-        <img style={{ width: "90%" }} src='https://static01.nyt.com/images/2021/03/30/multimedia/28xp-shoes-09/28xp-shoes-09-videoSixteenByNine3000.jpg?year=2021&h=1687&w=3000&s=706011e2ec021596519858a40f7eae578a545278bd568ae9f5cc2a723bd89ee1&k=ZQJBKqZ0VN&tw=1' />
+        <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/288b8a91-9660-4985-98c7-a64cd44658b2/men-s-shoes-clothing-accessories.jpg' />
+      </div>}
+      {data.gender==="Women" &&
+        <div className='Running'>
+          <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/3caec76b-0055-4398-9c90-a3fe7c5d31de/women-s-shoes-clothing-accessories.png' />
+        </div>
+      }
+      {data.gender==="Kids" &&
+        <div className='Running'>
+          <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/65786c71-ebf8-478b-a87b-0f83496e69ea/nike-kids.png' />
+        </div>
+      }
+      {!data.gender &&
+      <div className='Running'>
+        <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/288b8a91-9660-4985-98c7-a64cd44658b2/men-s-shoes-clothing-accessories.jpg' />
       </div>
+      }
       <div className='mainrun'>LOOKS GOOD. RUNS GOOD.</div>
       <div className='mainrun'>FEELS GOOD.</div>
       <div className='smalltext'>A smooth with an endless amount of comfort, the Nike React Infinity Run Flyknit 3 is the first

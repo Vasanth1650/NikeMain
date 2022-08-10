@@ -13,6 +13,7 @@ function UpdateProfile() {
     const [state, setState] = useState('')
     const [phonenumber, setPhonenumber] = useState('')
     const [username,setUsername] = useState('')
+    const [gender,setGender] = useState('')
     const [email,setEmail] = useState('')
     const [subscription,setSubscription] = useState('')
     const [data, setData] = useState({})
@@ -34,7 +35,7 @@ function UpdateProfile() {
 
     const handleClick = (e) => {
         e.preventDefault()
-        const addproduct = { username,email, address, city, state, phonenumber, password, subscription}
+        const addproduct = { username,email, address, city, state, phonenumber, password, subscription,gender}
         console.log(addproduct)
         if (localStorage.getItem("Userid")) {
             Service.updateUser(localStorage.getItem("Userid"), addproduct).then((response) => {
@@ -58,6 +59,7 @@ function UpdateProfile() {
         Service.getUserById(m).then((response) => {
             setAddress(response.data.address)
             setCity(response.data.city)
+            setGender(response.data.gender)
             setState(response.data.state)
             setPhonenumber(response.data.phonenumber)
             setUsername(response.data.username)
@@ -75,6 +77,16 @@ function UpdateProfile() {
         <div>
             <Header />
             <form onSubmit={handleClick}>
+
+
+            <div class="form-group row">
+                <label for="address" class="col-4 col-form-label">Gender*</label>
+                <div class="col-8">
+                    <input id="gender" name="gender" placeholder="gender" class="form-control here" onChange={(e) => setGender(e.target.value)} value={gender} required="required" type="text" />
+                </div>
+            </div>
+
+
             <div class="form-group row">
                 <label for="address" class="col-4 col-form-label">Address*</label>
                 <div class="col-8">

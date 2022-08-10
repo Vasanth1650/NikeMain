@@ -11,7 +11,7 @@
 section {
 
   position: relative;
-  min-height: 100vh;
+  min-height: 120vh;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -23,8 +23,8 @@ section {
 section .container {
   border-radius: 30px;
   position: relative;
-  width: 700px;
-  height: 600px;
+  width: 750px;
+  height: 650px;
   background: white;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
   overflow: hidden;

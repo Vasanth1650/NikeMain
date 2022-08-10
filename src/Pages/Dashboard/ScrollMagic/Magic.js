@@ -5,6 +5,7 @@ import DashboardService from '../../MostPopular/Services/DashboardService'
 import './Magics/Magic.css'
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom'
+import { FcLock } from "react-icons/fc";
 
 function Magic() {
     const [product, setProduct] = useState([])
@@ -158,13 +159,21 @@ function Magic() {
                                         gentle.map(gentle =>
 
                                             <div className="item" onClick={() => Nextsteps(gentle.id)}>
+                                                
                                                 {gentle.category3 === "Trend" &&
+
                                                     <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+
                                                         <div class="pad15">
+
+
                                                             <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
+
                                                             <BootStrap.Card.Body>
                                                                 <div className='mensproductname'>{gentle.productname}</div>
-                                                                <div className='mensproductgender'>{gentle.gender}</div>
+                                                                <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
+                                                                    <FcLock />
+                                                                }</div>
                                                                 <div className='mensproductprice'>₹{gentle.productprice}</div>
 
                                                             </BootStrap.Card.Body>

@@ -91,7 +91,7 @@ function NormalProductViewing() {
 
     const handleClick = (e) => {
         e.preventDefault()
-        if ((localStorage.getItem("USER_KEY")) && (check != "undefined")) {
+        if ((localStorage.getItem("USER_KEY")) && (check != "undefined") && (!product.buyingoption)) {
             const checkouts = { userid, username, productname, image1, price, size }
             if (size && size != "-") {
                 fetch("https://nike-backend.herokuapp.com/charging/checkout", {
@@ -109,7 +109,29 @@ function NormalProductViewing() {
             } else {
                 toast("Please Choose Size For Your Product")
             }
-        } else {
+        }else if((localStorage.getItem("USER_KEY")) && (check !== "undefined") && (product.buyingoption==="Membership")){
+            const check = { userid, username, productname, image1, price, size }
+            if(data.subscription!=="No Subscription"){
+            if (size && size != "-") {
+                fetch("https://nike-backend.herokuapp.com/charging/checkout", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(check)
+                }).then(() => {
+                    console.log("Everything Went Perfect")
+                    usenavigate("/checkout")
+                }).catch(error => {
+                    console.log("something went wrong")
+                })
+            } else if (size === "-") {
+
+                toast.dark("Please Select Size Of The Product")
+            } else {
+                toast("Please Choose Size For Your Product")
+            }}else{
+                toast("This Product Is Only For Exclusive Member Subscription")
+            }
+        }else {
             usenavigate('/login')
         }
 
@@ -379,7 +401,7 @@ function NormalProductViewing() {
                             <div>---------------------------------</div>
                             {product.size5 !== "-" &&
                                 <BootStrap.Button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>}
-                            <button className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
+                            <button style={{color:"black"}} className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
 
                         </div>
                     </div>

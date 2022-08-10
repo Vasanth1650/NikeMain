@@ -4,6 +4,7 @@ import * as BootStrap from 'react-bootstrap'
 import DashboardService from '../../MostPopular/Services/DashboardService'
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom'
+import { FcLock } from "react-icons/fc";
 
 function Airmax() {
     const [product, setProduct] = useState([])
@@ -163,7 +164,9 @@ function Airmax() {
                                                         <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
                                                             <BootStrap.Card.Body>
                                                                 <div className='mensproductname'>{gentle.productname}</div>
-                                                                <div className='mensproductgender'>{gentle.gender}</div>
+                                                                <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
+                                                                    <FcLock />
+                                                                }</div>
                                                                 <div className='mensproductprice'>₹{gentle.productprice}</div>
                                                             </BootStrap.Card.Body>
                                                         </div>

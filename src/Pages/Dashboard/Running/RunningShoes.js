@@ -62,7 +62,7 @@ function RunningShoes() {
       }
       {!data.gender &&
       <div className='Running'>
-        <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/288b8a91-9660-4985-98c7-a64cd44658b2/men-s-shoes-clothing-accessories.jpg' />
+        <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/38760c8b-79b5-4cf7-a57b-2a2884076035/nike-just-do-it.jpg' />
       </div>
       }
       <div className='mainrun'>LOOKS GOOD. RUNS GOOD.</div>

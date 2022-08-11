@@ -17,6 +17,10 @@ class Service{
     getByGender(gender){
         return axios.get(VIEW_BASE_REST_API_URL+'/gender/'+gender)
     }
+
+    getByColor(color){
+        return axios.get(VIEW_BASE_REST_API_URL+'/specification/'+color)
+    }
 }
 
 export default new Service();

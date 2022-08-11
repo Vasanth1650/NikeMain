@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import * as BootStrap from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { SiNike } from "react-icons/si";
 import { BsHandbag } from "react-icons/bs";
 import { AiOutlineHeart } from "react-icons/ai";
@@ -11,14 +11,17 @@ import './Styles/Header.css';
 import { SiJordan } from "react-icons/si";
 import './Styles/Header.scss';
 import $ from 'jquery';
-import { BsSearch } from "react-icons/bs";
+import { ImSearch } from "react-icons/im";
+import { MDBInputGroup, MDBInput, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
 
 
 function Header() {
     const usenavigate = useNavigate();
     const [data, setData] = useState({});
+    const [element,setElement] = useState("")
+    const {elements} = useParams()
 
-    localStorage.setItem("Userid",data.id)
+    localStorage.setItem("Userid", data.id)
 
     const AllSection = (value) => {
         console.log(value)
@@ -26,14 +29,14 @@ function Header() {
         usenavigate('/section/' + value);
         window.location.reload(false);
     }
-    useEffect(()=>{
-        if(data.roleCode==="ADMIN"){
-            localStorage.setItem("Authority",data.roleCode)
-        }else if(data.roleCode==="USER"){
-            
+    useEffect(() => {
+        if (data.roleCode === "ADMIN") {
+            localStorage.setItem("Authority", data.roleCode)
+        } else if (data.roleCode === "USER") {
+
         }
-    },[data])
-    
+    }, [data])
+
 
     function logout() {
         localStorage.clear();
@@ -58,7 +61,7 @@ function Header() {
             $(popup).wrapInner("<div class='wrapper'></div>");
         }
 
-    
+
         $(popup).show();
 
 
@@ -86,9 +89,9 @@ function Header() {
     });
 
 
-    localStorage.setItem("Userid",data.id)
+    localStorage.setItem("Userid", data.id)
 
-    
+
     $(document).ready(function () {
         $('.popup-btn').click(function (e) {
             $('.popup-wrap').fadeIn(500);
@@ -105,7 +108,18 @@ function Header() {
         });
     });
 
-    
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        usenavigate('/search/'+element)
+    };
+
+    const handleKeypress = e => {
+        //it triggers by pressing the enter key
+        if (e.keyCode === 13) {
+            handleSubmit();
+        }
+    };
 
 
     return (
@@ -113,11 +127,10 @@ function Header() {
             <BootStrap.Navbar className='bg'>
                 <BootStrap.Container className='cont'>
                     <BootStrap.Navbar.Brand href="/Jordan"><SiJordan /></BootStrap.Navbar.Brand>
-                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                        <BootStrap.Button href='dashboard/add' className='gradient-text'>ADD</BootStrap.Button>}
-                    
-                    
-                    
+
+
+
+
                     <BootStrap.Navbar.Collapse id="responsive-navbar-nav">
                         <div className='navtext'>
                             <BootStrap.Nav.Link data-js="open" class="container" className='navtext'>Help</BootStrap.Nav.Link>
@@ -133,23 +146,35 @@ function Header() {
                     <BootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <BootStrap.Navbar.Collapse id="responsive-navbar-nav" className='mainnavitems'>
                         <BootStrap.Nav className="me-auto">
-                        
+
                             <BootStrap.Nav.Link className='mainnavtext' href='/mens'>Men</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link href='/womens'>Women</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link href='/kids' >Kids</BootStrap.Nav.Link>
                             <BootStrap.Nav.Link onClick={() => AllSection("Gear")}>Gear</BootStrap.Nav.Link>
+
+
                             
-                            
-                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                <BootStrap.Nav.Link href="/allsection/mainadd"  type="submit">Add products</BootStrap.Nav.Link>}
 
 
                         </BootStrap.Nav>
 
+                        <div  className='formsearch1'>
+                            <form className='formsearch'>
+                                <MDBInputGroup >
+                                    <MDBInput placeholder={elements} onChange={(e)=>setElement(e.target.value)} onKeyPress={handleKeypress} className='formsearch'/>
+                                    <MDBBtn className='formsearchbutton' rippleColor='dark'  onClick={handleSubmit} type="submit">
+                                       <ImSearch/>
+                                    </MDBBtn>
+                                </MDBInputGroup>
+                            </form>
+                        </div>
+
+                        
                         <BootStrap.Nav.Link href="/wishlist" className='dum'><AiOutlineHeart /></BootStrap.Nav.Link>
                         <BootStrap.Nav.Link href="/checkout" className='dum'><BsHandbag /></BootStrap.Nav.Link>
 
-                        <BootStrap.Nav.Link href='/search' className='dum'><BsSearch /></BootStrap.Nav.Link>
+
+
                     </BootStrap.Navbar.Collapse>
                 </BootStrap.Container>
             </BootStrap.Navbar>
@@ -171,14 +196,14 @@ function Header() {
                 <br />
                 <a href='/nikesupport' className='dum'>Guide Tour</a>
                 <br />
-                 
+
                 <a onClick={() => logout()} href='' className='dum'>logout</a>
             </div>
 
 
 
 
-        </div>
+        </div >
     )
 }
 

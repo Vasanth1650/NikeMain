@@ -491,6 +491,7 @@ function NormalProductAdd() {
                                                 <option>kids training</option>
                                                 <option>Slides And Sandals</option>
                                                 <option>Road Racing Shoes</option>
+                                                <option>Running Shoes</option>
                                                 <option>Running Clothing</option>
                                                 <option>Womens Clothing</option>
                                                 <option>Womens sportswear</option>
@@ -508,6 +509,7 @@ function NormalProductAdd() {
                                                 <option>Gear</option>
                                                 <option>Football</option>
                                                 <option>BasketBall</option>
+                                                <option>back to basics</option>
                                                 <option>Sneakers</option>
                                                 <option>FirstDay</option>
                                                 <option>Pants</option>

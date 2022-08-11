@@ -11,6 +11,10 @@ class TotService{
         return axios.get(VIEW_BASE_REST_API_URL+'/'+id);
     }
 
+    getByColor(color){
+        return axios.get(VIEW_BASE_REST_API_URL+'/specification/'+color)
+    }
+
     findByCategory(option){
         return axios.get(VIEW_BASE_REST_API_URL+'/category/'+option);
     }

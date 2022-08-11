@@ -65,12 +65,32 @@
   color: white;
   }
 
+  .bottom-textkids{
+  position: absolute;
+  bottom: 18%;
+  margin-left: 2%;
+  font-size: xx-large;
+  font-weight: 500;
+  font-family: fantasy;
+  color: white;
+  }
+
   .bottom{
     position: absolute;
     bottom: 18%;
     margin-left: 2%;
     color: white;
     font-size: larger;
+  }
+
+  .bottomkids{
+    position: absolute;
+    bottom: 18%;
+    margin-left: 2%;
+    color: white;
+    font-size: xx-large;
+    font-weight: 500;
+    font-family: fantasy;
   }
   
   .bottomss{
@@ -94,6 +114,18 @@
     border: none;
   }
 
+  .butnskids{
+    
+    
+    margin-left: 22%;
+    bottom: 7%;
+    background-color: black;
+    color: white;
+    border-radius: 35px;
+    border: none;
+    padding-bottom: 5%;
+  }
+
   .shopse{
     width: 7%;
     height: 8%;
@@ -104,4 +136,18 @@
     border-radius: 35px;
     border: none;
     
+  }
+
+  .mainrunkid{
+    color:black;
+    font-size: xxx-large;
+    font-family: fantasy;
+    margin-left: 4%;
+    margin-top: -20%;
+  }
+
+  .smalltextingkids{
+    text-align: left;
+    color: black;
+    margin-left: 4%;
   }

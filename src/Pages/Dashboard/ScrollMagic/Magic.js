@@ -6,12 +6,14 @@ import './Magics/Magic.css'
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom'
 import { FcLock } from "react-icons/fc";
+import { fetchUserData } from '../../../Api/AuthenticationService'
 
 function Magic() {
     const [product, setProduct] = useState([])
     const [gentle, setGentle] = useState([])
     const [bottom, setBottom] = useState([])
     const [similar, setSimilar] = useState([])
+    const [data, setData] = useState({})
     const usenavigate = useNavigate()
 
     useEffect(() => {
@@ -25,6 +27,15 @@ function Magic() {
             console.log(err)
         })
     }
+
+    React.useEffect(() => {
+        fetchUserData().then((response) => {
+            setData(response.data);
+            console.log(response.data)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }, [])
 
 
 
@@ -154,37 +165,162 @@ function Magic() {
                             <div class="MultiCarousel" data-items="1,3,5,6" data-slide="2" id="MultiCarousel" data-interval="2">
                                 <div class="MultiCarousel-inner">
 
-
+                                    
                                     {
                                         gentle.map(gentle =>
-
+                                            <>
+                                            {!data.gender &&
                                             <div className="item" onClick={() => Nextsteps(gentle.id)}>
-                                                
-                                                {gentle.category3 === "Trend" &&
+
+                                                {
+                                                    gentle.category3 === "Trend" &&
 
                                                     <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+                                                        
+                                                            <div class="pad15">
 
-                                                        <div class="pad15">
 
+                                                                <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
 
-                                                            <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
+                                                                <BootStrap.Card.Body>
+                                                                    <div className='mensproductname'>{gentle.productname}</div>
+                                                                    <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
+                                                                        <FcLock />
+                                                                    }</div>
+                                                                    <div className='mensproductprice'>₹{gentle.productprice}</div>
 
-                                                            <BootStrap.Card.Body>
-                                                                <div className='mensproductname'>{gentle.productname}</div>
-                                                                <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
-                                                                    <FcLock />
-                                                                }</div>
-                                                                <div className='mensproductprice'>₹{gentle.productprice}</div>
-
-                                                            </BootStrap.Card.Body>
-                                                        </div>
+                                                                </BootStrap.Card.Body>
+                                                            </div>
+                                                        
                                                     </BootStrap.Card>
+
                                                 }
 
+
                                             </div>
+                                            }
+                                            </>
                                         )
                                     }
 
+                                    <div>
+                                    {
+                                        gentle.map(gentle =>
+                                            <>
+                                            {data.gender==="Kids" &&
+                                            <div className="item" onClick={() => Nextsteps(gentle.id)}>
+
+                                                {
+                                                    gentle.gender === "Kids's" &&
+
+                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+                                                        
+                                                            <div class="pad15">
+
+
+                                                                <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
+
+                                                                <BootStrap.Card.Body>
+                                                                    <div className='mensproductname'>{gentle.productname}</div>
+                                                                    <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
+                                                                        <FcLock />
+                                                                    }</div>
+                                                                    <div className='mensproductprice'>₹{gentle.productprice}</div>
+
+                                                                </BootStrap.Card.Body>
+                                                            </div>
+                                                        
+                                                    </BootStrap.Card>
+
+                                                }
+
+
+                                            </div>
+                                            }
+                                            </>
+                                        )
+                                    }
+                                    </div>
+
+
+                                    
+                                    <div>
+                                    {
+                                        gentle.map(gentle =>
+                                            <>
+                                            {data.gender==="Men" &&
+                                            <div className="item" onClick={() => Nextsteps(gentle.id)}>
+
+                                                {
+                                                    gentle.gender === "Men's" &&
+
+                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+                                                        
+                                                            <div class="pad15">
+
+
+                                                                <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
+
+                                                                <BootStrap.Card.Body>
+                                                                    <div className='mensproductname'>{gentle.productname}</div>
+                                                                    <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
+                                                                        <FcLock />
+                                                                    }</div>
+                                                                    <div className='mensproductprice'>₹{gentle.productprice}</div>
+
+                                                                </BootStrap.Card.Body>
+                                                            </div>
+                                                        
+                                                    </BootStrap.Card>
+
+                                                }
+
+
+                                            </div>
+                                            }
+                                            </>
+                                        )
+                                    }
+                                    </div>
+
+                                    <div>
+                                    {
+                                        gentle.map(gentle =>
+                                            <>
+                                            {data.gender==="Women" &&
+                                            <div className="item" onClick={() => Nextsteps(gentle.id)}>
+
+                                                {
+                                                    gentle.gender === "Women's" &&
+
+                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+                                                        
+                                                            <div class="pad15">
+
+
+                                                                <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
+
+                                                                <BootStrap.Card.Body>
+                                                                    <div className='mensproductname'>{gentle.productname}</div>
+                                                                    <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
+                                                                        <FcLock />
+                                                                    }</div>
+                                                                    <div className='mensproductprice'>₹{gentle.productprice}</div>
+
+                                                                </BootStrap.Card.Body>
+                                                            </div>
+                                                        
+                                                    </BootStrap.Card>
+
+                                                }
+
+
+                                            </div>
+                                            }
+                                            </>
+                                        )
+                                    }
+                                    </div>
 
 
 

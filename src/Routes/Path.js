@@ -73,7 +73,7 @@ function Path() {
         <Route path="/signup" element={<Signup/>}/>
 
 
-        <Route path='/search' element={<AllSearch/>}/>
+        <Route path='/search/:elements' element={<AllSearch/>}/>
 
 
         <Route path='/nikesupport' element={<Chatbot/>}/>

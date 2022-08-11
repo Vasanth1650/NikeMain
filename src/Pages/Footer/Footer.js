@@ -76,10 +76,13 @@ function Footer() {
                                             <li><a href="/paymentoptions">Payment Options</a></li>
                                             <li><a href="/livesupport">Contact Us On Nike.com Inquiries</a></li>
                                             <li><a href="/livesupport">Contact Us On All Other Inquiries</a></li>
-                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                        <BootStrap.Button href='/admin/support' className='gradient-text'>Custome Support Channel</BootStrap.Button>}
+                                            
                                             <li><a href="/profile">Profile</a></li>
                                             
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                <BootStrap.Nav.Link href="/allsection/mainadd" type="submit">Add products</BootStrap.Nav.Link>}
+                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                        <BootStrap.Button href='/admin/support' className='gradient-text'>Custome Support Channel</BootStrap.Button>}
                                         </ul>
                                     </div>
                                     
@@ -121,6 +124,8 @@ function Footer() {
                                 <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                                     <div class="footer-menu">
                                         <ul>
+                                        {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                        <BootStrap.Button href='dashboard/add' className='gradient-text'>ADD</BootStrap.Button>}
                                             <li><a href="#">Guides</a></li>
                                             <li><a href="https://www.eshopworld.com/shoppers/help/terms-and-conditions-of-sale-en/">Terms of Sale</a></li>
                                             <li><a href="https://agreementservice.svs.nike.com/sg/en_gb/rest/agreement?agreementType=termsOfUse&uxId=com.nike&country=SG&language=en&requestType=redirect">Terms of Use</a></li>

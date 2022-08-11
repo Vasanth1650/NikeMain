@@ -1,30 +1,30 @@
-.bg{
-    
+.bg {
+
     background-color: whitesmoke;
     padding-top: 0px !important;
     padding-bottom: 0 !important;
     min-height: 20px;
 }
 
-.cont{
+.cont {
     size: 5ch;
 }
 
-.navtext{
+.navtext {
     margin-left: 70%;
     font-size: small;
     color: black;
     display: flex;
 }
 
-.navtext1{
+.navtext1 {
     margin-left: 5%;
     font-size: small;
     color: black;
     display: flex;
 }
 
-.navtext2{
+.navtext2 {
     margin-left: 5%;
     font-size: small;
     color: black;
@@ -32,43 +32,77 @@
 }
 
 
-.nikesymbol{
+.nikesymbol {
     width: 200%;
     height: 50%;
     margin-left: -100%;
 }
 
-
-.mainnav{
-    
-    background-color: white;
+.formsearch {
+    border-radius: 30px;
+    background-color: transparent;
+    outline: none;
+    height: 35px;
+    font-size: 15px;
+    margin-left: 27%;
+    width: 80%;
 }
 
-.mainnavitems{
-    margin-left: 35%;
-    letter-spacing:normal;
+.formsearch1 {
+    background-color: #FFF;
+    position: relative;
+    border-radius: 30px;
+    padding: 3px 50px 3px 10px;
+   
 }
 
-.dum{
+.formsearchbutton {
+    position: fixed;
+    right: -168.5px;
+    top: -35px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0;
+    color: black;
+    width: 35px;
+    height: 35px;
+    outline: 0;
+}
+
+.formsearchbutton:hover {
+    background-color: transparent;
     color: black;
 }
 
-.offer{
-    
+
+.mainnav {
+
+    background-color: white;
+}
+
+.mainnavitems {
+    margin-left: 36%;
+    letter-spacing: normal;
+}
+
+.dum {
+    color: black;
+}
+
+.offer {
+
     cursor: pointer;
 }
 
-.headerss{
-    
-}
+.headerss {}
 
 
-.oojne{
+.oojne {
     font-size: small;
 }
 
 
-.offertext1{
+.offertext1 {
     text-decoration: underline;
     text-decoration-color: black;
 }

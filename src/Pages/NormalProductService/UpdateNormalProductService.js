@@ -503,7 +503,7 @@ function NormalProductService() {
 
                                             <BootStrap.Form.Select id='category1' name='category1' value={category1}
                                         >
-                                                <option></option>
+<option></option>
                                                 <option>Jordan Men's</option>
                                                 <option>Jordan Womens</option>
                                                 <option>Men's Shoes</option>
@@ -513,14 +513,31 @@ function NormalProductService() {
                                                 <option>Womens training</option>
                                                 <option>kids training</option>
                                                 <option>Slides And Sandals</option>
-                                                <option>Football</option>
-                                                <option>BasketBall</option>
+                                                <option>Road Racing Shoes</option>
+                                                <option>Running Shoes</option>
+                                                <option>Running Clothing</option>
+                                                <option>Womens Clothing</option>
+                                                <option>Womens sportswear</option>
+                                                <option>Womens tshirts</option>
+                                                <option>Womens Shorts</option>
+                                                <option>Older Kids Shoes</option>
+                                                <option>Kids Shorts</option>
+                                                <option>Kids T-Shirts</option>
+                                                <option>Kids leggings</option>
+                                                <option>Kids Hoodies</option>
+                                                <option>Nike Waffle Shoes</option>
+                                                <option>Kids Play</option>
+                                                <option>training</option>
                                                 <option>Clothing</option>
                                                 <option>Gear</option>
+                                                <option>Football</option>
+                                                <option>BasketBall</option>
+                                                <option>back to basics</option>
                                                 <option>Sneakers</option>
-                                                <option>T Shirt</option>
+                                                <option>FirstDay</option>
                                                 <option>Pants</option>
                                                 <option>Tops</option>
+                                                <option>T Shirt</option>
                                                 <option>Shorts</option>
                                                 <option>Socks</option>
                                             </BootStrap.Form.Select>

@@ -195,6 +195,9 @@ function Category() {
     }
 
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [color,trend]);
 
 
 
@@ -275,7 +278,7 @@ function Category() {
                     <div>
                         <BootStrap.Form.Check
                             className='switchswift'
-
+                            type='checkbox'
                             id="custom-switch"
                             label=""
                             value="Trend"
@@ -287,7 +290,7 @@ function Category() {
                     <div>
                         <BootStrap.Form.Check
                             className='switchswift'
-
+                            type='checkbox'
                             id="custom-switch"
                             label=""
                             value="Most Popular"
@@ -300,7 +303,7 @@ function Category() {
                     <div>
                         <BootStrap.Form.Check
                             className='switchswift'
-
+                            type='checkbox'
                             id="custom-switch"
                             label=""
                             value="Just In"
@@ -331,6 +334,7 @@ function Category() {
 
 
             <div>
+            {color==="" && trend==="" &&
                 <div>
                     <BootStrap.Row xs={1} md={3} >
                         {
@@ -390,7 +394,7 @@ function Category() {
                             )
                         }
                     </BootStrap.Row>
-                </div>
+                </div>}
             </div>
 
 
@@ -525,13 +529,14 @@ function Category() {
 
 
             <div>
+            {color === "" && trend !== "" &&
                 <div >
                     <BootStrap.Row xs={1} md={3} >
                         {
                             trending.map(gentle =>
                                 <BootStrap.Col>
                                     <div className='items'>
-                                        {color === "" && trend !== "" &&
+                                        
                                             <BootStrap.CardGroup>
                                                 <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
@@ -571,7 +576,7 @@ function Category() {
 
                                                 </BootStrap.Card>
                                             </BootStrap.CardGroup>
-                                        }
+                                        
 
 
 
@@ -584,18 +589,23 @@ function Category() {
                             )
                         }
                     </BootStrap.Row>
-                </div>
+                </div>}
             </div>
 
 
             <div>
+            {trend !== "" && color!== "" &&
                 <div >
                     <BootStrap.Row xs={1} md={3} >
                         {
-                            trending.map(gentle =>
+                            trending.filter(gentle => {
+                                if (color === gentle.productspecification1) {
+                                    return gentle;
+                                }
+                            }).map(gentle =>
                                 <BootStrap.Col>
                                     <div className='items'>
-                                        {color === gentle.productspecification1 && trend !== "" &&
+                                       
                                             <BootStrap.CardGroup>
                                                 <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
@@ -635,7 +645,7 @@ function Category() {
 
                                                 </BootStrap.Card>
                                             </BootStrap.CardGroup>
-                                        }
+                                        
 
 
 
@@ -648,7 +658,7 @@ function Category() {
                             )
                         }
                     </BootStrap.Row>
-                </div>
+                </div>}
             </div>
 
 
@@ -661,6 +671,7 @@ function Category() {
 
 
             <br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <br /> <br />   <br />   <br />   <br />  <br /> <br /><br /><br />
 
 
             <Footer />

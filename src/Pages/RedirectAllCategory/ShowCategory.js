@@ -169,6 +169,9 @@ function ShowCategory() {
     }
 
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [color,trend]);
 
 
 
@@ -249,10 +252,10 @@ function ShowCategory() {
                 </div>
                 <div className='sidebardawdwadwa'>
                     <div className='colorsector'>Current</div>
-                    <div>
+                    <div className='trendswicth'>
                         <BootStrap.Form.Check
                             className='switchswift'
-
+                            type='checkbox'
                             id="custom-switch"
                             label=""
                             value="Trend"
@@ -264,7 +267,7 @@ function ShowCategory() {
                     <div>
                         <BootStrap.Form.Check
                             className='switchswift'
-
+                            type='checkbox'
                             id="custom-switch"
                             label=""
                             value="Most Popular"
@@ -277,7 +280,7 @@ function ShowCategory() {
                     <div>
                         <BootStrap.Form.Check
                             className='switchswift'
-
+                            type='checkbox'
                             id="custom-switch"
                             label=""
                             value="Just In"
@@ -431,60 +434,61 @@ function ShowCategory() {
 
 
             <div>
+                {color==="" && trend==="" &&
                 <div >
                     <BootStrap.Row xs={1} md={3} >
 
                         {
                             gentle.map(product =>
                                 <BootStrap.Col>
+                                    <div className='items'>
+                                        {color === "" && trend === "" &&
+                                            <BootStrap.CardGroup >
+                                                <BootStrap.Card className='jawdjawd'>
+                                                    <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
+                                                    <BootStrap.Card.Body onClick={() => Nextstep(product.id)} >
 
-                                    {color === "" && trend === "" &&
-                                        <BootStrap.CardGroup >
-                                            <BootStrap.Card className='jawdjawd'>
-                                                <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
-                                                <BootStrap.Card.Body onClick={() => Nextstep(product.id)} >
+                                                        <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
 
-                                                    <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
-
-                                                    <div className='categoryandcategory'>
-                                                        {product.category1}
-                                                    </div>
-                                                    {product.buyingoption === "Membership" &&
                                                         <div className='categoryandcategory'>
-                                                            <MdCardMembership />
+                                                            {product.category1}
                                                         </div>
-                                                    }
+                                                        {product.buyingoption === "Membership" &&
+                                                            <div className='categoryandcategory'>
+                                                                <MdCardMembership />
+                                                            </div>
+                                                        }
 
-                                                    {product.buyingoption !== "Membership" &&
-                                                        <div className='categoryandcategory'>
-                                                            {product.category2} Colors
-                                                        </div>}
+                                                        {product.buyingoption !== "Membership" &&
+                                                            <div className='categoryandcategory'>
+                                                                {product.category2} Colors
+                                                            </div>}
 
-                                                    <div className='kwjdnjwakwn'>
-                                                        ₹{product.price}
-                                                    </div>
-                                                </BootStrap.Card.Body>
+                                                        <div className='kwjdnjwakwn'>
+                                                            ₹{product.price}
+                                                        </div>
+                                                    </BootStrap.Card.Body>
 
-                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                    <BootStrap.NavLink onClick={() => deleteById(product.id)}>Delete</BootStrap.NavLink>}
-                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                    <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
-                                            </BootStrap.Card>
-                                        </BootStrap.CardGroup>
-                                    }
-
-
+                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                        <BootStrap.NavLink onClick={() => deleteById(product.id)}>Delete</BootStrap.NavLink>}
+                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                        <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
+                                                </BootStrap.Card>
+                                            </BootStrap.CardGroup>
+                                        }
 
 
 
 
-                                    <br />
+
+                                        <br />
+                                    </div>
                                 </BootStrap.Col>
 
                             )
                         }
                     </BootStrap.Row>
-                </div>
+                </div>}
             </div>
 
 
@@ -548,6 +552,7 @@ function ShowCategory() {
 
 
             <div>
+            {trend !== "" && color === "" &&
                 <div >
                     <BootStrap.Row xs={1} md={3} >
 
@@ -555,7 +560,7 @@ function ShowCategory() {
                             trending.map(product =>
                                 <BootStrap.Col>
 
-                                    {trend !== "" && color === "" &&
+                                    
                                         <BootStrap.CardGroup >
                                             <BootStrap.Card className='jawdjawd'>
                                                 <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
@@ -588,28 +593,31 @@ function ShowCategory() {
                                                     <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
                                             </BootStrap.Card>
                                         </BootStrap.CardGroup>
-                                    }
+                                    
                                     <br />
                                 </BootStrap.Col>
 
                             )
                         }
                     </BootStrap.Row>
-                </div>
+                </div>}
             </div>
 
 
 
 
             <div>
+            {trend !== "" && color!== "" &&
                 <div >
                     <BootStrap.Row xs={1} md={3} >
 
                         {
-                            trending.map(product =>
+                            trending.filter(product => {
+                                if (color === product.productspecification1) {
+                                    return product;
+                                }
+                            }).map(product =>
                                 <BootStrap.Col>
-
-                                    {trend !== "" && color === product.productspecification1 &&
                                         <BootStrap.CardGroup >
                                             <BootStrap.Card className='jawdjawd'>
                                                 <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
@@ -642,14 +650,14 @@ function ShowCategory() {
                                                     <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
                                             </BootStrap.Card>
                                         </BootStrap.CardGroup>
-                                    }
+                                    
                                     <br />
                                 </BootStrap.Col>
 
                             )
                         }
                     </BootStrap.Row>
-                </div>
+                </div>}
             </div>
 
 

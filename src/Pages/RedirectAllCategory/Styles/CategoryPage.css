@@ -321,7 +321,9 @@ background-color: #FF8B5A;
 
 
 
-
+input[type="checkbox"]{
+  cursor: pointer;
+}
 
 
 

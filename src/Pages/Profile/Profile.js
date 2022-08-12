@@ -79,6 +79,7 @@ function Profile() {
                                                 <div class="col-8">
                                                     <input id="email" name="email" placeholder="Email" class="form-control here" value={data && `${data.gender} `} required="required" type="text" />
                                                 </div>
+                                                
                                             </div>
 
                                             <div class="form-group row">
@@ -117,7 +118,8 @@ function Profile() {
                                             </div>
 
                                             
-                                            
+                                            <div>*To disable the dashboard auto customization select general in update of gender</div>
+                                            <br/>
                                             <div class="form-group row">
                                                 <label for="phonenumber" class="col-4 col-form-label">Update Profile*</label>
                                                 <div class="col-8">

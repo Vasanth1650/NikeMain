@@ -17,8 +17,8 @@ function AllSearch() {
     const [trend, setTrend] = useState("")
     const [product, setProduct] = useState([])
     const [normal, setNormal] = useState([])
-    const [coloring,setColoring] = useState([])
-    const [coloringp,setColoringp] = useState([])
+    const [coloring, setColoring] = useState([])
+    const [coloringp, setColoringp] = useState([])
     const [dummy, setDummy] = useState('')
 
     let size = product.length + normal.length
@@ -89,6 +89,11 @@ function AllSearch() {
     function normaling(id) {
         usenavigate('/nextsteps/' + id)
     }
+
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [color]);
 
 
     return (
@@ -163,52 +168,11 @@ function AllSearch() {
                 <div class="line-3">
                     <hr></hr>
                 </div>
-                <div className='sidebardawdwadwa'>
-                    <div className='colorsector'>Current</div>
-                    <div>
-                        <BootStrap.Form.Check
-                            className='switchswift'
-
-                            id="custom-switch"
-                            label=""
-                            value="Trend"
-                            onChange={handleChange}
-                        />
-                        <div className='trendswitch'>Trend</div>
-                    </div>
-                    <br />
-                    <div>
-                        <BootStrap.Form.Check
-                            className='switchswift'
-
-                            id="custom-switch"
-                            label=""
-                            value="Most Popular"
-                            onChange={handleChange}
-                        />
-                        <div className='trendswitch'>Most Popular</div>
-                    </div>
-
-                    <br />
-                    <div>
-                        <BootStrap.Form.Check
-                            className='switchswift'
-
-                            id="custom-switch"
-                            label=""
-                            value="Just In"
-                            onChange={handleChange}
-                        />
-                        <div className='trendswitch'>Just In</div>
-                    </div>
 
 
-                </div>
 
                 <br /><br />
-                <div class="line-3">
-                    <hr></hr>
-                </div>
+
 
 
             </div>
@@ -218,121 +182,124 @@ function AllSearch() {
                 <div>
                     <div >
                         <BootStrap.Row xs={1} md={3} >
+                            <>
+                                {color === "" && trend === "" &&
+                                    <>
+                                        {
+                                            product.filter(product => {
+                                                if (elements === '') {
+                                                    return null;
+                                                } else if (product.productname.toLowerCase().includes(elements.toLowerCase())) {
+                                                    return product;
+                                                } else if (product.category1.toLowerCase().includes(elements.toLowerCase())) {
+                                                    return product;
+                                                } else if (product.productspecification1.toLowerCase().includes(elements.toLowerCase())) {
+                                                    return product;
+                                                }
+                                            }).map(product =>
+                                                <BootStrap.Col>
+                                                    <div className='items'>
 
+                                                        <BootStrap.CardGroup >
+                                                            <BootStrap.Card className='jawdjawd'>
+                                                                <BootStrap.Card.Img onClick={() => openup(product.id)} variant="top" src={product.productimage1} />
+                                                                <BootStrap.Card.Body onClick={() => openup(product.id)} >
+
+                                                                    <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
+
+                                                                    <div className='categoryandcategory'>
+                                                                        {product.category1}
+                                                                    </div>
+                                                                    {product.buyingoption === "Membership" &&
+                                                                        <div className='categoryandcategory'>
+                                                                            <MdCardMembership />
+                                                                        </div>
+                                                                    }
+
+                                                                    {product.buyingoption !== "Membership" &&
+                                                                        <div className='categoryandcategory'>
+                                                                            {product.category2} Colors
+                                                                        </div>}
+
+                                                                    <div className='kwjdnjwakwn'>
+                                                                        ₹{product.productprice}
+                                                                    </div>
+                                                                </BootStrap.Card.Body>
+
+
+                                                            </BootStrap.Card>
+                                                        </BootStrap.CardGroup>
+
+                                                        <br />
+                                                    </div>
+                                                </BootStrap.Col>
+
+                                            )
+                                        }
+                                    </>}
+                            </>
+
+                            <>
+                                {color !== "" && trend === "" && color !== elements &&
+                                    <>
+                                        {
+                                            coloring.map(product =>
+                                                <BootStrap.Col>
+                                                    <div className='items'>
+
+                                                        <BootStrap.CardGroup >
+                                                            <BootStrap.Card className='jawdjawd'>
+                                                                <BootStrap.Card.Img onClick={() => openup(product.id)} variant="top" src={product.image1} />
+                                                                <BootStrap.Card.Body onClick={() => openup(product.id)} >
+
+                                                                    <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
+
+                                                                    <div className='categoryandcategory'>
+                                                                        {product.category1}
+                                                                    </div>
+                                                                    {product.buyingoption === "Membership" &&
+                                                                        <div className='categoryandcategory'>
+                                                                            <MdCardMembership />
+                                                                        </div>
+                                                                    }
+
+                                                                    {product.buyingoption !== "Membership" &&
+                                                                        <div className='categoryandcategory'>
+                                                                            {product.category2} Colors
+                                                                        </div>}
+
+                                                                    <div className='kwjdnjwakwn'>
+                                                                        ₹{product.price}
+                                                                    </div>
+                                                                </BootStrap.Card.Body>
+
+
+                                                            </BootStrap.Card>
+                                                        </BootStrap.CardGroup>
+
+
+
+
+
+
+
+                                                        <br />
+                                                    </div>
+                                                </BootStrap.Col>
+
+                                            )
+                                        }
+                                    </>}
+                            </>
+
+                            <>
+                            {color !== "" && trend === "" && color !== elements &&
+                            <>
                             {
-                                product.filter(product => {
-                                    if (elements === '') {
-                                        return null;
-                                    } else if (product.productname.toLowerCase().includes(elements.toLowerCase())) {
-
-                                        return product;
-                                    } else if (product.category1.toLowerCase().includes(elements.toLowerCase())) {
-                                        return product;
-                                    }else if(product.productspecification1.toLowerCase().includes(elements.toLowerCase())){
-                                        return product;
-                                    }
-                                }).map(product =>
-                                    <BootStrap.Col>
-                                        <div className='items'>
-                                            {color === "" && trend === "" &&
-                                                <BootStrap.CardGroup >
-                                                    <BootStrap.Card className='jawdjawd'>
-                                                        <BootStrap.Card.Img onClick={() => openup(product.id)} variant="top" src={product.productimage1} />
-                                                        <BootStrap.Card.Body onClick={() => openup(product.id)} >
-
-                                                            <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
-
-                                                            <div className='categoryandcategory'>
-                                                                {product.category1}
-                                                            </div>
-                                                            {product.buyingoption === "Membership" &&
-                                                                <div className='categoryandcategory'>
-                                                                    <MdCardMembership />
-                                                                </div>
-                                                            }
-
-                                                            {product.buyingoption !== "Membership" &&
-                                                                <div className='categoryandcategory'>
-                                                                    {product.category2} Colors
-                                                                </div>}
-
-                                                            <div className='kwjdnjwakwn'>
-                                                                ₹{product.productprice}
-                                                            </div>
-                                                        </BootStrap.Card.Body>
-
-
-                                                    </BootStrap.Card>
-                                                </BootStrap.CardGroup>
-                                            }
-
-
-
-
-
-
-                                            <br />
-                                        </div>
-                                    </BootStrap.Col>
-
-                                )
-                            }
-
-
-                            {
-                                coloring.map(product =>
-                                    <BootStrap.Col>
-                                        <div className='items'>
-                                            {color !== "" && trend === "" && color !==elements &&
-                                                <BootStrap.CardGroup >
-                                                    <BootStrap.Card className='jawdjawd'>
-                                                        <BootStrap.Card.Img onClick={() => openup(product.id)} variant="top" src={product.image1} />
-                                                        <BootStrap.Card.Body onClick={() => openup(product.id)} >
-
-                                                            <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
-
-                                                            <div className='categoryandcategory'>
-                                                                {product.category1}
-                                                            </div>
-                                                            {product.buyingoption === "Membership" &&
-                                                                <div className='categoryandcategory'>
-                                                                    <MdCardMembership />
-                                                                </div>
-                                                            }
-
-                                                            {product.buyingoption !== "Membership" &&
-                                                                <div className='categoryandcategory'>
-                                                                    {product.category2} Colors
-                                                                </div>}
-
-                                                            <div className='kwjdnjwakwn'>
-                                                                ₹{product.price}
-                                                            </div>
-                                                        </BootStrap.Card.Body>
-
-
-                                                    </BootStrap.Card>
-                                                </BootStrap.CardGroup>
-                                            }
-
-
-
-
-
-
-                                            <br />
-                                        </div>
-                                    </BootStrap.Col>
-
-                                )
-                            }
-
-
-{
                                 coloringp.map(product =>
                                     <BootStrap.Col>
                                         <div className='items'>
-                                            {color !== "" && trend === "" && color !==elements &&
+                                           
                                                 <BootStrap.CardGroup >
                                                     <BootStrap.Card className='jawdjawd'>
                                                         <BootStrap.Card.Img onClick={() => openup(product.id)} variant="top" src={product.productimage1} />
@@ -362,7 +329,7 @@ function AllSearch() {
 
                                                     </BootStrap.Card>
                                                 </BootStrap.CardGroup>
-                                            }
+                                            
 
 
 
@@ -374,10 +341,14 @@ function AllSearch() {
                                     </BootStrap.Col>
 
                                 )
-                            }
+
+                            }</>}
+                            </>
 
 
-
+                            <>
+                            {color === "" && trend === "" &&
+                            <>
                             {
                                 normal.filter(product => {
                                     if (elements === '') {
@@ -387,13 +358,13 @@ function AllSearch() {
                                         return product;
                                     } else if (product.category1.toLowerCase().includes(elements.toLowerCase())) {
                                         return product;
-                                    }else if(product.productspecification1.toLowerCase().includes(elements.toLowerCase())){
+                                    } else if (product.productspecification1.toLowerCase().includes(elements.toLowerCase())) {
                                         return product;
                                     }
                                 }).map(product =>
                                     <BootStrap.Col>
                                         <div className='items'>
-                                            {color === "" && trend === "" &&
+                                            
                                                 <BootStrap.CardGroup >
                                                     <BootStrap.Card className='jawdjawd'>
                                                         <BootStrap.Card.Img onClick={() => normaling(product.id)} variant="top" src={product.image1} />
@@ -423,7 +394,7 @@ function AllSearch() {
 
                                                     </BootStrap.Card>
                                                 </BootStrap.CardGroup>
-                                            }
+                                            
 
 
 
@@ -436,6 +407,8 @@ function AllSearch() {
 
                                 )
                             }
+                            </>}
+                            </>
                         </BootStrap.Row>
                     </div>
                 </div>

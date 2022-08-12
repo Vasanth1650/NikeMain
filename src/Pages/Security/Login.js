@@ -53,7 +53,7 @@ const Login = ({loading,error, ...props})=> {
                 props.setUser(response.data);
                 localStorage.setItem("Assign",true);
 
-                usenavigate(-1);
+                usenavigate('/redering/setting..');
                 
             }
             else {

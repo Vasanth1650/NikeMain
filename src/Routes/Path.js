@@ -43,6 +43,7 @@ import Sidebar from '../Pages/RedirectAllCategory/Sidebar';
 import Mens from '../Pages/Mens/Mens';
 import Womens from '../Pages/Womens/Womens';
 import Kids from '../Pages/Kids/Kids';
+import Rendering from '../Pages/Render/Rendering';
 
 
 function Path() {
@@ -63,7 +64,7 @@ function Path() {
       <Routes>
         <Route path='/' element={<Dashboard/>}/>
 
-
+       
         {data.roleCode==="ADMIN" &&
         <Route path="/dashboard/add" element={<DashboardAdd/>}/>}
 
@@ -75,6 +76,7 @@ function Path() {
 
         <Route path='/search/:elements' element={<AllSearch/>}/>
 
+        <Route path='/redering/setting..' element={<Rendering/>}/>
 
         <Route path='/nikesupport' element={<Chatbot/>}/>
 

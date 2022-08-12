@@ -65,7 +65,7 @@ function ViewDelivery() {
    
     })
 
-    
+   
 
 
     useEffect(()=>{

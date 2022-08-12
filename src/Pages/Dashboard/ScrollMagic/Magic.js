@@ -203,6 +203,46 @@ function Magic() {
                                         )
                                     }
 
+
+                                    <div>
+                                    {
+                                        gentle.map(gentle =>
+                                            <>
+                                            {data.gender==="General" &&
+                                            <div className="item" onClick={() => Nextsteps(gentle.id)}>
+
+                                                {
+                                                    gentle.category3 === "Trend" &&
+
+                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+                                                        
+                                                            <div class="pad15">
+
+
+                                                                <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
+
+                                                                <BootStrap.Card.Body>
+                                                                    <div className='mensproductname'>{gentle.productname}</div>
+                                                                    <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
+                                                                        <FcLock />
+                                                                    }</div>
+                                                                    <div className='mensproductprice'>₹{gentle.productprice}</div>
+
+                                                                </BootStrap.Card.Body>
+                                                            </div>
+                                                        
+                                                    </BootStrap.Card>
+
+                                                }
+
+
+                                            </div>
+                                            }
+                                            </>
+                                        )
+                                    }
+                                    </div>
+
                                     <div>
                                     {
                                         gentle.map(gentle =>

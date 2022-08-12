@@ -204,6 +204,7 @@
 
 .favorite{
   background-color: black;
+  margin-left: 4%;
   border: none;
   transition-property: background-color;
 }

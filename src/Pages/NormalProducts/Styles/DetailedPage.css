@@ -5,6 +5,10 @@
 
 }
 
+.conentingsi{
+  margin-top: 2%;
+}
+
 
 .detv1{
     width: 40%;
@@ -39,8 +43,9 @@
 .bus{
     background-color: black;
     color: white;
-    width: 40%;
-    
+    width: 30%;
+    padding-top: 1%;
+    padding-bottom: 1%;
     border-radius: 30px;
 }
 
@@ -159,8 +164,8 @@
   }
 
 .conenting{
-  margin-top: 10%;
-  margin-left: 80px;
+  margin-top: 2%;
+  margin-left: 60px;
 }
 
 .extra{
@@ -169,12 +174,12 @@
 
 .conentings{
   margin-top: 2%;
-  margin-left: 80px;
+  margin-left: 60px;
 }
 
 .conenting1{
-  margin-top: -15%;
-  margin-left: 80px;
+  margin-top: -30%;
+  margin-left: 60px;
 }
 
 .bus{
@@ -197,11 +202,27 @@
   font-weight: 400;
 }
 
+.favorite{
+  background-color: black;
+  border: none;
+  transition-property: background-color;
+}
+
+.favorite:hover{
+  background-color: red;
+}
 
 .bags{
   background-color: black;
-  width: 300%;
-  height: 25%;
+  width: 250%;
+  height: 15%;
+  border-radius: 30px;
+  border: none;
+  transition-property: background-color;
+}
+
+.bags:hover{
+  background-color: grey;
 }
 
 .produ{
@@ -355,7 +376,7 @@
   background-color: transparent;
   border: none;
   color: red;
-  width: 40%;
+  width: 35%;
     
    
 }

@@ -9,16 +9,26 @@ import { useNavigate } from 'react-router-dom';
 import { MdCancel } from "react-icons/md";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { fetchUserData } from '../../Api/AuthenticationService';
 
 function WishList() {
     const [wish, setWish] = useState([])
     const [normal,setNormal] = useState([])
     const usenavigate = useNavigate()
+    const [data,setData] = useState({})
 
     useEffect(() => {
         getAllWishlists()
         getAllNormal()
-    }, [])
+    }, [data])
+
+    React.useEffect(()=>{
+        fetchUserData().then((response)=>{
+            setData(response.data)
+        }).catch((err)=>{
+            console.log(err)
+        })
+    },[])
 
     useEffect(()=>{
         if(!localStorage.getItem("USER_KEY")){
@@ -30,7 +40,7 @@ function WishList() {
 
 
     const getAllWishlists = () => {
-        WishListService.findByUserid(m).then((response) => {
+        WishListService.findByUserid(data.id).then((response) => {
             setWish(response.data)
             console.log(response.data)
         }).catch((err) => {
@@ -39,7 +49,7 @@ function WishList() {
     }
 
     const getAllNormal = () => {
-        NormalListService.findByUserid(m).then((response)=>{
+        NormalListService.findByUserid(data.id).then((response)=>{
             setNormal(response.data)
             console.log(response.data)
         }).catch((err)=>{

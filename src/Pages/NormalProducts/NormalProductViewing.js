@@ -362,8 +362,9 @@ function NormalProductViewing() {
 
 
                         <div className='conenting'>
-                            <div style={{ color: "black" }} className="produ">{product.productname}</div>
+                            <div style={{ color: "black" }} className="produ">{product.productname}<BootStrap.Button className='favorite' onClick={wishlist}><AiOutlineHeart /></BootStrap.Button></div>
                             <div>{product.category1}</div>
+                            <br/>
                             <div>₹{product.price}
                                 <div>Includes All Taxes</div>
 
@@ -410,8 +411,8 @@ function NormalProductViewing() {
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.image3} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.image4} />
                         <div className='conentings'>
-                            <BootStrap.Button className='bags' onClick={handleClick}><BsHandbag />Add to bag</BootStrap.Button>
-                            <BootStrap.Button className='bags' onClick={wishlist}><AiOutlineHeart />Favourite</BootStrap.Button>
+                            <BootStrap.Button className='bags' onClick={handleClick}>Add to bag</BootStrap.Button>
+    
 
                         </div>
 

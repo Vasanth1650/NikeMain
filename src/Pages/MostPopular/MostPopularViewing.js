@@ -366,9 +366,11 @@ function MostPopularViewing() {
                         </div>
 
 
-                        <div className='conenting'>
-                            <div style={{color:"black"}} className="produ">{product.productname}</div>
+                        <div className='conentingsi'>
+                            <div style={{color:"black"}} className="produ">{product.productname} <BootStrap.Button className='favorite' onClick={wishlist}><AiOutlineHeart /></BootStrap.Button></div>
+                            
                             <div>{product.category1}</div>
+                            <br/>
                             <div>₹{product.productprice}
                                 <div>Includes All Taxes</div>
 
@@ -414,8 +416,8 @@ function MostPopularViewing() {
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.productimage3} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.productimage4} />
                         <div className='conentings'>
-                            <BootStrap.Button className='bags' onClick={handleClick}><BsHandbag />Add to bag</BootStrap.Button>
-                            <BootStrap.Button className='bags' onClick={wishlist}><AiOutlineHeart />Favourite</BootStrap.Button>
+                            <BootStrap.Button className='bags' onClick={handleClick}>Add to bag</BootStrap.Button>
+                           
 
                         </div>
 

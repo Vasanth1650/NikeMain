@@ -37,8 +37,8 @@ function UpdateProfile() {
         e.preventDefault()
         const addproduct = { username,email, address, city, state, phonenumber, password, subscription,gender}
         console.log(addproduct)
-        if (localStorage.getItem("Userid")) {
-            Service.updateUser(localStorage.getItem("Userid"), addproduct).then((response) => {
+        if (data.id) {
+            Service.updateUser(data.id, addproduct).then((response) => {
                 usenavigate(-1)
             }).catch((error) => {
                 console.log(error)
@@ -56,7 +56,7 @@ function UpdateProfile() {
     let m = localStorage.getItem("Userid")
 
     useEffect(() => {
-        Service.getUserById(m).then((response) => {
+        Service.getUserById(data.id).then((response) => {
             setAddress(response.data.address)
             setCity(response.data.city)
             setGender(response.data.gender)
@@ -67,7 +67,7 @@ function UpdateProfile() {
             setPassword(response.data.password)
             setSubscription(response.data.subscription)
         })
-    },[])
+    },[data])
 
 
 
@@ -82,7 +82,7 @@ function UpdateProfile() {
             <div class="form-group row">
                 <label for="address" class="col-4 col-form-label">Gender*</label>
                 <div class="col-8">
-                    <input id="gender" name="gender" placeholder="gender" class="form-control here" onChange={(e) => setGender(e.target.value)} value={gender} required="required" type="text" />
+                    <input id="gender" name="gender" placeholder="gender" class="form-control here" onChange={(e) => setGender(e.target.value)} value={gender} type="text" />
                 </div>
             </div>
 

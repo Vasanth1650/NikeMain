@@ -517,6 +517,7 @@ function NormalProductService() {
                                                 <option>Running Shoes</option>
                                                 <option>Running Clothing</option>
                                                 <option>Womens Clothing</option>
+                                                <option>Under 100$</option>
                                                 <option>Womens sportswear</option>
                                                 <option>Womens tshirts</option>
                                                 <option>Womens Shorts</option>
@@ -530,9 +531,10 @@ function NormalProductService() {
                                                 <option>training</option>
                                                 <option>Clothing</option>
                                                 <option>Gear</option>
+                                                <option>Soccer</option>
                                                 <option>Football</option>
                                                 <option>BasketBall</option>
-                                                <option>back to basics</option>
+                                                <option>Back to Basics</option>
                                                 <option>Sneakers</option>
                                                 <option>FirstDay</option>
                                                 <option>Pants</option>

@@ -110,7 +110,7 @@ function Womens() {
                 <div className='gendertect'>The Essentials</div>
                 <div className='essentailsmen'>
 
-                    <img  onClick={()=>ThreeSection("Womens tshirts")} className='imgsis' style={{ width: "22%" }} src='https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/2b937c0f-e298-4da0-afdf-84af7562a583/sportswear-icon-clash-short-sleeve-tie-top-GdbMh0.png' />
+                    <img  onClick={()=>ThreeSection("Tops")} className='imgsis' style={{ width: "22%" }} src='https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/2b937c0f-e298-4da0-afdf-84af7562a583/sportswear-icon-clash-short-sleeve-tie-top-GdbMh0.png' />
 
 
                     <img  onClick={()=>ThreeSection("Womens Shorts")} className='imgsis' style={{ width: "28%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/e5fb5e37-80cc-4e61-bd8d-da5c1a894e9a/women-s-shoes-clothing-accessories.png' />
@@ -118,7 +118,7 @@ function Womens() {
                 </div>
 
                 <div className='adwa'>
-                    <button  className='firt' onClick={()=>ThreeSection("Womens tshirts")}>T-Shirts</button>
+                    <button  className='firt' onClick={()=>ThreeSection("Tops")}>T-Shirts</button>
                     <button  className="seond" onClick={()=>ThreeSection("Womens Shorts")}>Shorts</button>
                     <button  className='thrd' style={{width:"10%"}} onClick={()=>ThreeSection("Womens Clothing")}>Clothing</button>
                 </div>

@@ -19,6 +19,9 @@ function Popular() {
 
     return (
         <div>
+
+            {!localStorage.getItem("USER_KEY") &&
+            <>
             {!data.gender &&
                 <div>
                     <a href='/subscription'>
@@ -34,7 +37,9 @@ function Popular() {
                         </div>
                     </a>
                 </div>}
-
+                </>}
+                {localStorage.getItem("USER_KEY") &&
+                <>
                 {data.gender==="Women" &&
                 <div>
                     <a href='/nextsteps/85'>
@@ -50,7 +55,10 @@ function Popular() {
                         </div>
                     </a>
                 </div>}
+                </>}
 
+                {localStorage.getItem("USER_KEY") &&
+                <>
                 {data.gender==="Men" &&
                 <div>
                     <a href='/section/FirstDay'>
@@ -68,10 +76,11 @@ function Popular() {
                         </div>
                     </a>
                     <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-                </div>}
+                </div>}</>}
 
 
-
+                {localStorage.getItem("USER_KEY") &&
+                <>
                 {data.gender==="Kids" &&
                 <div>
                     <a href="/section/Kids Play">
@@ -89,6 +98,7 @@ function Popular() {
                     </a>
                     
                 </div>}
+                </>}
 
         </div>
     )

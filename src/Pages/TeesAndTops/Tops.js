@@ -26,6 +26,8 @@ function Tops() {
         <div className='bodying'>
             <div className='titles'>Don't Miss</div>
             <br />
+            {!localStorage.getItem("USER_KEY") &&
+            <>
             {!data.gender &&
             <div class="row">
                 <div class="columns" onClick={() => AllSection("Tops")}>
@@ -53,68 +55,68 @@ function Tops() {
 
 
             </div>}
+            </>}
 
 
+            {localStorage.getItem("USER_KEY") &&
+            <>
             {data.gender==="Men" &&
-            <div class="row">
-                <div class="columns" onClick={() => AllSection("Tops")}>
+            <div className='mensing' class="row">
+                <div class="columns" onClick={() => AllSection("Back to Basics")}>
                     {!data.gender &&
                     <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/85f856e5-50cd-4883-90f0-daa7c4eff962/nike-just-do-it.png"
                         alt="Snow" style={{ width: "100%" }} />}
                     {data.gender==="Men" &&
-                    <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/85f856e5-50cd-4883-90f0-daa7c4eff962/nike-just-do-it.png"
+                    <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/bb76b350-3c68-4ce6-b304-905f27d38a3a/nike-just-do-it.jpg"
                         alt="Snow" style={{ width: "100%" }} />}
                     {data.gender==="Women" &&
                     <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/85f856e5-50cd-4883-90f0-daa7c4eff962/nike-just-do-it.png"
                         alt="Snow" style={{ width: "100%" }} />}
                     
-                    <div className='mainrun'>GO OUTSIDE TOGETHER</div>
-                    <div className='smalltexting'>As the sun keeps shining, ACG is giving you an important quest
-                    : get outside with the ones you love. We've git you and</div>
-                    <div className='smalltexting'>yours covered with tees, shorts and enough layering options to make 
-                    your compass spin.</div>
+                    <div className='mainrunmens'>BACK TO BASICS</div>
+                    <div className='smalltextingmens'>Show off your unique style with uniform essentails made for A+</div>
+                    <div className='smalltextingmensing'>fits.</div>
                     
-                    <div className='butns'>
+                    <div className='butnsmens'>
                         <button className='bikes'>Shop</button>
                     </div>
-                    
+                    <br/><br/><br/><br/>
                 </div>
-
+                
 
             </div>}
+            </>}
 
 
+            {localStorage.getItem("USER_KEY") &&
+            <>
             {data.gender==="Women" &&
             <div class="row">
-                <div class="columns" onClick={() => AllSection("Tops")}>
-                    {!data.gender &&
-                    <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/85f856e5-50cd-4883-90f0-daa7c4eff962/nike-just-do-it.png"
-                        alt="Snow" style={{ width: "100%" }} />}
-                    {data.gender==="Men" &&
-                    <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/85f856e5-50cd-4883-90f0-daa7c4eff962/nike-just-do-it.png"
-                        alt="Snow" style={{ width: "100%" }} />}
+                <div class="columns" onClick={() => AllSection("Back to Basics")}>
+                    
                     {data.gender==="Women" &&
-                    <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/85f856e5-50cd-4883-90f0-daa7c4eff962/nike-just-do-it.png"
+                    <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/991715af-338c-4d79-8005-d9092503c74c/women-s-shoes-clothing-accessories.jpg"
                         alt="Snow" style={{ width: "100%" }} />}
                     
-                    <div className='mainrun'>GO OUTSIDE TOGETHER</div>
-                    <div className='smalltexting'>As the sun keeps shining, ACG is giving you an important quest
-                    : get outside with the ones you love. We've git you and</div>
-                    <div className='smalltexting'>yours covered with tees, shorts and enough layering options to make 
-                    your compass spin.</div>
+                    <div className='mainrunmens'>GO OUTSIDE TOGETHER</div>
+                    <div className='smalltextingmens'>Show of your unique style with uniform basics made for A+ fits</div>
                     
-                    <div className='butns'>
+                    
+                    <div className='butnsmens'>
                         <button className='bikes'>Shop</button>
                     </div>
-                    
+                    <br/><br/><br/><br/>
                 </div>
 
 
             </div>}
+            </>}
 
+            {localStorage.getItem("USER_KEY") &&
+            <>
             {data.gender==="Kids" &&
             <div class="row">
-                <div class="columns" onClick={() => AllSection("back to basics")}>
+                <div class="columns" onClick={() => AllSection("Back to Basics")}>
                     
                     {data.gender==="Kids" &&
                     <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/e4bc6178-9309-419a-8a28-d6fa4932efe7/nike-kids-shoes-clothing-and-accessories-nike-com.jpg"
@@ -134,6 +136,7 @@ function Tops() {
 
 
             </div>}
+            </>}
 
 
         </div>

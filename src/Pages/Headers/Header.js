@@ -29,14 +29,7 @@ function Header() {
         usenavigate('/section/' + value);
         window.location.reload(false);
     }
-    useEffect(() => {
-        if (data.roleCode === "ADMIN") {
-            localStorage.setItem("Authority", data.roleCode)
-        } else if (data.roleCode === "USER") {
-
-        }
-    }, [data])
-
+    
 
     function logout() {
         localStorage.clear();
@@ -45,14 +38,7 @@ function Header() {
 
     }
 
-    React.useEffect(() => {
-        fetchUserData().then((response) => {
-
-            setData(response.data);
-        }).catch((e) => {
-            localStorage.clear();
-        })
-    }, [])
+   
 
 
     function popupOpenClose(popup) {
@@ -89,7 +75,7 @@ function Header() {
     });
 
 
-    localStorage.setItem("Userid", data.id)
+    
 
 
     $(document).ready(function () {

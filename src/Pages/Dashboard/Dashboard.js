@@ -24,38 +24,12 @@ function Dashboard() {
 
     //Variables
     const usenavigate = useNavigate();
-    const [data, setData] = useState({});
+    
     const [check, setCheck] = useState('');
     const [searchl, setSearchl] = useState([]);
     const [roles, setRoles] = useState('')
 
-    //useEffect to set username
-    useEffect(() => {
-        setCheck(data.username)
-    }, [])
-
-    localStorage.setItem("Userid", data.id)
-
-    React.useEffect(() => {
-        fetchUserData().then((response) => {
-
-            setData(response.data);
-            console.log(response.data)
-            setRoles(response.data.roles)
-
-        }).catch((e) => {
-            localStorage.clear();
-        })
-    }, [])
-
-
-
-
-    const Options = (variable) => {
-        console.log(variable);
-        usenavigate('/section/' + variable);
-    }
-
+    
 
     console.log(roles)
 

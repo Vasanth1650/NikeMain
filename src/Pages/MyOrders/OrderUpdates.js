@@ -64,11 +64,20 @@ function OrderUpdates() {
         usenavigate('/')
     }
 
+    const GenerateOrder = () =>{
+        Myorderservice.getInSheet().then((response)=>{
+            console.log(response)
+        })
+    }
+
     return (
         <div>
 
             <Headers />
 
+            <br/><br/>
+
+            <a  href='https://nike-backend.herokuapp.com/ordered/generate/export' download>Genrate List In Excel</a>
             <br/><br/>
 
             <div class="table-users">

@@ -64,7 +64,14 @@ function Checkout() {
 
 
 
-
+    useEffect(()=>{
+        if(address){
+            if(address==="-"){
+                alert("Please Update Your Location IN Profile")
+                usenavigate('/profile')
+            }
+        }
+    },[address])
 
 
     function CheckoutDelete(userid) {

@@ -24,6 +24,10 @@ class Myorderservice{
         return axios.put(VIEW_BASE_REST_API_URL+'/updateOrder/'+id,orders)
     }
 
+    getInSheet(){
+        return axios.get(VIEW_BASE_REST_API_URL+'/generate/export')
+    }
+
 
 }
 

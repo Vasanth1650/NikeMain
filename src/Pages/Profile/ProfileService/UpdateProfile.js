@@ -6,6 +6,7 @@ import Header from '../../Headers/Header'
 import Footer from '../../Footer/Footer'
 import * as BootStrap from 'react-bootstrap'
 
+
 function UpdateProfile() {
 
     const [address, setAddress] = useState('')
@@ -78,20 +79,20 @@ function UpdateProfile() {
             <Header />
             <form onSubmit={handleClick}>
                 <div>
- 
-                <BootStrap.Form.Group style={{width:"40%"}} className='profiledit' onChange={(e) => setGender(e.target.value)} required>
 
-                    <BootStrap.Form.Select id='gender' name='gender' value={gender}>
-                        
-                        <option>Men</option>
-                        <option>Women</option>
-                        <option>Kids</option>
-                        <option>General</option>
-                    </BootStrap.Form.Select>
-                </BootStrap.Form.Group>
+                    <BootStrap.Form.Group style={{ width: "40%" }} className='profiledit' onChange={(e) => setGender(e.target.value)} required>
+
+                        <BootStrap.Form.Select id='gender' name='gender' value={gender}>
+
+                            <option>Men</option>
+                            <option>Women</option>
+                            <option>Kids</option>
+                            <option>General</option>
+                        </BootStrap.Form.Select>
+                    </BootStrap.Form.Group>
                 </div>
-                
 
+                
 
                 <div class="form-group row">
                     <label for="address" class="col-4 col-form-label">Address*</label>
@@ -122,7 +123,7 @@ function UpdateProfile() {
                 </div>
 
 
-
+                
 
 
                 <div class="form-group row">

@@ -44,6 +44,7 @@ import Mens from '../Pages/Mens/Mens';
 import Womens from '../Pages/Womens/Womens';
 import Kids from '../Pages/Kids/Kids';
 import Rendering from '../Pages/Render/Rendering';
+import Emailing from '../Pages/Email/Emailing';
 
 
 function Path() {
@@ -79,6 +80,9 @@ function Path() {
         <Route path='/redering/setting..' element={<Rendering/>}/>
 
         <Route path='/nikesupport' element={<Chatbot/>}/>
+
+        {data.roleCode==="ADMIN"&&
+        <Route path='/emailing' element={<Emailing/>}/>}
 
 
         <Route path='/myorders/:id' element={<ViewDelivery/>}/>

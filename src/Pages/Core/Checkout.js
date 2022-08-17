@@ -69,7 +69,7 @@ function Checkout() {
             if(address==="-"){
                 alert("Please Update Your Location IN Profile")
                 usenavigate('/profile')
-            }
+            } 
         }
     },[address])
 

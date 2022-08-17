@@ -213,9 +213,14 @@
   background-color: red;
 }
 
+.atsdaw{
+  text-decoration: none;
+  padding-bottom: 2%;
+}
+
 .bags{
   background-color: black;
-  width: 250%;
+  width: 120%;
   height: 15%;
   border-radius: 30px;
   border: none;

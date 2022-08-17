@@ -141,26 +141,27 @@ function MostPopularViewing() {
             } else {
                 toast("Please Choose Size For Your Product")
             }
-        }else if((localStorage.getItem("USER_KEY")) && (check !== "undefined") && (product.buyingoption==="Membership")){
+        } else if ((localStorage.getItem("USER_KEY")) && (check !== "undefined") && (product.buyingoption === "Membership")) {
             const check = { userid, username, productname, image1, price, size }
-            if(data.subscription!=="No Subscription"){
-            if (size && size != "-") {
-                fetch("https://nike-backend.herokuapp.com/charging/checkout", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(check)
-                }).then(() => {
-                    console.log("Everything Went Perfect")
-                    usenavigate("/checkout")
-                }).catch(error => {
-                    console.log("something went wrong")
-                })
-            } else if (size === "-") {
+            if (data.subscription !== "No Subscription") {
+                if (size && size != "-") {
+                    fetch("https://nike-backend.herokuapp.com/charging/checkout", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(check)
+                    }).then(() => {
+                        console.log("Everything Went Perfect")
+                        usenavigate("/checkout")
+                    }).catch(error => {
+                        console.log("something went wrong")
+                    })
+                } else if (size === "-") {
 
-                toast.dark("Please Select Size Of The Product")
+                    toast.dark("Please Select Size Of The Product")
+                } else {
+                    toast("Please Choose Size For Your Product")
+                }
             } else {
-                toast("Please Choose Size For Your Product")
-            }}else{
                 toast("This Product Is Only For Exclusive Member Subscription")
             }
         }
@@ -367,10 +368,10 @@ function MostPopularViewing() {
 
 
                         <div className='conentingsi'>
-                            <div style={{color:"black"}} className="produ">{product.productname} <BootStrap.Button className='favorite' onClick={wishlist}><AiOutlineHeart /></BootStrap.Button></div>
-                            
+                            <div style={{ color: "black" }} className="produ">{product.productname} <BootStrap.Button className='favorite' onClick={wishlist}><AiOutlineHeart /></BootStrap.Button></div>
+
                             <div>{product.category1}</div>
-                            <br/>
+                            <br />
                             <div>₹{product.productprice}
                                 <div>Includes All Taxes</div>
 
@@ -395,19 +396,19 @@ function MostPopularViewing() {
                             <br /><br />
                             <div>Size</div>
                             {product.size1 !== "-" &&
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>}
+                                <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>}
                             {product.size2 !== "-" &&
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>}
-                            {product.size3 !=="-" &&
-                            <div>---------------------------------</div>}
-                            {product.size3 !=="-" &&
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size3)}>{product.size3}</BootStrap.Button>}
-                            {product.size4 !=="-" &&
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>}
+                                <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>}
+                            {product.size3 !== "-" &&
+                                <div>---------------------------------</div>}
+                            {product.size3 !== "-" &&
+                                <BootStrap.Button className='bus' onClick={(e) => setSize(product.size3)}>{product.size3}</BootStrap.Button>}
+                            {product.size4 !== "-" &&
+                                <BootStrap.Button className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>}
                             <div>---------------------------------</div>
-                            {product.size5 !=="-" &&
-                            <BootStrap.Button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>}
-                            <button style={{color:"black"}} className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
+                            {product.size5 !== "-" &&
+                                <BootStrap.Button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>}
+                            <button style={{ color: "black" }} className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
 
                         </div>
                     </div>
@@ -416,8 +417,11 @@ function MostPopularViewing() {
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.productimage3} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.productimage4} />
                         <div className='conentings'>
+                            <div className='atsdaw'>
+                                <a style={{ color: "black" }} href='#'>Including All Taxes Applied..</a>
+                            </div>
                             <BootStrap.Button className='bags' onClick={handleClick}>Add to bag</BootStrap.Button>
-                           
+
 
                         </div>
 
@@ -497,7 +501,7 @@ function MostPopularViewing() {
                 <div className='explore'>Explore the {product.productname}</div>}
             {product.productimage10 !== "-" &&
                 <br />}
-            {product.productimage10 !== "-"  &&
+            {product.productimage10 !== "-" &&
                 <br />}
             {product.productimage10 !== "-" &&
                 <div className='explore'>
@@ -514,7 +518,7 @@ function MostPopularViewing() {
             {product.productimage10 !== "-" &&
                 <div className='asd'>{product.productdescription}</div>}
 
-            
+
             {product.productimage10 !== "-" &&
                 <br />}
             {product.productimage10 !== "-" &&
@@ -537,7 +541,7 @@ function MostPopularViewing() {
                 <br />}
             {product.productimage10 !== "-" &&
                 <div className='asd'>{product.productspecification4}</div>}
-            
+
             {product.productimage10 !== "-" &&
                 <br />}
             {product.productimage10 !== "-" &&
@@ -560,10 +564,10 @@ function MostPopularViewing() {
                 <div className='explore'>Secure for Take-Off {product.productname}</div>}
             {product.productimage10 !== "-" &&
                 <br />}
-            
+
             {product.productimage10 !== "-" &&
                 <div className='asd'>{product.productspecification5}</div>}
-            
+
             <br /><br /><br /><br />
 
             <div className='similars'>You May Also Like This</div>

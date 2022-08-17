@@ -12,10 +12,10 @@ function Signup() {
     const [email,setEmail] = useState('')
     const [phonenumber,setPhonenumber] = useState('')
     const [password,setPassword] = useState('')
-    const [address,setAddress] = useState('')
+    const [address,setAddress] = useState("-")
     const [gender,setGender] = useState('')
-    const [state,setState] = useState('')
-    const [city,setCity] = useState('')
+    const [state,setState] = useState("-")
+    const [city,setCity] = useState("-")
     const authorities = [{roleCode:"USER",roleDescription:"USER"}]
 
     const handleClick = (e) =>{
@@ -128,29 +128,7 @@ function Signup() {
                                                     </div>
                                                 </div>
 
-                                                <div className="gradient">
-                                                    <input id="state" type="state" minLength={4}
-                                                       placeholder='Enter State' onChange={(e)=>setState(e.target.value)} value={state} required />
-                                                    <div className="invalid-feedback">
-                                                        State is required
-                                                    </div>
-                                                </div>
-
-                                                <div className="gradient">
-                                                    <input id="city" type="city" minLength={4}
-                                                       placeholder='Enter City' onChange={(e)=>setCity(e.target.value)} value={city} required />
-                                                    <div className="invalid-feedback">
-                                                        City is required
-                                                    </div>
-                                                </div>
-
-                                                <div className="gradient">
-                                                    <input id="address" type="address" minLength={8}
-                                                       placeholder='Enter Address' onChange={(e)=>setAddress(e.target.value)} value={address} required />
-                                                    <div className="invalid-feedback">
-                                                        Address is required
-                                                    </div>
-                                                </div>
+                                               
 
 
 

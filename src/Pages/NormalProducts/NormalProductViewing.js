@@ -411,6 +411,9 @@ function NormalProductViewing() {
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.image3} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.image4} />
                         <div className='conentings'>
+                            <div  className='atsdaw'>
+                                <a style={{color:"black"}} href='#'>Including All Taxes Applied..</a>
+                            </div>
                             <BootStrap.Button className='bags' onClick={handleClick}>Add to bag</BootStrap.Button>
     
 

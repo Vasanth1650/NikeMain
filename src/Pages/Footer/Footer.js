@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, { useState } from 'react'
 import { fetchUserData } from '../../Api/AuthenticationService';
 import * as BootStrap from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +14,7 @@ function Footer() {
     const [data, setData] = useState({});
     const usenavigate = useNavigate()
 
-    function refresh(){
+    function refresh() {
         window.location.reload(false);
     }
 
@@ -26,21 +26,21 @@ function Footer() {
         })
     }, [])
 
-    const OrderUpdates = () =>{
-        localStorage.setItem("Role","permit")
+    const OrderUpdates = () => {
+        localStorage.setItem("Role", "permit")
         usenavigate("/orderupdate")
         window.location.reload(false);
     }
 
-    function sendEmail(e){
+    function sendEmail(e) {
         e.preventDefault();
-        emailjs.sendForm('service_lc3a1or','template_it7jqmj',e.target,'0C3fg6Ghhl2fj0Jv4').then(response=>{
+        emailjs.sendForm('service_lc3a1or', 'template_it7jqmj', e.target, '0C3fg6Ghhl2fj0Jv4').then(response => {
             toast("Subscribed For New Launch Products Information")
         })
     }
 
-    
-    const RefundRequest = () =>{
+
+    const RefundRequest = () => {
         usenavigate("/refund")
         window.location.reload(false);
     }
@@ -56,14 +56,14 @@ function Footer() {
                             <div class="row">
                                 {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                     <BootStrap.Button onClick={RefundRequest} variant="warning" type="submit">Refund Requests</BootStrap.Button>}
-                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&<marquee>Check out The Latest Customer Orders</marquee>}
+                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 && <marquee>Check out The Latest Customer Orders</marquee>}
                                 {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                     <BootStrap.Button onClick={OrderUpdates} variant="warning" type="submit">Order Updates</BootStrap.Button>}
                             </div>
                         </div>
                         <div class="footer-content pt-5 pb-5">
                             <div class="row">
-                                
+
                                 <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                                     <div class="footer-widget">
                                         <div class="footer-widget-heading">
@@ -76,21 +76,21 @@ function Footer() {
                                             <li><a href="/paymentoptions">Payment Options</a></li>
                                             <li><a href="/livesupport">Contact Us On Nike.com Inquiries</a></li>
                                             <li><a href="/livesupport">Contact Us On All Other Inquiries</a></li>
-                                            
+
                                             <li><a href="/profile">Profile</a></li>
-                                            
+
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                <BootStrap.Nav.Link href="/allsection/mainadd" type="submit">Add products</BootStrap.Nav.Link>}
-                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                        <BootStrap.Button href='/admin/support' className='gradient-text'>Custome Support Channel</BootStrap.Button>}
+                                                <BootStrap.Nav.Link href="/allsection/mainadd" type="submit">Add products</BootStrap.Nav.Link>}
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                <BootStrap.Button href='/admin/support' className='gradient-text'>Custome Support Channel</BootStrap.Button>}
                                         </ul>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="col-xl-4 col-lg-4 mb-50">
                                     <div class="footer-widget">
-                                     
-                                        
+
+
                                     </div>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
@@ -112,7 +112,7 @@ function Footer() {
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="copyright-area">
                         <div class="container">
                             <div class="row">
@@ -124,9 +124,11 @@ function Footer() {
                                 <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
                                     <div class="footer-menu">
                                         <ul>
-                                        {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                        <BootStrap.Button href='dashboard/add' className='gradient-text'>ADD</BootStrap.Button>}
-                                            <li><a href="#">Guides</a></li>
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                <BootStrap.Button href='dashboard/add' className='gradient-text'>ADD</BootStrap.Button>}
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                <li><a href='/emailing'>Email</a></li>}
+                                            
                                             <li><a href="https://www.eshopworld.com/shoppers/help/terms-and-conditions-of-sale-en/">Terms of Sale</a></li>
                                             <li><a href="https://agreementservice.svs.nike.com/sg/en_gb/rest/agreement?agreementType=termsOfUse&uxId=com.nike&country=SG&language=en&requestType=redirect">Terms of Use</a></li>
                                             <li><a href="https://agreementservice.svs.nike.com/sg/en_gb/rest/agreement?agreementType=privacyPolicy&uxId=com.nike.unite&country=SG&language=en&requestType=redirect">Nike Privacy Policy</a></li>
@@ -138,7 +140,7 @@ function Footer() {
                     </div>
                 </footer>
             </div>
-            <ToastContainer/>
+            <ToastContainer />
         </div>
     )
 }

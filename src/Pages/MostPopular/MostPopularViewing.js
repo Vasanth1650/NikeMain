@@ -426,12 +426,13 @@ function MostPopularViewing() {
                         </div>
 
                     </div>
-
+                    
                     <div className='carding'>
 
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.productimage5} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.productimage6} />
                         <div className='conenting1'>
+                        <br/><br/>
                             <div>{product.productdescription}
                                 <div className='extra'>
                                     <button class="btn popup-btn" href="#">View Details</button>

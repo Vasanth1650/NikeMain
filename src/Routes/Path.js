@@ -45,6 +45,8 @@ import Womens from '../Pages/Womens/Womens';
 import Kids from '../Pages/Kids/Kids';
 import Rendering from '../Pages/Render/Rendering';
 import Emailing from '../Pages/Email/Emailing';
+import Explain from '../Pages/Usecase/Explain';
+import Data from '../Pages/Usecase/Separate/Data';
 
 
 function Path() {
@@ -74,8 +76,13 @@ function Path() {
 
         <Route path="/signup" element={<Signup/>}/>
 
+        <Route path='/usecase' element={<Explain/>}/>
 
         <Route path='/search/:elements' element={<AllSearch/>}/>
+
+        <Route path='/datasecurity' element={<Data/>}/>
+
+        
 
         <Route path='/redering/setting..' element={<Rendering/>}/>
 

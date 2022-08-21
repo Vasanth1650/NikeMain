@@ -74,8 +74,8 @@ function Footer() {
                                             <li><a href="/delivery">Delivery</a></li>
                                             <li><a href="/livesupport">Returns</a></li>
                                             <li><a href="/paymentoptions">Payment Options</a></li>
-                                            <li><a href="/livesupport">Contact Us On Nike.com Inquiries</a></li>
-                                            <li><a href="/livesupport">Contact Us On All Other Inquiries</a></li>
+                                            <li><a href="/livesupport">Contact Us</a></li>
+                                            <li><a href="/usecase">About Site</a></li>
 
                                             <li><a href="/profile">Profile</a></li>
 

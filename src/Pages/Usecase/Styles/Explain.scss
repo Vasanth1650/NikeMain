@@ -1,0 +1,358 @@
+.explaintop{
+    background-color: black;
+    color: black;
+    overflow: hidden;
+}
+
+.sectionimage{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sectionimage::before{
+    
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,#1c0522,transparent);
+    z-index: 1000;
+}
+
+.smallimages{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.smallimages2{
+    position: absolute;
+    left: 0;
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.smallimages22{
+    position: absolute;
+    left: 0;
+    top: 80%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.detailsset{
+    position: absolute;
+    color: white;
+    font-family: fantasy;
+    font-size: 7.0vw;
+    white-space: nowrap;
+    transform: translateY(10px);
+    padding-left: 36.5%;
+}
+
+.detailsseting{
+    position: absolute;
+    color: white;
+    font-size: 7.5vw;
+    white-space: nowrap;
+    font-family: fantasy;
+    transform: translateY(-175px);
+}
+
+.smallimagesmountain{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 10;
+}
+
+.exploreinf{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+
+    color: #2b1055;
+    font-size: larger;
+    z-index: 9;
+    transform: translateY(190px);
+}
+
+.sectonsparass{
+    overflow: hidden;
+    position: absolute;
+    padding: 100px;
+    background-color: black;
+    display: flex;
+    width: 100%;
+    height: 165%;
+}
+
+.sectonsparass22{
+    overflow: hidden;
+    position: absolute;
+    margin-top: 85%;
+    padding: 100px;
+    background-color: #000027;
+    display: flex;
+    width: 100%;
+    height: 80%;
+}
+
+.sectonsparass222{
+    overflow: hidden;
+    position: absolute;
+    margin-top: 125%;
+    padding: 100px;
+    background-color: #000027;
+    display: flex;
+    width: 100%;
+    height: 145%;
+}
+
+
+.sectonsparass2222{
+    overflow: hidden;
+    position: absolute;
+    margin-top: 195%;
+    padding: 100px;
+    background-color: #000027;
+    display: flex;
+    width: 100%;
+    height: 125%;
+}
+
+.sectonsparass22222{
+    overflow: hidden;
+    position: absolute;
+    margin-top: 245%;
+    padding: 100px;
+    background-color: #000027;
+    
+    width: 100%;
+    height: 105%;
+}
+
+.mainkeluft{
+    display: flex;
+}
+
+.smallsmall{
+    padding-top: 15%;
+    color: white;
+    cursor: pointer;
+    padding-left: 25%;
+}
+
+.mainkeluft2{
+    display: flex;
+    margin-top: 15%;
+    margin-left: -35%;
+    cursor: pointer;
+}
+
+.sectonsparass222222{
+    overflow: hidden;
+    position: absolute;
+    margin-top: 298%;
+    padding: 100px;
+    background-color: #000027;
+    display: flex;
+    width: 100%;
+    height: 105%;
+}
+
+.bottomsfloating{
+  float: left;
+}
+
+.bottomsfloating2{
+    float: left;
+}
+
+.cradexlain{
+  
+    background-color: #2b1055;
+}
+
+.bottomfloatingtext{
+    padding-top: 15%;
+    margin-left: -20%;
+    color: white;
+}
+
+.bottomfloatingtext2{
+    padding-top: 15%;
+    margin-left: -20%;
+    color: white;
+}
+
+.card1{
+    position: absolute;
+    right: 900;
+    
+}
+
+.card2{
+    position: absolute;
+    right: 900;
+    display: flex;
+    padding-top: 45%;
+    pointer-events: none;
+    
+}
+
+.niwadn{
+    margin-left: 35%;
+}
+
+.card3{
+    
+    position: absolute;
+    right: 900;
+    display: flex;
+    padding-top: 85%;
+    pointer-events: none;
+}
+
+.vardbac{
+    color: white;
+    font-size: 2.5vh;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    
+}
+
+.vardbac1{
+    color: white;
+    font-size: 2.5vh;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding-top: 5%;
+}
+
+
+.vardbac2{
+    color: white;
+    font-size: 2.5vh;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding-top: 5%;
+}
+
+.learnmore{
+    width: 30%;
+    background-color: white;
+    color: blue;
+    border: none;
+    border-radius: 20px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+
+.card1texting{
+    position: relative;
+    color: white;
+    font-size: larger;
+    font-weight: 500;
+    padding-top: 10%;
+    padding-left: 55%;
+   
+}
+
+.cardbottomtexting1{
+    margin-left: 2%;
+    position: relative;
+    color: white;
+    font-size: small;
+    padding-top: 10%;
+    padding-left: 5%;
+    font-weight: 600;
+    left: 900;
+}
+
+
+.usercase2{
+    float: right;
+    position: relative;
+}
+
+
+.otherthan{
+    font-size: xxx-large;
+    letter-spacing: 0.1in;
+    font-family: fantasy;
+    font-weight: 600;
+    position: absolute;
+    color: white;
+    margin-top: -5%;
+}
+
+
+.otherthanbottom{
+    font-size: xxx-large;
+    letter-spacing: 0.1in;
+    font-family: fantasy;
+    font-weight: 600;
+    position: absolute;
+    color: white;
+    margin-top: -5%;
+}
+
+.otherthanbottom1{
+    font-size: xxx-large;
+    letter-spacing: 0.1in;
+    font-family: fantasy;
+    font-weight: 600;
+    position: absolute;
+    margin-left: 70%;
+    color: white;
+    margin-top: -5%;
+}
+
+.otherthanbottomsmall{
+    font-size: small;
+    font-weight: 400;
+    position: absolute;
+    color: white;
+    margin-top: 2%;
+    margin-left: 3%;
+    padding-right: 40%;
+}
+
+.otherthanbottomsmall{
+    font-size: small;
+    font-weight: 400;
+    position: absolute;
+    color: white;
+    margin-top: 2%;
+    margin-left: 3%;
+    padding-right: 40%;
+}
+
+.socketioimage{
+    margin-top: 50%;
+    margin-left: -25%;
+}

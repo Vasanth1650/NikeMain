@@ -37,7 +37,7 @@ function RunningShoes() {
 
   return (
     <div className='bad'>
-      <div className='trendingfont'>Trending</div>
+      <div className='trendingfont'>Training</div>
 
 
       {localStorage.getItem("USER_KEY") &&
@@ -113,19 +113,18 @@ function RunningShoes() {
             <>
 
               <div className='Running'>
-                <img style={{ width: "90%" }} src='https://static.nike.com/a/images/t_prod/w_1920,c_limit,f_auto,q_auto/5d1abfbd-9ffc-4c06-be30-1090ed533247/pdp-replace.jpg' />
+                <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/eba50b3e-2c09-4fbb-820e-005a44cfb704/jordan.jpg' />
               </div>
 
 
 
-              <div className='mainrun'>LOOKS GOOD. RUNS GOOD.</div>
+              <div className='mainrun' style={{fontSize:"large"}}>Howard University.</div>
 
-              <div className='mainrun'>FEELS GOOD.</div>
+              <div className='mainrun'>WELCOME TO THE FAMILY.</div>
 
-              <div className='smalltext'>A smooth with an endless amount of comfort, the Nike React Infinity Run Flyknit 3 is the first
-                step towards your best run</div>
+              <div className='smalltext' style={{paddingLeft:"30%",paddingRight:"30%",fontSize:"small",fontWeight:"bolder"}}>We're proud to partner with HowardUniversity,one of the most
+              iconic and esteemed Historically Black College and University(HBCUs) and the newest member of the Jordan family</div>
 
-              <div className='smalltext'>yet.</div>
 
 
               <div className='butns'>

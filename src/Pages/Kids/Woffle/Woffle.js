@@ -159,7 +159,7 @@ function Woffle() {
                                         gentle.map(gentle =>
                                             
                                             <div className="item" onClick={() => Nextsteps(gentle.id)}>
-                                                {gentle.category1 === "Older Kids Shoes" &&
+                                                {gentle.gender === "Kids's" &&
                                                     <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
                                                         <div class="pad15">
                                                         <BootStrap.Card.Img variant="top" src={gentle.image1} />

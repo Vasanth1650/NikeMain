@@ -39,40 +39,29 @@
   }
 
   .firt{
-    background-color: black;
-    color: white;
-    width: 8%;
-    border-radius: 30px;
-    margin-left: 8%;
-    border: none;
     
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
+    color: black;
+    margin-left: 8%;
+    font-weight: 500;
+    
+    
   }
 
   .seond{
-    background-color: black;
-    color: white;
-    width: 8%;
-    border-radius: 30px;
-    margin-left: 22%;
-    border: none;
     
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
+    color: black;
+    margin-top: -2%;
+    margin-left: 38%;
+    font-weight: 500;
+    
   }
 
   .thrd{
-    background-color: black;
-    color: white;
-    width: 6%;
-    border-radius: 30px;
-    border: none;
-    
-    margin-left: 22%;
-    padding-top: 0.5%;
+    color: black;
+    margin-top: -2%;
+    margin-left: 68%;
     padding-bottom: 0.5%;
-    
+    font-weight: 500;
   }
 
   .adwa{

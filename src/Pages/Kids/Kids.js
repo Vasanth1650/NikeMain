@@ -74,6 +74,8 @@ function Kids() {
             </div>
 
 
+            <Woffle/>
+
             <div onClick={()=>nikeworld()}>
                 <br/><br/>
             <div className='titlesssssss'>The Latest</div>
@@ -94,35 +96,35 @@ function Kids() {
 
             </div>
 
-            <Woffle/>
+            
 
             <div>
             <div className='gendertect'>The Essentials</div>
-                <img className='imagehoodie' onClick={()=>kidsshort("Kids Hoodies")}  style={{width:"30%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_578,c_limit/e70753c7-e6a4-43b6-8dac-0c9a2a5f261e/nike-kids.png'/>
+                <img  onClick={()=>kidsshort("Kids Hoodies")}  className='tshirtmens' style={{ width: "40%",height:"58%",marginLeft:"49%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_578,c_limit/e70753c7-e6a4-43b6-8dac-0c9a2a5f261e/nike-kids.png'/>
                 
-                <img className='imageboy' onClick={()=>kidsshort("Kids Shorts")} style={{width:"40%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_1016,c_limit/4e4db71f-ef74-42a7-81da-6041ef1a8244/image.png'/>
-                <img className='imagegirl' onClick={()=>kidsshort("Kids T-Shirts")} style={{width:"30%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_578,c_limit/bd9d8c23-46d7-47d8-a8d3-fc8d470431d1/nike-kids.png'/>
+                <img onClick={()=>kidsshort("Kids Shorts")} className='imgsis' style={{ width: "38%" ,marginLeft:"10%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_1016,c_limit/4e4db71f-ef74-42a7-81da-6041ef1a8244/image.png'/>
+                <img onClick={()=>kidsshort("Kids T-Shirts")} className='clothingmens' style={{ width: "40%",height:"51.5%", marginLeft:"1%" }}  src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_578,c_limit/bd9d8c23-46d7-47d8-a8d3-fc8d470431d1/nike-kids.png'/>
                 
             </div>
 
             <div className='imagehoodiebutton' onClick={()=>kidsshort("Kids Hoodies")}>
-                <div>Hoodies & Sweatshirts</div>
+                <div  style={{marginLeft:"45%", marginTop:"-8%",position:"absolute",color:"white"}}>Hoodies & Sweatshirts</div>
                 <br/>
-                <button className='kidsbutton'>Shop</button>
+                <button className='tshortbutton' style={{marginLeft:"45%", marginTop:"-6%"}}>Shop</button>
             </div>
 
 
             <div className='imageshortsbutton' onClick={()=>kidsshort("Kids Shorts")}>
-                <div>Shorts</div>
+                <div style={{marginLeft:"-22%", marginTop:"-2%",position:"absolute",color:"white"}}>Shorts</div>
                 <br/>
-                <button className='kids1button'>Shop</button>
+                <button className="shortsbutton" style={{marginLeft:"-22.5%", marginTop:"0.1%"}}>Shop</button>
             </div>
 
 
             <div className='imagetshirtbutton' onClick={()=>kidsshort("Kids T-Shirts")}>
-                <div>T-Shirts</div>
+                <div style={{marginLeft:"-25%", marginTop:"26%",position:"absolute",color:"white"}}>T-Shirts</div>
                 <br/>
-                <button className='kids3button'>Shop</button>
+                <button className='clothingbuttons' style={{marginLeft:"-25%" ,marginTop:"28%",paddingLeft:"1%",paddingRight:"1%"}}>Shop</button>
             </div>
 
             
@@ -130,7 +132,7 @@ function Kids() {
             
 
 
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             
 
         <Footer/>

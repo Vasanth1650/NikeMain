@@ -83,7 +83,7 @@ function Magic() {
                     incno = itemsSplit[3];
                     itemWidth = sampwidth / incno;
                 }
-                else if (bodyWidth >= 1592) {
+                else if (bodyWidth >= 1992) {
                     incno = itemsSplit[2];
                     itemWidth = sampwidth / incno;
                 }

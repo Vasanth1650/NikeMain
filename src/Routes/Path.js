@@ -47,6 +47,7 @@ import Rendering from '../Pages/Render/Rendering';
 import Emailing from '../Pages/Email/Emailing';
 import Explain from '../Pages/Usecase/Explain';
 import Data from '../Pages/Usecase/Separate/Data';
+import JordanCollection from '../Pages/Charts/JordanCollection';
 
 
 function Path() {
@@ -93,6 +94,8 @@ function Path() {
 
 
         <Route path='/myorders/:id' element={<ViewDelivery/>}/>
+
+        <Route path='/chart/jordan' element={<JordanCollection/>}/>
 
 
         <Route path='/delivery' element={<Delivery/>}/>

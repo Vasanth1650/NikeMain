@@ -32,14 +32,9 @@ function Tops() {
             <div class="row">
                 <div class="columns" onClick={() => AllSection("Tops")}>
                     {!data.gender &&
-                    <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/85f856e5-50cd-4883-90f0-daa7c4eff962/nike-just-do-it.png"
+                    <img src="https://images.ctfassets.net/feazk3r7m969/6nVKnzVPNMuBSiKelaGPBj/aac5179bb43f3d4a49e2c7ac75220616/article-02-e-large.jpg?w=1920&q=70&fm=webp"
                         alt="Snow" style={{ width: "100%" }} />}
-                    {data.gender==="Men" &&
-                    <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/85f856e5-50cd-4883-90f0-daa7c4eff962/nike-just-do-it.png"
-                        alt="Snow" style={{ width: "100%" }} />}
-                    {data.gender==="Women" &&
-                    <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/85f856e5-50cd-4883-90f0-daa7c4eff962/nike-just-do-it.png"
-                        alt="Snow" style={{ width: "100%" }} />}
+                    
                     
                     <div className='mainrun'>GO OUTSIDE TOGETHER</div>
                     <div className='smalltexting'>As the sun keeps shining, ACG is giving you an important quest

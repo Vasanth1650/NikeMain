@@ -18,7 +18,7 @@ function Popular() {
 
 
     return (
-        <div>
+        <div className='pointereventcanceller'>
 
             {!localStorage.getItem("USER_KEY") &&
             <>
@@ -27,13 +27,14 @@ function Popular() {
                     <a href='/subscription'>
                         <div className='popularthings' >
 
-                            <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/59e9f4f2-eea0-4836-bcad-98b9326af2b0/nike-just-do-it.jpg' />
+                            <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/3adf3bf6-ed9f-4b78-aa3c-dd292c4e103a/nike-just-do-it.jpg' />
 
                         </div>
-                        <div className='mainrun'>WHAT ARE YOU WORKING ON?</div>
-                        <div className='smalltext11'>When pro cricketer Smriti Mandhana's home, she focuses on recharging</div>
-                        <div className='butonseefs'>
-                            <BootStrap.Button className='smallsdas'>Learn More</BootStrap.Button>
+                        <div className='mainrunforkids' style={{color:"black"}}>SETS FOR</div>
+                        <div className='mainrunforkidss' style={{color:"black"}}>SUCCESS</div>
+                        <div className='smalltextkidsd' style={{color:"black"}}>Matching sets that'll carry your year in effortless style</div>
+                        <div className='butonseefs11'>
+                            <BootStrap.Button className='smallsdas11'>Shop</BootStrap.Button>
                         </div>
                     </a>
                 </div>}

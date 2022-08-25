@@ -78,11 +78,14 @@ function Footer() {
                                             <li><a href="/usecase">About Site</a></li>
 
                                             <li><a href="/profile">Profile</a></li>
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                <li><a href='/chart/jordan' className='gradient-text'>Jordan Collection</a></li>}
 
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                                 <BootStrap.Nav.Link href="/allsection/mainadd" type="submit">Add products</BootStrap.Nav.Link>}
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                                 <BootStrap.Button href='/admin/support' className='gradient-text'>Custome Support Channel</BootStrap.Button>}
+                                                
                                         </ul>
                                     </div>
 

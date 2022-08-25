@@ -154,7 +154,7 @@ function WomensShoes() {
                                         gentle.map(gentle =>
                                             
                                             <div className="item" onClick={() => Nextsteps(gentle.id)}>
-                                                {gentle.category1 === "Women's Shoes" &&
+                                                {gentle.gender === "Women's" &&
                                                     <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
                                                         <div class="pad15">
                                                         <BootStrap.Card.Img variant="top" src={gentle.productimage1} />

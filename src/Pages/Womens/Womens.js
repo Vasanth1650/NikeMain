@@ -108,19 +108,19 @@ function Womens() {
 
             <div>
                 <div className='gendertect'>The Essentials</div>
-                <div className='essentailsmen'>
+                <div className='essentailsmen' style={{marginLeft:"5%"}}>
 
-                    <img  onClick={()=>ThreeSection("Tops")} className='imgsis' style={{ width: "22%" }} src='https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/2b937c0f-e298-4da0-afdf-84af7562a583/sportswear-icon-clash-short-sleeve-tie-top-GdbMh0.png' />
+                    <img  onClick={()=>ThreeSection("Tops")} className='tshirtmens' style={{ width: "35%",height:"43%" }}   src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_578,c_limit/c5f46589-02c2-42dd-8bc1-8ca0cd77b846/women-s-shoes-clothing-accessories.jpg' />
 
 
-                    <img  onClick={()=>ThreeSection("Womens Shorts")} className='imgsis' style={{ width: "28%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/e5fb5e37-80cc-4e61-bd8d-da5c1a894e9a/women-s-shoes-clothing-accessories.png' />
-                    <img  onClick={()=>ThreeSection("Womens Clothing")} className='imgsis' style={{ width: "22%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/548998d9-390d-4b56-8991-4536f65c1c18/women-s-shoes-clothing-accessories.png' />
+                    <img  onClick={()=>ThreeSection("Womens Shorts")} className='imgsis' style={{ width: "48%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_700,c_limit/9e98c0b7-8299-4840-b029-dd74f11bfe52/women-s-shoes-clothing-accessories.jpg' />
+                    <img  onClick={()=>ThreeSection("Womens Clothing")} className='clothingmens' style={{ width: "35%",height:"48.5%" ,marginTop:"23%",marginLeft:"2.5%"}} src='https://helios-i.mashable.com/imagery/articles/03FjhnHGVioBwMJ1HuuAT39/hero-image.fill.size_1200x900.v1611616511.jpg' />
                 </div>
 
                 <div className='adwa'>
-                    <button  className='firt' onClick={()=>ThreeSection("Tops")}>T-Shirts</button>
-                    <button  className="seond" onClick={()=>ThreeSection("Womens Shorts")}>Shorts</button>
-                    <button  className='thrd' style={{width:"10%"}} onClick={()=>ThreeSection("Womens Clothing")}>Clothing</button>
+                    <button  className='tshortbutton' onClick={()=>ThreeSection("Tops")} style={{marginTop:"-32%",marginLeft:"56%"}}>T-Shirts</button>
+                    <button  className="shortsbutton" onClick={()=>ThreeSection("Womens Shorts")}>Shorts</button>
+                    <button  className='clothingbuttons' style={{width:"10%" , marginLeft:"56%"}} onClick={()=>ThreeSection("Womens Clothing")}>Clothing</button>
                 </div>
             </div>
 

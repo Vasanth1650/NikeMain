@@ -17,17 +17,17 @@ function Gender() {
         <div className='gendertect'> More Nikes</div>
         <div className='aranimg'>
             
-            <img onClick={() => AllSection("Men's")} className='imgsis' style={{width:"28%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/54238927-c5aa-46a3-abff-25162b3b1fd7/nike-just-do-it.png'/>
+            <img onClick={() => AllSection("Football")} className='imgsis' style={{width:"28%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/74ab1ecb-e312-4d29-8669-8264c9ef79ba/nike-just-do-it.jpg'/>
           
       
-            <img onClick={() => AllSection("Women's")} className='imgsis' style={{width:"28%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/e64cc521-c652-49bd-bf62-f04cf9cb6b60/nike-just-do-it.png'/>
-            <img onClick={() => AllSection("Kids's")}  className='imgsis' style={{width:"28%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/aa8d60e4-d556-4022-9f83-9058601c20a4/nike-just-do-it.png'/>
+            <img onClick={() => AllSection("Soccer")} className='imgsis' style={{width:"28%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/4e3bd1bf-7769-484e-aa39-83380ce6be1e/nike-just-do-it.jpg'/>
+            <img onClick={() => AllSection("Volleyball")}  className='imgsis' style={{width:"28%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/04833b2d-f7b1-47bd-aabe-775a3a2dfc11/nike-just-do-it.jpg'/>
         </div>
 
         <div className='adwa'>
-        <button onClick={() => AllSection("Men's")} className='firt'>Men's</button>
-        <button onClick={() => AllSection("Women's")} className="seond">Women's</button>
-        <button onClick={() => AllSection("Kids's")} className='thrd'>Kid's</button>
+        <div onClick={() => AllSection("Football")} className='firt'>Football</div>
+        <div onClick={() => AllSection("Soccer")} className="seond">Soccer</div>
+        <div onClick={() => AllSection("Volleyball")} className='thrd'>Volleyball</div>
         </div>
         
 

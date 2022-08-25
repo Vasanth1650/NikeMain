@@ -55,7 +55,7 @@ function Emailing() {
         <div className='emailer'>
             <Header />
             <button className='btunemail' onClick={getAllUsersEmail}>Get All User Emails</button>
-            <div className='totaldetails'>{total}</div>
+            
             <div className='mailerinf'>
                 <input value={total} className='inputmailer' onChange={(e) => setRecipient(e.target.value)} placeholder='Send Recipent Mail'></input>
                 <input className='inputmailer' onChange={(e) => setSubject(e.target.value)} placeholder='subject'></input>

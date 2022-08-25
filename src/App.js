@@ -5,8 +5,7 @@ import Path from './Routes/Path';
 function App() {
   return (
     <div>
-      <Path/>
-      
+      <Path/> 
     </div>
   );
 }

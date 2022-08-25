@@ -515,6 +515,7 @@ function NormalProductAdd() {
                                                 <option>Sneakers</option>
                                                 <option>FirstDay</option>
                                                 <option>Pants</option>
+                                                <option>Volleyball</option>
                                                 <option>Tops</option>
                                                 <option>T Shirt</option>
                                                 <option>Shorts</option>

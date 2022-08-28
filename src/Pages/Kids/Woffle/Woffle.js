@@ -168,7 +168,7 @@ function Woffle() {
                                                                 <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
                                                                     <FcLock />
                                                                 }</div>
-                                                                <div className='mensproductprice'>₹{gentle.price}</div>
+                                                                <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.price}</div>
                                                             </BootStrap.Card.Body>
                                                         </div>
                                                     </BootStrap.Card>

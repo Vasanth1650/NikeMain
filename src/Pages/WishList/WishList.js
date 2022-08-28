@@ -84,10 +84,10 @@ function WishList() {
     }
 
     return (
-        <div className='bug'>
+        <div className='bug' style={{backgroundColor:"white"}}>
             <Header />
 
-            <div className='gradient-texting'>WishList</div>
+            <div style={{fontSize:"xx-large",textAlign:"center",fontFamily:"fantasy"}}>WishList</div>
             <div >
                 <BootStrap.Row className='cardssss' xs={1} md={4} >
                     {
@@ -95,18 +95,19 @@ function WishList() {
                             <BootStrap.Col>
                                 <div className='items'>
                                     <BootStrap.CardGroup >
-                                        <BootStrap.Card >
+                                        <BootStrap.Card style={{backgroundColor:"transparent",border:"none",boxShadow:"none"}}>
                                             <BootStrap.Card.Img onClick={() => openup(wish.productid)} className='image' variant="top" src={wish.image1} />
                                             <BootStrap.Card.Body>
                                                 
                                                 <BootStrap.Card.Title onClick={() => openup(wish.productid)}>{wish.productname}</BootStrap.Card.Title>
+                                                <BootStrap.Nav.Link onClick={() => deletefromwish(wish.id)}><MdCancel/></BootStrap.Nav.Link>
                                             </BootStrap.Card.Body>
                                             
                                             
                                         </BootStrap.Card>
                                         
                                     </BootStrap.CardGroup>
-                                    <BootStrap.Nav.Link onClick={() => deletefromwish(wish.id)}><MdCancel/></BootStrap.Nav.Link>
+                                    
                                     <br />
                                     
                                 </div>
@@ -125,18 +126,19 @@ function WishList() {
                             <BootStrap.Col>
                                 <div className='items'>
                                     <BootStrap.CardGroup >
-                                        <BootStrap.Card onClick={() => normaling(normal.productid)}>
+                                        <BootStrap.Card style={{backgroundColor:"transparent",border:"none",boxShadow:"none"}} onClick={() => normaling(normal.productid)}>
                                             <BootStrap.Card.Img className='image' variant="top" src={normal.image1} />
                                             <BootStrap.Card.Body>
                                                 
                                                 <BootStrap.Card.Title>{normal.productname}</BootStrap.Card.Title>
+                                                <BootStrap.Nav.Link onClick={() => deletefromnormal(normal.id)}><MdCancel/></BootStrap.Nav.Link>
                                             </BootStrap.Card.Body>
                                             
 
                                         </BootStrap.Card>
                                         
                                     </BootStrap.CardGroup>
-                                    <BootStrap.Nav.Link onClick={() => deletefromnormal(normal.id)}><MdCancel/></BootStrap.Nav.Link>
+                                    
                                     <br />
                                 </div>
                             </BootStrap.Col>

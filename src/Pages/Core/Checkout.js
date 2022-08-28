@@ -265,8 +265,8 @@ function Checkout() {
             <br />
             <div className='sa'>
             <br /><br /><br /><br /><br /><br />
-                <h6 className='ounwn'>The BillAble Amount With Offer Included If Any Automatically</h6>
-                <div className='ounwn'>₹{price}</div>
+                <h6 className='ounwn'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>The BillAble Amount With Offer Included If Any Automatically</h6>
+                <div className='ounwn' >₹{price}</div>
                 <br /><br /><br />
             </div>
 

@@ -32,7 +32,7 @@ function Popular() {
                         </div>
                         <div className='mainrunforkids' style={{color:"black"}}>SETS FOR</div>
                         <div className='mainrunforkidss' style={{color:"black"}}>SUCCESS</div>
-                        <div className='smalltextkidsd' style={{color:"black"}}>Matching sets that'll carry your year in effortless style</div>
+                        <div className='smalltextkidsd'   style={{color:"black",fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Matching sets that'll carry your year in effortless style</div>
                         <div className='butonseefs11'>
                             <BootStrap.Button className='smallsdas11'>Shop</BootStrap.Button>
                         </div>

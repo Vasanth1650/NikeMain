@@ -1,27 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import $ from 'jquery'
+import GiftCard from './Services/GiftCard'
 import * as BootStrap from 'react-bootstrap'
-import DashboardService from '../../MostPopular/Services/DashboardService'
 import { useNavigate } from 'react-router-dom'
-import { FcLock } from "react-icons/fc";
 
-function WomensShoes() {
-    const [gentle, setGentle] = useState([])
-    const usenavigate = useNavigate()
+function Cards() {
+    const [cards,setCard] = useState([])
 
-    useEffect(() => {
-        getTrend()
-    }, [])
 
-    const getTrend = () => {
-        DashboardService.getAllProducts().then((response) => {
-            setGentle(response.data)
-        }).catch((err) => {
+    React.useEffect(()=>{
+        GiftCard.getAllGiftCard().then((response)=>{
+            setCard(response.data)
+        }).catch((err)=>{
             console.log(err)
         })
-    }
-
-
+    },[])
 
     $(document).ready(function () {
         var itemsMainDiv = ('.MultiCarousel');
@@ -73,10 +66,10 @@ function WomensShoes() {
                 }
                 else if (bodyWidth >= 768) {
                     incno = itemsSplit[1];
-                    itemWidth = sampwidth / incno;
+                    itemWidth = sampwidth / 2.4;
                 }
                 else {
-                    incno = itemsSplit[0];
+                    incno = itemsSplit[8];
                     itemWidth = sampwidth / incno;
                 }
                 $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
@@ -99,7 +92,7 @@ function WomensShoes() {
             var divStyle = $(el + ' ' + itemsDiv).css('transform');
             var values = divStyle.match(/-?[\d\.]+/g);
             var xds = Math.abs(values[4]);
-            if (e === 0) {
+            if (e == 0) {
                 translateXval = parseInt(xds) - parseInt(itemWidth * s);
                 $(el + ' ' + rightBtn).removeClass("over");
 
@@ -108,7 +101,7 @@ function WomensShoes() {
                     $(el + ' ' + leftBtn).addClass("over");
                 }
             }
-            else if (e === 1) {
+            else if (e == 1) {
                 var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
                 translateXval = parseInt(xds) + parseInt(itemWidth * s);
                 $(el + ' ' + leftBtn).removeClass("over");
@@ -130,55 +123,70 @@ function WomensShoes() {
 
     });
 
-    const Nextsteps = (ids) => {
-        console.log(ids);
-        usenavigate('/most/' + ids);
+    const usenavigate = useNavigate()
+
+    function useme(id){
+        usenavigate('/gift/'+id)
     }
 
-
-    return (
-        <div className='bodyd'>
+    
+  return (
+    <div className='bodyd'>
             <div>
                 <br /><br /><br />
-                <div className='similarsbudwaw'>Outdoor Festival</div>
+                
                 <br /><br />
 
                 <div>
                     <div class="containeriknjein">
                         <div class="row">
-                            <div class="MultiCarousel" data-items="1,3,5,6" data-slide="2" id="MultiCarousel" data-interval="2">
+                            <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="2">
                                 <div class="MultiCarousel-inner">
 
-
+                                    
+                                    
+                                <div>
                                     {
-                                        gentle.map(gentle =>
+                                        cards.map(gentle =>
+                                            <>
                                             
-                                            <div className="item" onClick={() => Nextsteps(gentle.id)}>
-                                                {gentle.gender === "Women's" &&
-                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
-                                                        <div class="pad15">
-                                                        <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
-                                                            <BootStrap.Card.Body>
-                                                                <div className='mensproductname'>{gentle.productname}</div>
-                                                                <div className='mensproductgender'>{gentle.gender}{gentle.gender}{gentle.buyingoption === "Membership" &&
-                                                                    <FcLock />
-                                                                }</div>
-                                                                <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.productprice}</div>
-                                                            </BootStrap.Card.Body>
-                                                        </div>
+                                            <div className="item">
+
+                                               
+
+                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }} onClick={()=>useme(gentle.id)}>
+                                                        
+                                                            <div class="pad15">
+
+
+                                                                <BootStrap.Card.Img variant="top" src={gentle.image} />
+
+                                                                <BootStrap.Card.Body>
+                                                                    <div className='mensproductname'>{gentle.cardname}</div>
+                                                                    <div style={{marginLeft:"-32.5%"}}>Emailed in 2 Hours or Less</div> 
+                                                                    <div style={{marginLeft:"90%",marginTop:"-15%"}}>0$</div>
+
+                                                                </BootStrap.Card.Body>
+                                                            </div>
+                                                        
                                                     </BootStrap.Card>
-                                                }
-                                            
+
+                                                
+
+
                                             </div>
+                                            
+                                            </>
                                         )
                                     }
+                                    </div>
 
 
-                                    
+
 
                                 </div>
-                                <button class="btn btn-primary leftLsts"> ← </button>
-                                <button class="btn btn-primary rightLsts"> → </button>
+                                <button style={{marginTop:"-110%",color:"black",backgroundColor:"lightgray"}} class="btn btn-primary leftLsts"> ← </button>
+                                <button style={{marginTop:"-115.3%",color:"black",backgroundColor:"lightgray"}} class="btn btn-primary rightLsts"> → </button>
 
 
                             </div>
@@ -188,9 +196,9 @@ function WomensShoes() {
 
             </div>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /> <br /><br /><br /><br /> <br /><br />
-            
+
         </div>
-    )
+  )
 }
 
-export default WomensShoes
+export default Cards

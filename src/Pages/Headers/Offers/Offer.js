@@ -15,8 +15,8 @@ function Offer() {
 
   
   return (
-    <div>
-        <BootStrap.Carousel className='offer' >
+    <div style={{backgroundColor:"white"}}>
+        <BootStrap.Carousel className='offer'>
                 <BootStrap.Carousel.Item interval={5000} onClick={()=>dummy()}>
                     <div className='offertext' onClick={()=>dummy()}>Save Up to 40%</div>
                     <div className='offertext1' onClick={()=>dummy()}>Shop All Our New Markdowns</div>

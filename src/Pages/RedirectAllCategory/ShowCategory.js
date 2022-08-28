@@ -225,14 +225,14 @@ function ShowCategory() {
                     </div>
 
                     <div className='uwinajn'>
-                        <span class="dot2" onClick={() => setColor("orange")} style={{ backgroundColor: "orange" }}></span>
-                        <div className='orangecolor'>Orange</div>
+                        <span class="dot2" onClick={() => setColor("yellow")} style={{ backgroundColor: "yellow" ,marginTop:"33%"}}></span>
+                        <div className='orangecolor'>Yellow</div>
                     </div>
 
                     <div className='uwinajn'>
 
-                        <span class="dot3" onClick={() => setColor("brown")} style={{ backgroundColor: "brown" }}></span>
-                        <div className='browncolor'>Brown</div>
+                        <span class="dot3" onClick={() => setColor("brown")} style={{ backgroundColor: "brown" ,marginLeft:"-2%"}}></span>
+                        <div className='browncolor' style={{marginLeft:"1%"}}>Brown</div>
                     </div>
 
 
@@ -335,7 +335,7 @@ function ShowCategory() {
                                                                 {product.category2} Colors
                                                             </div>}
 
-                                                        <div className='kwjdnjwakwn'>
+                                                        <div className='kwjdnjwakwn' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>
                                                             ₹{product.price}
                                                         </div>
                                                     </BootStrap.Card.Body>
@@ -399,7 +399,7 @@ function ShowCategory() {
                                                                 {product.category2} Colors
                                                             </div>}
 
-                                                        <div className='kwjdnjwakwn'>
+                                                        <div className='kwjdnjwakwn' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>
                                                             ₹{product.price}
                                                         </div>
                                                     </BootStrap.Card.Body>
@@ -464,7 +464,7 @@ function ShowCategory() {
                                                                 {product.category2} Colors
                                                             </div>}
 
-                                                        <div className='kwjdnjwakwn'>
+                                                        <div className='kwjdnjwakwn' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>
                                                             ₹{product.price}
                                                         </div>
                                                     </BootStrap.Card.Body>
@@ -527,7 +527,7 @@ function ShowCategory() {
                                                             {product.category2} Colors
                                                         </div>}
 
-                                                    <div className='kwjdnjwakwn'>
+                                                    <div className='kwjdnjwakwn' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>
                                                         ₹{product.price}
                                                     </div>
                                                 </BootStrap.Card.Body>
@@ -582,7 +582,7 @@ function ShowCategory() {
                                                             {product.category2} Colors
                                                         </div>}
 
-                                                    <div className='kwjdnjwakwn'>
+                                                    <div className='kwjdnjwakwn' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>
                                                         ₹{product.price}
                                                     </div>
                                                 </BootStrap.Card.Body>
@@ -639,7 +639,7 @@ function ShowCategory() {
                                                             {product.category2} Colors
                                                         </div>}
 
-                                                    <div className='kwjdnjwakwn'>
+                                                    <div className='kwjdnjwakwn' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>
                                                         ₹{product.price}
                                                     </div>
                                                 </BootStrap.Card.Body>

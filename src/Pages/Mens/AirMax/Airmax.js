@@ -167,7 +167,7 @@ function Airmax() {
                                                                 <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
                                                                     <FcLock />
                                                                 }</div>
-                                                                <div className='mensproductprice'>₹{gentle.productprice}</div>
+                                                                <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.productprice}</div>
                                                             </BootStrap.Card.Body>
                                                         </div>
                                                     </BootStrap.Card>

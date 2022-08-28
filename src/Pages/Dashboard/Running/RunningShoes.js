@@ -74,9 +74,9 @@ function RunningShoes() {
 
               <div className='mainrun'>GET IN.</div>
 
-              <div className='smalltext'>Train like a succesor with our training shoes</div>
+              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Train like a succesor with our training shoes</div>
 
-              <div className='smalltext'>The best yet to come.</div>
+              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>The best yet to come.</div>
 
               <div className='explorebuttoncenter'>
                 <button className='exploremensbutton'>Shop</button>
@@ -96,9 +96,9 @@ function RunningShoes() {
 
               <div className='mainrun'>GET IN.</div>
 
-              <div className='smalltext'>With our new football shoes you wont think of stop playing with this smoothnes</div>
+              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>With our new football shoes you wont think of stop playing with this smoothnes</div>
 
-              <div className='smalltext'>yet.</div>
+              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>yet.</div>
 
               <div className='explorebuttoncenter'>
                 <button className='exploremensbutton'>Explore</button>
@@ -167,10 +167,10 @@ function RunningShoes() {
 
               <div className='mainrun'>FEELS GOOD.</div>
 
-              <div className='smalltext'>A smooth with an endless amount of comfort, the Nike React Infinity Run Flyknit 3 is the first
+              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>A smooth with an endless amount of comfort, the Nike React Infinity Run Flyknit 3 is the first
                 step towards your best run</div>
 
-              <div className='smalltext'>yet.</div>
+              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>yet.</div>
 
 
               <div className='butns'>

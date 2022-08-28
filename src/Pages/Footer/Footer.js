@@ -52,15 +52,7 @@ function Footer() {
             <div>
                 <footer class="footer-section">
                     <div class="container">
-                        <div class="footer-cta pt-5 pb-5">
-                            <div class="row">
-                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                    <BootStrap.Button onClick={RefundRequest} variant="warning" type="submit">Refund Requests</BootStrap.Button>}
-                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 && <marquee>Check out The Latest Customer Orders</marquee>}
-                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                    <BootStrap.Button onClick={OrderUpdates} variant="warning" type="submit">Order Updates</BootStrap.Button>}
-                            </div>
-                        </div>
+                       
                         <div class="footer-content pt-5 pb-5">
                             <div class="row">
 
@@ -76,16 +68,22 @@ function Footer() {
                                             <li><a href="/paymentoptions">Payment Options</a></li>
                                             <li><a href="/livesupport">Contact Us</a></li>
                                             <li><a href="/usecase">About Site</a></li>
+                                            <li><a href='/mygifts'>My Gifts</a></li>
 
                                             <li><a href="/profile">Profile</a></li>
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                                 <li><a href='/chart/jordan' className='gradient-text'>Jordan Collection</a></li>}
 
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                <BootStrap.Nav.Link href="/allsection/mainadd" type="submit">Add products</BootStrap.Nav.Link>}
+                                                <li><a href="/allsection/mainadd" type="submit">Add products</a></li>}
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                <BootStrap.Button href='/admin/support' className='gradient-text'>Custome Support Channel</BootStrap.Button>}
-                                                
+                                                <li><a href='/refund' >Refund Requests</a></li>}
+
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                <li><a href='orderupdate'>Order Updates</a></li>}
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                <li><a href='/admin/support' className='gradient-text'>Custome Support Channel</a></li>}
+
                                         </ul>
                                     </div>
 
@@ -131,7 +129,7 @@ function Footer() {
                                                 <BootStrap.Button href='dashboard/add' className='gradient-text'>ADD</BootStrap.Button>}
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                                 <li><a href='/emailing'>Email</a></li>}
-                                            
+
                                             <li><a href="https://www.eshopworld.com/shoppers/help/terms-and-conditions-of-sale-en/">Terms of Sale</a></li>
                                             <li><a href="https://agreementservice.svs.nike.com/sg/en_gb/rest/agreement?agreementType=termsOfUse&uxId=com.nike&country=SG&language=en&requestType=redirect">Terms of Use</a></li>
                                             <li><a href="https://agreementservice.svs.nike.com/sg/en_gb/rest/agreement?agreementType=privacyPolicy&uxId=com.nike.unite&country=SG&language=en&requestType=redirect">Nike Privacy Policy</a></li>

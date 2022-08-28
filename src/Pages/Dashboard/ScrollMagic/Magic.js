@@ -83,7 +83,7 @@ function Magic() {
                     incno = itemsSplit[3];
                     itemWidth = sampwidth / incno;
                 }
-                else if (bodyWidth >= 1992) {
+                else if (bodyWidth >= 1592) {
                     incno = itemsSplit[2];
                     itemWidth = sampwidth / incno;
                 }
@@ -187,7 +187,7 @@ function Magic() {
                                                                     <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
                                                                         <FcLock />
                                                                     }</div>
-                                                                    <div className='mensproductprice'>₹{gentle.productprice}</div>
+                                                                    <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.productprice}</div>
 
                                                                 </BootStrap.Card.Body>
                                                             </div>
@@ -226,7 +226,7 @@ function Magic() {
                                                                     <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
                                                                         <FcLock />
                                                                     }</div>
-                                                                    <div className='mensproductprice'>₹{gentle.productprice}</div>
+                                                                    <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.productprice}</div>
 
                                                                 </BootStrap.Card.Body>
                                                             </div>
@@ -265,7 +265,7 @@ function Magic() {
                                                                     <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
                                                                         <FcLock />
                                                                     }</div>
-                                                                    <div className='mensproductprice'>₹{gentle.productprice}</div>
+                                                                    <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.productprice}</div>
 
                                                                 </BootStrap.Card.Body>
                                                             </div>
@@ -306,7 +306,7 @@ function Magic() {
                                                                     <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
                                                                         <FcLock />
                                                                     }</div>
-                                                                    <div className='mensproductprice'>₹{gentle.productprice}</div>
+                                                                    <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.productprice}</div>
 
                                                                 </BootStrap.Card.Body>
                                                             </div>
@@ -345,7 +345,7 @@ function Magic() {
                                                                     <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
                                                                         <FcLock />
                                                                     }</div>
-                                                                    <div className='mensproductprice'>₹{gentle.productprice}</div>
+                                                                    <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.productprice}</div>
 
                                                                 </BootStrap.Card.Body>
                                                             </div>

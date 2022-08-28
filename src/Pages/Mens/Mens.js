@@ -44,8 +44,8 @@ function Mens() {
                 <div className='Running'>
                     <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/b3a54a9c-b447-4632-ad04-4b7f8a739185/men-s-shoes-clothing-accessories.jpg' />
                 </div>
-                <div className='smalltext'>Just In</div>
-                <div className='mainrun'>NIKE ZOOMX ZEGAMA</div>
+                <div className='smalltext' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Just In</div>
+                <div className='mainrun' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>NIKE ZOOMX ZEGAMA</div>
 
 
                 <div className='butns'>
@@ -63,29 +63,29 @@ function Mens() {
                     <div class="column" onClick={()=>Shoes()}>
                         <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_700,c_limit/d08af2d7-6d57-422c-866d-046d5e4405a9/men-s-shoes-clothing-accessories.png"
                             alt="Snow" style={{ width: "100%" }} />
-                        <div style={{ color: "black" }} className='bottom-text'>The Air Zoom Alphafly NEXT% 2</div>
+                        <div className='bottom-text' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",color:"black"}}>The Air Zoom Alphafly NEXT% 2</div>
                         <button className='shope' >Shop</button>
                     </div>
                     <div class="column2" onClick={() =>training()}>
                         <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_700,c_limit/86e69005-ee77-4d96-8b08-5dcdebe90dca/men-s-shoes-clothing-accessories.png"
                             alt="Forest" style={{ width: "100%" }} />
-                        <div style={{ color: "white" }} className='bottom'>Camo For Your Reps</div>
+                        <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",color:"white"}} className='bottom'>Camo For Your Reps</div>
                         <button className='shope' >Shop</button>
                     </div>
 
                 </div>
             </div>
 
-
+            <br/><br/>
 
             <div onClick={()=>Road()}>
                 <div className='Running' >
                     <img style={{ width: "95%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/35776b78-53c1-4229-b0f7-7d7c9745afab/men-s-shoes-clothing-accessories.png' />
                 </div>
-                <div className='smalltext'>Just In</div>
+                <div className='smalltext' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Just In</div>
                 <div className='mainrun'>THE AIR ZOOM ALPHAFLY</div>
                 <div className='mainrun'>NEXT% 2</div>
-                <div className='smalltext'>Your race-day time machine for the future of fast.</div>
+                <div className='smalltext' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Your race-day time machine for the future of fast.</div>
 
                 <div className='butns'>
                     <button className='bikes'>Shop</button>
@@ -93,6 +93,8 @@ function Mens() {
 
 
             </div>
+
+
 
 
             <div>
@@ -110,7 +112,7 @@ function Mens() {
 
                 <div className='mainrun'>FAST IS IN THE AIR</div>
 
-                <div className='smalltext'>The Nike Air Zoom Mecurical Lucent Pack. Available now.</div>
+                <div className='smalltext' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>The Nike Air Zoom Mecurical Lucent Pack. Available now.</div>
 
                 <div className='butns'>
                     <button className='bikes'>Shop</button>

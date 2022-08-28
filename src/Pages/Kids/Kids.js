@@ -42,7 +42,7 @@ function Kids() {
                 </div>
                 
                 <div className='mainrun'>NIKE WAFFLE ONE</div>
-                <div className='smalltext'>Let 'em experiment with the latest Waffle One colors.</div>
+                <div className='smalltext' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Let 'em experiment with the latest Waffle One colors.</div>
 
                 <div className='butns'>
 
@@ -59,14 +59,14 @@ function Kids() {
                     <div class="column" onClick={()=>Kidaplay()}>
                         <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_700,c_limit/29ca6846-551a-43b7-bdd2-4c5c4b275a9b/nike-kids.png"
                             alt="Snow" style={{ width: "100%" }} />
-                        <div style={{ color: "white" }} className='bottom-text'>Look of Play: Cozy Essentials to Keep Kids</div>
+                        <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}} className='bottom-text'>Look of Play: Cozy Essentials to Keep Kids</div>
 
                         <button className='shope' >Shop</button>
                     </div>
                     <div class="column2" onClick={()=>Kidsleggings()}>
                         <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_700,c_limit/3fb67238-0969-49a1-a583-bd6a84a30476/nike-kids.png"
                             alt="Forest" style={{ width: "100%" }} />
-                        <div style={{ color: "white" }} className='bottom'>Gear For Playing Like A Champ</div>
+                        <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}} className='bottom'>Gear For Playing Like A Champ</div>
                         <button className='shope' >Shop</button>
                     </div>
 
@@ -85,9 +85,9 @@ function Kids() {
                
                 <div className='mainrun'>FOOTBALL WITHOUT RULES</div>
                 
-                <div className='smalltext'>Football has landed in NIKELAND, but not as you know it
+                <div className='smalltext' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Football has landed in NIKELAND, but not as you know it
                 . Test out your skills on a smaller pitch with six goals and no</div>
-                <div className='smalltext'>goalies. Plus, check out the new accelerometer power-ups and Federation gear for your avatar.</div>
+                <div className='smalltext' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>goalies. Plus, check out the new accelerometer power-ups and Federation gear for your avatar.</div>
 
                 <div className='butns'>
                     <button className='bikes'>Explore</button>

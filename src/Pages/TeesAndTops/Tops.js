@@ -37,9 +37,9 @@ function Tops() {
                     
                     
                     <div className='mainrun'>GO OUTSIDE TOGETHER</div>
-                    <div className='smalltexting'>As the sun keeps shining, ACG is giving you an important quest
+                    <div className='smalltexting' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>As the sun keeps shining, ACG is giving you an important quest
                     : get outside with the ones you love. We've git you and</div>
-                    <div className='smalltexting'>yours covered with tees, shorts and enough layering options to make 
+                    <div className='smalltexting' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>yours covered with tees, shorts and enough layering options to make 
                     your compass spin.</div>
                     
                     <div className='butns'>
@@ -64,9 +64,9 @@ function Tops() {
                
                     
                     <div className='mainrun'>GO OUTSIDE TOGETHER</div>
-                    <div className='smalltexting'>As the sun keeps shining, ACG is giving you an important quest
+                    <div className='smalltexting' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>As the sun keeps shining, ACG is giving you an important quest
                     : get outside with the ones you love. We've git you and</div>
-                    <div className='smalltexting'>yours covered with tees, shorts and enough layering options to make 
+                    <div className='smalltexting' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>yours covered with tees, shorts and enough layering options to make 
                     your compass spin.</div>
                     
                     <div className='butns'>
@@ -96,8 +96,8 @@ function Tops() {
                         alt="Snow" style={{ width: "100%" }} />}
                     
                     <div className='mainrunmens'>BACK TO BASICS</div>
-                    <div className='smalltextingmens'>Show off your unique style with uniform essentails made for A+</div>
-                    <div className='smalltextingmensing'>fits.</div>
+                    <div className='smalltextingmens' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Show off your unique style with uniform essentails made for A+</div>
+                    <div className='smalltextingmensing' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>fits.</div>
                     
                     <div className='butnsmens'>
                         <button className='bikes'>Shop</button>
@@ -121,7 +121,7 @@ function Tops() {
                         alt="Snow" style={{ width: "100%" }} />}
                     
                     <div className='mainrunmens'>GO OUTSIDE TOGETHER</div>
-                    <div className='smalltextingmens'>Show of your unique style with uniform basics made for A+ fits</div>
+                    <div className='smalltextingmens' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Show of your unique style with uniform basics made for A+ fits</div>
                     
                     
                     <div className='butnsmens'>
@@ -147,8 +147,8 @@ function Tops() {
                    
                     
                     <div className='mainrunkid'>ELEVATE YOUR UNIFORM</div>
-                    <div className='smalltextingkids'>Show off your unique style with uniform basics made</div>
-                    <div className='smalltextingkids'>for A+ fits</div>
+                    <div className='smalltextingkids' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Show off your unique style with uniform basics made</div>
+                    <div className='smalltextingkids' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>for A+ fits</div>
                     
                     <div className='butnskids'>
                         <button className='bikes'>Shop</button>

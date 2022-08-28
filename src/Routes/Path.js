@@ -48,6 +48,12 @@ import Emailing from '../Pages/Email/Emailing';
 import Explain from '../Pages/Usecase/Explain';
 import Data from '../Pages/Usecase/Separate/Data';
 import JordanCollection from '../Pages/Charts/JordanCollection';
+import Gift from '../Pages/GiftCards/Gift';
+import ViewGift from '../Pages/GiftCards/GiftCardView/ViewGift';
+import Redeem from '../Pages/GiftCards/Redeem/Redeem';
+import MyCardgift from '../Pages/GiftCards/MyCard/MyCardgift';
+import Verify from '../Pages/Security/VerifyAccount/Verify';
+import EmailNotify from '../Pages/Security/VerifyAccount/EmailNotify';
 
 
 function Path() {
@@ -170,6 +176,18 @@ function Path() {
 
 
         <Route path='/livesupport' element={<Livechat/>}/>
+
+        <Route path='/gift' element={<Gift/>}/>
+
+        <Route path='/reedem' element={<Redeem/>}/>
+
+        <Route path='/mygifts' element={<MyCardgift/>}/>
+
+        <Route path='/gift/:id' element={<ViewGift/>}/>
+
+        <Route path='/verifyaccount/:verify' element={<Verify/>}/>
+
+        <Route path='/redirect' element={<EmailNotify/>}/>
 
         {data.roleCode==="ADMIN" &&
         <Route path='/admin/support' element={<LiveChatAdmin/>}/>}

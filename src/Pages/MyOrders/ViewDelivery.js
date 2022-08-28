@@ -115,7 +115,7 @@ function ViewDelivery() {
                 <div class="table-cell">
                     <div class="box">
                         <div class="row">
-                            <div class="col4 sidebar">
+                            <div class="col4 sidebar" style={{backgroundColor:"orange",cursor:"pointer"}}>
                                 <ul>
                                     <li class={product.status1}><span>Order Is Being Processed</span></li>
                                     <li class={product.status2}><span>Pick up</span></li>

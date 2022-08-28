@@ -27,6 +27,10 @@ class DashboardService{
         return axios.get(VIEW_BASE_REST_API_URL+'/specification/'+color)
     }
 
+    findByName(productname){
+        return axios.get(VIEW_BASE_REST_API_URL+'/name/'+productname)
+    }
+
     deleted(id){
         return axios.delete(VIEW_BASE_REST_API_URL+'/delete/'+id);
     }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Alert, Spinner } from 'react-bootstrap';
@@ -17,10 +17,26 @@ function Signup() {
     const [state,setState] = useState("-")
     const [city,setCity] = useState("-")
     const authorities = [{roleCode:"USER",roleDescription:"USER"}]
+    const [verify,setVerify] = useState("")
+    const [recipient, setRecipient] = useState('')
+    const [msgBody, setMsgBody] = useState('')
+    const [subject, setSubject] = useState('')
+
+    useEffect(()=>{
+        setSubject("Verify Your Nike Account")
+        setRecipient(username)
+        setMsgBody("Use This Link To Verify The Account"+" "+"https://nikeworld.herokuapp.com/verifyaccount/"+verify)
+    },[username])
+
+    useEffect(()=>{
+        setVerify(Math.floor(Math.random() * 1000000000000000))
+    },[])
+
+
 
     const handleClick = (e) =>{
         e.preventDefault()
-        const adddetails = {username,email,phonenumber,password,address,state,city,authorities,gender}
+        const adddetails = {username,email,phonenumber,password,address,state,city,authorities,gender,verify}
         fetch("https://nike-backend.herokuapp.com/addnew/save",{
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -35,6 +51,19 @@ function Signup() {
             if(response.ok){
                 usenavigate('/login')
                 console.log("User Added")
+                const details = { recipient, msgBody, subject }
+                fetch("https://nike-backend.herokuapp.com/email/sendMail", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(details)
+                }).then((response) => {
+                    if (response.ok) {
+                        console("Mail Has Been Send To The Recipients")
+                        window.location.reload()
+                    }
+                }).catch((err) => {
+                    alert(err)
+                })
             }
         }).catch((error)=>{
             console.log("User Already Present")

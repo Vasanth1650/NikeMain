@@ -136,7 +136,7 @@ function More() {
 
 
     return (
-        <div>
+        <div style={{backgroundColor:"white"}}>
 
 
 

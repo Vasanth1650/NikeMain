@@ -25,9 +25,9 @@ function Gender() {
         </div>
 
         <div className='adwa'>
-        <div onClick={() => AllSection("Football")} className='firt'>Football</div>
-        <div onClick={() => AllSection("Soccer")} className="seond">Soccer</div>
-        <div onClick={() => AllSection("Volleyball")} className='thrd'>Volleyball</div>
+        <div onClick={() => AllSection("Football")} className='firt'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Football</div>
+        <div onClick={() => AllSection("Soccer")} className="seond"  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Soccer</div>
+        <div onClick={() => AllSection("Volleyball")} className='thrd'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Volleyball</div>
         </div>
         
 

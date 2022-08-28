@@ -49,9 +49,9 @@ function Womens() {
                 <div className='mainrun'>MADE FOR</div>
                 <div className='mainrun'>EVERYTHING YOU ARE</div>
 
-                <div className='smalltextwomen'>The Nike (M) collection is designed and tested for womens, Giving freedom
+                <div className='smalltextwomen' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>The Nike (M) collection is designed and tested for womens, Giving freedom
                     to move however you want </div>
-                <div className='smalltextwomen'>to, throughout your entire training.</div>
+                <div className='smalltextwomen' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>to, throughout your entire training.</div>
 
                 <div className='butns'>
                     <button className='bikes'>Shop</button>
@@ -72,13 +72,13 @@ function Womens() {
                         <div class="column" onClick={() =>training()}>
                             <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_700,c_limit/d86ef867-ec90-4912-b7cf-adf9b092c5fe/women-s-shoes-clothing-accessories.png"
                                 alt="Snow" style={{ width: "100%" }} />
-                            <div style={{ color: "black" }} className='bottom-text'>Icon Clash Collection</div>
+                            <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",color:"black"}} className='bottom-text'>Icon Clash Collection</div>
                             <button className='shope' >Shop</button>
                         </div>
                         <div class="column2" onClick={() =>train()}>
                             <img src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_700,c_limit/4691492f-e351-492c-9be7-f2ade6d3edf9/women-s-shoes-clothing-accessories.png"
                                 alt="Forest" style={{ width: "100%" }} />
-                            <div style={{ color: "white" }} className='bottom'>Jordan Apparel</div>
+                            <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}} className='bottom'>Jordan Apparel</div>
                             <button className='shope' >Shop</button>
                         </div>
 
@@ -95,9 +95,9 @@ function Womens() {
                 
                 <div className='mainrun'onClick={()=>Road()} >NIKE ZOOMX INVINCIBLE RUN</div>
                 <div className='mainrun' onClick={()=>Road()}>FLYKNIT 2</div>
-                <div className='smalltext' onClick={()=>Road()}>Breathable, lightweight comfort, support, softness and a
+                <div className='smalltext' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}} onClick={()=>Road()}>Breathable, lightweight comfort, support, softness and a
                 snappy response in a shoe that's designed to keep you running.</div>
-                <div className='smalltext' onClick={()=>Road()}>It's the total package</div>
+                <div className='smalltext' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}} onClick={()=>Road()}>It's the total package</div>
                 <div className='butns' onClick={()=>Road()}>
                     <button className='bikes'>Shop</button>
                 </div>

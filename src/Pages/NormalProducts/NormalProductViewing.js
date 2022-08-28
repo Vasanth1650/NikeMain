@@ -362,11 +362,11 @@ function NormalProductViewing() {
 
 
                         <div className='conenting'>
-                            <div style={{ color: "black" }} className="produ">{product.productname}<BootStrap.Button className='favorite' onClick={wishlist}><AiOutlineHeart /></BootStrap.Button></div>
-                            <div>{product.category1}</div>
+                            <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",color:"black"}} className="produ">{product.productname}<BootStrap.Button className='favorite' onClick={wishlist}><AiOutlineHeart /></BootStrap.Button></div>
+                            <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>{product.category1}</div>
                             <br/>
-                            <div>₹{product.price}
-                                <div>Includes All Taxes</div>
+                            <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{product.price}
+                                <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Includes All Taxes</div>
 
                             </div>
                             <br />
@@ -387,7 +387,8 @@ function NormalProductViewing() {
                             <br />
                             <br />
 
-                            <div>Size</div>
+                            <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Size</div>
+                            <br/>
                             {product.size1 !== "-" &&
                                 <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>}
                             {product.size2 !== "-" &&
@@ -412,7 +413,7 @@ function NormalProductViewing() {
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.image4} />
                         <div className='conentings'>
                             <div  className='atsdaw'>
-                                <a style={{color:"black"}} href='#'>Including All Taxes Applied..</a>
+                                <a style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",color:"black"}} href='#'>Including All Taxes Applied..</a>
                             </div>
                             <BootStrap.Button className='bags' onClick={handleClick}>Add to bag</BootStrap.Button>
     
@@ -426,10 +427,10 @@ function NormalProductViewing() {
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.image5} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.image6} />
                         <div className='conenting1'>
-                        <br/><br/>
-                            <div>{product.productdescription}
+                        <br/>
+                            <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>{product.productdescription}
                                 <div className='extra'>
-                                    <button class="btn popup-btn" href="#">View Details</button>
+                                    <button class="btn popup-btn" href="#" style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",marginLeft:"-2%"}}>View Details</button>
                                     <br /><br />
 
                                     <br />
@@ -520,7 +521,7 @@ function NormalProductViewing() {
             </div>
 
             {product.image10 !== "-" &&
-                <div className='explore'>Explore the {product.productname}</div>}
+                <div className='explore' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Explore the {product.productname}</div>}
             {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
@@ -534,11 +535,11 @@ function NormalProductViewing() {
             {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
-                <div className='explore'>Light Flex</div>}
+                <div className='explore' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Light Flex</div>}
             {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
-                <div className='asd'>{product.productdescription}</div>}
+                <div className='asd' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>{product.productdescription}</div>}
 
 
             {product.image10 !== "-" &&
@@ -558,11 +559,11 @@ function NormalProductViewing() {
             {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
-                <div className='explore'>Made By, Big Energy</div>}
+                <div className='explore' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Made By, Big Energy</div>}
             {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
-                <div className='asd'>{product.productspecification4}</div>}
+                <div className='asd' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>{product.productspecification4}</div>}
 
             {product.image10 !== "-" &&
                 <br />}
@@ -583,12 +584,12 @@ function NormalProductViewing() {
             {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
-                <div className='explore'>Secure for Take-Off {product.productname}</div>}
+                <div className='explore' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Secure for Take-Off {product.productname}</div>}
             {product.image10 !== "-" &&
                 <br />}
 
             {product.image10 !== "-" &&
-                <div className='asd'>{product.productspecification5}</div>}
+                <div className='asd' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>{product.productspecification5}</div>}
 
 
             {product.image10 !== "-" &&
@@ -598,15 +599,15 @@ function NormalProductViewing() {
             {product.image10 !== "-" &&
                 <br />}
             {product.image10 !== "-" &&
-                <br />}
-
-            {sizeign !== 1 &&
-                <br />}
-            {sizeign !== 1 &&
                 <br />}
 
             {sizeign !== 1 &&
-                <div className='similars'>You May Also Like This</div>}
+                <br />}
+            {sizeign !== 1 &&
+                <br />}
+
+            {sizeign !== 1 &&
+                <div className='similars' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>You May Also Like This</div>}
 
             {sizeign !== 1 &&
                 <br />}
@@ -633,7 +634,7 @@ function NormalProductViewing() {
                                                             <BootStrap.Card.Body>
                                                                 <div className='mensproductname'>{bottom.productname}</div>
                                                                 <div className='mensproductgender'>{bottom.gender}</div>
-                                                                <div className='mensproductprice'>₹{bottom.price}</div>
+                                                                <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{bottom.price}</div>
                                                             </BootStrap.Card.Body>
 
                                                         </div>
@@ -655,7 +656,7 @@ function NormalProductViewing() {
                                                             <BootStrap.Card.Body>
                                                                 <div className='mensproductname'>{gentle.productname}</div>
                                                                 <div className='mensproductgender'>{gentle.gender}</div>
-                                                                <div className='mensproductprice'>₹{gentle.productprice}</div>
+                                                                <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.productprice}</div>
                                                             </BootStrap.Card.Body>
                                                         </div>
                                                     </BootStrap.Card>

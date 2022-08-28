@@ -1,5 +1,5 @@
 import axios from 'axios'
-const VIEW_BASE_URL = "http://nike-backend.herokuapp.com/recievedcards"
+const VIEW_BASE_URL = "https://nike-backend.herokuapp.com/recievedcards"
 
 class RedemptionService{
 

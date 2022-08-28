@@ -59,7 +59,7 @@ function Signup() {
                 }).then((response) => {
                     if (response.ok) {
                         console.log("Mail Has Been Send To The Recipients")
-                        window.location.reload()
+                        
                         usenavigate('/redirecter')
                     }
                 }).catch((err) => {
@@ -108,7 +108,7 @@ function Signup() {
                                             <form className="my-login-validation" onSubmit={handleClick}   noValidate={false}>
                                                 <div className="gradient">
                                                     
-                                                    <input id="username" type="email" minLength={8}
+                                                    <input style={{cursor:"pointer"}} id="username" type="email" minLength={5}
                                                        placeholder='Enter Email' onChange={(e)=>setUsername(e.target.value)} value={username} required />
 
                                                     <div className="invalid-feedback">
@@ -120,14 +120,14 @@ function Signup() {
                                                 </div>
 
                                                 <div className="gradient">
-                                                    <input id="username" type="username" minLength={5}
+                                                    <input style={{cursor:"pointer"}} id="username" type="username" minLength={5}
                                                        placeholder='Enter Username' onChange={(e)=>setEmail(e.target.value)} value={email} required />
                                                     <div className="invalid-feedback">
                                                         Username is required
                                                     </div>
                                                 </div>
                                                 <br/>
-                                                <div className="gradient" onChange={(e)=>setGender(e.target.value)}>
+                                                <div style={{cursor:"pointer"}} className="gradient" onChange={(e)=>setGender(e.target.value)}>
                                                 <BootStrap.Form.Group className="mb-3"  required>
                                                 <BootStrap.Form.Select id='category1' name='category1'>
                                                     <option></option>
@@ -142,7 +142,7 @@ function Signup() {
                                                 </div>
 
                                                 <div className="gradient">
-                                                    <input id="phonenumber" type="phonenumber" minLength={10}
+                                                    <input style={{cursor:"pointer"}} id="phonenumber" type="phonenumber" minLength={10}
                                                        placeholder='Enter Phonenumber' onChange={(e)=>setPhonenumber(e.target.value)} value={phonenumber} required />
                                                     <div className="invalid-feedback">
                                                         Phonenumber is required
@@ -151,7 +151,7 @@ function Signup() {
 
 
                                                 <div className="gradient">
-                                                    <input id="password" type="password" minLength={8}
+                                                    <input style={{cursor:"pointer"}} id="password" type="password" minLength={8}
                                                        placeholder='Enter Password' onChange={(e)=>setPassword(e.target.value)} value={password} required />
                                                     <div className="invalid-feedback">
                                                         Password is required

@@ -92,7 +92,7 @@ const Login = ({loading,error, ...props})=> {
     
       
     return (
-        <div className='login'>
+        <div className='login' style={{cursor:"pointer"}}>
             <Headers/>
             <section>
                 <div class="container">
@@ -120,7 +120,7 @@ const Login = ({loading,error, ...props})=> {
                                             <form className="my-login-validation" onSubmit={handleSubmit} noValidate={false}>
                                                 <div className="gradient">
                                                     
-                                                    <input id="username" type="email" minLength={5}
+                                                    <input style={{cursor:"pointer"}} id="username" type="email" minLength={5}
                                                        placeholder='Enter Email' value={values.username} onChange={handleChange} name="username" required />
 
                                                     <div className="invalid-feedback">
@@ -132,7 +132,7 @@ const Login = ({loading,error, ...props})=> {
                                                 </div>
 
                                                 <div className="gradient">
-                                                    <input id="password" type="password" 
+                                                    <input style={{cursor:"pointer"}} id="password" type="password" 
                                                        placeholder='Enter Password' value={values.password} onChange={handleChange} name="password" required />
                                                     <div className="invalid-feedback">
                                                         Password is required

@@ -49,7 +49,7 @@ function Signup() {
                 
             }
             if(response.ok){
-                usenavigate('/login')
+                
                 console.log("User Added")
                 const details = { recipient, msgBody, subject }
                 fetch("https://nike-backend.herokuapp.com/email/sendMail", {
@@ -58,8 +58,9 @@ function Signup() {
                     body: JSON.stringify(details)
                 }).then((response) => {
                     if (response.ok) {
-                        console("Mail Has Been Send To The Recipients")
+                        console.log("Mail Has Been Send To The Recipients")
                         window.location.reload()
+                        usenavigate('/redirecter')
                     }
                 }).catch((err) => {
                     alert(err)

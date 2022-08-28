@@ -187,7 +187,7 @@ function Path() {
 
         <Route path='/verifyaccount/:verify' element={<Verify/>}/>
 
-        <Route path='/redirect' element={<EmailNotify/>}/>
+        <Route path='/redirecter' element={<EmailNotify/>}/>
 
         {data.roleCode==="ADMIN" &&
         <Route path='/admin/support' element={<LiveChatAdmin/>}/>}

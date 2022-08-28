@@ -142,7 +142,7 @@ function ViewGift() {
             body: JSON.stringify(addproduct)
         }).then((response) => {
             if (response.ok) {
-                console("Your Gift Has Been Successfuly Sended")
+                console.log("Your Gift Has Been Successfuly Sended")
                 const details = { recipient, msgBody, subject, attachment }
                 fetch("https://nike-backend.herokuapp.com/email/sendMail", {
                     method: "POST",
@@ -150,7 +150,7 @@ function ViewGift() {
                     body: JSON.stringify(details)
                 }).then((response) => {
                     if (response.ok) {
-                        console("Mail Has Been Send To The Recipients")
+                        console.log("Mail Has Been Send To The Recipients")
                         window.location.reload()
                     }
                 }).catch((err) => {

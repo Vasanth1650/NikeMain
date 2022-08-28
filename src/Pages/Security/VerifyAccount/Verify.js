@@ -30,7 +30,7 @@ function Verify() {
             {verify}
             {response==="1" &&
                 <>
-                    Everything Went Smooth You Can Login Now <a href='https://nikeworld.herokuapp.com/login'></a>
+                    Everything Went Smooth You Can Login Now <a href='https://nikeworld.herokuapp.com/login'>Login</a>
                 </>
             }
         </div>

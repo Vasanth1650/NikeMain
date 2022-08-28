@@ -21,13 +21,18 @@ function Redeem() {
     const gettingValues = (e) =>{
         e.preventDefault()
         const gifts= {receiverEmail,secretnumber}
-        RedemptionService.activate(gifts).then((response)=>{
-            console.log(response.data)
-            alert("The Card Has Been Reedemed Successfully")
-        }).catch((err)=>{
-            console.log(err)
-            alert("This Redemption Code Is Not Available")
-        })
+        if(localStorage.getItem("USER_KEY")){
+            RedemptionService.activate(gifts).then((response)=>{
+                console.log(response.data)
+                alert("The Card Has Been Reedemed Successfully")
+            }).catch((err)=>{
+                console.log(err)
+                alert("This Redemption Code Is Not Available")
+            })
+        }else{
+            usenavigate('/login')
+        }
+        
     }
     
 

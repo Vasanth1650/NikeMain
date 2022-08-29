@@ -9,7 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
     "emailjs-com": "^3.2.0",
-    "fullpage.js": "^4.0.9",
+    "fullpage.js": "^4.0.10",
     "gsap": "^3.10.4",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",

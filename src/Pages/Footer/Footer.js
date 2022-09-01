@@ -64,7 +64,7 @@ function Footer() {
                                         <ul>
                                             <li><a onClick={refresh} href="/checking">Order Status</a></li>
                                             <li><a href="/delivery">Delivery</a></li>
-                                            <li><a href="/livesupport">Returns</a></li>
+                                            <li><a href="/nikesupport">Guide</a></li>
                                             <li><a href="/paymentoptions">Payment Options</a></li>
                                             <li><a href="/livesupport">Contact Us</a></li>
                                             <li><a href="/usecase">About Site</a></li>

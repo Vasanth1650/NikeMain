@@ -45,7 +45,7 @@ function Mens() {
                     <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/b3a54a9c-b447-4632-ad04-4b7f8a739185/men-s-shoes-clothing-accessories.jpg' />
                 </div>
                 <div className='smalltext' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Just In</div>
-                <div className='mainrun' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>NIKE ZOOMX ZEGAMA</div>
+                <div className='mainrun' >NIKE ZOOMX ZEGAMA</div>
 
 
                 <div className='butns'>

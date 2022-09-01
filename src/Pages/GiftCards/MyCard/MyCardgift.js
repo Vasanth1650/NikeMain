@@ -5,6 +5,7 @@ import Footer from '../../Footer/Footer'
 import Header from '../../Headers/Header'
 import RedemptionService from '../Redeem/Service/RedemptionService'
 import './Styles/MyCard.scss'
+import Barcode from 'react-barcode';
 import $ from 'jquery'
 
 function MyCardgift() {
@@ -54,7 +55,7 @@ function MyCardgift() {
 
                                 <img class="ticket__barcode" style={{ width: "10%", position: 'absolute', marginTop: "8.4%", marginLeft: "-10.7%" }} src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/515428/barcode.png" alt="Fake barcode" />
                                 <div style={{ position: "absolute", marginTop: "-1.7%", marginLeft: "0.4%",fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>{gifts.secretnumber}</div>
-
+            
                                 <div style={{position:"absolute", fontFamily:"fantasy",fontSize:"large",marginLeft:"20%",marginTop:"-10%"}}>{gifts.cardName}</div>
                                 <div style={{position:"absolute",fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",fontSize:"small",marginLeft:"12%",marginTop:"-7%"}}>Sender : {gifts.senderUsername}</div>
                                 <div style={{position:"absolute",fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",fontSize:"small",marginLeft:"12%",marginTop:"-5%"}}>Amount : ₹{gifts.amountofcard}</div>

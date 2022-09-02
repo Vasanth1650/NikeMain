@@ -128,6 +128,7 @@ function Path() {
 
         <Route path='/subscription' element={<Sub/>}/>
 
+        <Route path='/livesupport' element={<Livechat/>}/>
 
         <Route path='/mens' element={<Mens/>}/>
 
@@ -174,8 +175,7 @@ function Path() {
 
         <Route path='/paymentoptions' element={<PaymentOptions/>}/>
 
-
-        <Route path='/livesupport' element={<Livechat/>}/>
+        
 
         <Route path='/gift' element={<Gift/>}/>
 

@@ -1,4 +1,3 @@
-import { fetchUserData } from '../Api/AuthenticationService';
 import {AUTH_REQ,AUTH_SUCCESS,AUTH_FAILURE} from './Types';
 
 

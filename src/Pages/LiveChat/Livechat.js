@@ -7,6 +7,14 @@ import Chat from './Chat';
 import './Styles/Chat.css';
 import ReactPlayer from 'react-player';
 
+function livechat() {
+  return (
+    <div>livechat</div>
+  )
+}
+
+export default livechat
+/*
 const socket = io.connect("https://nikelivechat.herokuapp.com");
 
 
@@ -85,4 +93,4 @@ function Livechat() {
   )
 }
 
-export default Livechat
+export default Livechat*/

@@ -3,7 +3,7 @@ import ScrollToBottom from "react-scroll-to-bottom";
 import Footer from "../Footer/Footer";
 import Header from "../Headers/Header";
 import './Styles/Chat.css'
-
+/*
 function Chat({ socket, username, room }) {
     const [currentMessage, setCurrentMessage] = useState("");
     const [messageList, setMessageList] = useState([]);
@@ -84,4 +84,4 @@ function Chat({ socket, username, room }) {
     );
 }
 
-export default Chat;
+export default Chat;*/

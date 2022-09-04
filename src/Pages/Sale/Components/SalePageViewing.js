@@ -364,7 +364,7 @@ function SalePageViewing() {
                         {product.image2checker === "Image" &&
                             <BootStrap.Card.Img className='tre111' variant="top" src={product.productimage2} />}
 
-
+                        {product.image2checker==="Image"&&
                         <div className='conentingsi' style={{ marginLeft: "5%" }}>
                             <div style={{ color: "black", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }} className="produ">{product.productname}</div>
                             <div style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{product.category1} {product.status==="Launched"&& <>(units : {product.quantity})</>}</div>
@@ -398,7 +398,43 @@ function SalePageViewing() {
                                         </>}
                                 </>}
 
-                        </div>
+                        </div>}
+
+                        {product.image2checker==="Video"&&
+                        <div className='conentingsi' style={{ marginLeft: "0%" }}>
+                            <div style={{ color: "black", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }} className="produ">{product.productname}</div>
+                            <div style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{product.category1} {product.status==="Launched"&& <>(units : {product.quantity})</>}</div>
+
+                            <br />
+                            <div style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>₹{product.productprice}
+                                <div style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Includes All Taxes</div>
+
+                            </div>
+                            
+                         
+                            {product.quantity !== 0 &&
+                                <>
+                                    {product.status === "Launched" &&
+                                        <>
+                                            <div style={{ paddingBottom: "5%", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Size</div>
+                                            {product.size1 !== "-" &&
+                                                <BootStrap.Button style={{borderRadius:"5px"}} className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>}
+                                            {product.size2 !== "-" &&
+                                                <BootStrap.Button style={{borderRadius:"5px",marginLeft:"12%"}} className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>}
+                                            {product.size3 !== "-" &&
+                                                <div>---------------------------------</div>}
+                                            {product.size3 !== "-" &&
+                                                <BootStrap.Button style={{borderRadius:"5px"}} className='bus' onClick={(e) => setSize(product.size3)}>{product.size3}</BootStrap.Button>}
+                                            {product.size4 !== "-" &&
+                                                <BootStrap.Button style={{borderRadius:"5px",marginLeft:"12%"}} className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>}
+                                            <div>---------------------------------</div>
+                                            {product.size5 !== "-" &&
+                                                <BootStrap.Button style={{borderRadius:"5px"}} className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>}
+                                            <button style={{ color: "black",marginLeft:"10%" }} className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
+                                        </>}
+                                </>}
+
+                        </div>}
                     </div>
                     <div className='carding'>
 

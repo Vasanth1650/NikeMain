@@ -365,8 +365,8 @@ function Magic() {
 
 
                                 </div>
-                                <button class="btn btn-primary leftLsts"> ← </button>
-                                <button class="btn btn-primary rightLsts"> → </button>
+                                <button class="btn btn-primary leftLsts" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> ← </button>
+                                <button class="btn btn-primary rightLsts" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> → </button>
 
 
                             </div>

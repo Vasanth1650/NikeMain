@@ -13,6 +13,7 @@ import './Styles/Header.scss';
 import $ from 'jquery';
 import { ImSearch } from "react-icons/im";
 import { MDBInputGroup, MDBInput, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
+import Circle from './Circle';
 
 
 function Header() {
@@ -138,7 +139,11 @@ function Header() {
                                 <BootStrap.Nav.Link href='/womens'>Women</BootStrap.Nav.Link>
                                 <BootStrap.Nav.Link href='/kids' >Kids</BootStrap.Nav.Link>
                                 <BootStrap.Nav.Link href='/gift'>Gift</BootStrap.Nav.Link>
-                                <BootStrap.Nav.Link href='/sale'>Sale</BootStrap.Nav.Link>
+                              
+                                    <BootStrap.Nav.Link href='/sale'>Sale<div style={{marginLeft:"60%",width:"190%",marginTop:"-90%"}}><Circle/></div></BootStrap.Nav.Link>
+                                    
+                                
+                                
                             
 
 

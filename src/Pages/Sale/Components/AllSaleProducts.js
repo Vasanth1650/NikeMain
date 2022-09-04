@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SalePageService from '../Service/SalePageService'
 import * as BootStrap from 'react-bootstrap'
 import { MdCardMembership } from "react-icons/md";
 import Header from '../../Headers/Header';
 import Footer from '../../Footer/Footer';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { fetchUserData } from '../../../Api/AuthenticationService';
 
 
@@ -16,6 +16,15 @@ function AllSaleProducts() {
     const [coloring, setColoring] = useState([])
     const [data, setData] = useState({})
     const usenavigate = useNavigate()
+    const location = useLocation()
+    const [values,setValues] = useState("")
+
+    useEffect(()=>{
+        if(location.state){
+            setValues(location.state.category)
+        }
+        
+    },[location.state])
 
     React.useEffect(() => {
         SalePageService.getProducts().then((response) => {
@@ -81,10 +90,12 @@ function AllSaleProducts() {
                 </div>
                 <br />
 
+               
                 <div class="line-3">
                     <hr></hr>
                 </div>
 
+                {values==="All" &&
                 <div class="sidebardawdwadwa">
                     <div className='colorsector'>Colour</div>
 
@@ -122,7 +133,7 @@ function AllSaleProducts() {
 
 
                     <br /><br /><br /><br /><br /><br />
-                </div>
+                </div>}
 
 
                 {color !== "" &&
@@ -131,9 +142,12 @@ function AllSaleProducts() {
 
 
                 <br />
+                {values==="All" &&
                 <div class="line-3">
                     <hr></hr>
-                </div>
+                </div>}
+
+                {values==="All" &&
                 <div className='sidebardawdwadwa'>
                     <div className='colorsector'>Current</div>
                     <div>
@@ -187,12 +201,13 @@ function AllSaleProducts() {
                     </div>
 
 
-                </div>
+                </div>}
 
                 <br /><br />
+                {values==="All" &&
                 <div class="line-3">
                     <hr></hr>
-                </div>
+                </div>}
 
 
             </div>
@@ -201,16 +216,17 @@ function AllSaleProducts() {
 
 
             <div>
-                <div>
-                    {color === "" && trend === "" &&
+                
+                   
                         <div>
+                        {color === "" && trend === "" && values === "All" &&
                             <BootStrap.Row xs={1} md={3} >
                                 {
                                     product.map(gentle =>
                                         <BootStrap.Col>
-                                            <div>
-
-                                                {color === "" && trend === "" &&
+                                            <div className='items'>
+                                            
+                                               
                                                     <BootStrap.CardGroup>
                                                         <BootStrap.Card className='jawdjawd' >
                                                             <BootStrap.Card.Img variant="top" src={gentle.productimage1}onClick={() => responsegiver(gentle.id)} />
@@ -244,7 +260,7 @@ function AllSaleProducts() {
 
                                                         </BootStrap.Card>
                                                     </BootStrap.CardGroup>
-                                                }
+                                                
 
                                                 <br />
                                             </div>
@@ -252,22 +268,89 @@ function AllSaleProducts() {
 
                                     )
                                 }
-                            </BootStrap.Row>
-                        </div>}
-                </div>
+                            </BootStrap.Row>}
+                        </div>
+                
 
-
-
-                <div>
-                    {color !== "" && trend === "" &&
+                
+                
+                    
                         <div>
+                        {color === "" && trend === "" && values!=="All" && values!== "" &&
                             <BootStrap.Row xs={1} md={3} >
                                 {
-                                    product.map(gentle =>
+                                    product.filter(product=>{
+                                        if(product.category1===values){
+                                            return product
+                                        }
+                                    }).map(gentle =>
                                         <BootStrap.Col>
                                             <div>
+           
+                                                
+                                                    <BootStrap.CardGroup>
+                                                        <BootStrap.Card className='jawdjawd' >
+                                                            <BootStrap.Card.Img variant="top" src={gentle.productimage1}onClick={() => responsegiver(gentle.id)} />
+                                                            <BootStrap.Card.Body onClick={() => responsegiver(gentle.id)}>
 
-                                                {gentle.productspecification1 === color &&
+                                                                <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
+
+                                                                <div className='categoryandcategory'>
+                                                                    {gentle.category1}
+                                                                </div>
+
+                                                                {gentle.buyingoption === "Membership" &&
+                                                                    <div className='categoryandcategory'>
+                                                                        <MdCardMembership />
+                                                                    </div>
+                                                                }
+
+                                                                {gentle.buyingoption !== "Membership" &&
+                                                                    <div className='categoryandcategory'>
+                                                                        {gentle.category2} Colors
+                                                                    </div>}
+                                                                <div className='kwjdnjwakwn'>
+                                                                    ₹{gentle.productprice}
+                                                                </div>
+
+
+                                                            </BootStrap.Card.Body>
+                                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                                <BootStrap.NavLink onClick={()=>updater(gentle.id)}>Update</BootStrap.NavLink>}
+
+
+                                                        </BootStrap.Card>
+                                                    </BootStrap.CardGroup>
+                                                
+
+                                                <br />
+                                            </div>
+                                        </BootStrap.Col>
+
+                                    )
+                                }
+                            </BootStrap.Row>}
+                        </div>
+                
+
+
+
+                
+                    
+                        <div>
+                        {color !== "" && trend === "" && values==="All"  &&
+                            <BootStrap.Row xs={1} md={3} >
+                                {
+                                    product.filter(product=>{
+                                        if(color === product.productspecification1){
+                                            return product;
+                                        }
+                                    }).map(gentle =>
+                                        <BootStrap.Col>
+                                            <div>
+                                            
+                                                
+                                                    <>
                                                     <BootStrap.CardGroup>
                                                         <BootStrap.Card className='jawdjawd'>
                                                             <BootStrap.Card.Img variant="top" src={gentle.productimage1}  onClick={() => responsegiver(gentle.id)}/>
@@ -300,7 +383,8 @@ function AllSaleProducts() {
 
                                                         </BootStrap.Card>
                                                     </BootStrap.CardGroup>
-                                                }
+                                                    </>
+                                                
 
                                                 <br />
                                             </div>
@@ -308,21 +392,27 @@ function AllSaleProducts() {
 
                                     )
                                 }
-                            </BootStrap.Row>
-                        </div>}
-                </div>
+                            </BootStrap.Row>}
+                        </div>
+                
 
 
-                <div>
-                    {color === "" && trend !== "" &&
+                
+                    
                         <div>
+                        {color === "" && trend !== "" && values==="All" &&
+                        <>
                             <BootStrap.Row xs={1} md={3} >
                                 {
-                                    product.map(gentle =>
+                                    product.filter(product=>{
+                                        if(product.category3 === trend){
+                                            return product
+                                        }
+                                    }).map(gentle =>
                                         <BootStrap.Col>
                                             <div>
-
-                                                {gentle.category3 === trend &&
+                                            
+                                                
                                                     <BootStrap.CardGroup>
                                                         <BootStrap.Card className='jawdjawd'>
                                                             <BootStrap.Card.Img variant="top" src={gentle.productimage1}  onClick={() => responsegiver(gentle.id)}/>
@@ -355,7 +445,7 @@ function AllSaleProducts() {
 
                                                         </BootStrap.Card>
                                                     </BootStrap.CardGroup>
-                                                }
+                                                
 
                                                 <br />
                                             </div>
@@ -363,23 +453,28 @@ function AllSaleProducts() {
 
                                     )
                                 }
-                            </BootStrap.Row>
-                        </div>}
-                </div>
+                            </BootStrap.Row></> }
+                        </div>
+                
 
 
 
 
-                <div>
-                    {color !== "" && trend !== "" &&
+                
+                    
                         <div>
+                        {color !== "" && trend !== "" && values==="All" && 
                             <BootStrap.Row xs={1} md={3} >
                                 {
-                                    product.map(gentle =>
+                                    product.filter(product=>{
+                                        if(product.category3===trend && product.productspecification1===color){
+                                            return product;
+                                        }
+                                    }).map(gentle =>
                                         <BootStrap.Col>
-                                            <div>
-
-                                                {gentle.category3 === trend && gentle.productspecification1 === color &&
+                                            <div >
+                                            
+                                                
                                                     <BootStrap.CardGroup>
                                                         <BootStrap.Card className='jawdjawd'>
                                                             <BootStrap.Card.Img variant="top" src={gentle.productimage1}  onClick={() => responsegiver(gentle.id)}/>
@@ -412,7 +507,7 @@ function AllSaleProducts() {
 
                                                         </BootStrap.Card>
                                                     </BootStrap.CardGroup>
-                                                }
+                                                
 
                                                 <br />
                                             </div>
@@ -420,9 +515,9 @@ function AllSaleProducts() {
 
                                     )
                                 }
-                            </BootStrap.Row>
-                        </div>}
-                </div>
+                            </BootStrap.Row>}
+                        </div>
+                
 
 
 
@@ -439,7 +534,10 @@ function AllSaleProducts() {
 
 
             <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            <Footer />
+            <div>
+                <Footer />
+            </div>
+            
 
         </div>
     )

@@ -14,7 +14,7 @@ import SalePageService from '../Service/SalePageService';
 import OptionPageService from '../../RedirectAllCategory/Services/CategoryService'
 import DashboardService from '../../MostPopular/Services/DashboardService';
 import PriorityService from '../Service/PriorityService';
-
+import Offer from '../../Headers/Offers/Offer';
 
 
 function loadScript(src) {
@@ -328,8 +328,11 @@ function SalePageViewing() {
             if (response.ok) {
                 console.log("ProductAddedByUser" + userid + productid)
             }
+            if(!response.ok){
+                window.location.reload()
+            }
         }).catch((err) => {
-            console.log(err)
+            alert("Refresh The Page")
         })
     }
 
@@ -348,8 +351,8 @@ function SalePageViewing() {
         <div className='bodyd'>
 
             <Headers />
-
-
+            <Offer/>
+            
             <div>
 
                 <div class="containers">
@@ -359,7 +362,7 @@ function SalePageViewing() {
                         {product.image2checker === "Video" &&
                             <div className='vido' style={{ position: "static" }}>
                                 <ReactPlayer width={500} height={451} muted type='video/mp4' loop playing={true} url={product.productimage2} playsinline />
-                            </div>}
+                            </div>} 
 
                         {product.image2checker === "Image" &&
                             <BootStrap.Card.Img className='tre111' variant="top" src={product.productimage2} />}
@@ -411,7 +414,7 @@ function SalePageViewing() {
 
                             </div>
                             
-                         
+                            <br/>
                             {product.quantity !== 0 &&
                                 <>
                                     {product.status === "Launched" &&
@@ -422,12 +425,12 @@ function SalePageViewing() {
                                             {product.size2 !== "-" &&
                                                 <BootStrap.Button style={{borderRadius:"5px",marginLeft:"12%"}} className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>}
                                             {product.size3 !== "-" &&
-                                                <div>---------------------------------</div>}
+                                                <div className='dashhider'>---------------------------------</div>}
                                             {product.size3 !== "-" &&
                                                 <BootStrap.Button style={{borderRadius:"5px"}} className='bus' onClick={(e) => setSize(product.size3)}>{product.size3}</BootStrap.Button>}
                                             {product.size4 !== "-" &&
                                                 <BootStrap.Button style={{borderRadius:"5px",marginLeft:"12%"}} className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>}
-                                            <div>---------------------------------</div>
+                                            <div className='dashhider'>---------------------------------</div>
                                             {product.size5 !== "-" &&
                                                 <BootStrap.Button style={{borderRadius:"5px"}} className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>}
                                             <button style={{ color: "black",marginLeft:"10%" }} className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
@@ -436,7 +439,7 @@ function SalePageViewing() {
 
                         </div>}
                     </div>
-                    <div className='carding'>
+                    <div className='carding' >
 
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.productimage3} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.productimage4} />
@@ -446,7 +449,7 @@ function SalePageViewing() {
                                 <>
                                     {
                                         product.status === "Launched" &&
-                                        <div className='atsdaw' style={{marginTop:"-90%"}}>
+                                        <div className='atsdaw' style={{marginTop:"-70%"}}>
                                             <a style={{ style: "black", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }} href='#' >Including All Taxes Applied..</a>
                                         </div>
                                     }
@@ -484,7 +487,7 @@ function SalePageViewing() {
 
                     </div>
 
-                    <div className='carding'>
+                    <div className='carding' >
 
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.productimage5} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.productimage6} />
@@ -523,7 +526,7 @@ function SalePageViewing() {
                             product.quantity !== 0 &&
                             <>
                                 {product.status === "Launched" &&
-                                    <div className='conenting1' style={{ marginTop: "-45%" }}>
+                                    <div className='conenting1' style={{ marginTop: "-40%" }}>
                                         <br />
                                         <div style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{product.productdescription}
                                             <div className='extra'>
@@ -560,7 +563,7 @@ function SalePageViewing() {
 
                     </div>
 
-                    <div className='carding'>
+                    <div className='carding' style={{marginTop:"-2%"}}>
 
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.productimage7} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.productimage8} />
@@ -583,7 +586,7 @@ function SalePageViewing() {
 
                     </div>
 
-                    <div className='carding'>
+                    <div className='carding' style={{marginTop:"-2%"}}>
 
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.productimage9} />
 
@@ -667,9 +670,12 @@ function SalePageViewing() {
 
             <br /><br /><br /><br />
 
-            <div className='similars' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>You May Also Like This</div>
+            {sizeign !== 0 &&
+            <div className='similars' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>You May Also Like This</div>}
             <br /><br />
+            
 
+            {sizeign !== 0 &&
             <div>
                 <div class="containeriknje">
                     <div class="row">
@@ -719,16 +725,17 @@ function SalePageViewing() {
                                 }
 
                             </div>
-                            <button class="btn btn-primary leftLst"> ← </button>
-                            <button class="btn btn-primary rightLst"> → </button>
+                            <button class="btn btn-primary leftLst" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> ← </button>
+                            <button class="btn btn-primary rightLst" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> → </button>
 
 
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            </div>}
+            
+            {sizeign !== 0 &&<div> <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /></div>}
+           
 
             <ToastContainer />
             <Footer />

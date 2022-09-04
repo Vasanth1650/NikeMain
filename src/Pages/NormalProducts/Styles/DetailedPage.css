@@ -46,7 +46,11 @@
     width: 30%;
     padding-top: 1%;
     padding-bottom: 1%;
-    border-radius: 30px;
+    border-radius: 5px;
+}
+
+.dashhider{
+  color: transparent;
 }
 
 .image{

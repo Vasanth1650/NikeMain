@@ -349,7 +349,7 @@ function NormalProductViewing() {
         <div className='bodyd'>
 
             <Headers />
-
+            
 
 
             <div>
@@ -392,22 +392,22 @@ function NormalProductViewing() {
                             {product.size1 !== "-" &&
                                 <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>}
                             {product.size2 !== "-" &&
-                                <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>}
+                                <BootStrap.Button style={{marginLeft:"12%"}} className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>}
                             {product.size3 !== "-" &&
-                                <div>---------------------------------</div>}
+                                <div className='dashhider'>---------------------------------</div>}
                             {product.size3 !== "-" &&
                                 <BootStrap.Button className='bus' onClick={(e) => setSize(product.size3)}>{product.size3}</BootStrap.Button>}
                             {product.size4 !== "-" &&
-                                <BootStrap.Button className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>}
+                                <BootStrap.Button style={{marginLeft:"12%"}} className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>}
 
-                            <div>---------------------------------</div>
+                            <div className='dashhider'>---------------------------------</div>
                             {product.size5 !== "-" &&
                                 <BootStrap.Button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>}
-                            <button style={{color:"black"}} className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
+                            <button style={{color:"black",marginLeft:"9%"}}  className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
 
                         </div>
                     </div>
-                    <div className='carding'>
+                    <div className='carding' style={{marginTop:"-1.5%"}}>
 
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.image3} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.image4} />
@@ -415,6 +415,7 @@ function NormalProductViewing() {
                             <div  className='atsdaw'>
                                 <a style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",color:"black"}} href='#'>Including All Taxes Applied..</a>
                             </div>
+                            <br/>
                             <BootStrap.Button className='bags' onClick={handleClick}>Add to bag</BootStrap.Button>
     
 
@@ -422,8 +423,8 @@ function NormalProductViewing() {
 
                     </div>
 
-                    <div className='carding'>
-
+                    <div className='carding' style={{marginTop:"1%"}}>
+                        
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.image5} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.image6} />
                         <div className='conenting1'>
@@ -486,7 +487,7 @@ function NormalProductViewing() {
 
                     </div>
 
-                    <div className='carding'>
+                    <div className='carding' style={{marginTop:"-2%"}}>
 
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.image7} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.image8} />
@@ -509,7 +510,7 @@ function NormalProductViewing() {
 
                     </div>
 
-                    <div className='carding'>
+                    <div className='carding' style={{marginTop:"-2%"}}>
 
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.image9} />
 
@@ -667,9 +668,9 @@ function NormalProductViewing() {
 
                                 </div>
                                 {sizeign !== 1 &&
-                                    <button class="btn btn-primary leftLst"> ← </button>}
+                                    <button class="btn btn-primary leftLst" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> ← </button>}
                                 {sizeign !== 1 &&
-                                    <button class="btn btn-primary rightLst"> → </button>}
+                                    <button class="btn btn-primary rightLst" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> → </button>}
 
 
                             </div>

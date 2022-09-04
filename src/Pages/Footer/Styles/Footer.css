@@ -3,8 +3,8 @@ ul {
     padding: 0px;
   }
   .footer-section {
-    
-  background: black;
+  
+  background: rgba(0, 0, 0, 0.893);
   background-image:-moz-repeating-linear-gradient();
   position: relative;
   
@@ -57,6 +57,7 @@ ul {
   font-size: 14px;
       color: white;
   line-height: 28px;
+  font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
   }
   .footer-social-icon span {
   color: white;
@@ -70,6 +71,7 @@ ul {
   color: white;
   font-size: 16px;
   margin-right: 15px;
+  font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
   }
   .footer-social-icon i {
   height: 40px;
@@ -119,6 +121,7 @@ ul {
   .subscribe-form {
   position: relative;
   overflow: hidden;
+  
   }
   .subscribe-form input {
   width: 100%;
@@ -127,6 +130,7 @@ ul {
   border: 1px solid #2E2E2E;
   border-radius: 30px;
   color: black;
+  font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
   }
   .subscribe-form button {
     position: absolute;
@@ -143,13 +147,14 @@ ul {
   transform: rotate(-6deg);
   }
   .copyright-area{
-  background: black;
-  padding: 15px 0;
+  background: rgba(0, 0, 0, 0.893);
+  padding: 10px 0;
   }
   .copyright-text p {
   margin: 0;
-  font-size: 14px;
+  font-size: 10px;
   color: #878787;
+  font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
   }
   .copyright-text p a{
   color: #ff5e14;
@@ -162,10 +167,13 @@ ul {
   color: #ff5e14;
   }
   .footer-menu li a {
-  font-size: 14px;
+  font-size: 10px;
   color: white;
+  font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
   }
 
 
-
+.fontdesign{
+  font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
+}
   

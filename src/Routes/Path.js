@@ -59,6 +59,7 @@ import AddSaleProduct from '../Pages/Sale/Components/AddSaleProduct';
 import AllSaleProducts from '../Pages/Sale/Components/AllSaleProducts';
 import SalePageViewing from '../Pages/Sale/Components/SalePageViewing';
 import UpdateSaleProduct from '../Pages/Sale/Components/UpdateSaleProduct';
+import  Demo  from '../Pages/Demo/Demo';
 
 
 function Path() {
@@ -146,6 +147,8 @@ function Path() {
         <Route path='/subscription' element={<Sub/>}/>
 
         <Route path='/livesupport' element={<Livechat/>}/>
+
+        <Route path='/demo' element={<Demo/>}/>
 
         <Route path='/mens' element={<Mens/>}/>
 

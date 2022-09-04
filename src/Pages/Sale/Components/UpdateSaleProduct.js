@@ -577,7 +577,7 @@ function UpdateSaleProduct() {
 
                                             <BootStrap.Form.Select id='category2' name='category2' value={category2}
                                         >
-                                                <option></option>
+                                                <option>0</option>
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
@@ -618,7 +618,7 @@ function UpdateSaleProduct() {
 
                                             <BootStrap.Form.Select id='quantity' name='quantity' value={quantity}
                                         >
-                                                <option></option>
+                                                <option>0</option>
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>

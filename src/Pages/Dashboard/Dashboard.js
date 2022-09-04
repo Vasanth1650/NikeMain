@@ -20,6 +20,7 @@ import Popular from './Popular/Popular';
 import Trending from './Trending/Trending';
 
 
+
 function Dashboard() {
 
     //Variables

@@ -1,31 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import $ from 'jquery'
 import * as BootStrap from 'react-bootstrap'
-import DashboardService from '../../MostPopular/Services/DashboardService'
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom'
-import NormalProductService from '../../NormalProducts/Services/NormalProductService';
 import { FcLock } from "react-icons/fc";
 
-function Woffle() {
-    const [product, setProduct] = useState([])
-    const [gentle, setGentle] = useState([])
-    const [bottom, setBottom] = useState([])
-    const [similar, setSimilar] = useState([])
+function Batoschool() {
     const usenavigate = useNavigate()
-
-    useEffect(() => {
-        getTrend()
-    }, [])
-
-    const getTrend = () => {
-        NormalProductService.allProducts().then((response) => {
-            setGentle(response.data)
-        }).catch((err) => {
-            console.log(err)
-        })
-    }
-
 
 
     $(document).ready(function () {
@@ -135,9 +116,8 @@ function Woffle() {
 
     });
 
-    const Nextsteps = (ids) => {
-        console.log(ids);
-        usenavigate('/nextsteps/' + ids);
+    const Nextsteps = (category) => {
+        usenavigate('/sale/currentsales', { state: {category} });
     }
 
 
@@ -145,45 +125,112 @@ function Woffle() {
         <div className='bodyd'>
             <div>
                 <br /><br /><br />
-                <div className='similarsbudwaw'>Nike Air Apparel</div>
+                <div className='similarsbudwaw'>Back To School Utilities</div>
                 <br /><br />
 
                 <div>
-                    <div class="containeriknjein">
+                    <div class="containeriknjein" >
                         <div class="row">
                             <div class="MultiCarousel" data-items="1,3,5,6" data-slide="2" id="MultiCarousel" data-interval="2">
                                 <div class="MultiCarousel-inner">
 
 
-                                    {
-                                        gentle.map(gentle =>
-                                            
-                                            <div className="item" onClick={() => Nextsteps(gentle.id)}>
-                                                {gentle.gender === "Kids's" &&
-                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
-                                                        <div class="pad15">
-                                                        <BootStrap.Card.Img variant="top" src={gentle.image1} />
-                                                            <BootStrap.Card.Body>
-                                                                <div className='mensproductname'>{gentle.productname}</div>
-                                                                <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
-                                                                    <FcLock />
-                                                                }</div>
-                                                                <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.price}</div>
-                                                            </BootStrap.Card.Body>
-                                                        </div>
-                                                    </BootStrap.Card>
-                                                }
-                                            
-                                            </div>
-                                        )
-                                    }
-
-
                                     
+                                            <>
+
+                                                <div className="item" onClick={() => Nextsteps("HighSchool")}>
+
+
+
+                                                    <BootStrap.Card className='cardcarsol' style={{ width: '110%' }}>
+
+                                                        <div class="pad15">
+
+                                                          
+                                                          
+                                                                <BootStrap.Card.Img variant="top" src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/a19e296e-7e7a-48ef-a215-50ee278f6ee5/nike-back-to-school.jpg" />
+
+                                                            
+                                                        </div>
+
+                                                    </BootStrap.Card>
+
+                                                </div>
+
+                                            </>
+
+                                            <>
+
+                                                <div className="item" onClick={() => Nextsteps("ElementarySchool")}>
+
+
+
+                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+
+                                                        <div class="pad15">
+
+                                                          
+                                                          
+                                                                <BootStrap.Card.Img variant="top" src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/c4d461ee-cdc4-4099-bfaa-d2cbd895fc2e/nike-back-to-school.jpg" />
+
+                                                            
+                                                        </div>
+
+                                                    </BootStrap.Card>
+
+                                                </div>
+
+                                            </>
+
+                                            <>
+
+                                                <div className="item" onClick={() => Nextsteps("PreSchool")}>
+
+
+
+                                                    <BootStrap.Card className='cardcarsol' style={{ width: '110%' }}>
+
+                                                        <div class="pad15">
+                                                                <BootStrap.Card.Img variant="top" src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/4791e7e1-a613-42ba-9b26-2ddd1329dfde/nike-back-to-school.jpg" />
+                                                        </div>
+
+                                                    </BootStrap.Card>
+
+                                                </div>
+
+                                            </>
+
+                                            <>
+
+                                                <div className="item" onClick={() => Nextsteps("MiddleSchool")}>
+
+
+
+                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+
+                                                        <div class="pad15">
+
+                                                          
+                                                          
+                                                                <BootStrap.Card.Img variant="top" src="https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/c27456fc-0d77-4ab1-92df-411bd7da999b/nike-back-to-school.jpg" />
+
+                                                            
+                                                        </div>
+
+                                                    </BootStrap.Card>
+
+                                                </div>
+
+                                            </>
+                                        
+
+
+
+
 
                                 </div>
-                                <button class="btn btn-primary leftLsts" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> ← </button>
-                                <button class="btn btn-primary rightLsts" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> → </button>
+                                <button class="btn btn-primary leftLsts"  style={{ backgroundColor: "whitesmoke", color: "black", paddingTop: "1%", paddingBottom: "1%", paddingLeft: "1.5%", paddingRight: "1.5%",marginTop:"-60%"}} > ← </button>
+                                <button class="btn btn-primary rightLsts" style={{ backgroundColor: "whitesmoke", color: "black", paddingTop: "1%", paddingBottom: "1%", paddingLeft: "1.5%", paddingRight: "1.5%",marginTop:"-65%"}}> → </button>
 
 
                             </div>
@@ -193,9 +240,9 @@ function Woffle() {
 
             </div>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /> <br /><br /><br /><br /> <br /><br />
-            
+
         </div>
     )
 }
 
-export default Woffle
+export default Batoschool

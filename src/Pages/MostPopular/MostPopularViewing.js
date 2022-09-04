@@ -350,7 +350,7 @@ function MostPopularViewing() {
 
             <Headers />
 
-
+            
 
 
 
@@ -400,12 +400,12 @@ function MostPopularViewing() {
                             {product.size2 !== "-" &&
                                 <BootStrap.Button className='bus' onClick={(e) => setSize(product.size2)}>{product.size2}</BootStrap.Button>}
                             {product.size3 !== "-" &&
-                                <div>---------------------------------</div>}
+                                <div className='dashhider'>---------------------------------</div>}
                             {product.size3 !== "-" &&
                                 <BootStrap.Button className='bus' onClick={(e) => setSize(product.size3)}>{product.size3}</BootStrap.Button>}
                             {product.size4 !== "-" &&
                                 <BootStrap.Button className='bus' onClick={(e) => setSize(product.size4)}>{product.size4}</BootStrap.Button>}
-                            <div>---------------------------------</div>
+                            <div className='dashhider'>---------------------------------</div>
                             {product.size5 !== "-" &&
                                 <BootStrap.Button className='bus' onClick={(e) => setSize(product.size5)}>{product.size5}</BootStrap.Button>}
                             <button style={{ color: "black" }} className='sizechartss' onClick={() => sizeChart(product.category1)}>Size Chart</button>
@@ -623,8 +623,8 @@ function MostPopularViewing() {
                                 }
 
                             </div>
-                            <button class="btn btn-primary leftLst"> ← </button>
-                            <button class="btn btn-primary rightLst"> → </button>
+                            <button class="btn btn-primary leftLst" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> ← </button>
+                            <button class="btn btn-primary rightLst" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> → </button>
 
 
                         </div>

@@ -6,6 +6,7 @@ import emailjs from 'emailjs-com';
 import './Styles/Footer.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Circle from '../Headers/Circle';
 
 
 
@@ -16,6 +17,10 @@ function Footer() {
 
     function refresh() {
         window.location.reload(false);
+    }
+
+    function redirecthelper(){
+        usenavigate('/sale')
     }
 
     React.useEffect(() => {
@@ -48,7 +53,7 @@ function Footer() {
 
 
     return (
-        <div>
+        <div style={{position:"relative",width:"100%"}}>
             <div>
                 <footer class="footer-section">
                     <div class="container">
@@ -58,40 +63,39 @@ function Footer() {
 
                                 <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                                     <div class="footer-widget">
-                                        <div class="footer-widget-heading">
-                                            <h3>Useful Links</h3>
-                                        </div>
+                                        
                                         <ul>
-                                            <li><a onClick={refresh} href="/checking">Order Status</a></li>
-                                            <li><a href="/delivery">Delivery</a></li>
-                                            <li><a href="/nikesupport">Guide</a></li>
-                                            <li><a href="/paymentoptions">Payment Options</a></li>
-                                            <li><a href="/livesupport">Contact Us</a></li>
-                                            <li><a href="/usecase">About Site</a></li>
-                                            <li><a href='/mygifts'>My Gifts</a></li>
-
-                                            <li><a href="/profile">Profile</a></li>
+                                            <li><a onClick={refresh} href="/checking" className='fontdesign'>Order Status</a></li>
+                                            <li><a href="/delivery" className='fontdesign'>Delivery</a></li>
+                                            <li><a href="/nikesupport" className='fontdesign'>Guide</a></li>
+                                            <li><a href="/paymentoptions" className='fontdesign'>Payment Options</a></li>
+                                            <li><a href="/livesupport" className='fontdesign'>Contact Us</a></li>
+                                            <li><a href="/usecase" className='fontdesign'>About Site</a></li>
+                                            <li><a href='/mygifts' className='fontdesign'>My Gifts</a></li>
+                                            
+                                            <li><a href="/profile" className='fontdesign'>Profile</a></li>
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                <li><a href='/chart/jordan' className='gradient-text'>Jordan Collection</a></li>}
-
-                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                <li><a href="/allsection/mainadd" type="submit">Add products</a></li>}
-                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                <li><a href='/refund' >Refund Requests</a></li>}
+                                                <li><a href='/chart/jordan' className='fontdesign'>Jordan Collection</a></li>}
 
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                <li><a href='orderupdate'>Order Updates</a></li>}
+                                                <li><a href="/allsection/mainadd" type="submit" className='fontdesign'>Add products</a></li>}
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
-                                                <li><a href='/admin/support' className='gradient-text'>Custome Support Channel</a></li>}
+                                                <li><a href='/refund' className='fontdesign'>Refund Requests</a></li>}
+
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                <li><a href='orderupdate' className='fontdesign'>Order Updates</a></li>}
+                                            {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                <li><a href='/admin/support' className='fontdesign'>Custome Support Channel</a></li>}
 
                                         </ul>
                                     </div>
 
                                 </div>
                                 <div class="col-xl-4 col-lg-4 mb-50">
-                                    <div class="footer-widget">
-
-
+                                    <div class="footer-widget" onClick={redirecthelper} style={{cursor:"pointer"}}>
+                                        <div style={{color:"white",marginLeft:"40%",fontFamily:"fantasy"}}>Nike Fest</div>
+                                        <Circle/>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
@@ -100,7 +104,7 @@ function Footer() {
                                             <h3>Subscribe</h3>
                                         </div>
                                         <div class="footer-text mb-25">
-                                            <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
+                                            <p style={{fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif"}}>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
                                         </div>
                                         <div class="subscribe-form">
                                             <form action="#" onSubmit={sendEmail}>
@@ -113,7 +117,7 @@ function Footer() {
                             </div>
                         </div>
                     </div>
-
+                  
                     <div class="copyright-area">
                         <div class="container">
                             <div class="row">
@@ -129,7 +133,7 @@ function Footer() {
                                                 <BootStrap.Button href='dashboard/add' className='gradient-text'>ADD</BootStrap.Button>}
                                             {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
                                                 <li><a href='/emailing'>Email</a></li>}
-
+                                            
                                             <li><a href="https://www.eshopworld.com/shoppers/help/terms-and-conditions-of-sale-en/">Terms of Sale</a></li>
                                             <li><a href="https://agreementservice.svs.nike.com/sg/en_gb/rest/agreement?agreementType=termsOfUse&uxId=com.nike&country=SG&language=en&requestType=redirect">Terms of Use</a></li>
                                             <li><a href="https://agreementservice.svs.nike.com/sg/en_gb/rest/agreement?agreementType=privacyPolicy&uxId=com.nike.unite&country=SG&language=en&requestType=redirect">Nike Privacy Policy</a></li>

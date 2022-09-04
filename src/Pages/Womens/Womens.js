@@ -110,7 +110,7 @@ function Womens() {
                 <div className='gendertect'>The Essentials</div>
                 <div className='essentailsmen' style={{marginLeft:"5%"}}>
 
-                    <img  onClick={()=>ThreeSection("Tops")} className='tshirtmens' style={{ width: "35%",height:"43%" }}   src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_578,c_limit/c5f46589-02c2-42dd-8bc1-8ca0cd77b846/women-s-shoes-clothing-accessories.jpg' />
+                    <img  onClick={()=>ThreeSection("Tops")} className='tshirtmens' style={{ width: "35%",height:"43%" }}   src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/c5f1ac94-abce-483c-a654-5270035dd709/nike-just-do-it.jpg' />
 
 
                     <img  onClick={()=>ThreeSection("Womens Shorts")} className='imgsis' style={{ width: "48%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/h_700,c_limit/9e98c0b7-8299-4840-b029-dd74f11bfe52/women-s-shoes-clothing-accessories.jpg' />

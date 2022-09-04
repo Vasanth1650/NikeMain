@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import $ from 'jquery'
 import * as BootStrap from 'react-bootstrap'
-import DashboardService from '../../MostPopular/Services/DashboardService'
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom'
-import NormalProductService from '../../NormalProducts/Services/NormalProductService';
 import { FcLock } from "react-icons/fc";
+import SalePageService from '../Service/SalePageService';
 
-function Woffle() {
+function VideoIMage() {
     const [product, setProduct] = useState([])
     const [gentle, setGentle] = useState([])
     const [bottom, setBottom] = useState([])
     const [similar, setSimilar] = useState([])
+    const [data, setData] = useState({})
     const usenavigate = useNavigate()
 
     useEffect(() => {
@@ -19,12 +19,15 @@ function Woffle() {
     }, [])
 
     const getTrend = () => {
-        NormalProductService.allProducts().then((response) => {
+        SalePageService.getProducts().then((response) => {
             setGentle(response.data)
+            console.log(response.data)
         }).catch((err) => {
             console.log(err)
         })
     }
+
+
 
 
 
@@ -135,9 +138,8 @@ function Woffle() {
 
     });
 
-    const Nextsteps = (ids) => {
-        console.log(ids);
-        usenavigate('/nextsteps/' + ids);
+    const Nextsteps = (id) => {
+        usenavigate('/sale/viewer', { state: { id } });
     }
 
 
@@ -145,57 +147,73 @@ function Woffle() {
         <div className='bodyd'>
             <div>
                 <br /><br /><br />
-                <div className='similarsbudwaw'>Nike Air Apparel</div>
+                <div className='similarsbudwaw'>Ready For Sale</div>
                 <br /><br />
 
-                <div>
+                
                     <div class="containeriknjein">
                         <div class="row">
-                            <div class="MultiCarousel" data-items="1,3,5,6" data-slide="2" id="MultiCarousel" data-interval="2">
+                            <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="2">
                                 <div class="MultiCarousel-inner">
 
 
                                     {
                                         gentle.map(gentle =>
-                                            
-                                            <div className="item" onClick={() => Nextsteps(gentle.id)}>
-                                                {gentle.gender === "Kids's" &&
-                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+                                            <>
+
+                                                <div className="item" >
+
+
+
+                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }} onClick={() => Nextsteps(gentle.id)}>
+
                                                         <div class="pad15">
-                                                        <BootStrap.Card.Img variant="top" src={gentle.image1} />
+
+                                                          
+                                                          
+                                                                <BootStrap.Card.Img variant="top" src={gentle.productimage9} />
+
                                                             <BootStrap.Card.Body>
                                                                 <div className='mensproductname'>{gentle.productname}</div>
                                                                 <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
                                                                     <FcLock />
                                                                 }</div>
-                                                                <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.price}</div>
+                                                                <div className='mensproductprice' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>₹{gentle.productprice}</div>
+
                                                             </BootStrap.Card.Body>
                                                         </div>
+
                                                     </BootStrap.Card>
-                                                }
-                                            
-                                            </div>
+
+
+
+
+                                                </div>
+
+                                            </>
                                         )
                                     }
 
 
-                                    
+
+
+
 
                                 </div>
-                                <button class="btn btn-primary leftLsts" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> ← </button>
-                                <button class="btn btn-primary rightLsts" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> → </button>
+                                <button class="btn btn-primary leftLsts" style={{ backgroundColor: "whitesmoke", color: "black", paddingTop: "1%", paddingBottom: "1%", paddingLeft: "1.5%", paddingRight: "1.5%" }}> ← </button>
+                                <button class="btn btn-primary rightLsts" style={{ backgroundColor: "whitesmoke", color: "black", paddingTop: "1%", paddingBottom: "1%", paddingLeft: "1.5%", paddingRight: "1.5%" }}> → </button>
 
 
                             </div>
                         </div>
                     </div>
-                </div>
+                
 
             </div>
             <br /><br /><br /><br /><br /><br /><br /><br /><br /> <br /><br /><br /><br /> <br /><br />
-            
+
         </div>
     )
 }
 
-export default Woffle
+export default VideoIMage

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Styles/Order.scss';
 import './Styles/Order.css';
 import Myorderservice from './Service/Myorderservice';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { fetchUserData } from '../../Api/AuthenticationService'
 import {useNavigate} from 'react-router-dom'
 import Headers from '../Headers/Header';
@@ -18,8 +18,8 @@ import Headers from '../Headers/Header';
 
 function ViewDelivery() {
     const usenavigate = useNavigate()
-    const {id} = useParams()
-    const isFormEdited = id.isDirty;
+    const location = useLocation()
+    
     const [data,setData] = useState({})
     const [userid,setUserid] = useState('')
     const [product,setProduct] = useState([])
@@ -27,59 +27,17 @@ function ViewDelivery() {
     let m = localStorage.getItem("Userid")
 
     
-    useEffect(()=>{
-        setTimeout(()=>{
-            getByUserid(id)
-        },2000)
-    },[])
+   useEffect(()=>{
+        getByUserid()
+   },[])
     
-    m = localStorage.getItem("Userid")
-    
-
-    const [check,setCheck] = useState('')
-
-
-    let g;
-
-    console.log(product.userid+"  "+data.id)
-
-
-    
-    
-
-    useEffect(()=>{
-        
-        if(product.userid && data.id){
-            if(product.userid != data.id){
-                console.log("Trying To Data Theft")
-                usenavigate('/')
-            }else{
-                
-                console.log("Confirmed Correct User")
-                
-            }
-        }
-
-        
-        
-   
-    })
-
-   
-
-
-    useEffect(()=>{
-        setUserid(product.userid)
-    },[])
-
-   
 
     
     
 
     const getByUserid = () =>{
         
-            Myorderservice.finderById(id).then((response)=>{
+            Myorderservice.finderById(location.state.id).then((response)=>{
                 setProduct(response.data);
                 
             }).catch((error)=>{

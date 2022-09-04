@@ -7,7 +7,7 @@ function Svg() {
             <svg id="sky_day" data-name="sky day" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1295.87 804.79">
                 <defs>
                 </defs>
-                <title>Amusement park flat by Lina</title>
+                <title>Powered By Nike Fest</title>
                 <g>
                     <rect id="day" class="cls-1" x="-8.79" y="-27.96" width="1342.08" height="860.72" />
                     <g id="sun">

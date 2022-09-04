@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import './Styles/Popular.scss'
 import * as BootStrap from 'react-bootstrap'
 import { fetchUserData } from '../../../Api/AuthenticationService'
+import { useNavigate } from 'react-router-dom'
 
 function Popular() {
     const [data, setData] = useState({})
+    const usenavigate = useNavigate()
 
 
     React.useEffect(() => {
@@ -15,6 +17,10 @@ function Popular() {
         })
     }, [])
 
+    function navigatior(){
+        usenavigate("/subscription")
+    }
+
 
 
     return (
@@ -24,8 +30,8 @@ function Popular() {
             <>
             {!data.gender &&
                 <div>
-                    <a href='/subscription'>
-                        <div className='popularthings' >
+                    
+                        <div className='popularthings' onClick={()=>navigatior()}>
 
                             <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/3adf3bf6-ed9f-4b78-aa3c-dd292c4e103a/nike-just-do-it.jpg' />
 
@@ -36,7 +42,7 @@ function Popular() {
                         <div className='butonseefs11'>
                             <BootStrap.Button className='smallsdas11'>Shop</BootStrap.Button>
                         </div>
-                    </a>
+                    
                 </div>}
 
                 
@@ -47,8 +53,8 @@ function Popular() {
             <>
             {data.gender==="General" &&
                 <div>
-                    <a href='/subscription'>
-                        <div className='popularthings' >
+                   
+                        <div className='popularthings' onClick={()=>navigatior()}>
 
                             <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/59e9f4f2-eea0-4836-bcad-98b9326af2b0/nike-just-do-it.jpg' />
 
@@ -58,7 +64,7 @@ function Popular() {
                         <div className='butonseefs'>
                             <BootStrap.Button className='smallsdas'>Learn More</BootStrap.Button>
                         </div>
-                    </a>
+                    
                 </div>}
 
                 

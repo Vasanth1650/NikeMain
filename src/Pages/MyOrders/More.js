@@ -83,7 +83,7 @@ function More() {
     }
 
     function OrderId(id) {
-        usenavigate("/myorders/" + id);
+        usenavigate("/myorders",{state:{id}});
     }
 
     function logout() {

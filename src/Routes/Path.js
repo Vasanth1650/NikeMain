@@ -54,6 +54,11 @@ import Redeem from '../Pages/GiftCards/Redeem/Redeem';
 import MyCardgift from '../Pages/GiftCards/MyCard/MyCardgift';
 import Verify from '../Pages/Security/VerifyAccount/Verify';
 import EmailNotify from '../Pages/Security/VerifyAccount/EmailNotify';
+import SalePage from '../Pages/Sale/SalePage';
+import AddSaleProduct from '../Pages/Sale/Components/AddSaleProduct';
+import AllSaleProducts from '../Pages/Sale/Components/AllSaleProducts';
+import SalePageViewing from '../Pages/Sale/Components/SalePageViewing';
+import UpdateSaleProduct from '../Pages/Sale/Components/UpdateSaleProduct';
 
 
 function Path() {
@@ -95,11 +100,23 @@ function Path() {
 
         <Route path='/nikesupport' element={<Chatbot/>}/>
 
+        <Route path='/sale' element={<SalePage/>}/>
+
+        {data.roleCode==="ADMIN"&&
+        <Route path='/sale/lauchproduct' element={<AddSaleProduct/>}/>}
+
+        {data.roleCode==="ADMIN"&&
+        <Route path='/sale/saleupdate' element={<UpdateSaleProduct/>}/>}
+
+        <Route path='/sale/viewer' element={<SalePageViewing/>}/>
+
+        <Route path='/sale/currentsales' element={<AllSaleProducts/>}/>
+
         {data.roleCode==="ADMIN"&&
         <Route path='/emailing' element={<Emailing/>}/>}
 
 
-        <Route path='/myorders/:id' element={<ViewDelivery/>}/>
+        <Route path='/myorders' element={<ViewDelivery/>}/>
 
         <Route path='/chart/jordan' element={<JordanCollection/>}/>
 

@@ -18,8 +18,8 @@ import { MDBInputGroup, MDBInput, MDBIcon, MDBBtn } from 'mdb-react-ui-kit';
 function Header() {
     const usenavigate = useNavigate();
     const [data, setData] = useState({});
-    const [element,setElement] = useState("")
-    const {elements} = useParams()
+    const [element, setElement] = useState("")
+    const { elements } = useParams()
 
     localStorage.setItem("Userid", data.id)
 
@@ -29,7 +29,7 @@ function Header() {
         usenavigate('/section/' + value);
         window.location.reload(false);
     }
-    
+
 
     function logout() {
         localStorage.clear();
@@ -38,7 +38,7 @@ function Header() {
 
     }
 
-   
+
 
 
     function popupOpenClose(popup) {
@@ -75,7 +75,7 @@ function Header() {
     });
 
 
-    
+
 
 
     $(document).ready(function () {
@@ -97,7 +97,7 @@ function Header() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        usenavigate('/search/'+element)
+        usenavigate('/search/' + element)
     };
 
     const handleKeypress = e => {
@@ -133,29 +133,31 @@ function Header() {
                     <BootStrap.Navbar.Collapse id="responsive-navbar-nav" className='mainnavitems'>
                         <BootStrap.Nav className="me-auto">
 
-                            <BootStrap.Nav.Link className='mainnavtext' href='/mens'>Men</BootStrap.Nav.Link>
-                            <BootStrap.Nav.Link href='/womens'>Women</BootStrap.Nav.Link>
-                            <BootStrap.Nav.Link href='/kids' >Kids</BootStrap.Nav.Link>
-                            <BootStrap.Nav.Link href='/gift'>Gift</BootStrap.Nav.Link>
-
-
+                           
+                                <BootStrap.Nav.Link className='mainnavtext' href='/mens'>Men</BootStrap.Nav.Link>
+                                <BootStrap.Nav.Link href='/womens'>Women</BootStrap.Nav.Link>
+                                <BootStrap.Nav.Link href='/kids' >Kids</BootStrap.Nav.Link>
+                                <BootStrap.Nav.Link href='/gift'>Gift</BootStrap.Nav.Link>
+                                <BootStrap.Nav.Link href='/sale'>Sale</BootStrap.Nav.Link>
                             
+
+
 
 
                         </BootStrap.Nav>
 
-                        <div  className='formsearch1'>
+                        <div className='formsearch1'>
                             <form className='formsearch'>
                                 <MDBInputGroup >
-                                    <MDBInput placeholder={elements} onChange={(e)=>setElement(e.target.value)} onKeyPress={handleKeypress} className='formsearch'/>
-                                    <MDBBtn className='formsearchbutton' rippleColor='dark'  onClick={handleSubmit} type="submit">
-                                       <ImSearch/>
+                                    <MDBInput placeholder={elements} onChange={(e) => setElement(e.target.value)} onKeyPress={handleKeypress} className='formsearch' />
+                                    <MDBBtn className='formsearchbutton' rippleColor='dark' onClick={handleSubmit} type="submit">
+                                        <ImSearch />
                                     </MDBBtn>
                                 </MDBInputGroup>
                             </form>
                         </div>
 
-                        
+
                         <BootStrap.Nav.Link href="/wishlist" className='dum'><AiOutlineHeart /></BootStrap.Nav.Link>
                         <BootStrap.Nav.Link href="/checkout" className='dum'><BsHandbag /></BootStrap.Nav.Link>
 

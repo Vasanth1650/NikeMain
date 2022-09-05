@@ -1,4 +1,15 @@
-import ReactJoyride from 'react-joyride';
+import React from 'react'
+
+function Demo() {
+  return (
+    <div>Demo</div>
+  )
+}
+
+export default Demo
+
+
+/*import ReactJoyride from 'react-joyride';
 import React, { useState } from 'react';
 
 
@@ -45,4 +56,4 @@ function Demo() {
     )
 }
 
-export default Demo
+export default Demo*/

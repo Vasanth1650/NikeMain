@@ -201,7 +201,7 @@ function ShowCategory() {
                     <hr></hr>
                 </div>
 
-                <div class="sidebardawdwadwa">
+                <div class="sidebardawdwadwa" className='sidebardawdwadwa1'>
                     <div className='colorsector'>Colour</div>
 
                     <div className='uwinajn'>
@@ -242,7 +242,7 @@ function ShowCategory() {
 
 
                 {color !== "" &&
-                    <BootStrap.Button className='njwnak' onClick={() => setColor("")}>View All Color</BootStrap.Button>}
+                    <BootStrap.Button className='njwnak' onClick={() => setColor("")}>Remove</BootStrap.Button>}
 
 
 

@@ -87,7 +87,7 @@ function Dashboard() {
             
 
             <div style={{backgroundColor:"white",textAlign:"center",cursor:"pointer",fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}} >
-                <div style={{display:"flex",paddingLeft:"15%",paddingRight:"10%",color:"black"}} onMouseMove={()=>setHide("1")}>
+                <div className='dashboardbototomtext' style={{display:"flex",paddingLeft:"15%",paddingRight:"10%",color:"black"}} onMouseMove={()=>setHide("1")}>
                     <div ><a href="/section/Men's Shoes" style={{color:"black"}}>Men's Shoes</a></div>
                     <div style={{marginLeft:"15%"}}><a href="/section/Men's Clothing" style={{color:"black"}}>Men's Clothing</a></div>
                     <div style={{marginLeft:"15%"}}><a href="/section/Gear" style={{color:"black"}}>Men's Gear</a></div>

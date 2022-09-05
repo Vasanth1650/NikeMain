@@ -122,7 +122,7 @@ function RunningShoes() {
 
               <div className='mainrun'>WELCOME TO THE FAMILY.</div>
 
-              <div className='smalltext' style={{paddingLeft:"30%",paddingRight:"30%",fontSize:"small",fontWeight:"bolder"}}>We're proud to partner with HowardUniversity,one of the most
+              <div className='smalltext' >We're proud to partner with HowardUniversity,one of the most
               iconic and esteemed Historically Black College and University(HBCUs) and the newest member of the Jordan family</div>
 
 

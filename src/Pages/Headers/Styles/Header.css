@@ -35,8 +35,10 @@
 .nikesymbol {
     width: 200%;
     height: 50%;
-    margin-left: -100%;
+    
 }
+
+
 
 .formsearch {
     border-radius: 30px;
@@ -107,4 +109,14 @@
 .offertext1 {
     text-decoration: underline;
     text-decoration-color: black;
+}
+
+
+@media only screen and(max-width:"600px"){
+    .navtext{
+        float: left;
+    }
+    .navtext1{
+        margin-right: 50%;
+    }
 }

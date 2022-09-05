@@ -95,3 +95,37 @@
     width: 15%;
     padding-bottom: 1%;
 }
+
+
+
+//media
+
+@media only screen and(max-width:"600px"){
+    .mainrunforkids{
+        font-size: 20px;
+    }
+    .mainrunforkidss{
+        font-size: 20px;
+    }
+
+    .smalltextkidsd{
+        font-size: small;
+        padding-left: 5%;
+        padding-right: 40%;
+        margin-top: -12%;
+        margin-left: 22%;
+        font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
+    }
+
+    .butonseefs11{
+        margin-top: -4%;
+        margin-left: 7%;
+    }
+
+    .smallsdas11{
+        width: 20%;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+        font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
+    }
+}

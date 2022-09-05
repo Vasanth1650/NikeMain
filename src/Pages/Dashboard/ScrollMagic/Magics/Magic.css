@@ -20,6 +20,10 @@
 
 }
 
+.cardcarsol{
+    width: 80%;
+}
+
 .similarsbudwaw{
   font-size: x-large;
   color: black;
@@ -83,5 +87,4 @@
     pointer-events: none;
 
 }
-
 

@@ -174,8 +174,8 @@ function Magic() {
 
                                                 {
                                                     gentle.category3 === "Trend" &&
-
-                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+                                                    <div className='cardcarsol1111'>
+                                                    <BootStrap.Card className='cardcarsol'>
                                                         
                                                             <div class="pad15">
 
@@ -193,7 +193,7 @@ function Magic() {
                                                             </div>
                                                         
                                                     </BootStrap.Card>
-
+                                                    </div>
                                                 }
 
 

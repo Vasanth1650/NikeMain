@@ -9,6 +9,12 @@
     cursor: pointer;
 }
 
+.smalltext{
+    padding-right: 180px;
+    padding-left: 180px;
+    font-weight: bolder;
+}
+
 
 .explorebuttoncenter{
     padding-top: 2%;
@@ -41,4 +47,35 @@
     font-size: xx-large;
     font-weight: bolder;
     margin-left: 5%;
+}
+
+
+
+
+@media only screen and(max-width:"600px"){
+    .trendingfont{
+        font-size: x-large;
+        padding-top: 15%;
+        padding-bottom: 5%;
+    }
+
+    .mainrun{
+        font-size: x-large;
+    }
+
+    .smalltext{
+        font-size: 8px;
+        padding-left: 10px;
+        padding-right: 1px;
+        font-weight: 400;
+    }
+
+    .bikes{
+        width: 40%;
+    }
+
+    .dropin{
+        margin-left: -15%;
+        margin-top: -35%;
+    }
 }

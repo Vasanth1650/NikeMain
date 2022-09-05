@@ -138,12 +138,14 @@
     margin-left: 14%;
   }
 
+  
+
   .nidnwa{
     padding-top: 0%;
   }
 
   .njwnak{
-    margin-left: 25%;
+    margin-left: 37%;
     background-color: #353535;
     border: none;
   }
@@ -240,28 +242,61 @@
     opacity: 1;
     visibility: visible;
   }
-  @media(max-width : 860px){
+  @media only screen and(max-width : 600px){
     .sidebardwadwadaw{
       height: auto;
-      width: 70px;
-      left: 0;
-      margin: 100px 0;
+      width: 110px;
+      margin: 10px 0;
     }
     header,#btn,#cancel{
       display: none;
     }
-    span{
-      position: absolute;
-      margin-left: 23px;
-      opacity: 0;
-      visibility: hidden;
-    }
+    
     .sidebardwadwadaw a{
-      height: 20px;
+      height: 80px;
+      margin-left: -22%;
+      
     }
+
+    .sidebardawdwadwa1 {
+      height: 200px;
+    }
+
     .sidebardwadwadaw a i{
-      margin-left: -10px;
+      margin-left: -1%;
     }
+
+    .uwinajn{
+      height: 60px;
+      margin-left: -4%;
+    }
+
+    .dot{
+      margin-left: 20%;
+    }
+
+    .njwnak{
+      width: fit-content;
+      margin-top: 15%;
+      margin-left: 15%;
+    }
+
+    .trendswitch{
+      margin-top: -20%;
+    }
+
+    .jawdjawd{
+      width: 100%;
+     
+    }
+
+    
+
+    .dot1{
+      margin-top: -1%;
+     
+    }
+
     a:hover {
       width: 200px;
       background: inherit;
@@ -291,6 +326,6 @@
   
 
 
-
+  
  
   

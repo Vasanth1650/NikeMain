@@ -362,7 +362,7 @@ function MostPopularViewing() {
                     <div className='carding'>
 
                         <BootStrap.Card.Img className='tre' variant="top" src={product.productimage1} />
-                        <div className='vido' style={{ position: "static" }}>
+                        <div className='vido' >
                             <ReactPlayer width={500} height={451} muted type='video/mp4' loop playing={true} url={product.productimage2} playsinline />
                         </div>
 

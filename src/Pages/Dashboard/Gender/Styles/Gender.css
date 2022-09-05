@@ -48,18 +48,16 @@
   }
 
   .seond{
-    
+   
     color: black;
-    margin-top: -2%;
-    margin-left: 38%;
+    margin-left: 26%;
     font-weight: 500;
     
   }
 
   .thrd{
     color: black;
-    margin-top: -2%;
-    margin-left: 68%;
+    margin-left: 27%;
     padding-bottom: 0.5%;
     font-weight: 500;
   }
@@ -67,4 +65,28 @@
   .adwa{
     padding-top: 2%;
     padding-bottom: 0%;
+    display: flex;
+  }
+
+
+  @media only screen and(max-width:"600px"){
+    .firt{
+      color: black;
+      margin-left: 8%;
+      font-weight: 500;
+    }
+    .seond{
+      position: absolute;
+      color: black;
+      
+      margin-left: -28%;
+      font-weight: 500;
+    }
+
+    .thrd{
+      color: black;
+      margin-left: 17%;
+      padding-bottom: 0.5%;
+      font-weight: 500;
+    }
   }

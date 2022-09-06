@@ -446,9 +446,9 @@ function NormalProductViewing() {
                         <div class="popup-wrap">
                             <div class="popup-box">
                                 <h2>Product Details</h2>
-                                <div>
+                                <div class="scrollbar scrollbar-lady-lips">
                                     <div className='dropingheadeers'>Free Delivery And Returns
-                                        <BootStrap.DropdownButton className='dropsin' variant="dark">
+                                        <BootStrap.DropdownButton class="force-overflow" variant="dark">
                                             <br />
                                             <div> • Your order of ₹14,000 or more gets free standard delivery.</div>
                                             <br />

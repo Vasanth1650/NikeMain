@@ -305,7 +305,7 @@ function ShowCategory() {
 
 
 
-            <div>
+            <div >
                 <div >
                     <BootStrap.Row xs={1} md={3} >
 

@@ -21,7 +21,8 @@ function Header() {
     const [data, setData] = useState({});
     const [element, setElement] = useState("")
     const { elements } = useParams()
-
+    const [search,setSearch] = useState("")
+    const [userid,setUserid] = useState("")
     localStorage.setItem("Userid", data.id)
 
     const AllSection = (value) => {
@@ -40,7 +41,10 @@ function Header() {
     }
 
 
-
+    useEffect(()=>{
+        setUserid(data.id)
+        setSearch(element)
+    },[element])
 
     function popupOpenClose(popup) {
 
@@ -98,11 +102,32 @@ function Header() {
 
     const handleSubmit = e => {
         e.preventDefault();
+        const details = {search,userid}
+        fetch("https://nike-backend.herokuapp.com/search/addRecent",{
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(details)
+        }).then((response)=>{
+            console.log(response)
+            
+        }).catch((err)=>{
+            console.log(err)
+            
+        })
         usenavigate('/search/' + element)
     };
 
+    React.useEffect(() => {
+        fetchUserData().then((response) => {
+            setData(response.data);
+        }).catch((e) => {
+            localStorage.clear();
+        })
+    }, [])
+
     const handleKeypress = e => {
         //it triggers by pressing the enter key
+        
         if (e.keyCode === 13) {
             handleSubmit();
         }
@@ -118,13 +143,13 @@ function Header() {
 
 
 
-                    <BootStrap.Navbar.Collapse id="responsive-navbar-nav">
-                        <div className='navtext'>
-                            <BootStrap.Nav.Link data-js="open" class="container" className='navtext'>Help</BootStrap.Nav.Link>
-                            <BootStrap.Nav.Link href='/subscription' className='navtext1'>JoinUs</BootStrap.Nav.Link>
-                            <BootStrap.Nav.Link className='navtext2' href='/login'>SignIn</BootStrap.Nav.Link>
+                    
+                        <div class="nav justify-content-end">
+                            <BootStrap.Nav.Link data-js="open" class="container" style={{color:"black",fontSize:"small"}}>Help</BootStrap.Nav.Link>
+                            <BootStrap.Nav.Link href='/subscription' style={{color:"black",fontSize:"small"}}>JoinUs</BootStrap.Nav.Link>
+                            <BootStrap.Nav.Link  href='/login' style={{color:"black",fontSize:"small"}}>SignIn</BootStrap.Nav.Link>
                         </div>
-                    </BootStrap.Navbar.Collapse>
+                    
                 </BootStrap.Container>
             </BootStrap.Navbar>
             <BootStrap.Navbar collapseOnSelect expand="lg" className='mainnav'>

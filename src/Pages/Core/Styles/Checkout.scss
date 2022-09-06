@@ -43,7 +43,7 @@ p {
 }
 
 .popup-box {
-  width:400px;
+  width:500px;
   padding:70px;
   transform:translate(-50%, -50%) scale(0.5);
   position:absolute;
@@ -74,11 +74,12 @@ p {
     -webkit-transition:all ease 0.5s;
     transition:all ease 0.5s;
     border-radius:1000px;
-    background:#d75f70;
+    background:#1a1a1a;
     font-weight:bold;
     text-decoration:none;
     color:#fff;
-    line-height:190%;
+    line-height:180%;
+    
     
     &:hover {
       -webkit-transform:rotate(180deg);

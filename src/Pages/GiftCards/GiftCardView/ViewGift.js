@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Footer from '../../Footer/Footer'
 import Header from '../../Headers/Header'
@@ -11,7 +11,7 @@ import Magic from '../../Dashboard/ScrollMagic/Magic'
 import { fetchUserData } from '../../../Api/AuthenticationService'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import emailjs from 'emailjs-com';
 
 function loadScript(src) {
 
@@ -33,6 +33,7 @@ function loadScript(src) {
 
 function ViewGift() {
     const { id } = useParams()
+    const form = useRef(); 
     const [gifts, setGifts] = useState("")
     const [email, setEmail] = useState("")
     const [allgifts, setAllgifts] = useState([])
@@ -61,21 +62,21 @@ function ViewGift() {
         setCardName(gifts.cardname)
         setImage(gifts.image)
         setAmountofcard(price)
-        
+
         setRecipient(receiverEmail)
         setSubject(message)
-        setMsgBody("Hi You Have Recieved A Gift From"+" "+senderUsername+"\n"+"Use This Secrect Key To Reedem Your Gift "+"\n"+secretnumber
-        +"\n"+"This Email Consits Confidential Information Dont Share With Anyone "+"You Can Reedem Your Gift From"+"\n"+"https://nikeworld.herokuapp.com/reedem")
-    }, [data, price, id,receiverEmail,message])
+        setMsgBody("Hi You Have Recieved A Gift From" + " " + senderUsername + "\n" + "Use This Secrect Key To Reedem Your Gift " + "\n" + secretnumber
+            + "\n" + "This Email Consits Confidential Information Dont Share With Anyone " + "You Can Reedem Your Gift From" + "\n" + "https://nikeworld.herokuapp.com/reedem")
+    }, [data, price, id, receiverEmail, message])
 
 
-    useEffect(()=>{
+    useEffect(() => {
         setSecretnumber(Math.floor(Math.random() * 1000000000000000))
-    },[])
+    }, [])
 
     async function displayRazorpay(valuess) {
         if (data.username) {
-            if (price) {
+            if (price, senderMail, senderUsername, receiverName, receiverEmail, message) {
                 const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js")
 
                 if (!res) {
@@ -101,7 +102,7 @@ function ViewGift() {
                     image: "https://img.etimg.com/thumb/msid-59738997,width-640,resizemode-4,imgsize-21421/nike.jpg",
                     handler: function (response) {
                         toast("SuccessFull");
-                        
+
                         console.log(response.razorpay_payment_id)
 
 
@@ -127,7 +128,7 @@ function ViewGift() {
                     alert(response.error.metadata.payment_id);
                 });
             } else {
-                alert("Please Choose An Amount")
+                alert("Please Fill The Required To Proceed Further")
             }
         } else {
             usenavigate('/login')
@@ -143,16 +144,12 @@ function ViewGift() {
         }).then((response) => {
             if (response.ok) {
                 console.log("Your Gift Has Been Successfuly Sended")
-                const details = { recipient, msgBody, subject, attachment }
-                fetch("https://nike-backend.herokuapp.com/email/sendMail", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(details)
-                }).then((response) => {
-                    if (response.ok) {
-                        console.log("Mail Has Been Send To The Recipients")
-                        window.location.reload()
-                    }
+                emailjs.sendForm('service_d3gyrxg', 'template_8lebc5p', form.current, 'OIRjUZ6EK9lCffxee').then((response) => {
+
+                    console.log("Mail Has Been Send To The Recipients")
+
+                    usenavigate('/redirecter')
+
                 }).catch((err) => {
                     alert(err)
                 })
@@ -263,7 +260,7 @@ function ViewGift() {
                     <div style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Choose Amount</div>
                     <br />
                     <div style={{ display: "flex", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
-                        <BootStrap.Button style={{ width: "70%", borderRadius: "5px" }} onClick={() => setPrice(gifts.amount1)} className='bus'>₹{gifts.amount1}</BootStrap.Button>
+                        <BootStrap.Button style={{ width: "70%", borderRadius: "5px" }} onClick={() => setPrice(gifts.amount1)} className='bus' >₹{gifts.amount1}</BootStrap.Button>
                         <BootStrap.Button style={{ width: "70%", marginLeft: "5%", borderRadius: "5px" }} onClick={() => setPrice(gifts.amount2)} className='bus'>₹{gifts.amount2}</BootStrap.Button>
                         <BootStrap.Button style={{ width: "70%", marginLeft: "5%", borderRadius: "5px" }} onClick={() => setPrice(gifts.amount3)} className='bus'>₹{gifts.amount3}</BootStrap.Button>
                         <BootStrap.Button style={{ width: "70%", marginLeft: "5%", borderRadius: "5px" }} onClick={() => setPrice(gifts.amount4)} className='bus'>₹{gifts.amount4}</BootStrap.Button>
@@ -281,21 +278,25 @@ function ViewGift() {
                     <div style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
                         <div>Add recipient delivery details</div>
                         <br />
-                        <label>FirstName</label>
-                        <input style={{ borderRadius: "10px", borderColor: "black", paddingTop: "4%", paddingBottom: "4%", boxShadow: "none", border: "1px solid black" }} placeholder=''></input>
-                        <br />
-                        <label>Claimer Name</label>
-                        <input onChange={(e) => setReceiverName(e.target.value)} style={{ borderRadius: "10px", borderColor: "black", paddingTop: "4%", paddingBottom: "4%", boxShadow: "none", border: "1px solid black" }} placeholder='' required></input>
-                        <br />
+                        <form ref={form}>
+                            <input type="hidden" name='senderUsername' value={senderUsername} style={{ borderRadius: "10px", borderColor: "black", paddingTop: "4%", paddingBottom: "4%", boxShadow: "none", border: "1px solid black" }} placeholder='SenderName'></input>
+                            <input type="hidden" name='secretnumber' value={secretnumber} style={{ borderRadius: "10px", borderColor: "black", paddingTop: "4%", paddingBottom: "4%", boxShadow: "none", border: "1px solid black" }} placeholder='secretnumber'></input>
+                            <label>FirstName</label>
+                            <input style={{ borderRadius: "10px", borderColor: "black", paddingTop: "4%", paddingBottom: "4%", boxShadow: "none", border: "1px solid black" }} placeholder=''></input>
+                            <br />
+                            <label>Claimer Name</label>
+                            <input name="receiverName" onChange={(e) => setReceiverName(e.target.value)} style={{ borderRadius: "10px", borderColor: "black", paddingTop: "4%", paddingBottom: "4%", boxShadow: "none", border: "1px solid black" }} placeholder='' required></input>
+                            <br />
 
-                        <label>Email</label>
-                        <input required onChange={(e) => setReceiverEmail(e.target.value)} style={{ borderRadius: "10px", borderColor: "black", paddingTop: "4%", paddingBottom: "4%", boxShadow: "none", border: "1px solid black" }} placeholder=''></input>
-                        <br />
-                        <label>Message</label>
-                        <input required onChange={(e) => setMessage(e.target.value)} style={{ borderRadius: "10px", borderColor: "black", paddingTop: "4%", paddingBottom: "4%", boxShadow: "none", border: "1px solid black", lineHeight: "50px" }} placeholder=''></input>
-                        <div style={{ color: "black", width: "100%", marginLeft: "-4%" }} class='line-3'>
-                            <hr></hr>
-                        </div>
+                            <label>Email</label>
+                            <input name="receiverEmail" required onChange={(e) => setReceiverEmail(e.target.value)} style={{ borderRadius: "10px", borderColor: "black", paddingTop: "4%", paddingBottom: "4%", boxShadow: "none", border: "1px solid black" }} placeholder=''></input>
+                            <br />
+                            <label>Message</label>
+                            <input name="message" onChange={(e) => setMessage(e.target.value)} style={{ borderRadius: "10px", borderColor: "black", paddingTop: "4%", paddingBottom: "4%", boxShadow: "none", border: "1px solid black", lineHeight: "50px" }} placeholder='' required></input>
+                            <div style={{ color: "black", width: "100%", marginLeft: "-4%" }} class='line-3'>
+                                <hr></hr>
+                            </div>
+                        </form>
                         <br />
                         <div>Enter a personalized message for the recipient.</div>
                         <br />

@@ -292,7 +292,7 @@ function Magic() {
                                             <div className="item" onClick={() => Nextsteps(gentle.id)}>
 
                                                 {
-                                                    gentle.gender === "Men's" &&
+                                                    gentle.category1 === "Men's Shoes" &&
 
                                                     <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
                                                         

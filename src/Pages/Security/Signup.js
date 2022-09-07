@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Alert, Spinner } from 'react-bootstrap';
 import Header from '../Headers/Header';
 import Footer from '../Footer/Footer';
 import * as BootStrap from 'react-bootstrap'
+import emailjs from 'emailjs-com';
 
 function Signup() {
+    const form = useRef();
     const usenavigate = useNavigate()
     const [username,setUsername] = useState('')
     const [email,setEmail] = useState('')
@@ -21,6 +23,15 @@ function Signup() {
     const [recipient, setRecipient] = useState('')
     const [msgBody, setMsgBody] = useState('')
     const [subject, setSubject] = useState('')
+    const [data,setData] = useState('')
+
+    function sendEmail(e) {
+        e.preventDefault();
+        emailjs.sendForm('service_d3gyrxg', 'template_10oi03j', form.current, 'OIRjUZ6EK9lCffxee').then(response => {
+           
+        })
+    }
+
 
     useEffect(()=>{
         setSubject("Verify Your Nike Account")
@@ -51,17 +62,12 @@ function Signup() {
             if(response.ok){
                 
                 console.log("User Added")
-                const details = { recipient, msgBody, subject }
-                fetch("https://nike-backend.herokuapp.com/email/sendMail", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(details)
-                }).then((response) => {
-                    if (response.ok) {
+                emailjs.sendForm('service_d3gyrxg', 'template_10oi03j', form.current, 'OIRjUZ6EK9lCffxee').then((response) => {
+                    
                         console.log("Mail Has Been Send To The Recipients")
                         
                         usenavigate('/redirecter')
-                    }
+                    
                 }).catch((err) => {
                     alert(err)
                 })
@@ -81,6 +87,7 @@ function Signup() {
         <div >
             <Header/>
 
+           
             <div className='login'>
             <section>
                 <div class="container">
@@ -96,20 +103,20 @@ function Signup() {
                                         <div >
                                             <ul className="nav nav-tabs nav-justified" id="myTab" role="tablist">
                                                 <li className="nav-item">
-                                                    <a className="nav-link " id="home-tab" data-toggle="tab" href="/login" role="tab" aria-controls="home" aria-selected="true">Login</a>
+                                                    <a  href="/login" role="tab">Login</a>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link active" id="home-tab" data-toggle="tab" href="/signup" role="tab" aria-controls="home" aria-selected="true">Signup</a>
+                                                    <a  href="/signup" role="tab" aria-selected="true">Signup</a>
                                                 </li>
                                             </ul>
                                             <br></br>
                                             <h4 className="gradient">Signup</h4>
 
-                                            <form className="my-login-validation" onSubmit={handleClick}   noValidate={false}>
+                                            <form className="my-login-validation" ref={form}  onSubmit={handleClick}   noValidate={false}>
                                                 <div className="gradient">
                                                     
                                                     <input style={{cursor:"pointer"}} id="username" type="email" minLength={5}
-                                                       placeholder='Enter Email' onChange={(e)=>setUsername(e.target.value)} value={username} required />
+                                                       placeholder='Enter Email' name='user_email' value={recipient} onChange={(e)=>setUsername(e.target.value)} required />
 
                                                     <div className="invalid-feedback">
                                                         UserId is invalid
@@ -157,8 +164,13 @@ function Signup() {
                                                         Password is required
                                                     </div>
                                                 </div>
-
+                                                
                                                
+                                                <div style={{backgroundColor:"transparent",width:"0.1%",marginLeft:"68%",position:"absolute"}}>
+                                                    <input style={{cursor:"pointer",color:"transparent"}} id="password" type="hidden" minLength={8}
+                                                       name='message' value={msgBody} required />
+                                                    
+                                                </div>
 
 
 

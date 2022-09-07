@@ -108,10 +108,10 @@ const Login = ({loading,error, ...props})=> {
                                         <div >
                                             <ul className="nav nav-tabs nav-justified" id="myTab" role="tablist">
                                                 <li className="nav-item">
-                                                    <a className="nav-link active" id="home-tab" data-toggle="tab" href="/" role="tab" aria-controls="home" aria-selected="true">Login</a>
+                                                    <a  href="/" role="tab" >Login</a>
                                                 </li>
                                                 <li className="nav-item">
-                                                    <a className="nav-link " id="home-tab" data-toggle="tab" href="/signup" role="tab" aria-controls="home" aria-selected="true">Signup</a>
+                                                    <a  href="/signup" role="tab" >Signup</a>
                                                 </li>
                                             </ul>
                                             <br></br>

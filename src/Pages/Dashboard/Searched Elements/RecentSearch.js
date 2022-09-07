@@ -5,16 +5,22 @@ import DashboardService from '../../MostPopular/Services/DashboardService'
 import $ from 'jquery'
 import { useNavigate } from 'react-router-dom'
 import { FcLock } from "react-icons/fc";
+import NormalProductService from '../../NormalProducts/Services/NormalProductService'
 
 function RecentSearch() {
-    const [data,setData] = useState({})
-    const [search,setSearch] = useState([])
-    const [gentle,setGentle] = useState([])
+    const [data, setData] = useState({})
+    const [search, setSearch] = useState([])
+    const [gentle, setGentle] = useState([])
+    const [normal, setNormal] = useState([])
     const usenavigate = useNavigate()
 
     useEffect(() => {
         getTrend()
-    }, [])
+        normall()
+    }, [search])
+
+
+    console.log(search)
 
 
     const getTrend = () => {
@@ -25,12 +31,20 @@ function RecentSearch() {
         })
     }
 
+    const normall = () => {
+        NormalProductService.allProducts().then((response) => {
+            setNormal(response.data)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+
 
     React.useEffect(() => {
         fetchUserData().then((response) => {
             setData(response.data);
             setSearch(response.data.search)
-           
+
         }).catch((err) => {
             console.log(err)
         })
@@ -145,15 +159,15 @@ function RecentSearch() {
     });
 
     const Nextsteps = (ids) => {
-        
+
         usenavigate('/most/' + ids);
     }
 
 
 
-  return (
-    <div className='bodyd' style={{backgroundColor:"white"}}>
-            
+    return (
+        <div className='bodyd' style={{ backgroundColor: "white" }}>
+
             <div>
                 <br /><br /><br />
                 <div className='similarsbudwaw'>We Found Something Your Searching For</div>
@@ -165,70 +179,121 @@ function RecentSearch() {
                             <div class="MultiCarousel" data-items="1,3,5,6" data-slide="2" id="MultiCarousel" data-interval="2">
                                 <div class="MultiCarousel-inner">
 
-            
-                                    
+
+
                                     <div>
-                                    {search.map(first=>
-                                    <>
-                        
-                                    {
-                                        gentle.filter(gentle=>{
-                                            if(gentle.productname.toLowerCase().includes(first.search.toLowerCase())){
-                                                return gentle
-                                            }else if(gentle.category1.toLowerCase().includes(first.search.toLowerCase())){
-                                                return gentle
-                                            }else if(gentle.productspecification1.toLowerCase().includes(first.search.toLowerCase())){
-                                                return gentle
-                                            }else if(gentle.gender.toLowerCase().includes(first.search.toLowerCase())){
-                                                return gentle
-                                            }
-                                        }).map(gentle =>
+                                        {search.map(first =>
                                             <>
-                                            {data.gender==="Men" &&
-                                            <div className="item" onClick={() => Nextsteps(gentle.id)}>
 
                                                 {
-                                                    gentle.gender === "Men's" &&
+                                                    gentle.filter(gentle => {
+                                                        if (gentle.category1.toLowerCase().includes(first.search.toLowerCase())) {
+                                                            return gentle
+                                                        } else if (gentle.productspecification1.toLowerCase().includes(first.search.toLowerCase())) {
+                                                            return gentle
+                                                        }
+                                                    }).map(gentle =>
+                                                        <>
+                                                            {data.gender === "Men" &&
+                                                                <div className="item" onClick={() => Nextsteps(gentle.id)}>
 
-                                                    <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
-                                                        
-                                                            <div class="pad15">
+                                                                    {
+                                                                        gentle.gender === "Men's" &&
+
+                                                                        <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+
+                                                                            <div class="pad15">
 
 
-                                                                <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
+                                                                                <BootStrap.Card.Img variant="top" src={gentle.productimage1} />
 
-                                                                <BootStrap.Card.Body>
-                                                                    <div className='mensproductname'>{gentle.productname}</div>
-                                                                    <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
-                                                                        <FcLock />
-                                                                    }</div>
-                                                                    <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.productprice}</div>
+                                                                                <BootStrap.Card.Body>
+                                                                                    <div className='mensproductname'>{gentle.productname}</div>
+                                                                                    <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
+                                                                                        <FcLock />
+                                                                                    }</div>
+                                                                                    <div className='mensproductprice' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>₹{gentle.productprice}</div>
 
-                                                                </BootStrap.Card.Body>
-                                                            </div>
-                                                        
-                                                    </BootStrap.Card>
+                                                                                </BootStrap.Card.Body>
+                                                                            </div>
 
+                                                                        </BootStrap.Card>
+
+                                                                    }
+
+
+                                                                </div>
+                                                            }
+                                                        </>
+                                                    )
                                                 }
-
-
-                                            </div>
-                                            }
                                             </>
                                         )
-                                    }
-                                    </>
-                                    )  
-                                    }
+                                        }
+                                    </div>
+
+                                    
+
+                                    <div>
+                                        {search.map(first =>
+                                            <>
+
+                                                {
+                                                    normal.filter(gentle => {
+                                                        if (gentle.category1.toLowerCase().includes(first.search.toLowerCase())) {
+                                                            return gentle
+                                                        } else if (gentle.productspecification1.toLowerCase().includes(first.search.toLowerCase())) {
+                                                            return gentle
+                                                        }
+                                                    }).map(gentle =>
+                                                        <>
+                                                            {data.gender === "Men" &&
+                                                                <div className="item" onClick={() => Nextsteps(gentle.id)}>
+
+                                                                    {
+                                                                        gentle.gender === "Men's" &&
+
+                                                                        <BootStrap.Card className='cardcarsol' style={{ width: '100%' }}>
+
+                                                                            <div class="pad15">
+
+
+                                                                                <BootStrap.Card.Img variant="top" src={gentle.image1} />
+
+                                                                                <BootStrap.Card.Body>
+                                                                                    <div className='mensproductname'>{gentle.productname}</div>
+                                                                                    <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
+                                                                                        <FcLock />
+                                                                                    }</div>
+                                                                                    <div className='mensproductprice' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>₹{gentle.price}</div>
+
+                                                                                </BootStrap.Card.Body>
+                                                                            </div>
+
+                                                                        </BootStrap.Card>
+
+                                                                    }
+
+
+                                                                </div>
+                                                            }
+                                                        </>
+                                                    )
+                                                }
+                                            </>
+                                        )
+                                        }
                                     </div>
 
 
 
 
 
+
+
                                 </div>
-                                <button class="btn btn-primary leftLsts" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> ← </button>
-                                <button class="btn btn-primary rightLsts" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> → </button>
+                                <button class="btn btn-primary leftLsts" style={{ backgroundColor: "whitesmoke", color: "black", paddingTop: "1%", paddingBottom: "1%", paddingLeft: "1.5%", paddingRight: "1.5%" }}> ← </button>
+                                <button class="btn btn-primary rightLsts" style={{ backgroundColor: "whitesmoke", color: "black", paddingTop: "1%", paddingBottom: "1%", paddingLeft: "1.5%", paddingRight: "1.5%" }}> → </button>
 
 
                             </div>
@@ -240,7 +305,7 @@ function RecentSearch() {
             <br /><br /><br /><br /><br /><br /><br /><br /><br /> <br /><br /><br /><br /> <br /><br />
 
         </div>
-  )
+    )
 }
 
 export default RecentSearch

@@ -25,6 +25,7 @@ function Redeem() {
             RedemptionService.activate(gifts).then((response)=>{
                 console.log(response.data)
                 alert("The Card Has Been Reedemed Successfully")
+                usenavigate('/mygifts')
             }).catch((err)=>{
                 console.log(err)
                 alert("This Redemption Code Is Not Available")

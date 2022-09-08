@@ -47,8 +47,18 @@ function Checkout() {
     const [dummy,setDummy]= useState()
     const [dummy1,setDummy1] = useState()
     const [price, setPrice] = useState('')
+    const [productid1,setProductid1] = useState("")
+    const [productid2,setProductid2] = useState("")
+    const [productid3,setProductid3] = useState("")
+    const [productid4,setProductid4] = useState("")
+    const [productid5,setProductid5] = useState("")
+    const [productid1reference,setProductid1reference] = useState("")
+    const [productid2reference,setProductid2reference] = useState("")
+    const [productid3reference,setProductid3reference] = useState("")
+    const [productid4reference,setProductid4reference] = useState("")
+    const [productid5reference,setProductid5reference] = useState("")
 
-    const confirm = { username, address, state, city, payment, productname, price, userid, status, paymentid, size ,color}
+    const confirm = { username, address, state, city, payment, productname, price, userid, status, paymentid, size ,color,productid1,productid2,productid3,productid4,productid5,productid1reference,productid2reference,productid3reference,productid4reference,productid5reference}
 
     useEffect(() => {
         setUserid(data.id)
@@ -81,7 +91,7 @@ function Checkout() {
         })
     }
 
-    console.log(paymentid)
+    
 
     async function displayRazorpay() {
 
@@ -165,7 +175,7 @@ function Checkout() {
         setPrice(ans)
         setDummy(size)
         setDummy1(color)
-        console.log(ans)
+        
     }
 
     useEffect(() => {
@@ -173,10 +183,42 @@ function Checkout() {
     }, [handlePrice])
 
 
+    useEffect(()=>{
+        setOneByOne()
+    },[checkout,productid1,productid2,productid3])
 
+    var summa = 0
 
+    const setOneByOne = () =>{
+        checkout.filter(checkouting=>{
+            if(checkout.length>0){
+                if(summa===0){
+                    setProductid1(checkouting.productid)
+                    setProductid1reference(checkouting.reference)
+                    summa+=1
+                }else if(summa===1 && checkouting.productid!==productid1){
+                    setProductid2(checkouting.productid)
+                    setProductid2reference(checkouting.reference)
+                    summa+=1
+                }else if(summa===2 && checkouting.productid!==productid2){
+                    setProductid3(checkouting.productid)
+                    setProductid3reference(checkouting.reference)
+                    summa+=1
+                }else if(summa===3 && checkouting.productid!==productid3){
+                    setProductid4(checkouting.productid)
+                    setProductid4reference(checkouting.reference)
+                    summa+=1
+                }else if(summa===4 && checkouting.productid!==productid4){
+                    setProductid5(checkouting.productid)
+                    setProductid5reference(checkouting.reference)
+                }
+            }
+        })
+    }
 
-    
+    console.log(productid1+" "+productid2+"  "+productid3+"  "+productid4+"  "+productid5+"  ")
+
+    console.log(productid1reference+" "+productid2reference)
 
     useEffect(()=>{
         if(!localStorage.getItem("USER_KEY")){
@@ -199,6 +241,8 @@ function Checkout() {
             }).then(() => {
                 CheckoutDelete(userid)
                 usenavigate("/checking")
+            }).catch((err)=>{
+                console.log(err)
             })
         } 
     }
@@ -251,6 +295,7 @@ function Checkout() {
                             <Card style={{ width: '18rem' }} className="jknwiandkiwa">
                                 <Card.Body>
                                     <img className='hu' src={checkout.image1}></img>
+                                    <div>{checkout.productid}</div>
                                     <div>{checkout.productname}</div>
                                     <div>₹{checkout.price}</div>
                                     <div>Size : {checkout.size}</div>

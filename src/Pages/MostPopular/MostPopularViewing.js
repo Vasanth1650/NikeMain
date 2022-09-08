@@ -32,7 +32,8 @@ function MostPopularViewing() {
     const [gentle, setGentle] = useState([])
     const [bottom, setBottom] = useState([])
     const [similar, setSimilar] = useState([])
-
+    const [reference,setReference] = useState("")
+    const [bag,setBag] = useState([])
 
     useEffect(() => {
         setUserid(data.id);
@@ -42,7 +43,7 @@ function MostPopularViewing() {
         setPrice(product.productprice)
         setCheck(data.username);
         setProductid(id)
-
+        setReference("most")
     })
 
     let sizeign = bottom.length + gentle.length
@@ -123,7 +124,8 @@ function MostPopularViewing() {
     const handleClick = (e) => {
         e.preventDefault()
         if ((localStorage.getItem("USER_KEY")) && (check != "undefined") && (!product.buyingoption)) {
-            const check = { userid, username, productname, image1, price, size }
+            if(bag.length<5){
+            const check = { userid, username, productname, image1, price, size ,productid,reference}
             if (size && size != "-") {
                 fetch("https://nike-backend.herokuapp.com/charging/checkout", {
                     method: "POST",
@@ -140,9 +142,11 @@ function MostPopularViewing() {
                 toast.dark("Please Select Size Of The Product")
             } else {
                 toast("Please Choose Size For Your Product")
+            }}else{
+                alert("Your Bag Is Full")
             }
         } else if ((localStorage.getItem("USER_KEY")) && (check !== "undefined") && (product.buyingoption === "Membership")) {
-            const check = { userid, username, productname, image1, price, size }
+            const check = { userid, username, productname, image1, price, size ,productid,reference}
             if (data.subscription !== "No Subscription") {
                 if (size && size != "-") {
                     fetch("https://nike-backend.herokuapp.com/charging/checkout", {
@@ -190,6 +194,7 @@ function MostPopularViewing() {
     React.useEffect(() => {
         fetchUserData().then((response) => {
             setData(response.data);
+            setBag(response.data.bag)
         }).catch((e) => {
             localStorage.clear();
         })

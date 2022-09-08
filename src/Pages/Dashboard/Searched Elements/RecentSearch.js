@@ -189,8 +189,6 @@ function RecentSearch() {
                                                     gentle.filter(gentle => {
                                                         if (gentle.category1.toLowerCase().includes(first.search.toLowerCase())) {
                                                             return gentle
-                                                        } else if (gentle.productspecification1.toLowerCase().includes(first.search.toLowerCase())) {
-                                                            return gentle
                                                         }
                                                     }).map(gentle =>
                                                         <>
@@ -242,9 +240,7 @@ function RecentSearch() {
                                                     normal.filter(gentle => {
                                                         if (gentle.category1.toLowerCase().includes(first.search.toLowerCase())) {
                                                             return gentle
-                                                        } else if (gentle.productspecification1.toLowerCase().includes(first.search.toLowerCase())) {
-                                                            return gentle
-                                                        }
+                                                        } 
                                                     }).map(gentle =>
                                                         <>
                                                             {data.gender === "Men" &&

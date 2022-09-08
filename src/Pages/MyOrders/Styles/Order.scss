@@ -20,17 +20,17 @@
   }
   .tableingss {
     
-    margin-left: 20%;
+    margin-left: 15%;
     position: absolute;
     
-    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+    font-family: "Helvetica Neue, Helvetica, Arial, sans-serif";
   }
   .table-cell {
     display: table-cell;
     vertical-align: middle;
   }
   .box {
-    width: 800px;
+    width: 900px;
     background: #fff;
     height: 750px;
     margin: 0 auto;
@@ -40,8 +40,7 @@
     position: relative;
     &:after {
       display: block;
-      content: '';
-      clear: both;
+      
     }
   }
   .col4 {
@@ -56,6 +55,7 @@
   }
   .col8 {
     width: 60%;
+    height: max-content;
     float: left;
   }
   .sidebar {
@@ -115,18 +115,9 @@
   .mapbox {
     overflow: hidden;
     position: relative;
-    height: 400px;
+    height: 500px;
   }
-  div.map {
-    position: absolute;
-    width: 1800px;
-    height: 600px;
-    background-image: url('https://dl.dropboxusercontent.com/u/2255413/map.svg');
-    animation-duration: 20s;
-              animation-name: travel;
-              animation-iteration-count:infinite;
-              animation-timing-function: linear;
-  }
+  
   #dot {
     width: 15px;
     height: 15px;
@@ -164,7 +155,7 @@
     letter-spacing: 3px;
     margin: 0;
     text-transform: uppercase;
-    border-bottom: 2px dotted $red;
+    
   }
   .address {
     padding: 25px 40px;

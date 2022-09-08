@@ -39,6 +39,8 @@ function NormalProductViewing() {
     const [gentle, setGentle] = useState([])
     const [bottom, setBottom] = useState([])
     const [similar, setSimilar] = useState([])
+    const [bag,setBag] = useState([])
+    const [reference,setReference] = useState("")
 
 
     useEffect(() => {
@@ -92,7 +94,8 @@ function NormalProductViewing() {
     const handleClick = (e) => {
         e.preventDefault()
         if ((localStorage.getItem("USER_KEY")) && (check != "undefined") && (!product.buyingoption)) {
-            const checkouts = { userid, username, productname, image1, price, size }
+            if(bag.length<5){
+            const checkouts = { userid, username, productname, image1, price, size ,productid,reference}
             if (size && size != "-") {
                 fetch("https://nike-backend.herokuapp.com/charging/checkout", {
                     method: "POST",
@@ -108,9 +111,11 @@ function NormalProductViewing() {
                 toast("These Size Are Unavailable")
             } else {
                 toast("Please Choose Size For Your Product")
+            }}else{
+                alert("Your Bag Is Full")
             }
         }else if((localStorage.getItem("USER_KEY")) && (check !== "undefined") && (product.buyingoption==="Membership")){
-            const check = { userid, username, productname, image1, price, size }
+            const check = { userid, username, productname, image1, price, size ,productid,reference}
             if(data.subscription!=="No Subscription"){
             if (size && size != "-") {
                 fetch("https://nike-backend.herokuapp.com/charging/checkout", {
@@ -289,6 +294,7 @@ function NormalProductViewing() {
         setPrice(product.price)
         setCheck(data.username);
         setProductid(id)
+        setReference("normal")
     })
 
     useEffect(() => {
@@ -312,6 +318,7 @@ function NormalProductViewing() {
     React.useEffect(() => {
         fetchUserData().then((response) => {
             setData(response.data);
+            setBag(response.data.bag)
         }).catch((e) => {
             localStorage.clear();
         })

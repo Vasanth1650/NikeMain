@@ -18,7 +18,7 @@ function JordanBasket() {
     }
   return (
     <div>
-        <div className='bodying'>
+        <div className='bodying' style={{userSelect:"none"}}>
         <div className='titlesssssss'>EXPLORE MORE FROM JORDAN</div>
             <div class="row">
                 <div class="column" onClick={() => AllSection("BasketBall")}>

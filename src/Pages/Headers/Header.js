@@ -103,7 +103,7 @@ function Header() {
     const handleSubmit = e => {
         e.preventDefault();
         const details = {search,userid}
-        fetch("https://nike-backend.herokuapp.com/search/addRecent",{
+        fetch("https://nike-backend.herokuapp.com/search/addCache",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(details)
@@ -135,7 +135,7 @@ function Header() {
 
 
     return (
-        <div className='headerss'>
+        <div className='headerss' style={{userSelect:"none"}}>
             <BootStrap.Navbar className='bg'>
                 <BootStrap.Container className='cont'>
                     <BootStrap.Navbar.Brand href="/Jordan"><SiJordan /></BootStrap.Navbar.Brand>

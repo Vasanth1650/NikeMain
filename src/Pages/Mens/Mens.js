@@ -38,6 +38,7 @@ function Mens() {
         <div className='menssections'>
             <Header />
             <Offer />
+            
             <div className='menssectiontitle'>Men</div>
 
             <div onClick={()=>NikeZoomX()}>

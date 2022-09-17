@@ -110,6 +110,7 @@ function NormalProductAdd() {
     var $body = $('body');
     var $progressBar = $('progress');
     var value = 0;
+    var left = 0;
     var transitionEnd = 'webkitTransitionEnd transitionend';
 
 
@@ -164,7 +165,7 @@ function NormalProductAdd() {
                 .find('.form-progress-indicator.active')
                 .next('.form-progress-indicator')
                 .addClass('active');
-
+                
 
 
             $progressBar.val(value);
@@ -234,7 +235,8 @@ function NormalProductAdd() {
 
     useEffect(() => {
         init()
-        value += 35
+      
+        
     }, [])
 
 
@@ -260,7 +262,7 @@ function NormalProductAdd() {
                     <div class="form-progress-indicator two"></div>
                     <div class="form-progress-indicator three"></div>
                     <div class="form-progress-indicator four"></div>
-                    <br />
+                   
 
                 </div>
 
@@ -271,7 +273,7 @@ function NormalProductAdd() {
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12">
                                     <h2>Just In / Most Searched Items</h2>
-                                    <h5>1/5</h5>
+                                    <h5>1/4</h5>
                                 </div>
                                 <div class="col-xs-12 col-sm-6">
                                     <div class="group">

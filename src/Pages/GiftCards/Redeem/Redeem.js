@@ -48,7 +48,7 @@ function Redeem() {
     }, [])
     
     return (
-        <div className='maingood' style={{ backgroundColor: "white"}}>
+        <div className='maingood' style={{ backgroundColor: "white",userSelect:"none"}}>
             <Header />
 
             <div className='inputboxfied'>

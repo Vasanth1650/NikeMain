@@ -109,7 +109,7 @@ function More() {
                             body: JSON.stringify(details)
                         }).then(() => {
                             Myorderservice.deleting(orderid)
-                            usenavigate('/')
+                            window.location.reload()
                             toast("Refund Request Has Been Requested")
                         })
                     }

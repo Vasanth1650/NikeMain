@@ -90,9 +90,12 @@ function Magic() {
                 else if (bodyWidth >= 768) {
                     incno = itemsSplit[1];
                     itemWidth = sampwidth / incno;
+                }else if(bodyWidth >=300){
+                    incno = itemsSplit[0];
+                    itemWidth = sampwidth / incno;
                 }
                 else {
-                    incno = itemsSplit[0];
+                    incno = itemsSplit[1];
                     itemWidth = sampwidth / incno;
                 }
                 $(this).css({ 'transform': 'translateX(0px)', 'width': itemWidth * itemNumbers });
@@ -153,7 +156,7 @@ function Magic() {
 
 
     return (
-        <div className='bodyd'>
+        <div className='bodyd' style={{userSelect:"none"}}>
             <div>
                 <br /><br /><br />
                 <div className='similarsbudwaw'>Most Selling</div>
@@ -187,7 +190,7 @@ function Magic() {
                                                                     <div className='mensproductgender'>{gentle.gender}{gentle.buyingoption === "Membership" &&
                                                                         <FcLock />
                                                                     }</div>
-                                                                    <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.productprice}</div>
+                                                                    <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",userSelect:"none"}}>₹{gentle.productprice}</div>
 
                                                                 </BootStrap.Card.Body>
                                                             </div>

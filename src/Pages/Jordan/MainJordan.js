@@ -23,15 +23,15 @@ function MainJordan() {
 
 
     return (
-        <div className='bac'>
+        <div className='bac' style={{userSelect:"none"}}>
             <Header />
             <Offer/>
 
             <SiJordan className='jordanback' />
 
-            <div className='jordanlinks'>
+            <div className='jordanlinks' >
 
-                <BootStrap.Nav.Link className='mainnavtext' href='/mostpopular/BasketBall'>BasketBall</BootStrap.Nav.Link>
+                <BootStrap.Nav.Link  className='mainnavtext' href='/mostpopular/BasketBall'>BasketBall</BootStrap.Nav.Link>
                 <BootStrap.Nav.Link className='mainnavtext' href='/mostpopular/Football'>FootBall</BootStrap.Nav.Link>
                 <BootStrap.Nav.Link className='mainnavtext' onClick={() => MostPopular("Men's")}>Men</BootStrap.Nav.Link>
                 <BootStrap.Nav.Link className='mainnavtext' onClick={() => MostPopular("Women's")}>Women</BootStrap.Nav.Link>

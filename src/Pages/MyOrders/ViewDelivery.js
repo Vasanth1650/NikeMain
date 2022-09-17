@@ -10,14 +10,6 @@ import NormalProductService from '../NormalProducts/Services/NormalProductServic
 import DashboardService from '../Dashboard/Service/DashboardService';
 
 
-
-
-
-
-
-
-
-
 function ViewDelivery() {
     const usenavigate = useNavigate()
     const location = useLocation()
@@ -99,7 +91,7 @@ function ViewDelivery() {
 
     }
 
-    console.log(product.productid1)
+
 
     const getByUserid = () => {
 
@@ -147,7 +139,7 @@ function ViewDelivery() {
                     <div class="table-cell">
                         <div class="box">
                             <div class="row">
-                                <div class="col4 sidebar" style={{ backgroundColor: "orange", cursor: "pointer" }}>
+                                <div class="col4 sidebar" style={{  cursor: "pointer" }}>
                                     <ul>
                                         <li class={product.status1}><span>Order Is Being Processed</span></li>
                                         <li class={product.status2}><span>Pick up</span></li>
@@ -236,10 +228,11 @@ function ViewDelivery() {
                                     <div style={{ color: "transparent" }}>------------------------------------------------</div>
                                     <div>Size : {product.size}</div>
                                     <div style={{ color: "transparent" }}>------------------------------------------------</div>
+                                    <div>Ordered Date : {product.date}</div>
 
                                 </div>
 
-
+                                
                             </div>
                             <div class="row">
                                 <div class="col6"><h2>From</h2>

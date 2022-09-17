@@ -523,8 +523,10 @@ function UpdateSaleProduct() {
                                             <BootStrap.Form.Select id='category1' name='category1' value={category1}
                                         >
                                                 <option></option>
-                                                <option>Jordan Men's</option>
-                                                <option>Jordan Womens</option>
+                                                <option>HighSchool</option>
+                                                <option>ElementarySchool</option>
+                                                <option>PreSchool</option>
+                                                <option>MiddleSchool</option>
                                                 <option>Men's Shoes</option>
                                                 <option>Women's Shoes</option>
                                                 <option>Kids's Shoes</option>

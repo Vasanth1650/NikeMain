@@ -16,7 +16,7 @@ function Essential() {
 
 
   return (
-    <div>
+    <div style={{userSelect:"none"}}>
         <div className='esstext'>DISCOVER JORDAN ESSENTIALS</div>
         <div className='ess'>
             <img className='imagesizes' onClick={()=>Popular("Clothing")} style={{width:"30%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_383,c_limit/c19d2099-35d1-4652-b754-ad6ee05ad613/jordan.jpg'/>

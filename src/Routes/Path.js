@@ -60,6 +60,11 @@ import AllSaleProducts from '../Pages/Sale/Components/AllSaleProducts';
 import SalePageViewing from '../Pages/Sale/Components/SalePageViewing';
 import UpdateSaleProduct from '../Pages/Sale/Components/UpdateSaleProduct';
 import  Demo  from '../Pages/Demo/Demo';
+import Cricket from '../Pages/Jordan/HistoryJordan/HistoryofCategoryCricket/Cricket';
+import Basketball from '../Pages/Jordan/HistoryJordan/HistoryofBasketBall/Basketball';
+import ViewComents from '../Pages/MostPopular/Comments/ViewComents';
+import AddComments from '../Pages/MostPopular/Comments/AddComments';
+
 
 
 function Path() {
@@ -72,6 +77,8 @@ function Path() {
       console.log(err)
     })
   },[])
+
+  
 
   return (
     <div>
@@ -195,9 +202,11 @@ function Path() {
 
         <Route path='/paymentoptions' element={<PaymentOptions/>}/>
 
-        
+        <Route path='/comments/:productname' element={<ViewComents/>}/>
 
         <Route path='/gift' element={<Gift/>}/>
+
+        <Route path='/addComments' element={<AddComments/>}/>
 
         <Route path='/reedem' element={<Redeem/>}/>
 
@@ -239,6 +248,9 @@ function Path() {
 
         <Route path='/sidebar' element={<Sidebar/>}/>
 
+        <Route path='/jordan/cricket' element={<Cricket/>}/>
+
+        <Route path='/jordan/basketball' element={<Basketball/>}/>
 
         <Route path='*' element={<Dashboard/>}/>
         

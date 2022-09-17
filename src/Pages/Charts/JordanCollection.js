@@ -54,7 +54,7 @@ function JordanCollection() {
 
 
     return (
-        <div className='chart'>
+        <div className='chart' style={{userSelect:"none"}}>
             <Header/>
             <div className='analysis'>Analysis</div>
             <div className='avaliablejordan'>Colors Available In Jordan Section</div>

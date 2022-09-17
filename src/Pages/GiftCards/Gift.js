@@ -12,7 +12,7 @@ function Gift() {
     usenavigate('/reedem')
   }
   return (
-    <div style={{backgroundColor:"white"}}>
+    <div style={{backgroundColor:"white",userSelect:"none"}}>
         <Header/>
 
         <div>

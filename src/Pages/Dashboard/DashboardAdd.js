@@ -73,27 +73,10 @@ function MainDBAdd() {
     }
 
 
-    useEffect(() => {
-        if (!localStorage.getItem("USER_KEY")) {
-            localStorage.clear();
-            usenavigate('/')
-        }
-    }, [])
-
-    useEffect(() => {
-        if (check === "undefined") {
-            usenavigate('/')
-        }
-    }, [])
-
-    console.log(check)
-
-    console.log(data.username)
+   
 
 
-    useEffect(() => {
-        setCheck(data.username)
-    }, [])
+    
 
 
     React.useEffect(() => {

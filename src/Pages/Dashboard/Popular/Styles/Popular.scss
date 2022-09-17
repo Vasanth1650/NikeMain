@@ -2,6 +2,8 @@
     padding-top: 5%;
     text-align: center;
     cursor: pointer;
+    
+   
 }
 
 
@@ -15,6 +17,7 @@
     cursor: pointer;
     margin-left: 7%;
     margin-top: -45%;
+    user-select: none;
 }
 
 .mainrunforkids{
@@ -48,9 +51,11 @@
     cursor: pointer;
     margin-left: 7%;
     margin-top: -2%;
+    user-select: none;
 }
 
 .smalltext11{
+    user-select: none;
     text-align: center;
     color: black;
 }
@@ -58,12 +63,14 @@
 .smalltext1111{
     margin-left: 7%;
     color: black;
+    user-select: none;
 }
 
 .smalltextkidsd{
     margin-left: 7%;
     margin-top: 0%;
     color: white;
+    user-select: none;
 }
 
 .butonseefs{

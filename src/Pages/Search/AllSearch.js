@@ -249,8 +249,8 @@ function AllSearch() {
 
                                                         <BootStrap.CardGroup >
                                                             <BootStrap.Card className='jawdjawd'>
-                                                                <BootStrap.Card.Img onClick={() => openup(product.id)} variant="top" src={product.image1} />
-                                                                <BootStrap.Card.Body onClick={() => openup(product.id)} >
+                                                                <BootStrap.Card.Img onClick={() => normaling(product.id)} variant="top" src={product.image1} />
+                                                                <BootStrap.Card.Body onClick={() => normaling(product.id)} >
 
                                                                     <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
 

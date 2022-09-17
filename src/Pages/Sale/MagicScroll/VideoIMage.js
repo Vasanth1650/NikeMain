@@ -152,7 +152,7 @@ function VideoIMage() {
 
                 
                     <div class="containeriknjein">
-                        <div class="row">
+                        <div class="row" style={{height:"480px",overflowY:"hidden"}} class="scrollbar-default" >
                             <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="2">
                                 <div class="MultiCarousel-inner">
 

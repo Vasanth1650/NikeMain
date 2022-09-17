@@ -93,8 +93,8 @@ function Footer() {
                                 </div>
                                 <div class="col-xl-4 col-lg-4 mb-50">
                                     <div class="footer-widget" onClick={redirecthelper} style={{cursor:"pointer"}}>
-                                        <div style={{color:"white",marginLeft:"40%",fontFamily:"fantasy"}}>Nike Fest</div>
-                                        <Circle/>
+
+                                       
                                         
                                     </div>
                                 </div>

@@ -21,28 +21,7 @@ const Login = ({loading,error, ...props})=> {
         username:'',
         password:''
     });
-    const[check,setCheck] = useState('')
-
     
-
-    useEffect(() => {
-        if (check) {
-            usenavigate(-1)
-        }
-    }, [check])
-
-    useEffect(()=>{
-        setCheck(data.username)
-    },[])
-
-    React.useEffect(() => {
-        fetchUserData().then((response) => {
-
-            setData(response.data);
-        }).catch((e) => {
-            localStorage.clear();
-        })
-    }, [])
 
     const handleSubmit = (evt) => {
         evt.preventDefault();
@@ -178,8 +157,8 @@ const Login = ({loading,error, ...props})=> {
     )
 }
 
-
-
+//stateManagement
+//start(what should i expose as props)
 const mapStateToProps = ({ auth }) => {
     console.log("state ", auth)
     return {
@@ -188,7 +167,7 @@ const mapStateToProps = ({ auth }) => {
     }
 }
 
-
+//what action do we have to pass to our components(what action should we exposed as props)
 const mapDispatchToProps = (dispatch) => {
 
     return {

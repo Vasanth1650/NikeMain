@@ -40,7 +40,7 @@ function MyCardgift() {
 
 
     return (
-        <div className='backgroundfcard' style={{ backgroundColor: "white" }}>
+        <div className='backgroundfcard' style={{ backgroundColor: "white" ,userSelect:"none"}}>
             <Header />
             <div style={{ color: "black", marginLeft: "5%", paddingTop: "5%"}}>
                 {

@@ -266,7 +266,7 @@ function Checkout() {
 
 
     return (
-        <div>
+        <div style={{userSelect:"none"}}>
             <Header />
             <div className='sa'>
                 <aside class="profile-card">

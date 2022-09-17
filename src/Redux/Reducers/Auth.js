@@ -7,7 +7,7 @@ const initialState={
 };
 
 
-
+//state change 
 const auth=(state=initialState,action)=>{
     console.log("Reducer auth");
     switch(action.type){

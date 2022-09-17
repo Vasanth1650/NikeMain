@@ -38,7 +38,7 @@ function ShowCategory() {
 
     }, [size, trend])
 
-
+    
 
     useEffect(() => {
         setCheck(data.username)
@@ -306,6 +306,7 @@ function ShowCategory() {
 
 
             <div >
+            {color === "" && trend === "" &&
                 <div >
                     <BootStrap.Row xs={1} md={3} >
 
@@ -313,7 +314,7 @@ function ShowCategory() {
                             product.map(product =>
                                 <BootStrap.Col>
                                     <div className='items'>
-                                        {color === "" && trend === "" &&
+                                       
                                             <BootStrap.CardGroup >
                                                 <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
@@ -346,7 +347,7 @@ function ShowCategory() {
                                                         <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
                                                 </BootStrap.Card>
                                             </BootStrap.CardGroup>
-                                        }
+                                        
 
 
 
@@ -360,7 +361,7 @@ function ShowCategory() {
                             )
                         }
                     </BootStrap.Row>
-                </div>
+                </div>}
             </div>
 
 
@@ -370,6 +371,7 @@ function ShowCategory() {
 
 
             <div>
+            {color === "" && trend === "" &&
                 <div >
                     <BootStrap.Row xs={1} md={3} >
 
@@ -377,7 +379,7 @@ function ShowCategory() {
                             collection.map(product =>
                                 <BootStrap.Col>
                                     <div className='items'>
-                                        {color === "" && trend === "" &&
+                                        
                                             <BootStrap.CardGroup >
                                                 <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
@@ -410,7 +412,7 @@ function ShowCategory() {
                                                         <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
                                                 </BootStrap.Card>
                                             </BootStrap.CardGroup>
-                                        }
+                                        
 
 
 
@@ -423,7 +425,7 @@ function ShowCategory() {
                             )
                         }
                     </BootStrap.Row>
-                </div>
+                </div>}
             </div>
 
 
@@ -498,14 +500,19 @@ function ShowCategory() {
 
 
             <div>
+            {color !== "" && trend === "" &&
                 <div >
                     <BootStrap.Row xs={1} md={3} >
 
                         {
-                            coloring.map(product =>
+                            product.filter(product=>{
+                                if(product.productspecification1===color){
+                                    return product
+                                }
+                            }).map(product =>
                                 <BootStrap.Col>
 
-                                    {color !== "" && trend === "" &&
+                                    
                                         <BootStrap.CardGroup >
                                             <BootStrap.Card className='jawdjawd'>
                                                 <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
@@ -538,7 +545,7 @@ function ShowCategory() {
                                                     <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
                                             </BootStrap.Card>
                                         </BootStrap.CardGroup>
-                                    }
+                                    
 
                                     <br />
                                 </BootStrap.Col>
@@ -546,7 +553,65 @@ function ShowCategory() {
                             )
                         }
                     </BootStrap.Row>
-                </div>
+                </div>}
+            </div>
+
+
+            <div>
+            {color !== "" && trend === "" &&
+                <div >
+                    <BootStrap.Row xs={1} md={3} >
+
+                        {
+                            gentle.filter(product=>{
+                                if(product.productspecification1===color){
+                                    return product
+                                }
+                            }).map(product =>
+                                <BootStrap.Col>
+
+                                    
+                                        <BootStrap.CardGroup >
+                                            <BootStrap.Card className='jawdjawd'>
+                                                <BootStrap.Card.Img onClick={() => Nextstep(product.id)} variant="top" src={product.image1} />
+                                                <BootStrap.Card.Body onClick={() => Nextstep(product.id)} >
+
+                                                    <BootStrap.Card.Title>{product.productname}</BootStrap.Card.Title>
+
+                                                    <div className='categoryandcategory'>
+                                                        {product.category1}
+                                                    </div>
+                                                    {product.buyingoption === "Membership" &&
+                                                        <div className='categoryandcategory'>
+                                                            <MdCardMembership />
+                                                        </div>
+                                                    }
+
+                                                    {product.buyingoption !== "Membership" &&
+                                                        <div className='categoryandcategory'>
+                                                            {product.category2} Colors
+                                                        </div>}
+
+                                                    <div className='kwjdnjwakwn' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>
+                                                        ₹{product.price}
+                                                    </div>
+                                                </BootStrap.Card.Body>
+
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.NavLink onClick={() => deleteById(product.id)}>Delete</BootStrap.NavLink>}
+                                                {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                    <BootStrap.NavLink onClick={() => UpdateDetails(product.id)}>Update</BootStrap.NavLink>}
+                                            </BootStrap.Card>
+                                        </BootStrap.CardGroup>
+                                    
+
+                                    <br />
+                                </BootStrap.Col>
+
+                            )
+                        }
+                    </BootStrap.Row>
+                </div>}
             </div>
 
 

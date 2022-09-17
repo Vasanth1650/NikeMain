@@ -1,10 +1,8 @@
-import React from 'react';
-import * as BootStrap from 'react-bootstrap';
+import React, { useContext } from 'react';
 import "./Styles/Dashboard.css";
 import "./Styles/Dashboard.scss";
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import DashboardService from './Service/DashboardService';
 import { useState } from 'react';
 import { fetchUserData } from '../../Api/AuthenticationService'
 import './Styles/DashboardAdd.css';
@@ -17,10 +15,7 @@ import RunningShoes from './Running/RunningShoes';
 import Gender from './Gender/Gender';
 import Magic from './ScrollMagic/Magic';
 import Popular from './Popular/Popular';
-import Trending from './Trending/Trending';
 import RecentSearch from './Searched Elements/RecentSearch';
-
-
 
 function Dashboard() {
 
@@ -31,6 +26,7 @@ function Dashboard() {
     const [search, setSearch] = useState([]);
     const [roles, setRoles] = useState('')
     const [data,setData] = useState({})
+    
 
     React.useEffect(() => {
         fetchUserData().then((response) => {
@@ -43,7 +39,7 @@ function Dashboard() {
     }, [])
 
 
-    console.log(roles)
+
 
 
 
@@ -58,41 +54,28 @@ function Dashboard() {
 
 
 
-
     return (
         <div className='body'>
             <Header />
             <Offer />
             <div className="jordan">
-
-                <div className="jordan"></div>
-
+                <div className="jordan" style={{color:"black"}}></div>
                 <Popular />
-
                 <div><br /></div>
             </div>
 
-
             <Magic />
 
-
             <RunningShoes />
-
 
             <div className="jordan">
                 <br /><br /><br />
                 <Tees />
                 <br /><br /><br /><br />
                 <Tops />
-
-
-
                 <Gender />
 
                 <br /><br /><br /><br />
-
-
-
             </div>
 
             {

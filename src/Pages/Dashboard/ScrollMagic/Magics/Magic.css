@@ -88,3 +88,92 @@
 
 }
 
+@media only screen and(max-width:"300px"){
+    .MultiCarousel {
+        float: left;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .MultiCarousel {
+        height: 60px;
+        width: 30px;
+    }
+    
+    .containeriknjein{
+      margin-left: 3%;
+    }
+    
+    .bodydkmkdkwa{
+      background-color: white;
+    
+    }
+    
+    .cardcarsol{
+        width: max-content;
+    }
+    
+    .similarsbudwaw{
+      font-size: x-large;
+      color: black;
+      margin-left: 4%;
+      font-weight: bolder;
+    }
+    
+    
+    .MultiCarousel .MultiCarousel-inner {
+        transition: 0s ease all;
+        
+        float: left;
+    }
+    
+    .MultiCarousel .MultiCarousel-inner .item {
+        float: left;
+        
+    }
+    
+    .efecb{
+      margin-left: 2%;
+    }
+    
+    .MultiCarousel .MultiCarousel-inner .item>div {
+        text-align: center;
+        width: 20%;
+        background: white;
+        color: #666;
+       
+    }
+    
+    
+    
+    .MultiCarousel .leftLsts{
+        margin-left: 115%;
+        margin-top: -110%;
+        border-radius: 50%;
+        top: calc(50% - 100px);
+        background-color: black;
+        border: none;
+    }
+    .MultiCarousel .rightLsts {
+        margin-left: 120%;
+        margin-top: -115.3%;
+        border-radius: 30px;
+        top: calc(50% - 100px);
+        background-color: black;
+        border: none;
+    }
+    
+    .MultiCarousel .leftLsts {
+        right: 0;
+    }
+    
+    .MultiCarousel .rightLsts {
+        
+        right: 0;
+    }
+    
+    .MultiCarousel .leftLsts.over,.MultiCarousel .rightLsts.over {
+        pointer-events: none;
+    
+    }
+}

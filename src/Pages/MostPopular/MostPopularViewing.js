@@ -13,8 +13,8 @@ import Headers from '../Headers/Header';
 import Footer from '../Footer/Footer';
 import $ from 'jquery'
 import OptionPageService from '../RedirectAllCategory/Services/CategoryService'
-
-
+import { MdOutlineVerifiedUser } from "react-icons/md";
+import Stars from './Stars'
 
 function MostPopularViewing() {
     const usenavigate = useNavigate()
@@ -32,8 +32,131 @@ function MostPopularViewing() {
     const [gentle, setGentle] = useState([])
     const [bottom, setBottom] = useState([])
     const [similar, setSimilar] = useState([])
-    const [reference,setReference] = useState("")
-    const [bag,setBag] = useState([])
+    const [reference, setReference] = useState("")
+    const [bag, setBag] = useState([])
+    const [comments, setComments] = useState([])
+    const [rating,setRating] = useState()
+    const [star1,setStar1] = useState()
+    const [star2,setStar2] = useState()
+    const [star3,setStar3] = useState()
+    const [star4,setStar4] = useState()
+    const [star5,setStar5] = useState()
+    
+
+    useEffect(()=>{
+        calculator()
+    },[comments])
+    
+
+    function calculator(){
+        var verybad = 0;
+        var bad = 0;
+        var okay = 0;
+        var good = 0;
+        var verygood = 0
+        comments.filter(comments=>{
+            if(comments.rating==="VERYGOOD"){
+                verygood++
+                
+            }else if(comments.rating==="OKAY"){
+                okay++
+            }else if(comments.rating==="GOOD"){
+                good++
+            }else if(comments.rating==="BAD"){
+                bad++
+            }else if(comments.rating==="VERYBAD"){
+                verybad++
+            }
+        })
+        var calc = Math.round((5*verygood+4*good+3*okay+2*bad+1*verybad)/(verygood+okay+verybad+bad+good))
+        var doublecalc = (5*verygood+4*good+3*okay+2*bad+1*verybad)/(verygood+okay+verybad+bad+good)
+        console.log("VERRYGOOD",verygood,calc)
+        if(calc===5){
+            if(doublecalc>=4.5){
+                setStar1("fa fa-star checked")
+                setStar2("fa fa-star checked")
+                setStar3("fa fa-star checked")
+                setStar4("fa fa-star checked")
+                setStar5("fa fa-star checked")
+            }else{
+                setStar1("fa fa-star checked")
+                setStar2("fa fa-star checked")
+                setStar3("fa fa-star checked")
+                setStar4("fa fa-star checked")
+                setStar5("fa fa-star-half-full")
+            }
+            
+        }else if(calc===4){
+            if(doublecalc>=3.5){
+                setStar1("fa fa-star checked")
+                setStar2("fa fa-star checked")
+                setStar3("fa fa-star checked")
+                setStar4("fa fa-star checked")
+                setStar5("fa fa-star")
+            }else{
+                setStar1("fa fa-star checked")
+                setStar2("fa fa-star checked")
+                setStar3("fa fa-star checked")
+                setStar4("fa fa-star-half-full")
+                setStar5("fa fa-star")
+            }
+            
+        }else if(calc===3){
+            if(doublecalc>=4.5){
+                setStar1("fa fa-star checked")
+                setStar2("fa fa-star checked")
+                setStar3("fa fa-star checked")
+                setStar4("fa fa-star")
+                setStar5("fa fa-star")
+            }else{
+                setStar1("fa fa-star checked")
+                setStar2("fa fa-star checked")
+                setStar3("fa fa-star-half-full")
+                setStar4("fa fa-star")
+                setStar5("fa fa-star")
+            }
+            
+        }else if(calc===2){
+            if(doublecalc>=4.5){
+                setStar1("fa fa-star checked")
+                setStar2("fa fa-star checked")
+                setStar3("fa fa-star")
+                setStar4("fa fa-star")
+                setStar5("fa fa-star")
+            }else{
+                setStar1("fa fa-star checked")
+                setStar2("fa fa-star-half-full")
+                setStar3("fa fa-star")
+                setStar4("fa fa-star")
+                setStar5("fa fa-star")
+            }
+            
+        }else if(calc===1){
+            if(doublecalc>=4.5){
+                setStar1("fa fa-star checked")
+                setStar2("fa fa-star")
+                setStar3("fa fa-star")
+                setStar4("fa fa-star")
+                setStar5("fa fa-star")
+            }else{
+                setStar1("fa fa-star-half-full")
+                setStar2("fa fa-star")
+                setStar3("fa fa-star")
+                setStar4("fa fa-star")
+                setStar5("fa fa-star")
+            }
+            
+        }else{
+            setStar1("fa fa-star")
+            setStar2("fa fa-star")
+            setStar3("fa fa-star")
+            setStar4("fa fa-star")
+            setStar5("fa fa-star")
+        }
+    }
+
+    
+    
 
     useEffect(() => {
         setUserid(data.id);
@@ -63,7 +186,7 @@ function MostPopularViewing() {
     const findByGender = () => {
         DashboardService.getByCategory1(product.category1).then((response) => {
             setGentle(response.data)
-            console.log(response.data)
+
         }).catch((error) => {
             console.log(error)
         })
@@ -72,7 +195,7 @@ function MostPopularViewing() {
     const findByName = () => {
         DashboardService.getByName(product.productname).then((response) => {
             setSimilar(response.data)
-            console.log("Hello", response.data)
+            
         }).catch((error) => {
             console.log(error)
         })
@@ -82,7 +205,7 @@ function MostPopularViewing() {
     const getByCategory = () => {
         OptionPageService.findByCategory(product.category1).then((response) => {
             setBottom(response.data);
-            console.log(response.data);
+
         }).catch(error => {
             console.log(error)
         })
@@ -124,29 +247,30 @@ function MostPopularViewing() {
     const handleClick = (e) => {
         e.preventDefault()
         if ((localStorage.getItem("USER_KEY")) && (check != "undefined") && (!product.buyingoption)) {
-            if(bag.length<5){
-            const check = { userid, username, productname, image1, price, size ,productid,reference}
-            if (size && size != "-") {
-                fetch("https://nike-backend.herokuapp.com/charging/checkout", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(check)
-                }).then(() => {
-                    console.log("Everything Went Perfect")
-                    usenavigate("/checkout")
-                }).catch(error => {
-                    console.log("something went wrong")
-                })
-            } else if (size === "-") {
+            if (bag.length < 5) {
+                const check = { userid, username, productname, image1, price, size, productid, reference }
+                if (size && size != "-") {
+                    fetch("https://nike-backend.herokuapp.com/charging/checkout", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(check)
+                    }).then(() => {
+                        console.log("Everything Went Perfect")
+                        usenavigate("/checkout")
+                    }).catch(error => {
+                        console.log("something went wrong")
+                    })
+                } else if (size === "-") {
 
-                toast.dark("Please Select Size Of The Product")
+                    toast.dark("Please Select Size Of The Product")
+                } else {
+                    toast("Please Choose Size For Your Product")
+                }
             } else {
-                toast("Please Choose Size For Your Product")
-            }}else{
                 alert("Your Bag Is Full")
             }
         } else if ((localStorage.getItem("USER_KEY")) && (check !== "undefined") && (product.buyingoption === "Membership")) {
-            const check = { userid, username, productname, image1, price, size ,productid,reference}
+            const check = { userid, username, productname, image1, price, size, productid, reference }
             if (data.subscription !== "No Subscription") {
                 if (size && size != "-") {
                     fetch("https://nike-backend.herokuapp.com/charging/checkout", {
@@ -183,7 +307,8 @@ function MostPopularViewing() {
     const getting = (id) => {
         DashboardService.getByIds(id).then((response) => {
             setProduct(response.data)
-            console.log(response.data)
+            setComments(response.data.comments)
+
 
         }).catch(err => {
             console.log(err)
@@ -340,26 +465,33 @@ function MostPopularViewing() {
     }
 
     const Nextstep = (ids) => {
-        console.log(ids);
         usenavigate('/nextsteps/' + ids);
     }
 
     const Nextsteps = (ids) => {
-        console.log(ids);
+
         usenavigate('/most/' + ids);
     }
 
+    const [csize, setCsize] = useState()
+
+    useEffect(() => {
+        setCsize(comments.length)
+
+    }, [comments])
+
+    function commentSection(productname,id){
+        usenavigate("/comments/"+productname,{state:{id}})
+    }
+    
+
 
     return (
+        
         <div className='bodyd'>
+        
 
             <Headers />
-
-            
-
-
-
-
 
             <div>
 
@@ -373,12 +505,12 @@ function MostPopularViewing() {
 
 
                         <div className='conentingsi'>
-                            <div style={{color:"black",fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}} className="produ">{product.productname} <BootStrap.Button className='favorite' onClick={wishlist}><AiOutlineHeart /></BootStrap.Button></div>
+                            <div style={{ color: "black", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }} className="produ">{product.productname} <BootStrap.Button className='favorite' onClick={wishlist}><AiOutlineHeart /></BootStrap.Button></div>
 
-                            <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>{product.category1}</div>
+                            <div style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{product.category1}</div>
                             <br />
-                            <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{product.productprice}
-                                <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Includes All Taxes</div>
+                            <div style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>₹{product.productprice}
+                                <div style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Includes All Taxes</div>
 
                             </div>
                             <br />
@@ -399,7 +531,7 @@ function MostPopularViewing() {
                             <br />
                             <br />
                             <br /><br />
-                            <div style={{paddingBottom:"5%",fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Size</div>
+                            <div style={{ paddingBottom: "5%", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Size</div>
                             {product.size1 !== "-" &&
                                 <BootStrap.Button className='bus' onClick={(e) => setSize(product.size1)}>{product.size1}</BootStrap.Button>}
                             {product.size2 !== "-" &&
@@ -423,7 +555,7 @@ function MostPopularViewing() {
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.productimage4} />
                         <div className='conentings'>
                             <div className='atsdaw'>
-                                <a style={{style:"black",fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}} href='#' >Including All Taxes Applied..</a>
+                                <a style={{ style: "black", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }} href='#' >Including All Taxes Applied..</a>
                             </div>
                             <BootStrap.Button className='bags' onClick={handleClick}>Add to bag</BootStrap.Button>
 
@@ -431,23 +563,74 @@ function MostPopularViewing() {
                         </div>
 
                     </div>
-                    
+
                     <div className='carding'>
 
                         <BootStrap.Card.Img className='imgBxs' variant="top" src={product.productimage5} />
                         <BootStrap.Card.Img className='imgBx1' variant="top" src={product.productimage6} />
                         <div className='conenting1'>
-                        <br/>
-                            <div style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>{product.productdescription}
+                            <br />
+                            <div style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{product.productdescription}
                                 <div className='extra'>
-                                    <button style={{marginLeft:"-2%",fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}} class="btn popup-btn" href="#">View Details</button>
-                                </div></div>
+                                    <button style={{ marginLeft: "-2%", fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif", fontSize: "large" }} class="btn popup-btn" href="#">View Details</button>
+                                </div>
+
+
+
+                                <div className='extra'>
+                                    <div style={{position:"absolute",marginLeft:"25%",marginTop:"2.2%"}}>
+                                        <span class={star1}></span>
+                                        <span class={star2}></span>
+                                        <span class={star3}></span>
+                                        <span class={star4}></span>
+                                        <span class={star5}></span></div>
+                                    <div class="dropdown show">
+
+                                        <button style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif", backgroundColor: "transparent",width:"100%", height:"80px",textAlign:"left",color: "black", border: "none", fontSize: "large" }} class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Reviews({csize})</button>
+
+
+
+
+
+
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style={{ width: "100%", border: "none",overflow:"scroll",height:"300px",overflowX:"hidden"}}>
+                                            {comments.slice(-2).map(comments =>
+                                                <>
+                                                    <div class="row text" style={{ textAlign: "left", cursor: "pointer" }} onClick={()=>commentSection(product.productname,product.id)}>
+                                                        <div class="card" style={{ width: "90%", backgroundColor: "white", textAlign: "left" }}>
+                                                            <div class="card-body">
+                                                                <div class="card-title">{comments.username}<div><MdOutlineVerifiedUser /> <div style={{ color: "black" }}>Verified User</div></div></div>
+
+                                                                <div class="card-subtitle mb-2 text-muted">Rating : {comments.rating}</div>
+                                                                <div class="card-text">Comments : {comments.comments}.</div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </>
+                                            )
+
+                                            }
+                                            <div class="row text" style={{ textAlign: "left", cursor: "pointer" }}>
+                                                <div class="card" style={{ width: "90%", backgroundColor: "white", textAlign: "left" }}>
+                                                    <div class="card-body">
+                                                        <li><a href='' onClick={()=>commentSection(product.productname,product.id)}>See More Reviews And Add Reviews</a></li>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
 
                         <div></div>
 
-                        <div class="popup-wrap" style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>
+                        <div class="popup-wrap" style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>
                             <div class="popup-box">
                                 <h2>Product Details</h2>
                                 <div>*Color Shown : {product.productspecification1}</div>
@@ -504,7 +687,7 @@ function MostPopularViewing() {
             </div>
 
             {product.productimage10 !== "-" &&
-                <div className='explore' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Explore the {product.productname}</div>}
+                <div className='explore' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Explore the {product.productname}</div>}
             {product.productimage10 !== "-" &&
                 <br />}
             {product.productimage10 !== "-" &&
@@ -518,11 +701,11 @@ function MostPopularViewing() {
             {product.productimage10 !== "-" &&
                 <br />}
             {product.productimage10 !== "-" &&
-                <div className='explore' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Light Flex</div>}
+                <div className='explore' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Light Flex</div>}
             {product.productimage10 !== "-" &&
                 <br />}
             {product.productimage10 !== "-" &&
-                <div className='asd' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>{product.productdescription}</div>}
+                <div className='asd' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{product.productdescription}</div>}
 
 
             {product.productimage10 !== "-" &&
@@ -542,11 +725,11 @@ function MostPopularViewing() {
             {product.productimage10 !== "-" &&
                 <br />}
             {product.productimage10 !== "-" &&
-                <div className='explore' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Made By, Big Energy</div>}
+                <div className='explore' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Made By, Big Energy</div>}
             {product.productimage10 !== "-" &&
                 <br />}
             {product.productimage10 !== "-" &&
-                <div className='asd' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>{product.productspecification4}</div>}
+                <div className='asd' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{product.productspecification4}</div>}
 
             {product.productimage10 !== "-" &&
                 <br />}
@@ -567,16 +750,16 @@ function MostPopularViewing() {
             {product.productimage10 !== "-" &&
                 <br />}
             {product.productimage10 !== "-" &&
-                <div className='explore' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Secure for Take-Off {product.productname}</div>}
+                <div className='explore' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>Secure for Take-Off {product.productname}</div>}
             {product.productimage10 !== "-" &&
                 <br />}
 
             {product.productimage10 !== "-" &&
-                <div className='asd' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>{product.productspecification5}</div>}
+                <div className='asd' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>{product.productspecification5}</div>}
 
             <br /><br /><br /><br />
 
-            <div className='similars' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>You May Also Like This</div>
+            <div className='similars' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>You May Also Like This</div>
             <br /><br />
 
             <div>
@@ -597,7 +780,7 @@ function MostPopularViewing() {
                                                         <BootStrap.Card.Body>
                                                             <div className='mensproductname'>{bottom.productname}</div>
                                                             <div className='mensproductgender'>{bottom.gender}</div>
-                                                            <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{bottom.price}</div>
+                                                            <div className='mensproductprice' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>₹{bottom.price}</div>
                                                         </BootStrap.Card.Body>
                                                     </div>
                                                 </BootStrap.Card>
@@ -618,7 +801,7 @@ function MostPopularViewing() {
                                                         <BootStrap.Card.Body>
                                                             <div className='mensproductname'>{gentle.productname}</div>
                                                             <div className='mensproductgender'>{gentle.gender}</div>
-                                                            <div className='mensproductprice' style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>₹{gentle.productprice}</div>
+                                                            <div className='mensproductprice' style={{ fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif" }}>₹{gentle.productprice}</div>
                                                         </BootStrap.Card.Body>
                                                     </div>
                                                 </BootStrap.Card>
@@ -628,8 +811,8 @@ function MostPopularViewing() {
                                 }
 
                             </div>
-                            <button class="btn btn-primary leftLst" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> ← </button>
-                            <button class="btn btn-primary rightLst" style={{backgroundColor:"whitesmoke",color:"black",paddingTop:"1%",paddingBottom:"1%",paddingLeft:"1.5%",paddingRight:"1.5%"}}> → </button>
+                            <button class="btn btn-primary leftLst" style={{ backgroundColor: "whitesmoke", color: "black", paddingTop: "1%", paddingBottom: "1%", paddingLeft: "1.5%", paddingRight: "1.5%" }}> ← </button>
+                            <button class="btn btn-primary rightLst" style={{ backgroundColor: "whitesmoke", color: "black", paddingTop: "1%", paddingBottom: "1%", paddingLeft: "1.5%", paddingRight: "1.5%" }}> → </button>
 
 
                         </div>

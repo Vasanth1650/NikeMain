@@ -6,7 +6,7 @@ import './Styles/Delivery.css'
 
 function Delivery() {
     return (
-        <div>
+        <div style={{userSelect:"none"}}>
             <Headers />
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />

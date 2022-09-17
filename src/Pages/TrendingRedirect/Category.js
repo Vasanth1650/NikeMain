@@ -399,13 +399,14 @@ function Category() {
 
 
             <div>
+            {color === "" && trend === "" &&
                 <div >
                     <BootStrap.Row xs={1} md={3} >
                         {
                             category1.map(gentle =>
                                 <BootStrap.Col>
                                     <div className='items'>
-                                        {color === "" && trend === "" &&
+                                        
                                             <BootStrap.CardGroup>
                                                 <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
@@ -445,7 +446,7 @@ function Category() {
 
                                                 </BootStrap.Card>
                                             </BootStrap.CardGroup>
-                                        }
+                                        
 
 
 
@@ -458,19 +459,24 @@ function Category() {
                             )
                         }
                     </BootStrap.Row>
-                </div>
+                </div>}
             </div>
 
 
 
             <div>
+            {color !== "" && trend === "" &&
                 <div >
                     <BootStrap.Row xs={1} md={3} >
                         {
-                            coloring.map(gentle =>
+                            gentle.filter(gentle=>{
+                                if(gentle.productspecification1===color){
+                                    return gentle;
+                                }
+                            }).map(gentle =>
                                 <BootStrap.Col>
                                     <div className='items'>
-                                        {color !== "" && trend === "" &&
+                                        
                                             <BootStrap.CardGroup>
                                                 <BootStrap.Card className='jawdjawd'>
                                                     <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
@@ -510,7 +516,7 @@ function Category() {
 
                                                 </BootStrap.Card>
                                             </BootStrap.CardGroup>
-                                        }
+                                        
 
 
 
@@ -523,7 +529,76 @@ function Category() {
                             )
                         }
                     </BootStrap.Row>
-                </div>
+                </div>}
+            </div>
+
+
+            <div>
+            {color !== "" && trend === "" &&
+                <div >
+                    <BootStrap.Row xs={1} md={3} >
+                        {
+                            category1.filter(gentle=>{
+                                if(gentle.productspecification1===color){
+                                    return gentle;
+                                }
+                            }).map(gentle =>
+                                <BootStrap.Col>
+                                    <div className='items'>
+                                        
+                                            <BootStrap.CardGroup>
+                                                <BootStrap.Card className='jawdjawd'>
+                                                    <BootStrap.Card.Img onClick={() => Nextstep(gentle.id)} variant="top" src={gentle.productimage1} />
+                                                    <BootStrap.Card.Body onClick={() => Nextstep(gentle.id)}>
+                                                        <BootStrap.Card.Title>{gentle.productname}</BootStrap.Card.Title>
+                                                        <div className='categoryandcategory'>
+                                                            {gentle.category1}
+                                                        </div>
+                                                        {gentle.buyingoption === "Membership" &&
+                                                            <div className='categoryandcategory'>
+                                                                <MdCardMembership />
+                                                            </div>
+                                                        }
+
+                                                        {gentle.buyingoption !== "Membership" &&
+                                                            <div className='categoryandcategory'>
+                                                                {gentle.category2} Colors
+                                                            </div>}
+                                                        <div className='kwjdnjwakwn'>
+                                                            ₹{gentle.productprice}
+                                                        </div>
+                                                    </BootStrap.Card.Body>
+
+                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                        <BootStrap.NavLink onClick={() => deleteById(gentle.id)}>Delete</BootStrap.NavLink>}
+
+
+                                                    {data && data.roles && data.roles.filter(value => value.roleCode === 'ADMIN').length > 0 &&
+                                                        <BootStrap.Form.Check
+                                                            type="switch"
+                                                            id="custom-switch"
+                                                            label=""
+                                                            value={gentle.id}
+                                                            onChange={handleChange}
+
+                                                        />}
+
+                                                </BootStrap.Card>
+                                            </BootStrap.CardGroup>
+                                        
+
+
+
+
+
+                                        <br />
+                                    </div>
+                                </BootStrap.Col>
+
+                            )
+                        }
+                    </BootStrap.Row>
+                </div>}
             </div>
 
 

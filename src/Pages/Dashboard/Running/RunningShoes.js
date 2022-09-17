@@ -46,7 +46,7 @@ function RunningShoes() {
             <div onClick={() => Options("Soccer")}>
 
               <div className='Running'>
-                <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/288b8a91-9660-4985-98c7-a64cd44658b2/men-s-shoes-clothing-accessories.jpg' />
+                <img style={{ width: "90%",userSelect:"none" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/288b8a91-9660-4985-98c7-a64cd44658b2/men-s-shoes-clothing-accessories.jpg' />
               </div>
               <div className='mainrun3mens'>GET SET GO.</div>
 
@@ -68,15 +68,15 @@ function RunningShoes() {
             <div onClick={() => Options("Womens training")}>
 
               <div className='Running'>
-                <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/3caec76b-0055-4398-9c90-a3fe7c5d31de/women-s-shoes-clothing-accessories.png' />
+                <img style={{ width: "90%",userSelect:"none"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/3caec76b-0055-4398-9c90-a3fe7c5d31de/women-s-shoes-clothing-accessories.png' />
               </div>
               
 
               <div className='mainrun'>GET IN.</div>
 
-              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Train like a succesor with our training shoes</div>
+              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",userSelect:"none"}}>Train like a succesor with our training shoes</div>
 
-              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>The best yet to come.</div>
+              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",userSelect:"none"}}>The best yet to come.</div>
 
               <div className='explorebuttoncenter'>
                 <button className='exploremensbutton'>Shop</button>
@@ -90,15 +90,15 @@ function RunningShoes() {
             <div onClick={() => Options("Soccer")}>
 
               <div className='Running'>
-                <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/65786c71-ebf8-478b-a87b-0f83496e69ea/nike-kids.png' />
+                <img style={{ width: "90%",userSelect:"none"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/65786c71-ebf8-478b-a87b-0f83496e69ea/nike-kids.png' />
               </div>
               <div className='mainrun3mens'>GET SET GO.</div>
 
               <div className='mainrun'>GET IN.</div>
 
-              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>With our new football shoes you wont think of stop playing with this smoothnes</div>
+              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",userSelect:"none"}}>With our new football shoes you wont think of stop playing with this smoothnes</div>
 
-              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>yet.</div>
+              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",userSelect:"none"}}>yet.</div>
 
               <div className='explorebuttoncenter'>
                 <button className='exploremensbutton'>Explore</button>
@@ -113,12 +113,12 @@ function RunningShoes() {
             <>
 
               <div className='Running'>
-                <img style={{ width: "90%" }} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/eba50b3e-2c09-4fbb-820e-005a44cfb704/jordan.jpg' />
+                <img style={{ width: "90%",userSelect:"none"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1167,c_limit/eba50b3e-2c09-4fbb-820e-005a44cfb704/jordan.jpg' />
               </div>
 
 
 
-              <div className='mainrun' style={{fontSize:"large"}}>Howard University.</div>
+              <div className='mainrun' style={{fontSize:"large",userSelect:"none"}}>Howard University.</div>
 
               <div className='mainrun'>WELCOME TO THE FAMILY.</div>
 
@@ -158,7 +158,7 @@ function RunningShoes() {
             <>
 
               <div className='Running'>
-                <img style={{ width: "90%" }} src='https://static.nike.com/a/images/t_prod/w_1920,c_limit,f_auto,q_auto/5d1abfbd-9ffc-4c06-be30-1090ed533247/pdp-replace.jpg' />
+                <img style={{ width: "90%",userSelect:"none"}} src='https://static.nike.com/a/images/t_prod/w_1920,c_limit,f_auto,q_auto/5d1abfbd-9ffc-4c06-be30-1090ed533247/pdp-replace.jpg' />
               </div>
 
 
@@ -167,10 +167,10 @@ function RunningShoes() {
 
               <div className='mainrun'>FEELS GOOD.</div>
 
-              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>A smooth with an endless amount of comfort, the Nike React Infinity Run Flyknit 3 is the first
+              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",userSelect:"none"}}>A smooth with an endless amount of comfort, the Nike React Infinity Run Flyknit 3 is the first
                 step towards your best run</div>
 
-              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>yet.</div>
+              <div className='smalltext'  style={{fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif",userSelect:"none"}}>yet.</div>
 
 
               <div className='butns'>

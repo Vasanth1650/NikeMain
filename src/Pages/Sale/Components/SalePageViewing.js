@@ -15,6 +15,7 @@ import OptionPageService from '../../RedirectAllCategory/Services/CategoryServic
 import DashboardService from '../../MostPopular/Services/DashboardService';
 import PriorityService from '../Service/PriorityService';
 import Offer from '../../Headers/Offers/Offer';
+import { set } from 'lodash';
 
 
 function loadScript(src) {
@@ -49,7 +50,7 @@ function SalePageViewing() {
     const [gentle, setGentle] = useState([])
     const [bottom, setBottom] = useState([])
     const [similar, setSimilar] = useState([])
-
+    const [secretKey,setSecretKey] = useState()
 
     useEffect(() => {
         findByGender()
@@ -59,6 +60,10 @@ function SalePageViewing() {
     useEffect(() => {
         setUserid(data.id);
     }, [data])
+
+    useEffect(()=>{
+        setSecretKey(Math.floor(Math.random() * 1000000000000000))
+    },[])
 
 
     useEffect(() => {
@@ -289,7 +294,7 @@ function SalePageViewing() {
                         console.log(response.razorpay_payment_id)
 
 
-                        addCarddetails()
+                        addCarddetails(response.razorpay_payment_id)
 
                     },
 
@@ -319,13 +324,15 @@ function SalePageViewing() {
     }
 
     const adddetails = (productid) => {
-        const total = { productid, userid }
+        const total = { productid, userid,secretKey }
         fetch("https://nike-backend.herokuapp.com/queue/addqueue", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(total)
         }).then((response) => {
+            
             if (response.ok) {
+                
                 console.log("ProductAddedByUser" + userid + productid)
             }
             if(!response.ok){
@@ -336,12 +343,14 @@ function SalePageViewing() {
         })
     }
 
-    const addCarddetails = () => {
-        const total = { userid }
+    const addCarddetails = (paymentid) => {
+        const total = {userid,secretKey}
         PriorityService.update(total).then((response) => {
             alert("Thank You")
+            window.location.reload()
         }).catch((err) => {
-            alert("Something Went Wrong")
+            alert("Something Went Wrong,If Amount Detected It Will Be Refunded In 2-3 Business Days,Sorry You Took More Time For Payment So The Paticular Unit Has Been Allocated To Other")
+            alert(paymentid)
         })
     }
 

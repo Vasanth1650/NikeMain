@@ -166,7 +166,7 @@ function RecentSearch() {
 
 
     return (
-        <div className='bodyd' style={{ backgroundColor: "white" }}>
+        <div className='bodyd' style={{ backgroundColor: "white" ,userSelect:"none"}}>
 
             <div>
                 <br /><br /><br />

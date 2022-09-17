@@ -212,7 +212,7 @@ function ViewGift() {
 
 
     return (
-        <div className='giftviewing'>
+        <div className='giftviewing' style={{userSelect:"none"}}>
             <Header />
             <Offer />
             <div style={{ display: "flex", paddingTop: "5%", paddingBottom: "5%" }}>

@@ -48,7 +48,7 @@ function SalePage() {
             <VideoIMage/>
             
 
-            <div style={{marginTop:"5%",textAlign:"center",cursor:"pointer",color:"black"}}>
+            <div style={{marginTop:"-15%",textAlign:"center",cursor:"pointer",color:"black"}}>
                 <img onClick={()=>explore("All")} style={{width:"90%"}} src='https://static.nike.com/a/images/f_auto/dpr_1.5,cs_srgb/w_1263,c_limit/b3169c2c-4522-4061-abb2-4696ee4eed8e/nike-back-to-school.jpg'/>
                 <div style={{fontFamily:"fantasy",fontSize:"xxx-large"}}>Zion</div>
                 <div className='SalePage' style={{paddingBottom:"2%"}}>Take Flight in style with the latest Zion 2 and Jordan apparel</div>

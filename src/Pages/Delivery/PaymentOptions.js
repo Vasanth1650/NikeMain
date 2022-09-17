@@ -4,7 +4,7 @@ import Header from '../Headers/Header'
 
 function PaymentOptions() {
   return (
-    <div>
+    <div style={{userSelect:"none"}}>
         <Header/>
         <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />

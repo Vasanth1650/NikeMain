@@ -131,7 +131,7 @@ function Cards() {
 
     
   return (
-    <div className='bodyd'>
+    <div className='bodyd' style={{userSelect:"none"}}>
             <div>
                 <br /><br /><br />
                 

@@ -19,7 +19,7 @@ function Offer() {
 
 
   return (
-    <div style={{ backgroundColor: "white" }}>
+    <div style={{ backgroundColor: "white",userSelect:"none"}}>
 
 
       <div id="carouselExampleFade" class="carousel slide carousel-fadecarousel slide" data-ride="carousel" data-interval="5000">

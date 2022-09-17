@@ -42,7 +42,7 @@ function Popular() {
                         <div className='mainrunforkidss' style={{color:"black",userSelect:"none"}}>SUCCESS</div>
                         <div className='smalltextkidsd'   style={{color:"black",userSelect:"none",fontFamily:"Helvetica Neue, Helvetica, Arial, sans-serif"}}>Matching sets that'll carry your year in effortless style</div>
                         <div className='butonseefs11'>
-                            <BootStrap.Button className='smallsdas11'>Shop</BootStrap.Button>
+                            <BootStrap.Button className='smallsdas11' onClick={()=>navigatior()}>Shop</BootStrap.Button>
                         </div>
                     
                 </div>}
@@ -64,7 +64,7 @@ function Popular() {
                         <div className='mainrun'>WHAT ARE YOU WORKING ON?</div>
                         <div className='smalltext11'>When pro cricketer Smriti Mandhana's home, she focuses on recharging</div>
                         <div className='butonseefs'>
-                            <BootStrap.Button className='smallsdas'>Learn More</BootStrap.Button>
+                            <BootStrap.Button className='smallsdas' onClick={()=>navigatior()}>Learn More</BootStrap.Button>
                         </div>
                     
                 </div>}
